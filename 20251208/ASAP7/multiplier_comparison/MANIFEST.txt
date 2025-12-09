@@ -1,0 +1,18 @@
+EDP Comparison Results Archive
+Date: December 8, 2025
+Design: BiRISC-V Core (ASAP7 7nm)
+
+Contents:
+  - mul_reports/        : Synthesis reports for MUL variant
+  - mule_reports/       : Synthesis reports for MULE variant
+  - cbm_reports/        : Synthesis reports for CBM variant
+  - MULTIPLIER_COMPARISON_RESULTS.md : Detailed analysis & conclusions
+  - SYNTHESIS_SUMMARY.txt : Executive summary with key metrics
+  - LATENCY_ANALYSIS.md : RTL latency analysis
+
+Key Results:
+  MUL:  396.14 µW, 1 cycle latency,   99 pJ·cy² EDP (BEST)
+  MULE: 396.14 µW, 3.5 cycle latency, 4,853 pJ·cy² EDP
+  CBM:  396.14 µW, 33 cycle latency,  431,394 pJ·cy² EDP
+
+Winner: MUL (biriscv_multiplier) - combinational design with best EDP

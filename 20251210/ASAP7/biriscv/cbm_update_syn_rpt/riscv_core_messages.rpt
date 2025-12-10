@@ -1,0 +1,13 @@
+  =================
+   Message Summary
+  =================
+---------------------------------
+|Id |Sev|Count|  Message Text   |
+---------------------------------
+|MES|War|    5|Maximum message  |
+| G-| ni|     | print count     |
+| 11| ng|     | reached.        |
+|SYN|Inf|    1|Done             |
+| TH| o |     | incrementally   |
+| -8|   |     | optimizing.     |
+---------------------------------

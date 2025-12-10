@@ -1,23 +1,22 @@
-# Multiplier Latency Analysis (from RTL)
+# Multiplier Latency Analysis (Updated with VCD Results)
 
 ## MUL (biriscv_multiplier)
-- **Type**: Combinational
-- **Latency**: 1 cycle  
-- **Path**: Inputs → Output in same cycle
+- **Type**: Pipelined (Fixed Latency)
+- **Latency**: 2 cycles
+- **Path**: Input → Stage 1 Reg → Stage 2 Reg → Output
 - **Details**: 
-  - Multiple combinational always @* blocks
-  - Clock input for hold_i control
-  - Standard Wallace tree or similar combinational multiplier
+  - `MULT_STAGES` parameter (default 2)
+  - Pipeline registers: `operand_a_e1_q`, `result_e2_q`
+  - High-throughput design
 
 ## MULE (biriscv_multiplier_efficient)  
-- **Type**: Pipelined
-- **Latency**: 3-4 cycles (estimated from state machine + pipeline stages)
-- **Path**: Issue → 3-4 stages of registers → Writeback
+- **Type**: Iterative / State Machine
+- **Latency**: 6-12 cycles (Measured Avg: 9 cycles)
+- **Path**: Issue → State Machine (IDLE->CALC->DONE) → Writeback
 - **Details**:
-  - 3-bit state machine (state_q)
-  - 4 pipeline registers: a_q, b_q, p0_q, p1_q
-  - Partial product stages: p0 (A_l × B_l), p1 (A_l × B_h), p2 (A_h × B_l)
-  - Valid output signal (writeback_valid_o) indicates completion
+  - 5-state FSM (`IDLE`, `CALC0`, `CALC1`, `CALC2`, `DONE`)
+  - Iterative calculation of partial products
+  - Variable latency depending on pipeline hazards
 
 ## CBM (column_bypass_multiplier)
 - **Type**: Multi-cycle (Column-bypass architecture)
@@ -35,8 +34,8 @@
 ┌──────────┬────────────┬──────────────────┐
 │ Multiplier│ Latency    │ Architecture     │
 ├──────────┼────────────┼──────────────────┤
-│ MUL      │ 1 cycle    │ Combinational    │
-│ MULE     │ 3-4 cycles │ Pipelined        │
+│ MUL      │ 2 cycles   │ Pipelined        │
+│ MULE     │ ~9 cycles  │ Iterative        │
 │ CBM      │ 33 cycles  │ Multi-cycle      │
 └──────────┴────────────┴──────────────────┘
 ```
@@ -46,8 +45,16 @@
 Given: Clock = 0.25 ns (4 GHz), Period = 0.25 ns
 
 For 1000 operations:
-- **MUL**: 1000 × 1 = 1000 cycles = 250 µs
-- **MULE**: 1000 × 3.5 ≈ 3500 cycles = 875 µs  
+- **MUL**: 1000 × 2 = 2000 cycles = 500 ns
+- **MULE**: 1000 × 9 = 9000 cycles = 2250 ns
+- **CBM**: 1000 × 33 = 33000 cycles = 8250 ns
+
+**EDP Comparison (Power × Latency²):**
+- MUL: 1.0x (Baseline)
+- MULE: (9/2)² = 20.25x worse
+- CBM: (33/2)² = 272.25x worse
+
+Note: Previous estimates assumed MUL was 1 cycle. The 2-cycle reality reduces the gap but MUL remains the clear winner.  
 - **CBM**: 1000 × 33 = 33000 cycles = 8250 µs (8.25 ms)
 
 EDP = Power × (Latency²)

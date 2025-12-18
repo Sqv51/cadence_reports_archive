@@ -1,0 +1,28 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2024 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[06:43:10.006001] Configured Lic search path (23.02-s006): 5280@100.75.31.67
+
+Version: 23.13-s073_1, built Fri Nov 08 02:01:49 PST 2024
+Options: -overwrite -no_gui -log log/genus_vcd500.log -files run_genus.tcl 
+Date:    Wed Dec 17 06:43:10 2025
+Host:    eda-bitirme (x86_64 w/Linux 6.8.0-48-generic) (32cores*128cpus*2physical cpus*AMD EPYC 9354 32-Core Processor 1024KB) (1056508712KB)
+PID:     190367
+OS:      Rocky Linux 8.10 (Green Obsidian)
+
+Checking out license: Genus_Synthesis
+License server error: ERROR (LMF-03004): License call failed for feature Genus_Synthesis, version 23.100 and quantity 1. The license server search path is defined as 5280@100.75.31.67. The FLEXnet error message is as follows,
+    FLEXnet ERROR(-4, 0, 0): Licensed number of users already reached.
+
+Run 'lic_error LMF-03004' for more information.
+ (3 seconds elapsed).
+License 'Genus_Synthesis' (version: 23.1) checkout failed.
+Checking out license: Virtuoso_Digital_Implem
+License 'Virtuoso_Digital_Implem' (version: 23.1) checkout failed.
+Checking out license: Virtuoso_Digital_Implem_XL
+License 'Virtuoso_Digital_Implem_XL' (version: 23.1) checkout failed.
+Cannot obtain 'Genus_Synthesis' license.
+Failed on application-specific initialization
+Abnormal exit.

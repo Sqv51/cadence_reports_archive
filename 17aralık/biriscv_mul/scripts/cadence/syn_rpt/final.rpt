@@ -1,0 +1,51 @@
+
+
+Working Directory = /home/ziyx/cadence-bitirme/Flows/ASAP7/biriscv_mul/scripts/cadence
+QoS Summary for riscv_core
+================================================================================
+Metric                          generic         map             final          
+================================================================================
+Slack (ps):                       456               2               0
+  R2R (ps):                       671             137              10
+  I2R (ps):                       456               2               0
+  R2O (ps):                     1,112             829             670
+  I2O (ps):                       898             664             652
+  CG  (ps):                  no_value        no_value        no_value
+TNS (ps):                           0               0               0
+  R2R (ps):                         0               0               0
+  I2R (ps):                         0               0               0
+  R2O (ps):                         0               0               0
+  I2O (ps):                         0               0               0
+  CG  (ps):                  no_value        no_value        no_value
+Failing Paths:                      0               0               0
+Cell Area:                      6,974           4,460           4,396
+Total Cell Area:                6,974           4,460           4,396
+Leaf Instances:                68,286          32,831          31,755
+Total Instances:               68,286          32,831          31,755
+Utilization (%):                 0.00            0.00            0.00
+Tot. Net Length (um):        no_value        no_value        no_value
+Avg. Net Length (um):        no_value        no_value        no_value
+Route Overflow H (%):        no_value        no_value        no_value
+Route Overflow V (%):        no_value        no_value        no_value
+MBCI(%) (bits/gate) :            0.00            0.00            0.00
+Norm Cong Hotspot Area:
+  Max Cong:                  no_value        no_value        no_value
+  Tot Cong:                  no_value        no_value        no_value
+================================================================================
+CPU  Runtime (h:m:s):        00:08:41        00:06:27        00:00:48
+Real Runtime (h:m:s):        03:00:37        00:03:11        00:00:33
+CPU  Elapsed (h:m:s):        00:08:48        00:15:13        00:15:59
+Real Elapsed (h:m:s):        03:00:40        03:03:50        03:04:22
+Memory (MB):                  2381.00         2370.54         2422.38
+================================================================================
+================================================================================
+Flow Settings:
+================================================================================
+Total Runtime (h:m:s): 03:04:22
+Total Memory (MB):     2422.38
+Executable Version:    23.13-s073_1
+================================================================================
+Total Cell Area =  Cell Area + Physical Cell Area
+Total Instances =  Leaf Instances + Physical Instances
+
+

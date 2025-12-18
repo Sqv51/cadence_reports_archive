@@ -1,0 +1,330 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2024 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[12:07:22.006001] Configured Lic search path (23.02-s006): 5280@100.75.31.67
+
+Version: 23.13-s073_1, built Fri Nov 08 02:01:49 PST 2024
+Options: -files run_genus.tcl 
+Date:    Mon Dec 08 12:07:22 2025
+Host:    eda-bitirme (x86_64 w/Linux 6.8.0-48-generic) (32cores*128cpus*2physical cpus*AMD EPYC 9354 32-Core Processor 1024KB) (1056508712KB)
+PID:     47948
+OS:      Rocky Linux 8.10 (Green Obsidian)
+
+Checking out license: Genus_Synthesis
+[12:07:25.033938] Periodic Lic check successful
+[12:07:25.558241] Feature usage summary:
+[12:07:25.558241] Genus_Synthesis
+ (3 seconds elapsed).
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Finished executable startup (3 seconds elapsed).
+
+Loading tool scripts...
+Finished loading tool scripts (7 seconds elapsed).
+
+#@ Processing -files option
+@genus:root: 1> source run_genus.tcl
+#@ Begin verbose source ./run_genus.tcl
+@file(run_genus.tcl) 4: source lib_setup.tcl
+Sourcing './lib_setup.tcl' (Mon Dec 08 12:07:32 UTC 2025)...
+#@ Begin verbose source ./lib_setup.tcl
+@file(lib_setup.tcl) 3: set libdir "../../../../../Enablements/ASAP7/lib"
+@file(lib_setup.tcl) 4: set lefdir "../../../../../Enablements/ASAP7/lef"
+@file(lib_setup.tcl) 5: set qrcdir "../../../../../Enablements/ASAP7/qrc"
+@file(lib_setup.tcl) 7: set_db init_lib_search_path { \
+    ${libdir} \
+    ${lefdir} \
+}
+  Setting attribute of root '/': 'init_lib_search_path' =   ${libdir}  ${lefdir}  
+@file(lib_setup.tcl) 13: set libworst [glob ${libdir}/*.lib]
+@file(lib_setup.tcl) 16: set libbest $libworst
+@file(lib_setup.tcl) 19: set lefs "  
+    ${lefdir}/asap7_tech_1x_201209.lef \
+    ${lefdir}/asap7sc7p5t_27_R_1x_201211.lef \
+    ${lefdir}/sram_asap7_16x256_1rw.lef \
+    ${lefdir}/sram_asap7_32x256_1rw.lef \
+    "
+@file(lib_setup.tcl) 27: set qrc_max "${qrcdir}/ASAP7.tch"
+@file(lib_setup.tcl) 28: set qrc_min "${qrcdir}/ASAP7.tch"
+@file(lib_setup.tcl) 35: setDesignMode -process 7
+#@ End verbose source ./lib_setup.tcl
+@file(run_genus.tcl) 5: source design_setup.tcl
+Sourcing './design_setup.tcl' (Mon Dec 08 12:07:32 UTC 2025)...
+#@ Begin verbose source ./design_setup.tcl
+@file(design_setup.tcl) 3: set DESIGN riscv_core
+@file(design_setup.tcl) 4: set sdc "../../constraints/riscv_core.sdc"
+@file(design_setup.tcl) 5: set rtldir /home/ziyx/cadence-bitirme/Testcases/biriscv/rtl
+@file(design_setup.tcl) 17: set_db syn_generic_effort medium
+  Setting attribute of root '/': 'syn_generic_effort' = medium
+@file(design_setup.tcl) 21: set_db syn_map_effort medium
+  Setting attribute of root '/': 'syn_map_effort' = medium
+@file(design_setup.tcl) 25: set_db syn_opt_effort medium
+  Setting attribute of root '/': 'syn_opt_effort' = medium
+@file(design_setup.tcl) 33: set SITE "asap7sc7p5t"
+@file(design_setup.tcl) 34: set HALO_WIDTH 2
+@file(design_setup.tcl) 35: set TOP_ROUTING_LAYER 7
+#@ End verbose source ./design_setup.tcl
+@file(run_genus.tcl) 8: set OUTPUTS_PATH  syn_output
+@file(run_genus.tcl) 9: set REPORTS_PATH  syn_rpt
+@file(run_genus.tcl) 10: set HANDOFF_PATH  syn_handoff
+@file(run_genus.tcl) 12: if {![file exists ${OUTPUTS_PATH}]} {
+  file mkdir ${OUTPUTS_PATH}
+}
+@file(run_genus.tcl) 16: if {![file exists ${REPORTS_PATH}]} {
+  file mkdir ${REPORTS_PATH}
+}
+@file(run_genus.tcl) 20: if {![file exists ${HANDOFF_PATH}]} {
+  file mkdir ${HANDOFF_PATH}
+}
+@file(run_genus.tcl) 25: set_db max_cpus_per_server 16
+  Setting attribute of root '/': 'max_cpus_per_server' = 16
+@file(run_genus.tcl) 26: set_db super_thread_servers "localhost"
+  Setting attribute of root '/': 'super_thread_servers' = localhost
+@file(run_genus.tcl) 29: set list_lib "$libworst"
+@file(run_genus.tcl) 30: set link_library $list_lib
+@file(run_genus.tcl) 31: set target_library $list_lib
+@file(run_genus.tcl) 34: set_db hdl_flatten_complex_port true
+  Setting attribute of root '/': 'hdl_flatten_complex_port' = true
+@file(run_genus.tcl) 35: set_db hdl_record_naming_style  %s_%s
+  Setting attribute of root '/': 'hdl_record_naming_style' = %s_%s
+@file(run_genus.tcl) 36: set_db auto_ungroup none
+  Setting attribute of root '/': 'auto_ungroup' = none
+@file(run_genus.tcl) 37: set_db library $list_lib
+
+  Message Summary for Library all 9 libraries:
+  ********************************************
+Warning : Found multiple definitions. [LBR-504]
+        : Duplicate definition for attribute 'default_input_pin_cap' encountered. The last definition will be retained. (File /home/ziyx/cadence-bitirme/Flows/ASAP7/biriscv_mul/scripts/cadence/../../../../../Enablements/ASAP7/lib/sram_asap7_64x256_1rw.lib, Line 31)
+        : Reload the library file by removing one of the multiple definitions of the same attribute.
+Warning : Found multiple definitions. [LBR-504]
+        : Duplicate definition for attribute 'default_input_pin_cap' encountered. The last definition will be retained. (File /home/ziyx/cadence-bitirme/Flows/ASAP7/biriscv_mul/scripts/cadence/../../../../../Enablements/ASAP7/lib/sram_asap7_16x256_1rw.lib, Line 31)
+Warning : Found multiple definitions. [LBR-504]
+        : Duplicate definition for attribute 'default_input_pin_cap' encountered. The last definition will be retained. (File /home/ziyx/cadence-bitirme/Flows/ASAP7/biriscv_mul/scripts/cadence/../../../../../Enablements/ASAP7/lib/sram_asap7_64x64_1rw.lib, Line 31)
+Warning : Found multiple definitions. [LBR-504]
+        : Duplicate definition for attribute 'default_input_pin_cap' encountered. The last definition will be retained. (File /home/ziyx/cadence-bitirme/Flows/ASAP7/biriscv_mul/scripts/cadence/../../../../../Enablements/ASAP7/lib/sram_asap7_32x256_1rw.lib, Line 31)
+  Found multiple definitions. [LBR-504]: 4
+  An unsupported construct was detected in this library. [LBR-40]: 4
+  ********************************************
+ 
+Warning : Libraries have inconsistent nominal operating conditions. In the Liberty library, there are attributes called nom_voltage, nom_process and nom_temperature. Genus reports the message, if the respective values of the 2 given .libs differ. [LBR-38]
+        : The libraries are 'sram_asap7_64x256_1rw' and 'asap7sc7p5t_OA_RVT_FF_nldm_201020'.
+        : This is a common source of delay calculation confusion and should be avoided.
+Warning : Libraries have inconsistent nominal operating conditions. In the Liberty library, there are attributes called nom_voltage, nom_process and nom_temperature. Genus reports the message, if the respective values of the 2 given .libs differ. [LBR-38]
+        : The libraries are 'sram_asap7_64x256_1rw' and 'asap7sc7p5t_SEQ_RVT_FF_nldm_201020'.
+Warning : Libraries have inconsistent nominal operating conditions. In the Liberty library, there are attributes called nom_voltage, nom_process and nom_temperature. Genus reports the message, if the respective values of the 2 given .libs differ. [LBR-38]
+        : The libraries are 'sram_asap7_64x256_1rw' and 'asap7sc7p5t_AO_RVT_FF_nldm_201020'.
+Warning : Libraries have inconsistent nominal operating conditions. In the Liberty library, there are attributes called nom_voltage, nom_process and nom_temperature. Genus reports the message, if the respective values of the 2 given .libs differ. [LBR-38]
+        : The libraries are 'sram_asap7_64x256_1rw' and 'asap7sc7p5t_INVBUF_RVT_FF_nldm_201020'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.700000, 25.000000) in library 'sram_asap7_64x256_1rw.lib'.
+        : The nominal operating condition is represented, either by the nominal PVT values specified in the library source (via nom_process,nom_voltage and nom_temperature respectively), or by the default PVT values (1.0,1.0,1.0).
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.770000, 0.000000) in library 'asap7sc7p5t_OA_RVT_FF_nldm_201020.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.770000, 0.000000) in library 'asap7sc7p5t_SEQ_RVT_FF_nldm_201020.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.700000, 25.000000) in library 'sram_asap7_16x256_1rw.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.700000, 25.000000) in library 'sram_asap7_64x64_1rw.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.770000, 0.000000) in library 'asap7sc7p5t_AO_RVT_FF_nldm_201020.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.770000, 0.000000) in library 'asap7sc7p5t_INVBUF_RVT_FF_nldm_201020.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.700000, 25.000000) in library 'asap7sc7p5t_SIMPLE_RVT_FF_nldm_201020.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.700000, 25.000000) in library 'sram_asap7_32x256_1rw.lib'.
+Warning : Found libraries with and without pg_pin construct. [LBR-12]
+        : Libraries with and without pg_pin construct have been loaded.
+        : This can lead to issues later in the flow.
+Warning : Inconsistency detected among the units specified in the timing libraries being used. [LBR-714]
+        : Libraries with inconsistent time/capacitance units were loaded.
+        : Default system time/capacitance unit will be used.
+  Setting attribute of root '/': 'library' = ../../../../../Enablements/ASAP7/lib/sram_asap7_64x256_1rw.lib ../../../../../Enablements/ASAP7/lib/asap7sc7p5t_OA_RVT_FF_nldm_201020.lib ../../../../../Enablements/ASAP7/lib/asap7sc7p5t_SEQ_RVT_FF_nldm_201020.lib ../../../../../Enablements/ASAP7/lib/sram_asap7_16x256_1rw.lib ../../../../../Enablements/ASAP7/lib/sram_asap7_64x64_1rw.lib ../../../../../Enablements/ASAP7/lib/asap7sc7p5t_AO_RVT_FF_nldm_201020.lib ../../../../../Enablements/ASAP7/lib/asap7sc7p5t_INVBUF_RVT_FF_nldm_201020.lib ../../../../../Enablements/ASAP7/lib/asap7sc7p5t_SIMPLE_RVT_FF_nldm_201020.lib ../../../../../Enablements/ASAP7/lib/sram_asap7_32x256_1rw.lib
+@file(run_genus.tcl) 44: set_db hdl_language sv
+  Setting attribute of root '/': 'hdl_language' = sv
+@file(run_genus.tcl) 46: source rtl_list.tcl
+Sourcing './rtl_list.tcl' (Mon Dec 08 12:07:33 UTC 2025)...
+#@ Begin verbose source ./rtl_list.tcl
+@file(rtl_list.tcl) 7: set rtl_all [list \
+    $rtldir/biriscv_defs.v \
+    $rtldir/biriscv_alu.v \
+    $rtldir/biriscv_csr.v \
+    $rtldir/biriscv_csr_regfile.v \
+    $rtldir/biriscv_decode.v \
+    $rtldir/biriscv_decoder.v \
+    $rtldir/biriscv_divider.v \
+    $rtldir/biriscv_exec.v \
+    $rtldir/biriscv_fetch.v \
+    $rtldir/biriscv_frontend.v \
+    $rtldir/biriscv_issue.v \
+    $rtldir/biriscv_lsu.v \
+    $rtldir/biriscv_mmu.v \
+    $rtldir/biriscv_multiplier.v \
+    $rtldir/biriscv_multiplier_efficient.v \
+    $rtldir/biriscv_npc.v \
+    $rtldir/biriscv_pipe_ctrl.v \
+    $rtldir/biriscv_regfile.v \
+    $rtldir/biriscv_trace_sim.v \
+    $rtldir/biriscv_xilinx_2r1w.v \
+    $rtldir/column_bypass_multiplier.v \
+    $rtldir/dcache.v \
+    $rtldir/dcache_axi.v \
+    $rtldir/dcache_axi_axi.v \
+    $rtldir/dcache_mux.v \
+    $rtldir/dcache_pmem_mux.v \
+    $rtldir/dport_axi.v \
+    $rtldir/dport_mux.v \
+    $rtldir/icache.v \
+    $rtldir/icache_data_ram.v \
+    $rtldir/icache_tag_ram.v \
+    $rtldir/riscv_core.v \
+    $rtldir/riscv_tcm_top.v \
+    $rtldir/riscv_top.v \
+    $rtldir/tcm_mem.v \
+    $rtldir/tcm_mem_pmem.v \
+    $rtldir/tcm_mem_ram.v \
+]
+#@ End verbose source ./rtl_list.tcl
+@file(run_genus.tcl) 49: set read_args [list]
+@file(run_genus.tcl) 50: foreach rtl_file $rtl_all {
+    lappend read_args $rtl_file
+}
+@file(run_genus.tcl) 55: eval read_hdl -sv $read_args
+function [0:0] less_than_signed;
+         |
+Warning : Usage of non-static tasks or functions might result in simulation-synthesis mismatch. [VLOGPT-692]
+        : in file '/home/ziyx/cadence-bitirme/Testcases/biriscv/rtl/biriscv_exec.v' on line 262, column 10.
+        : Use the 'automatic' keyword for declaring functions and tasks.
+function [0:0] greater_than_signed;
+         |
+Warning : Usage of non-static tasks or functions might result in simulation-synthesis mismatch. [VLOGPT-692]
+        : in file '/home/ziyx/cadence-bitirme/Testcases/biriscv/rtl/biriscv_exec.v' on line 280, column 10.
+function [31:0] calculate_addr_next;
+         |
+Warning : Usage of non-static tasks or functions might result in simulation-synthesis mismatch. [VLOGPT-692]
+        : in file '/home/ziyx/cadence-bitirme/Testcases/biriscv/rtl/tcm_mem_pmem.v' on line 76, column 10.
+@file(run_genus.tcl) 57: elaborate $DESIGN
+  Libraries have 167 usable logic and 23 usable sequential lib-cells.
+Info    : Elaborating Design. [ELAB-1]
+        : Elaborating top-level block 'riscv_core' from file '/home/ziyx/cadence-bitirme/Testcases/biriscv/rtl/riscv_core.v'.
+Warning : Using default parameter value for module elaboration. [CDFG-818]
+        : Elaborating block 'riscv_core' with default parameters value.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'BRANCH_PREDICTION.pc_accept_q' in module 'biriscv_npc_SUPPORT_BRANCH_PREDICTION1_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5_NUM_BHT_ENTRIES512_NUM_BHT_ENTRIES_W9_RAS_ENABLE1_GSHARE_ENABLE0_BHT_ENABLE1_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3' in file '/home/ziyx/cadence-bitirme/Testcases/biriscv/rtl/biriscv_npc.v' on line 118.
+        : Genus removes the flip-flop or latch inferred for an unused signal or variable. To preserve the flip-flop or latch, set the hdl_preserve_unused_registers attribute to true or use a pragma in the RTL.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'BRANCH_PREDICTION.global_history_real_q' in module 'biriscv_npc_SUPPORT_BRANCH_PREDICTION1_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5_NUM_BHT_ENTRIES512_NUM_BHT_ENTRIES_W9_RAS_ENABLE1_GSHARE_ENABLE0_BHT_ENABLE1_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3' in file '/home/ziyx/cadence-bitirme/Testcases/biriscv/rtl/biriscv_npc.v' on line 185.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'BRANCH_PREDICTION.global_history_q' in module 'biriscv_npc_SUPPORT_BRANCH_PREDICTION1_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5_NUM_BHT_ENTRIES512_NUM_BHT_ENTRIES_W9_RAS_ENABLE1_GSHARE_ENABLE0_BHT_ENABLE1_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3' in file '/home/ziyx/cadence-bitirme/Testcases/biriscv/rtl/biriscv_npc.v' on line 200.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'BRANCH_PREDICTION.btb_target_q[0]' in module 'biriscv_npc_SUPPORT_BRANCH_PREDICTION1_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5_NUM_BHT_ENTRIES512_NUM_BHT_ENTRIES_W9_RAS_ENABLE1_GSHARE_ENABLE0_BHT_ENABLE1_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3' in file '/home/ziyx/cadence-bitirme/Testcases/biriscv/rtl/biriscv_npc.v' on line 233.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'BRANCH_PREDICTION.btb_target_q[1]' in module 'biriscv_npc_SUPPORT_BRANCH_PREDICTION1_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5_NUM_BHT_ENTRIES512_NUM_BHT_ENTRIES_W9_RAS_ENABLE1_GSHARE_ENABLE0_BHT_ENABLE1_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3' in file '/home/ziyx/cadence-bitirme/Testcases/biriscv/rtl/biriscv_npc.v' on line 233.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'BRANCH_PREDICTION.btb_target_q[2]' in module 'biriscv_npc_SUPPORT_BRANCH_PREDICTION1_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5_NUM_BHT_ENTRIES512_NUM_BHT_ENTRIES_W9_RAS_ENABLE1_GSHARE_ENABLE0_BHT_ENABLE1_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3' in file '/home/ziyx/cadence-bitirme/Testcases/biriscv/rtl/biriscv_npc.v' on line 233.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'BRANCH_PREDICTION.btb_target_q[3]' in module 'biriscv_npc_SUPPORT_BRANCH_PREDICTION1_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5_NUM_BHT_ENTRIES512_NUM_BHT_ENTRIES_W9_RAS_ENABLE1_GSHARE_ENABLE0_BHT_ENABLE1_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3' in file '/home/ziyx/cadence-bitirme/Testcases/biriscv/rtl/biriscv_npc.v' on line 233.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'BRANCH_PREDICTION.btb_target_q[4]' in module 'biriscv_npc_SUPPORT_BRANCH_PREDICTION1_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5_NUM_BHT_ENTRIES512_NUM_BHT_ENTRIES_W9_RAS_ENABLE1_GSHARE_ENABLE0_BHT_ENABLE1_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3' in file '/home/ziyx/cadence-bitirme/Testcases/biriscv/rtl/biriscv_npc.v' on line 233.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'BRANCH_PREDICTION.btb_target_q[5]' in module 'biriscv_npc_SUPPORT_BRANCH_PREDICTION1_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5_NUM_BHT_ENTRIES512_NUM_BHT_ENTRIES_W9_RAS_ENABLE1_GSHARE_ENABLE0_BHT_ENABLE1_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3' in file '/home/ziyx/cadence-bitirme/Testcases/biriscv/rtl/biriscv_npc.v' on line 233.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'BRANCH_PREDICTION.btb_target_q[6]' in module 'biriscv_npc_SUPPORT_BRANCH_PREDICTION1_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5_NUM_BHT_ENTRIES512_NUM_BHT_ENTRIES_W9_RAS_ENABLE1_GSHARE_ENABLE0_BHT_ENABLE1_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3' in file '/home/ziyx/cadence-bitirme/Testcases/biriscv/rtl/biriscv_npc.v' on line 233.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'BRANCH_PREDICTION.btb_target_q[7]' in module 'biriscv_npc_SUPPORT_BRANCH_PREDICTION1_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5_NUM_BHT_ENTRIES512_NUM_BHT_ENTRIES_W9_RAS_ENABLE1_GSHARE_ENABLE0_BHT_ENABLE1_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3' in file '/home/ziyx/cadence-bitirme/Testcases/biriscv/rtl/biriscv_npc.v' on line 233.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'BRANCH_PREDICTION.btb_target_q[8]' in module 'biriscv_npc_SUPPORT_BRANCH_PREDICTION1_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5_NUM_BHT_ENTRIES512_NUM_BHT_ENTRIES_W9_RAS_ENABLE1_GSHARE_ENABLE0_BHT_ENABLE1_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3' in file '/home/ziyx/cadence-bitirme/Testcases/biriscv/rtl/biriscv_npc.v' on line 233.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'BRANCH_PREDICTION.btb_target_q[9]' in module 'biriscv_npc_SUPPORT_BRANCH_PREDICTION1_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5_NUM_BHT_ENTRIES512_NUM_BHT_ENTRIES_W9_RAS_ENABLE1_GSHARE_ENABLE0_BHT_ENABLE1_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3' in file '/home/ziyx/cadence-bitirme/Testcases/biriscv/rtl/biriscv_npc.v' on line 233.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'BRANCH_PREDICTION.btb_target_q[10]' in module 'biriscv_npc_SUPPORT_BRANCH_PREDICTION1_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5_NUM_BHT_ENTRIES512_NUM_BHT_ENTRIES_W9_RAS_ENABLE1_GSHARE_ENABLE0_BHT_ENABLE1_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3' in file '/home/ziyx/cadence-bitirme/Testcases/biriscv/rtl/biriscv_npc.v' on line 233.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'BRANCH_PREDICTION.btb_target_q[11]' in module 'biriscv_npc_SUPPORT_BRANCH_PREDICTION1_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5_NUM_BHT_ENTRIES512_NUM_BHT_ENTRIES_W9_RAS_ENABLE1_GSHARE_ENABLE0_BHT_ENABLE1_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3' in file '/home/ziyx/cadence-bitirme/Testcases/biriscv/rtl/biriscv_npc.v' on line 233.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'BRANCH_PREDICTION.btb_target_q[12]' in module 'biriscv_npc_SUPPORT_BRANCH_PREDICTION1_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5_NUM_BHT_ENTRIES512_NUM_BHT_ENTRIES_W9_RAS_ENABLE1_GSHARE_ENABLE0_BHT_ENABLE1_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3' in file '/home/ziyx/cadence-bitirme/Testcases/biriscv/rtl/biriscv_npc.v' on line 233.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'BRANCH_PREDICTION.btb_target_q[13]' in module 'biriscv_npc_SUPPORT_BRANCH_PREDICTION1_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5_NUM_BHT_ENTRIES512_NUM_BHT_ENTRIES_W9_RAS_ENABLE1_GSHARE_ENABLE0_BHT_ENABLE1_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3' in file '/home/ziyx/cadence-bitirme/Testcases/biriscv/rtl/biriscv_npc.v' on line 233.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'BRANCH_PREDICTION.btb_target_q[14]' in module 'biriscv_npc_SUPPORT_BRANCH_PREDICTION1_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5_NUM_BHT_ENTRIES512_NUM_BHT_ENTRIES_W9_RAS_ENABLE1_GSHARE_ENABLE0_BHT_ENABLE1_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3' in file '/home/ziyx/cadence-bitirme/Testcases/biriscv/rtl/biriscv_npc.v' on line 233.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'BRANCH_PREDICTION.btb_target_q[15]' in module 'biriscv_npc_SUPPORT_BRANCH_PREDICTION1_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5_NUM_BHT_ENTRIES512_NUM_BHT_ENTRIES_W9_RAS_ENABLE1_GSHARE_ENABLE0_BHT_ENABLE1_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3' in file '/home/ziyx/cadence-bitirme/Testcases/biriscv/rtl/biriscv_npc.v' on line 233.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'BRANCH_PREDICTION.btb_target_q[16]' in module 'biriscv_npc_SUPPORT_BRANCH_PREDICTION1_NUM_BTB_ENTRIES32_NUM_BTB_ENTRIES_W5_NUM_BHT_ENTRIES512_NUM_BHT_ENTRIES_W9_RAS_ENABLE1_GSHARE_ENABLE0_BHT_ENABLE1_NUM_RAS_ENTRIES8_NUM_RAS_ENTRIES_W3' in file '/home/ziyx/cadence-bitirme/Testcases/biriscv/rtl/biriscv_npc.v' on line 233.
+Warning : Maximum message print count reached. [MESG-11]
+        : Maximum print count of '20' reached for message 'CDFG-508'.
+Warning : Unreachable statements for case item. [CDFG-472]
+        : Case item 'default' in module 'biriscv_lsu_MEM_CACHE_ADDR_MIN32h80000000_MEM_CACHE_ADDR_MAX32h8fffffff' in file '/home/ziyx/cadence-bitirme/Testcases/biriscv/rtl/biriscv_lsu.v' on line 208.
+Info    : Done Elaborating Design. [ELAB-3]
+        : Done elaborating 'riscv_core'.
+Checking for source RTL...
+Check completed for source RTL.
+Running Unified Mux Engine Tricks...
+Completed Unified Mux Engine Tricks
+
+Stage: post_elab
+-------------------------------------------------------
+| Trick             | Accepts | Rejects | Runtime (s) | 
+-------------------------------------------------------
+| ume_constant_bmux |       0 |       0 |        0.00 | 
+| ume_merge         |       0 |       0 |        0.00 | 
+| ume_ssm           |       0 |       0 |        0.01 | 
+| ume_cse           |       1 |       0 |        0.19 | 
+| ume_shrink        |       3 |       0 |        0.00 | 
+| ume_sweep         |       0 |       0 |        0.07 | 
+| ume_constant_bmux |       0 |       0 |        0.00 | 
+| ume_merge         |       0 |       0 |        0.00 | 
+| ume_ssm           |       0 |       0 |        0.01 | 
+| ume_cse           |       0 |       0 |        0.06 | 
+| ume_shrink        |       0 |       0 |        0.00 | 
+| ume_sweep         |       0 |       0 |        0.07 | 
+-------------------------------------------------------
+Starting optimize datapath shifters [v1.0] (stage: post_elab, startdef: riscv_core, recur: true)
+Completed optimize datapath shifters (accepts: 0, rejects: 0, runtime: 0.001s)
+Starting clip mux common data inputs [v1.0] (stage: post_elab, startdef: riscv_core, recur: true)
+Completed clip mux common data inputs (accepts: 0, rejects: 0, runtime: 0.001s)
+Starting clip the non-user hierarchies [v2.0] (stage: post_elab, startdef: riscv_core, recur: true)
+Completed clip the non-user hierarchies (accepts: 0, rejects: 0, runtime: 0.001s)
+Starting basic netlist cleanup [v1.0] (stage: post_elab, startdef: riscv_core, recur: true)
+Completed basic netlist cleanup (accepts: 0, rejects: 0, runtime: 0.001s)
+
+Stage: post_elab
+--------------------------------------------------------------------
+| Transform                      | Accepts | Rejects | Runtime (s) | 
+--------------------------------------------------------------------
+| hlo_optimize_datapath_shifters |       0 |       0 |        0.00 | 
+| hlo_clip_mux_input             |       0 |       0 |        0.00 | 
+| hlo_clip                       |       0 |       0 |        0.00 | 
+| hlo_cleanup                    |       0 |       0 |        0.00 | 
+--------------------------------------------------------------------
+UM:   flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   elaborate
+@file(run_genus.tcl) 58: time_info Elaboration
+stamp 'Elaboration' being created for table 'default'
+
+  Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:01(00:00:00) |  00:00:00(00:00:00) |   0.0(  0.0) |   12:07:26 (Dec08) |  169.6 MB | init
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:21(00:00:13) |  00:00:20(00:00:13) | 100.0(100.0) |   12:07:39 (Dec08) |  626.3 MB | Elaboration
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+Number of threads: 16 * 1   (id: default, time_info v1.57)
+Info: (*N*) indicates data that was populated from previously saved time_info database
+Info: CPU time includes time of parent + longest thread
+@file(run_genus.tcl) 60: read_sdc $sdc
+Error: Unable to find ../../constraints/riscv_core.sdc
+#@ End verbose source ./run_genus.tcl
+Failed on read_sdc
+Encountered problems processing file: run_genus.tcl
+WARNING: This version of the tool is 395 days old.
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: 
+RT {elapsed: 275s, ST: 21s, FG: 21s, CPU: 0.3%}, MEM {curr: 1.5G, peak: 1.9G, phys curr: 0.6G, phys peak: 0.6G}

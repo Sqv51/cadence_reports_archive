@@ -1,0 +1,13 @@
+  =================
+   Message Summary
+  =================
+------------------------------------------------------------------------------
+|  Id   |  Sev  |Count|                     Message Text                     |
+------------------------------------------------------------------------------
+|MESG-11|Warning|    5|Maximum message print count reached.                  |
+|SYNTH-8|Info   |    1|Done incrementally optimizing.                        |
+|TUI-64 |Error  |    1|A command argument did not match any of the acceptable|
+|       |       |     | command options.                                     |
+|       |       |     |Check the command usage and correct the input to the  |
+|       |       |     | command.                                             |
+------------------------------------------------------------------------------

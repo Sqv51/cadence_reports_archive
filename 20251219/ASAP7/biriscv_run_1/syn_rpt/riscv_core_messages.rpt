@@ -1,0 +1,13 @@
+  =================
+   Message Summary
+  =================
+----------------------------------------------------------------------------------------
+|  Id   |  Sev  |Count|                          Message Text                          |
+----------------------------------------------------------------------------------------
+|MESG-11|Warning|    5|Maximum message print count reached.                            |
+|RPT-16 |Info   |    1|Joules engine is used.                                          |
+|SYNTH-8|Info   |    1|Done incrementally optimizing.                                  |
+|VCD-28 |Warning|    1|Use -instance option instead of -module.                        |
+|       |       |     |The option -module is deprecated will be obsolete soon, use     |
+|       |       |     | -instance instead.                                             |
+----------------------------------------------------------------------------------------

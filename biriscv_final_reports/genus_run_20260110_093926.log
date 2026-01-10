@@ -1,0 +1,186 @@
+TMPDIR is being set to /tmp/genus_temp_581799_bdf487b8-7600-4d8a-8c83-c8502f32a8df_eda-bitirme_ziyx_1TmPw1
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2024 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[09:39:26.006121] Configured Lic search path (23.02-s006): 5280@100.75.31.67
+
+Version: 23.13-s073_1, built Fri Nov 08 02:01:49 PST 2024
+Options: -no_gui 
+Date:    Sat Jan 10 09:39:26 2026
+Host:    eda-bitirme (x86_64 w/Linux 6.8.0-48-generic) (32cores*128cpus*2physical cpus*AMD EPYC 9354 32-Core Processor 1024KB) (1056508712KB)
+PID:     581799
+OS:      Rocky Linux 8.10 (Green Obsidian)
+
+Checking out license: Genus_Synthesis
+[09:39:29.457107] Periodic Lic check successful
+[09:39:29.457114] Feature usage summary:
+[09:39:29.457115] Genus_Synthesis
+ (3 seconds elapsed).
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Finished executable startup (3 seconds elapsed).
+
+Loading tool scripts...
+Finished loading tool scripts (7 seconds elapsed).
+
+WARNING: This version of the tool is 427 days old.
+@genus:root: 1> 
+@genus:root: 1> source lib_setup.tcl
+File 'lib_setup.tcl' does not exist.
+@genus:root: 2> source design_setup.tcl
+File 'design_setup.tcl' does not exist.
+@genus:root: 3> 
+@genus:root: 3> set OUTPUTS_PATH  syn_output
+syn_output
+@genus:root: 4> set REPORTS_PATH  syn_rpt
+syn_rpt
+@genus:root: 5> set HANDOFF_PATH  syn_handoff
+syn_handoff
+@genus:root: 6> 
+@genus:root: 6> file mkdir ${OUTPUTS_PATH} ${REPORTS_PATH} ${HANDOFF_PATH}
+@genus:root: 7> 
+@genus:root: 7> set_db max_cpus_per_server 16
+  Setting attribute of root '/': 'max_cpus_per_server' = 16
+1 16
+@genus:root: 8> set_db super_thread_servers "localhost"
+  Setting attribute of root '/': 'super_thread_servers' = localhost
+1 localhost
+@genus:root: 9> 
+@genus:root: 9> set list_lib "$libworst"
+can't read "libworst": no such variable
+@genus:root: 10> set link_library $list_lib
+can't read "list_lib": no such variable
+@genus:root: 11> set target_library $list_lib
+can't read "list_lib": no such variable
+@genus:root: 12> 
+@genus:root: 12> set_db hdl_flatten_complex_port true
+  Setting attribute of root '/': 'hdl_flatten_complex_port' = true
+1 true
+@genus:root: 13> set_db hdl_record_naming_style  %s_%s
+  Setting attribute of root '/': 'hdl_record_naming_style' = %s_%s
+1 %s_%s
+@genus:root: 14> set_db auto_ungroup none
+  Setting attribute of root '/': 'auto_ungroup' = none
+1 none
+@genus:root: 15> set_db library $list_lib
+can't read "list_lib": no such variable
+@genus:root: 16> 
+@genus:root: 16> # Match reference flow: allow includes from rtl tree
+@genus:root: 17> set_db init_hdl_search_path $rtldir
+can't read "rtldir": no such variable
+@genus:root: 18> 
+@genus:root: 18> # Load design
+@genus:root: 19> source rtl_list.tcl
+File 'rtl_list.tcl' does not exist.
+@genus:root: 20> # Read all RTL in one shot so define macros in earlier files (b [1Giriscv_defs.v)
+@genus:root: 21> # are visible to later files (e.g., biriscv_fetch.v)
+@genus:root: 22> read_hdl -sv $rtl_all
+can't read "rtl_all": no such variable
+@genus:root: 23> 
+@genus:root: 23> elaborate $DESIGN
+can't read "DESIGN": no such variable
+@genus:root: 24> read_sdc $sdc
+can't read "sdc": no such variable
+@genus:root: 25> init_design
+Error: no design has been loaded
+@genus:root: 26> 
+@genus:root: 26> # Basic sanity checks (match the standard flow)
+@genus:root: 27> check_design -unresolved
+Error   : No designs are available. A design must first be read in and elaborated. [TUI-10] [check_design]
+        : There is no design here.
+        : A design must first be read in with 'read_hdl' command and elaborated with 'elaborate' command.
+Failed on check_design
+@genus:root: 28> check_timing_intent
+Error   : No designs are available. A design must first be read in and elaborated. [TUI-10] [check_timing_intent]
+        : No elaborated designs in memory
+Nothing to report
+1
+@genus:root: 29> 
+@genus:root: 29> # Annotate power from VCD (scope: tb_1000mul.u_dut -> riscv_cor [1Ge)
+@genus:root: 30> puts "Loading VCD for power annotation: /home/ziyx/cadence-biti [1Grme/Flows/ASAP7/biriscv/../../Testcases/biriscv-default/biriscv/1000parallel.vcd [1G"
+Loading VCD for power annotation: /home/ziyx/cadence-bitirme/Flows/ASAP7/biriscv/../../Testcases/biriscv-default/biriscv/1000parallel.vcd
+@genus:root: 31> if { [file exists "/home/ziyx/cadence-bitirme/Flows/ASAP7/biris [1Gcv/../../Testcases/biriscv-default/biriscv/1000parallel.vcd"] } {
+==>     # Use -module and -static as per Genus documentation
+==>     read_vcd -module ${DESIGN} -static "/home/ziyx/cadence-bitirme/Flows/ASA [1GP7/biriscv/../../Testcases/biriscv-default/biriscv/1000parallel.vcd"
+==>     puts "VCD loaded successfully for module ${DESIGN}"
+==> } else {
+==>     puts "Warning: VCD file not found"
+==> }
+Warning: VCD file not found
+@genus:root: 32> 
+@genus:root: 32> syn_generic
+UM:   flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   syn_gen
+1
+@genus:root: 33> syn_map
+#----------------------------------------------------------------------------------------
+# Root attributes for category: opt
+#----------------------------------------------------------------------------------------
+# Feature                           | Attribute                    | Value            
+#----------------------------------------------------------------------------------------
+# Avoid tied inputs                 | avoid_tied_inputs            | false (default)  
+# Allow floating outputs            | opt_allow_floating_outputs   | false (default)  
+# Power optimization effort         | design_power_effort          | none (default)   
+# Do not use qbar sequential pins   | dont_use_qbar_seq_pins       | false (default)  
+#----------------------------------------------------------------------------------------
+
+Error   : Failed to execute command. [LBR-163] [syn_map]
+        : No target technology library was loaded.
+        : Specify libraries using read_libs or read_mmmc.
+      flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   syn_map
+1
+@genus:root: 34> syn_opt
+Warning : The selected flow setting will be removed in a future release. [SYNTH-33]
+        : The use of 'syn_opt' for logical only optimization will be obsolete in a future release.
+	Transition to 'syn_opt -logical' or 'syn_opt -spatial'.
+
+        : Contact Cadence support to understand current flows.
+Error   : Failed to execute command. [LBR-163] [syn_opt]
+        : No target technology library was loaded.
+      flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   syn_opt
+1
+@genus:root: 35> 
+@genus:root: 35> # Generate power reports with annotated values
+@genus:root: 36> report_power > ${REPORTS_PATH}/${DESIGN}_power_annotated.rpt
+can't read "DESIGN": no such variable
+@genus:root: 37> report_gates > ${REPORTS_PATH}/${DESIGN}_gates.rpt
+can't read "DESIGN": no such variable
+@genus:root: 38> report_area > ${REPORTS_PATH}/${DESIGN}_area.rpt
+can't read "DESIGN": no such variable
+@genus:root: 39> report_messages > ${REPORTS_PATH}/${DESIGN}_messages.rpt
+can't read "DESIGN": no such variable
+@genus:root: 40> 
+@genus:root: 40> write_reports -directory ${REPORTS_PATH} -tag final
+Error   : No designs are available. A design must first be read in and elaborated. [TUI-10] [generate_reports]
+Failed to find a design!
+@genus:root: 41> write_sdc >${HANDOFF_PATH}/${DESIGN}.sdc
+can't read "DESIGN": no such variable
+@genus:root: 42> write_hdl > ${HANDOFF_PATH}/${DESIGN}.v
+can't read "DESIGN": no such variable
+@genus:root: 43> 
+@genus:root: 43> puts ""
+
+@genus:root: 44> puts "=== SYNTHESIS COMPLETE ==="
+=== SYNTHESIS COMPLETE ===
+@genus:root: 45> puts "Power reports: ${REPORTS_PATH}/"
+Power reports: syn_rpt/
+@genus:root: 46> puts "Design outputs: ${OUTPUTS_PATH}/"
+Design outputs: syn_output/
+@genus:root: 47> 
+@genus:root: 47> exit
+
+Lic Summary:
+[09:39:37.015593] Cdslmd servers: nemesys3
+[09:39:37.015603] Feature usage summary:
+[09:39:37.015603] Genus_Synthesis
+
+Normal exit.

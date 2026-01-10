@@ -1,0 +1,443 @@
+TMPDIR is being set to /tmp/genus_temp_583143_a4022b46-3aa0-4a85-8e2e-b06a2f6b04d0_eda-bitirme_ziyx_RxKV5v
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2024 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[09:41:08.006065] Configured Lic search path (23.02-s006): 5280@100.75.31.67
+
+Version: 23.13-s073_1, built Fri Nov 08 02:01:49 PST 2024
+Options: -no_gui 
+Date:    Sat Jan 10 09:41:08 2026
+Host:    eda-bitirme (x86_64 w/Linux 6.8.0-48-generic) (32cores*128cpus*2physical cpus*AMD EPYC 9354 32-Core Processor 1024KB) (1056508712KB)
+PID:     583143
+OS:      Rocky Linux 8.10 (Green Obsidian)
+
+Checking out license: Genus_Synthesis
+[09:41:11.112233] Periodic Lic check successful
+[09:41:11.636528] Feature usage summary:
+[09:41:11.636528] Genus_Synthesis
+ (3 seconds elapsed).
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Finished executable startup (3 seconds elapsed).
+
+Loading tool scripts...
+Finished loading tool scripts (8 seconds elapsed).
+
+WARNING: This version of the tool is 427 days old.
+@genus:root: 1> 
+@genus:root: 1> source lib_setup.tcl
+Sourcing './lib_setup.tcl' (Sat Jan 10 09:41:19 UTC 2026)...
+#@ Begin verbose source ./lib_setup.tcl
+@file(lib_setup.tcl) 3: set libdir "../../../../../Enablements/ASAP7/lib"
+@file(lib_setup.tcl) 4: set lefdir "../../../../../Enablements/ASAP7/lef"
+@file(lib_setup.tcl) 5: set qrcdir "../../../../../Enablements/ASAP7/qrc"
+@file(lib_setup.tcl) 7: set_db init_lib_search_path { \
+    ${libdir} \
+    ${lefdir} \
+}
+  Setting attribute of root '/': 'init_lib_search_path' =   ${libdir}  ${lefdir}  
+@file(lib_setup.tcl) 12: set libworst [glob ${libdir}/*.lib]
+@file(lib_setup.tcl) 14: set libbest $libworst
+@file(lib_setup.tcl) 16: set lefs "  
+    ${lefdir}/asap7_tech_1x_201209.lef \
+    ${lefdir}/asap7sc7p5t_27_R_1x_201211.lef \
+    ${lefdir}/sram_asap7_16x256_1rw.lef \
+    "
+@file(lib_setup.tcl) 22: set qrc_max "${qrcdir}/ASAP7.tch"
+@file(lib_setup.tcl) 23: set qrc_min "${qrcdir}/ASAP7.tch"
+@file(lib_setup.tcl) 27: setDesignMode -process 7
+#@ End verbose source ./lib_setup.tcl
+@genus:root: 2> source design_setup.tcl
+Sourcing './design_setup.tcl' (Sat Jan 10 09:41:19 UTC 2026)...
+#@ Begin verbose source ./design_setup.tcl
+@file(design_setup.tcl) 2: set DESIGN riscv_core
+@file(design_setup.tcl) 3: set sdc  ../../constraints/${DESIGN}.sdc
+@file(design_setup.tcl) 4: set rtldir ../../rtl
+@file(design_setup.tcl) 6: if {[info exist ::env(PHY_SYNTH)] && $::env(PHY_SYNTH) == 1} {
+    set floorplan_def ../../def/riscv_core_fp_placed_macros.def
+} else {
+    set floorplan_def ../../def/riscv_core_fp.def
+}
+@file(design_setup.tcl) 14: set GEN_EFF medium
+@file(design_setup.tcl) 18: set MAP_EFF high
+@file(design_setup.tcl) 20: set SITE "asap7sc7p5t"
+@file(design_setup.tcl) 21: set HALO_WIDTH 1
+@file(design_setup.tcl) 22: set TOP_ROUTING_LAYER 7
+#@ End verbose source ./design_setup.tcl
+7
+@genus:root: 3> 
+@genus:root: 3> set OUTPUTS_PATH  syn_output
+syn_output
+@genus:root: 4> set REPORTS_PATH  syn_rpt
+syn_rpt
+@genus:root: 5> set HANDOFF_PATH  syn_handoff
+syn_handoff
+@genus:root: 6> 
+@genus:root: 6> file mkdir ${OUTPUTS_PATH} ${REPORTS_PATH} ${HANDOFF_PATH}
+@genus:root: 7> 
+@genus:root: 7> set_db max_cpus_per_server 16
+  Setting attribute of root '/': 'max_cpus_per_server' = 16
+1 16
+@genus:root: 8> set_db super_thread_servers "localhost"
+  Setting attribute of root '/': 'super_thread_servers' = localhost
+1 localhost
+@genus:root: 9> 
+@genus:root: 9> set list_lib "$libworst"
+../../../../../Enablements/ASAP7/lib/sram_asap7_64x256_1rw.lib ../../../../../Enablements/ASAP7/lib/asap7sc7p5t_OA_RVT_FF_nldm_201020.lib ../../../../../Enablements/ASAP7/lib/asap7sc7p5t_SEQ_RVT_FF_nldm_201020.lib ../../../../../Enablements/ASAP7/lib/sram_asap7_16x256_1rw.lib ../../../../../Enablements/ASAP7/lib/sram_asap7_64x64_1rw.lib ../../../../../Enablements/ASAP7/lib/asap7sc7p5t_AO_RVT_FF_nldm_201020.lib ../../../../../Enablements/ASAP7/lib/asap7sc7p5t_INVBUF_RVT_FF_nldm_201020.lib ../../../../../Enablements/ASAP7/lib/asap7sc7p5t_SIMPLE_RVT_FF_nldm_201020.lib ../../../../../Enablements/ASAP7/lib/sram_asap7_32x256_1rw.lib
+@genus:root: 10> set link_library $list_lib
+../../../../../Enablements/ASAP7/lib/sram_asap7_64x256_1rw.lib ../../../../../Enablements/ASAP7/lib/asap7sc7p5t_OA_RVT_FF_nldm_201020.lib ../../../../../Enablements/ASAP7/lib/asap7sc7p5t_SEQ_RVT_FF_nldm_201020.lib ../../../../../Enablements/ASAP7/lib/sram_asap7_16x256_1rw.lib ../../../../../Enablements/ASAP7/lib/sram_asap7_64x64_1rw.lib ../../../../../Enablements/ASAP7/lib/asap7sc7p5t_AO_RVT_FF_nldm_201020.lib ../../../../../Enablements/ASAP7/lib/asap7sc7p5t_INVBUF_RVT_FF_nldm_201020.lib ../../../../../Enablements/ASAP7/lib/asap7sc7p5t_SIMPLE_RVT_FF_nldm_201020.lib ../../../../../Enablements/ASAP7/lib/sram_asap7_32x256_1rw.lib
+@genus:root: 11> set target_library $list_lib
+../../../../../Enablements/ASAP7/lib/sram_asap7_64x256_1rw.lib ../../../../../Enablements/ASAP7/lib/asap7sc7p5t_OA_RVT_FF_nldm_201020.lib ../../../../../Enablements/ASAP7/lib/asap7sc7p5t_SEQ_RVT_FF_nldm_201020.lib ../../../../../Enablements/ASAP7/lib/sram_asap7_16x256_1rw.lib ../../../../../Enablements/ASAP7/lib/sram_asap7_64x64_1rw.lib ../../../../../Enablements/ASAP7/lib/asap7sc7p5t_AO_RVT_FF_nldm_201020.lib ../../../../../Enablements/ASAP7/lib/asap7sc7p5t_INVBUF_RVT_FF_nldm_201020.lib ../../../../../Enablements/ASAP7/lib/asap7sc7p5t_SIMPLE_RVT_FF_nldm_201020.lib ../../../../../Enablements/ASAP7/lib/sram_asap7_32x256_1rw.lib
+@genus:root: 12> 
+@genus:root: 12> set_db hdl_flatten_complex_port true
+  Setting attribute of root '/': 'hdl_flatten_complex_port' = true
+1 true
+@genus:root: 13> set_db hdl_record_naming_style  %s_%s
+  Setting attribute of root '/': 'hdl_record_naming_style' = %s_%s
+1 %s_%s
+@genus:root: 14> set_db auto_ungroup none
+  Setting attribute of root '/': 'auto_ungroup' = none
+1 none
+@genus:root: 15> set_db library $list_lib
+
+  Message Summary for Library all 9 libraries:
+  ********************************************
+Warning : Found multiple definitions. [LBR-504]
+        : Duplicate definition for attribute 'default_input_pin_cap' encountered. The last definition will be retained. (File /home/ziyx/cadence-bitirme/Flows/ASAP7/biriscv/scripts/cadence/../../../../../Enablements/ASAP7/lib/sram_asap7_64x256_1rw.lib, Line 31)
+        : Reload the library file by removing one of the multiple definitions of the same attribute.
+Warning : Found multiple definitions. [LBR-504]
+        : Duplicate definition for attribute 'default_input_pin_cap' encountered. The last definition will be retained. (File /home/ziyx/cadence-bitirme/Flows/ASAP7/biriscv/scripts/cadence/../../../../../Enablements/ASAP7/lib/sram_asap7_16x256_1rw.lib, Line 31)
+Warning : Found multiple definitions. [LBR-504]
+        : Duplicate definition for attribute 'default_input_pin_cap' encountered. The last definition will be retained. (File /home/ziyx/cadence-bitirme/Flows/ASAP7/biriscv/scripts/cadence/../../../../../Enablements/ASAP7/lib/sram_asap7_64x64_1rw.lib, Line 31)
+Warning : Found multiple definitions. [LBR-504]
+        : Duplicate definition for attribute 'default_input_pin_cap' encountered. The last definition will be retained. (File /home/ziyx/cadence-bitirme/Flows/ASAP7/biriscv/scripts/cadence/../../../../../Enablements/ASAP7/lib/sram_asap7_32x256_1rw.lib, Line 31)
+  Found multiple definitions. [LBR-504]: 4
+  An unsupported construct was detected in this library. [LBR-40]: 4
+  ********************************************
+ 
+Warning : Libraries have inconsistent nominal operating conditions. In the Liberty library, there are attributes called nom_voltage, nom_process and nom_temperature. Genus reports the message, if the respective values of the 2 given .libs differ. [LBR-38]
+        : The libraries are 'sram_asap7_64x256_1rw' and 'asap7sc7p5t_OA_RVT_FF_nldm_201020'.
+        : This is a common source of delay calculation confusion and should be avoided.
+Warning : Libraries have inconsistent nominal operating conditions. In the Liberty library, there are attributes called nom_voltage, nom_process and nom_temperature. Genus reports the message, if the respective values of the 2 given .libs differ. [LBR-38]
+        : The libraries are 'sram_asap7_64x256_1rw' and 'asap7sc7p5t_SEQ_RVT_FF_nldm_201020'.
+Warning : Libraries have inconsistent nominal operating conditions. In the Liberty library, there are attributes called nom_voltage, nom_process and nom_temperature. Genus reports the message, if the respective values of the 2 given .libs differ. [LBR-38]
+        : The libraries are 'sram_asap7_64x256_1rw' and 'asap7sc7p5t_AO_RVT_FF_nldm_201020'.
+Warning : Libraries have inconsistent nominal operating conditions. In the Liberty library, there are attributes called nom_voltage, nom_process and nom_temperature. Genus reports the message, if the respective values of the 2 given .libs differ. [LBR-38]
+        : The libraries are 'sram_asap7_64x256_1rw' and 'asap7sc7p5t_INVBUF_RVT_FF_nldm_201020'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.700000, 25.000000) in library 'sram_asap7_64x256_1rw.lib'.
+        : The nominal operating condition is represented, either by the nominal PVT values specified in the library source (via nom_process,nom_voltage and nom_temperature respectively), or by the default PVT values (1.0,1.0,1.0).
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.770000, 0.000000) in library 'asap7sc7p5t_OA_RVT_FF_nldm_201020.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.770000, 0.000000) in library 'asap7sc7p5t_SEQ_RVT_FF_nldm_201020.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.700000, 25.000000) in library 'sram_asap7_16x256_1rw.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.700000, 25.000000) in library 'sram_asap7_64x64_1rw.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.770000, 0.000000) in library 'asap7sc7p5t_AO_RVT_FF_nldm_201020.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.770000, 0.000000) in library 'asap7sc7p5t_INVBUF_RVT_FF_nldm_201020.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.700000, 25.000000) in library 'asap7sc7p5t_SIMPLE_RVT_FF_nldm_201020.lib'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.700000, 25.000000) in library 'sram_asap7_32x256_1rw.lib'.
+Warning : Found libraries with and without pg_pin construct. [LBR-12]
+        : Libraries with and without pg_pin construct have been loaded.
+        : This can lead to issues later in the flow.
+Warning : Inconsistency detected among the units specified in the timing libraries being used. [LBR-714]
+        : Libraries with inconsistent time/capacitance units were loaded.
+        : Default system time/capacitance unit will be used.
+  Setting attribute of root '/': 'library' = ../../../../../Enablements/ASAP7/lib/sram_asap7_64x256_1rw.lib ../../../../../Enablements/ASAP7/lib/asap7sc7p5t_OA_RVT_FF_nldm_201020.lib ../../../../../Enablements/ASAP7/lib/asap7sc7p5t_SEQ_RVT_FF_nldm_201020.lib ../../../../../Enablements/ASAP7/lib/sram_asap7_16x256_1rw.lib ../../../../../Enablements/ASAP7/lib/sram_asap7_64x64_1rw.lib ../../../../../Enablements/ASAP7/lib/asap7sc7p5t_AO_RVT_FF_nldm_201020.lib ../../../../../Enablements/ASAP7/lib/asap7sc7p5t_INVBUF_RVT_FF_nldm_201020.lib ../../../../../Enablements/ASAP7/lib/asap7sc7p5t_SIMPLE_RVT_FF_nldm_201020.lib ../../../../../Enablements/ASAP7/lib/sram_asap7_32x256_1rw.lib
+1 {../../../../../Enablements/ASAP7/lib/sram_asap7_64x256_1rw.lib ../../../../../Enablements/ASAP7/lib/asap7sc7p5t_OA_RVT_FF_nldm_201020.lib ../../../../../Enablements/ASAP7/lib/asap7sc7p5t_SEQ_RVT_FF_nldm_201020.lib ../../../../../Enablements/ASAP7/lib/sram_asap7_16x256_1rw.lib ../../../../../Enablements/ASAP7/lib/sram_asap7_64x64_1rw.lib ../../../../../Enablements/ASAP7/lib/asap7sc7p5t_AO_RVT_FF_nldm_201020.lib ../../../../../Enablements/ASAP7/lib/asap7sc7p5t_INVBUF_RVT_FF_nldm_201020.lib ../../../../../Enablements/ASAP7/lib/asap7sc7p5t_SIMPLE_RVT_FF_nldm_201020.lib ../../../../../Enablements/ASAP7/lib/sram_asap7_32x256_1rw.lib}
+@genus:root: 16> 
+@genus:root: 16> # Match reference flow: allow includes from rtl tree
+@genus:root: 17> set_db init_hdl_search_path $rtldir
+  Setting attribute of root '/': 'init_hdl_search_path' = ../../rtl
+1 ../../rtl
+@genus:root: 18> 
+@genus:root: 18> # Load design
+@genus:root: 19> source rtl_list.tcl
+Sourcing './rtl_list.tcl' (Sat Jan 10 09:41:20 UTC 2026)...
+#@ Begin verbose source ./rtl_list.tcl
+@file(rtl_list.tcl) 1: set rtl_all {
+  ../../rtl/core/riscv_core.v
+  ../../rtl/top/riscv_top.v
+  ../../rtl/core/biriscv_alu.v
+  ../../rtl/core/biriscv_csr_regfile.v
+  ../../rtl/core/biriscv_csr.v
+  ../../rtl/core/biriscv_decode.v
+  ../../rtl/core/biriscv_decoder.v
+  ../../rtl/core/biriscv_defs.v
+  ../../rtl/core/biriscv_divider.v
+  ../../rtl/core/biriscv_exec.v
+  ../../rtl/core/biriscv_fetch.v
+  ../../rtl/core/biriscv_frontend.v
+  ../../rtl/core/biriscv_issue.v
+  ../../rtl/core/biriscv_lsu.v
+  ../../rtl/core/biriscv_mmu.v
+  ../../rtl/core/biriscv_multiplier.v
+  ../../rtl/core/biriscv_npc.v
+  ../../rtl/core/biriscv_pipe_ctrl.v
+  ../../rtl/core/biriscv_regfile.v
+  ../../rtl/core/biriscv_trace_sim.v
+  ../../rtl/dcache/dcache_axi.v
+  ../../rtl/dcache/dcache_core.v
+  ../../rtl/dcache/dcache_core_data_ram.v
+  ../../rtl/dcache/dcache_core_tag_ram.v
+  ../../rtl/dcache/dcache_if_pmem.v
+  ../../rtl/dcache/dcache_mux.v
+  ../../rtl/icache/icache_axi.v
+  ../../rtl/icache/icache_axi_fixed.v
+  ../../rtl/icache/icache_core.v
+  ../../rtl/icache/icache_core_data_ram.v
+  ../../rtl/icache/icache_core_tag_ram.v
+  ../../rtl/icache/icache_if_pmem.v
+  ../../rtl/icache/icache_mux.v
+  ../../rtl/tcm/tcm_axi.v
+  ../../rtl/tcm/tcm_axi_mem.v
+}
+#@ End verbose source ./rtl_list.tcl
+
+  ../../rtl/core/riscv_core.v
+  ../../rtl/top/riscv_top.v
+  ../../rtl/core/biriscv_alu.v
+  ../../rtl/core/biriscv_csr_regfile.v
+  ../../rtl/core/biriscv_csr.v
+  ../../rtl/core/biriscv_decode.v
+  ../../rtl/core/biriscv_decoder.v
+  ../../rtl/core/biriscv_defs.v
+  ../../rtl/core/biriscv_divider.v
+  ../../rtl/core/biriscv_exec.v
+  ../../rtl/core/biriscv_fetch.v
+  ../../rtl/core/biriscv_frontend.v
+  ../../rtl/core/biriscv_issue.v
+  ../../rtl/core/biriscv_lsu.v
+  ../../rtl/core/biriscv_mmu.v
+  ../../rtl/core/biriscv_multiplier.v
+  ../../rtl/core/biriscv_npc.v
+  ../../rtl/core/biriscv_pipe_ctrl.v
+  ../../rtl/core/biriscv_regfile.v
+  ../../rtl/core/biriscv_trace_sim.v
+  ../../rtl/dcache/dcache_axi.v
+  ../../rtl/dcache/dcache_core.v
+  ../../rtl/dcache/dcache_core_data_ram.v
+  ../../rtl/dcache/dcache_core_tag_ram.v
+  ../../rtl/dcache/dcache_if_pmem.v
+  ../../rtl/dcache/dcache_mux.v
+  ../../rtl/icache/icache_axi.v
+  ../../rtl/icache/icache_axi_fixed.v
+  ../../rtl/icache/icache_core.v
+  ../../rtl/icache/icache_core_data_ram.v
+  ../../rtl/icache/icache_core_tag_ram.v
+  ../../rtl/icache/icache_if_pmem.v
+  ../../rtl/icache/icache_mux.v
+  ../../rtl/tcm/tcm_axi.v
+  ../../rtl/tcm/tcm_axi_mem.v
+
+@genus:root: 20> # Read all RTL in one shot so define macros in earlier files (b [1Giriscv_defs.v)
+@genus:root: 21> # are visible to later files (e.g., biriscv_fetch.v)
+@genus:root: 22> read_hdl -sv $rtl_all
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'VLOGPT-650' default severity is 'Warning'
+Error   : Cannot open file. [VLOGPT-650] [read_hdl]
+        : File '../../rtl/core/riscv_core.v'.
+        : The specified file could not be opened.  Check the value of the init_hdl_search_path attribute.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'VLOGPT-650' default severity is 'Warning'
+Error   : Cannot open file. [VLOGPT-650] [read_hdl]
+        : File '../../rtl/top/riscv_top.v'.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'VLOGPT-650' default severity is 'Warning'
+Error   : Cannot open file. [VLOGPT-650] [read_hdl]
+        : File '../../rtl/core/biriscv_alu.v'.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'VLOGPT-650' default severity is 'Warning'
+Error   : Cannot open file. [VLOGPT-650] [read_hdl]
+        : File '../../rtl/core/biriscv_csr_regfile.v'.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'VLOGPT-650' default severity is 'Warning'
+Error   : Cannot open file. [VLOGPT-650] [read_hdl]
+        : File '../../rtl/core/biriscv_csr.v'.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'VLOGPT-650' default severity is 'Warning'
+Error   : Cannot open file. [VLOGPT-650] [read_hdl]
+        : File '../../rtl/core/biriscv_decode.v'.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'VLOGPT-650' default severity is 'Warning'
+Error   : Cannot open file. [VLOGPT-650] [read_hdl]
+        : File '../../rtl/core/biriscv_decoder.v'.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'VLOGPT-650' default severity is 'Warning'
+Error   : Cannot open file. [VLOGPT-650] [read_hdl]
+        : File '../../rtl/core/biriscv_defs.v'.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'VLOGPT-650' default severity is 'Warning'
+Error   : Cannot open file. [VLOGPT-650] [read_hdl]
+        : File '../../rtl/core/biriscv_divider.v'.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'VLOGPT-650' default severity is 'Warning'
+Error   : Cannot open file. [VLOGPT-650] [read_hdl]
+        : File '../../rtl/core/biriscv_exec.v'.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'VLOGPT-650' default severity is 'Warning'
+Error   : Cannot open file. [VLOGPT-650] [read_hdl]
+        : File '../../rtl/core/biriscv_fetch.v'.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'VLOGPT-650' default severity is 'Warning'
+Error   : Cannot open file. [VLOGPT-650] [read_hdl]
+        : File '../../rtl/core/biriscv_frontend.v'.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'VLOGPT-650' default severity is 'Warning'
+Error   : Cannot open file. [VLOGPT-650] [read_hdl]
+        : File '../../rtl/core/biriscv_issue.v'.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'VLOGPT-650' default severity is 'Warning'
+Error   : Cannot open file. [VLOGPT-650] [read_hdl]
+        : File '../../rtl/core/biriscv_lsu.v'.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'VLOGPT-650' default severity is 'Warning'
+Error   : Cannot open file. [VLOGPT-650] [read_hdl]
+        : File '../../rtl/core/biriscv_mmu.v'.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'VLOGPT-650' default severity is 'Warning'
+Error   : Cannot open file. [VLOGPT-650] [read_hdl]
+        : File '../../rtl/core/biriscv_multiplier.v'.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'VLOGPT-650' default severity is 'Warning'
+Error   : Cannot open file. [VLOGPT-650] [read_hdl]
+        : File '../../rtl/core/biriscv_npc.v'.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'VLOGPT-650' default severity is 'Warning'
+Error   : Cannot open file. [VLOGPT-650] [read_hdl]
+        : File '../../rtl/core/biriscv_pipe_ctrl.v'.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'VLOGPT-650' default severity is 'Warning'
+Error   : Cannot open file. [VLOGPT-650] [read_hdl]
+        : File '../../rtl/core/biriscv_regfile.v'.
+Info    : Message severity has been changed from default value. [MESG-7]
+        : Message 'VLOGPT-650' default severity is 'Warning'
+Error   : Cannot open file. [VLOGPT-650] [read_hdl]
+        : File '../../rtl/core/biriscv_trace_sim.v'.
+Warning : Maximum message print count reached. [MESG-11]
+        : Maximum print count of '20' reached for message 'VLOGPT-650'.
+1
+@genus:root: 23> 
+@genus:root: 23> elaborate $DESIGN
+  Libraries have 167 usable logic and 23 usable sequential lib-cells.
+Error   : Could not find an HDL design. [CDFG-210] [elaborate]
+        : The design is 'riscv_core'.
+        : This error may happen if you read a set of files, and you try to elaborate a design which description is not part of the files read. To fix this, check the name of the design you want to elaborate, or check if you have read all the expected RTL files.
+UM:   flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   elaborate
+1
+@genus:root: 24> read_sdc $sdc
+Design not exist for read_sdc
+@genus:root: 25> init_design
+Error: no design has been loaded
+@genus:root: 26> 
+@genus:root: 26> # Basic sanity checks (match the standard flow)
+@genus:root: 27> check_design -unresolved
+Error   : No designs are available. A design must first be read in and elaborated. [TUI-10] [check_design]
+        : There is no design here.
+        : A design must first be read in with 'read_hdl' command and elaborated with 'elaborate' command.
+Failed on check_design
+@genus:root: 28> check_timing_intent
+Error   : No designs are available. A design must first be read in and elaborated. [TUI-10] [check_timing_intent]
+        : No elaborated designs in memory
+Nothing to report
+1
+@genus:root: 29> 
+@genus:root: 29> # Annotate power from VCD (scope: tb_1000mul.u_dut -> riscv_cor [1Ge)
+@genus:root: 30> puts "Loading VCD for power annotation: /home/ziyx/cadence-biti [1Grme/Flows/ASAP7/biriscv/../../Testcases/biriscv-default/biriscv/1000parallel.vcd [1G"
+Loading VCD for power annotation: /home/ziyx/cadence-bitirme/Flows/ASAP7/biriscv/../../Testcases/biriscv-default/biriscv/1000parallel.vcd
+@genus:root: 31> if { [file exists "/home/ziyx/cadence-bitirme/Flows/ASAP7/biris [1Gcv/../../Testcases/biriscv-default/biriscv/1000parallel.vcd"] } {
+==>     # Use -module and -static as per Genus documentation
+==>     read_vcd -module ${DESIGN} -static "/home/ziyx/cadence-bitirme/Flows/ASA [1GP7/biriscv/../../Testcases/biriscv-default/biriscv/1000parallel.vcd"
+==>     puts "VCD loaded successfully for module ${DESIGN}"
+==> } else {
+==>     puts "Warning: VCD file not found"
+==> }
+Warning: VCD file not found
+@genus:root: 32> 
+@genus:root: 32> syn_generic
+      flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   syn_gen
+1
+@genus:root: 33> syn_map
+#----------------------------------------------------------------------------------------
+# Root attributes for category: opt
+#----------------------------------------------------------------------------------------
+# Feature                           | Attribute                    | Value            
+#----------------------------------------------------------------------------------------
+# Avoid tied inputs                 | avoid_tied_inputs            | false (default)  
+# Allow floating outputs            | opt_allow_floating_outputs   | false (default)  
+# Power optimization effort         | design_power_effort          | none (default)   
+# Do not use qbar sequential pins   | dont_use_qbar_seq_pins       | false (default)  
+#----------------------------------------------------------------------------------------
+
+      flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   syn_map
+1
+@genus:root: 34> syn_opt
+Warning : The selected flow setting will be removed in a future release. [SYNTH-33]
+        : The use of 'syn_opt' for logical only optimization will be obsolete in a future release.
+	Transition to 'syn_opt -logical' or 'syn_opt -spatial'.
+
+        : Contact Cadence support to understand current flows.
+      flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   syn_opt
+1
+@genus:root: 35> 
+@genus:root: 35> # Generate power reports with annotated values
+@genus:root: 36> report_power > ${REPORTS_PATH}/${DESIGN}_power_annotated.rpt
+Error   : No designs are available. A design must first be read in and elaborated. [TUI-10] [::report::power::report_power]
+        : There is no design here.
+Failed on find_unique_design
+@genus:root: 37> report_gates > ${REPORTS_PATH}/${DESIGN}_gates.rpt
+Error   : No designs are available. A design must first be read in and elaborated. [TUI-10] [::report::gates::report_gates]
+        : There is no design here.
+Failed on find_unique_design
+@genus:root: 38> report_area > ${REPORTS_PATH}/${DESIGN}_area.rpt
+Error   : No designs are available. A design must first be read in and elaborated. [TUI-10] [::report::area::report_area]
+        : There is no design here.
+Failed on find_unique_design
+@genus:root: 39> report_messages > ${REPORTS_PATH}/${DESIGN}_messages.rpt
+@genus:root: 40> 
+@genus:root: 40> write_reports -directory ${REPORTS_PATH} -tag final
+Error   : No designs are available. A design must first be read in and elaborated. [TUI-10] [generate_reports]
+Failed to find a design!
+@genus:root: 41> write_sdc >${HANDOFF_PATH}/${DESIGN}.sdc
+Error   : No designs are available. A design must first be read in and elaborated. [TUI-10] [write_sdc]
+        : There is no design here.
+Failed on find_unique_design
+@genus:root: 42> write_hdl > ${HANDOFF_PATH}/${DESIGN}.v
+Error   : No designs are available. A design must first be read in and elaborated. [TUI-10] [write_hdl]
+        : There is no design here.
+Failed on find_unique_design
+@genus:root: 43> 
+@genus:root: 43> puts ""
+
+@genus:root: 44> puts "=== SYNTHESIS COMPLETE ==="
+=== SYNTHESIS COMPLETE ===
+@genus:root: 45> puts "Power reports: ${REPORTS_PATH}/"
+Power reports: syn_rpt/
+@genus:root: 46> puts "Design outputs: ${OUTPUTS_PATH}/"
+Design outputs: syn_output/
+@genus:root: 47> 
+@genus:root: 47> exit
+
+Lic Summary:
+[09:41:20.140635] Cdslmd servers: nemesys3
+[09:41:20.664936] Feature usage summary:
+[09:41:20.664937] Genus_Synthesis
+
+Normal exit.

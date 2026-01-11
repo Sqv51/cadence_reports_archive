@@ -1,0 +1,51 @@
+
+
+Working Directory = /home/ziyx/cadence-bitirme/Flows/ASAP7/biriscv-3module/scripts/cadence
+QoS Summary for riscv_core
+================================================================================
+Metric                          final          
+================================================================================
+Slack (ps):                 1,997,469
+  R2R (ps):                 1,997,469
+  I2R (ps):                  no_value
+  R2O (ps):                  no_value
+  I2O (ps):                  no_value
+  CG  (ps):                  no_value
+TNS (ps):                           0
+  R2R (ps):                         0
+  I2R (ps):                  no_value
+  R2O (ps):                  no_value
+  I2O (ps):                  no_value
+  CG  (ps):                  no_value
+Failing Paths:                      0
+Cell Area:                      4,402
+Total Cell Area:                4,402
+Leaf Instances:                32,197
+Total Instances:               32,197
+Utilization (%):                 0.00
+Tot. Net Length (um):        no_value
+Avg. Net Length (um):        no_value
+Route Overflow H (%):        no_value
+Route Overflow V (%):        no_value
+MBCI(%) (bits/gate) :            0.00
+Norm Cong Hotspot Area:
+  Max Cong:                  no_value
+  Tot Cong:                  no_value
+================================================================================
+CPU  Runtime (h:m:s):        00:14:55
+Real Runtime (h:m:s):        00:23:58
+CPU  Elapsed (h:m:s):        00:14:58
+Real Elapsed (h:m:s):        00:23:59
+Memory (MB):                  2436.67
+================================================================================
+================================================================================
+Flow Settings:
+================================================================================
+Total Runtime (h:m:s): 00:23:59
+Total Memory (MB):     2436.67
+Executable Version:    23.13-s073_1
+================================================================================
+Total Cell Area =  Cell Area + Physical Cell Area
+Total Instances =  Leaf Instances + Physical Instances
+
+

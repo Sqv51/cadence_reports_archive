@@ -35,6 +35,18 @@ The design is `riscv_core` from the biRISC-V open-source dual-issue RISC-V proce
 
 All five multipliers receive the same inputs and execute in parallel during each multiply instruction, ensuring identical workload and fair power comparison.
 
+#### Multiplier Latencies
+
+| Instance | RTL Latency (cycles) | Latency (ns) @ 100 MHz | Determination |
+|----------|:--------------------:|:----------------------:|---------------|
+| `u_mul`  | 2 | 20 | `MULT_STAGES = 2` localparam; operands registered in cycle 1, combinational `*` + result registered in cycle 2 |
+| `u_mule` | 5 | 50 | FSM: IDLE → CALC0 → CALC1 → CALC2 → DONE; confirmed by simulation log (avg 5.000 cycles over 1,000 ops) |
+| `u_muls` | 2 | 20 | 2-stage pipeline identical to `u_mul`: operand register → combinational `*` → result register |
+| `u_cbm`  | ~9.5 avg (2–34) | ~95 avg | Data-dependent: popcount(sparser operand) + 2 cycles; FSM iterates over set bits via `lowest_index()`. Confirmed by simulation (avg 9.500 cycles). Zero operand fast-path: 2 cycles |
+| `u_mulp` | 6 | 60 | `MULT_STAGES = 6` parameter; 1 input stage + 5 shift-register pipeline stages. Recommended range 4–8 |
+
+**Note:** These are raw multiplier latencies. The biRISC-V issue pipeline adds ~1 cycle of overhead visible in end-to-end simulation measurements (e.g., `u_mul` measured as 3 cycles in simulation).
+
 ### 2.2 VCD Generation
 
 **Tool:** Synopsys VCS X-2025.06-SP2 (RTL simulation)
@@ -77,12 +89,26 @@ report_power -inst $multiplier_instance
 
 ### 2.5 Energy-per-Instruction Calculation
 
-$$EPI = \frac{P_{multiplier} \times T_{total}}{N_{instructions}}$$
+$$EPI = \frac{P_{avg} \times T_{total}}{N_{instructions}}$$
 
 Where:
-- $P_{multiplier}$ = VCD-annotated power of the multiplier instance (W)
+- $P_{avg}$ = VCD-annotated **average** power of the multiplier instance over the full simulation (W)
 - $T_{total}$ = 76,900 cycles × 10 ns = 769 µs
 - $N_{instructions}$ = 1,000 multiply operations
+
+**Important:** Multiplier latency is **not** a factor in EPI. The VCD-based $P_{avg}$ is the time-average over the entire simulation window, which already captures the duty cycle of each multiplier — a multiplier that is active for 5 cycles per operation naturally toggles more per operation than one active for 2 cycles, and its $P_{avg}$ is correspondingly higher. Multiplying by latency again would double-count the effect. If one were using *active-only* power (measured only during the cycles when the unit is computing), then energy would equal $P_{active} \times L \times T_{clk}$, but that is not what the Genus/Innovus VCD power reports provide.
+
+### 2.6 Energy-Delay Product (EDP)
+
+To capture the trade-off between energy efficiency and performance, the EDP is computed as:
+
+$$EDP = EPI \times L_{cycles} \times T_{clk}$$
+
+Where:
+- $L_{cycles}$ = multiplier latency in clock cycles (from RTL design)
+- $T_{clk}$ = 10 ns (100 MHz clock period)
+
+Lower EDP indicates a better energy–performance trade-off. An architecture that is very energy-efficient but extremely slow (high latency) will be penalized, and vice versa.
 
 ---
 
@@ -90,37 +116,43 @@ Where:
 
 ### 3.1 ASAP7 (7nm) — Genus Synthesis Only
 
-| Rank | Multiplier | Total Power (µW) | Leakage % | Internal % | Switching % | EPI (fJ/instr) |
-|------|-----------|-------------------|-----------|------------|-------------|----------------|
-| 1 | u_mul | 26.89 | 0.8% | 95.8% | 3.3% | 20.68 |
-| 2 | u_muls | 28.68 | 0.4% | 97.7% | 1.9% | 22.06 |
-| 3 | u_mule | 38.33 | 0.3% | 92.9% | 6.8% | 29.48 |
-| 4 | u_cbm | 50.66 | 0.2% | 77.6% | 22.2% | 38.96 |
-| 5 | u_mulp | 60.22 | 0.2% | 98.9% | 0.9% | 46.31 |
+| Rank | Multiplier | Total Power (µW) | Leakage % | Internal % | Switching % | Latency (cyc) | EPI (pJ) | EDP (pJ·ns) |
+|------|-----------|-------------------|-----------|------------|-------------|:-------------:|:--------:|:-----------:|
+| 1 | u_mul | 26.89 | 0.8% | 95.8% | 3.3% | 2 | 20.68 | 413.6 |
+| 2 | u_muls | 28.68 | 0.4% | 97.7% | 1.9% | 2 | 22.06 | 441.2 |
+| 3 | u_mule | 38.33 | 0.3% | 92.9% | 6.8% | 5 | 29.48 | 1,474.0 |
+| 4 | u_cbm | 50.66 | 0.2% | 77.6% | 22.2% | ~9.5 | 38.96 | 3,701.2 |
+| 5 | u_mulp | 60.22 | 0.2% | 98.9% | 0.9% | 6 | 46.31 | 2,778.6 |
+
+**EDP ranking:** u_mul (413.6) < u_muls (441.2) < u_mule (1,474.0) < u_mulp (2,778.6) < u_cbm (3,701.2)
 
 **VCD annotation coverage in Genus (ASAP7):** 21.19% of RTL driver nets annotated; 11.57% of all driver nets annotated. Flop annotation: 58.78%.
 
 ### 3.2 NanGate45 (45nm) — Genus Synthesis Only
 
-| Rank | Multiplier | Total Power (µW) | Leakage % | Internal % | Switching % | EPI (pJ/instr) |
-|------|-----------|-------------------|-----------|------------|-------------|----------------|
-| 1 | u_muls | 287.2 | 26.5% | 71.6% | 1.9% | 220.9 |
-| 2 | u_mule | 316.7 | 19.2% | 75.7% | 5.1% | 243.6 |
-| 3 | u_mul | 358.7 | 43.9% | 53.4% | 2.8% | 275.9 |
-| 4 | u_cbm | 387.4 | 15.4% | 65.8% | 18.8% | 297.9 |
-| 5 | u_mulp | 526.3 | 16.4% | 82.6% | 1.0% | 404.7 |
+| Rank | Multiplier | Total Power (µW) | Leakage % | Internal % | Switching % | Latency (cyc) | EPI (pJ) | EDP (pJ·ns) |
+|------|-----------|-------------------|-----------|------------|-------------|:-------------:|:--------:|:-----------:|
+| 1 | u_muls | 287.2 | 26.5% | 71.6% | 1.9% | 2 | 220.9 | 4,418 |
+| 2 | u_mule | 316.7 | 19.2% | 75.7% | 5.1% | 5 | 243.6 | 12,180 |
+| 3 | u_mul | 358.7 | 43.9% | 53.4% | 2.8% | 2 | 275.9 | 5,518 |
+| 4 | u_cbm | 387.4 | 15.4% | 65.8% | 18.8% | ~9.5 | 297.9 | 28,301 |
+| 5 | u_mulp | 526.3 | 16.4% | 82.6% | 1.0% | 6 | 404.7 | 24,282 |
+
+**EDP ranking:** u_muls (4,418) < u_mul (5,518) < u_mule (12,180) < u_mulp (24,282) < u_cbm (28,301)
 
 **VCD annotation coverage in Genus (NanGate45):** 21.35% of RTL driver nets annotated; 12.52% of all driver nets annotated. Flop annotation: 73.96%.
 
 ### 3.3 NanGate45 (45nm) — Post-Route (Innovus)
 
-| Rank | Multiplier | Total Power (mW) | Leakage % | Internal % | Switching % | Area (µm²) | Cells | EPI (pJ/instr) |
-|------|-----------|-------------------|-----------|------------|-------------|------------|-------|----------------|
-| 1 | u_muls | 0.169 | 32.0% | 47.6% | 20.4% | 2,572 | 1,187 | 129.8 |
-| 2 | u_mule | 0.239 | 18.9% | 54.3% | 26.8% | 2,325 | 990 | 183.7 |
-| 3 | u_mulp | 0.265 | 24.2% | 57.7% | 18.1% | 3,218 | 1,306 | 203.4 |
-| 4 | u_cbm | 0.326 | 14.6% | 52.2% | 33.2% | 2,444 | 1,457 | 250.8 |
-| 5 | u_mul | 1.522 | 17.1% | 50.3% | 32.6% | 4,805 | 2,316 | 1,170.4 |
+| Rank | Multiplier | Total Power (mW) | Leakage % | Internal % | Switching % | Area (µm²) | Cells | Latency (cyc) | EPI (pJ) | EDP (pJ·ns) |
+|------|-----------|-------------------|-----------|------------|-------------|------------|-------|:-------------:|:--------:|:-----------:|
+| 1 | u_muls | 0.169 | 32.0% | 47.6% | 20.4% | 2,572 | 1,187 | 2 | 129.8 | 2,596 |
+| 2 | u_mule | 0.239 | 18.9% | 54.3% | 26.8% | 2,325 | 990 | 5 | 183.7 | 9,185 |
+| 3 | u_mulp | 0.265 | 24.2% | 57.7% | 18.1% | 3,218 | 1,306 | 6 | 203.4 | 12,204 |
+| 4 | u_cbm | 0.326 | 14.6% | 52.2% | 33.2% | 2,444 | 1,457 | ~9.5 | 250.8 | 23,826 |
+| 5 | u_mul | 1.522 | 17.1% | 50.3% | 32.6% | 4,805 | 2,316 | 2 | 1,170.4 | 23,408 |
+
+**EDP ranking:** u_muls (2,596) < u_mule (9,185) < u_mulp (12,204) < u_mul (23,408) < u_cbm (23,826)
 
 **VCD annotation coverage in Innovus:** 9.79% of nets annotated (4,149 out of 42,384 nets). 3.83% of annotated nets had zero toggles.
 
@@ -146,7 +178,26 @@ The most significant finding is that `u_mul` (Booth-Wallace) ranks **#1 at 7nm**
 - At **7nm**, leakage is <1% of total power — `u_mul`'s 2× larger area (4,805 µm² vs. ~2,300 µm² for others) incurs negligible leakage cost, and its single-cycle execution minimizes dynamic power per operation.
 - At **45nm**, leakage accounts for 17–44% of total power. The 45nm library exhibits approximately 600–700× higher leakage per cell compared to the 7nm library. `u_mul`'s larger cell count directly translates to proportionally higher leakage.
 
-### 4.2 Post-Route Switching Power Amplification
+### 4.2 Energy-Delay Product (EDP) Analysis
+
+EDP captures the joint optimization of energy and latency. A key observation is that **EDP is more stable across technologies and flow stages than EPI alone**, because it penalizes high-latency architectures even when they are energy-efficient.
+
+| Multiplier | ASAP7 Genus EDP (pJ·ns) | Rank | NG45 Genus EDP (pJ·ns) | Rank | NG45 Post-Route EDP (pJ·ns) | Rank |
+|-----------|:-----------------------:|:----:|:----------------------:|:----:|:---------------------------:|:----:|
+| u_mul | 413.6 | 1 | 5,518 | 2 | 23,408 | 4 |
+| u_mule | 1,474.0 | 3 | 12,180 | 3 | 9,185 | 2 |
+| u_muls | 441.2 | 2 | 4,418 | 1 | 2,596 | 1 |
+| u_cbm | 3,701.2 | 5 | 28,301 | 5 | 23,826 | 5 |
+| u_mulp | 2,778.6 | 4 | 24,282 | 4 | 12,204 | 3 |
+
+**Key insights:**
+- **`u_muls` is consistently #1 or #2 in EDP** across all experiments. Its 2-cycle latency combined with moderate energy makes it the best overall energy–performance trade-off.
+- **`u_mul` drops from EDP #1 at 7nm to #4 at 45nm post-route.** While its 2-cycle latency is optimal, the 49× switching power amplification after P&R at 45nm overwhelms the latency benefit.
+- **`u_cbm` is consistently last in EDP** due to its ~9.5-cycle average latency. Even though its per-instruction energy is competitive, the high latency destroys the EDP trade-off.
+- **`u_mule` benefits from moderate latency (5 cycles)** and relatively low energy, placing it mid-range consistently.
+- **`u_mulp`'s 6-cycle latency** and deep pipeline provide moderate EDP despite higher absolute energy.
+
+### 4.3 Post-Route Switching Power Amplification
 
 Place-and-route introduces real wire parasitics that are absent in synthesis. The observed switching power amplification from Genus to Innovus at 45nm:
 

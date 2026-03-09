@@ -1,0 +1,7 @@
+Physical Design Stage, Core Area (um^2), Standard Cell Area (um^2), Macro Area (um^2), Total Power (mW), Wirelength(um), WS(ns), TNS(ns), Congestion(H), Congestion(V)
+postSynth, N/A, N/A, N/A, 13.19, N/A, N/A, N/A, N/A, N/A
+floorplan, N/A, N/A, N/A, 13.19, N/A, N/A, N/A, N/A, N/A
+preCTS, N/A, N/A, N/A, 12.23, N/A, N/A, N/A, N/A, N/A
+postCTS, N/A, N/A, N/A, 9.412, N/A, N/A, N/A, N/A, N/A
+postRoute, N/A, N/A, N/A, 9.486, N/A, N/A, N/A, N/A, N/A
+postRouteOpt, N/A, N/A, N/A, 9.484, N/A, N/A, N/A, N/A, N/A

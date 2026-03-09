@@ -1,0 +1,97 @@
+*----------------------------------------------------------------------------------------
+*	Innovus 25.12-s079_1 (64bit) 11/18/2025 12:56 (Linux 4.18.0-305.el8.x86_64)
+*	
+*
+* 	Date & Time:	2026-Mar-09 10:34:16 (2026-Mar-09 10:34:16 GMT)
+*
+*----------------------------------------------------------------------------------------
+*
+*	Design: riscv_core
+*
+*	Liberty Libraries used: 
+*	        /home/ykaraagac/cadence-bitirme/Enablements/NanGate45/lib/NangateOpenCellLibrary_typical.lib
+*
+*	Power Domain used: 
+*              Rail:        VDD      Voltage:        1.1 
+*
+*       Dynamic View: WC_VIEW
+*
+*       Leakage View: WC_VIEW
+*
+*       User-Defined Activity : N.A.
+*
+*	Switching Activity File used: 
+*	        ../../vcd_gen/mul5_power.vcd
+*                    Vcd Window used(Start Time, Stop Time):   
+*                     Vcd Scale Factor: 1 
+* *                    Design annotation coverage: 4149/42384 = 9.78907% 
+*
+*       Hierarchical Global Activity: N.A.
+*
+*       Global Activity: N.A.
+*
+*       Sequential Element Activity: 0.200000
+*
+*       Primary Input Activity: 0.200000
+*
+*       Default icg ratio: N.A.
+*
+*       Global Comb ClockGate Ratio: N.A.
+*
+*	Power Units = 1mW
+*
+*	Time Units = 1e-09 secs 
+*
+*       report_power -outfile summaryReport//power_vcd_postroute_u_muls.rpt -instances {u_muls}
+*
+-----------------------------------------------------------------------------------------
+
+
+Total Power 
+-----------------------------------------------------------------------------------------
+Total Internal Power:        4.65079192 	   58.6583%
+Total Switching Power:       1.70822585 	   21.5451%
+Total Leakage Power:         1.56959979 	   19.7966%
+Total Power:                 7.92861755 
+-----------------------------------------------------------------------------------------
+
+
+Group                           Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+Sequential                         3.437      0.4153      0.6491       4.502       56.78 
+Macro                                  0           0           0           0           0 
+IO                                     0           0           0           0           0 
+Combinational                      1.214       1.293      0.9205       3.427       43.22 
+Clock (Combinational)                  0           0           0           0           0 
+Clock (Sequential)                     0           0           0           0           0 
+-----------------------------------------------------------------------------------------
+Total                              4.651       1.708        1.57       7.929         100 
+-----------------------------------------------------------------------------------------
+
+
+Rail                  Voltage   Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+VDD                       1.1      4.651       1.708        1.57       7.929         100 
+
+
+Instance                      Max Toggles   Total Toggles   Internal   Switching     Leakage       Total  Percentage    Cell
+                              Input Pins    Output Pins     Power      Power         Power         Power  (%)           Name
+----------------------------------------------------------------------------------------------------------------------------
+u_muls                                  0               0    0.08041     0.03441     0.05398      0.1688       2.129    
+----------------------------------------------------------------------------------------------------------------------------
+Total                                                        0.08041     0.03441     0.05398      0.1688       2.129    
+
+
+-----------------------------------------------------------------------------------------
+*	Power Distribution Summary: 
+*                Highest Average Power: u_cbm/csa_tree_lte_82_43_groupi_g2541__6260 (NAND2_X2):           0.0174 
+*                Highest Leakage Power: u_issue/FE_OFC2992_exec0_hold_w (BUF_X8):        0.0001831 
+*          Total Cap:      2.58568e-10 F
+*          Total instances in design: 35045
+*          Total instances in design with no power:     0
+*          Total instances in design with no activity:     0
+*          Total Fillers and Decap:     0
+-----------------------------------------------------------------------------------------
+

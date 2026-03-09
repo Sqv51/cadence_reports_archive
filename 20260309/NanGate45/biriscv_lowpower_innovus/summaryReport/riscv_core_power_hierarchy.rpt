@@ -1,0 +1,129 @@
+*----------------------------------------------------------------------------------------
+*	Innovus 25.12-s079_1 (64bit) 11/18/2025 12:56 (Linux 4.18.0-305.el8.x86_64)
+*	
+*
+* 	Date & Time:	2026-Mar-09 10:33:41 (2026-Mar-09 10:33:41 GMT)
+*
+*----------------------------------------------------------------------------------------
+*
+*	Design: riscv_core
+*
+*	Liberty Libraries used: 
+*	        /home/ykaraagac/cadence-bitirme/Enablements/NanGate45/lib/NangateOpenCellLibrary_typical.lib
+*
+*	Power Domain used: 
+*              Rail:        VDD      Voltage:        1.1 
+*
+*       Dynamic View: WC_VIEW
+*
+*       Leakage View: WC_VIEW
+*
+*       User-Defined Activity : N.A.
+*
+*       Activity File: N.A.
+*
+*       Hierarchical Global Activity: N.A.
+*
+*       Global Activity: N.A.
+*
+*       Sequential Element Activity: 0.200000
+*
+*       Primary Input Activity: 0.200000
+*
+*       Default icg ratio: N.A.
+*
+*       Global Comb ClockGate Ratio: N.A.
+*
+*	Power Units = 1mW
+*
+*	Time Units = 1e-09 secs 
+*
+*       report_power -outfile summaryReport//riscv_core_power_hierarchy.rpt -hierarchy all
+*
+-----------------------------------------------------------------------------------------
+
+
+Total Power 
+-----------------------------------------------------------------------------------------
+Total Internal Power:        5.30694504 	   55.9586%
+Total Switching Power:       2.63731473 	   27.8090%
+Total Leakage Power:         1.53943062 	   16.2324%
+Total Power:                 9.48369039 
+-----------------------------------------------------------------------------------------
+
+
+Group                           Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+Sequential                         3.494       0.588      0.6452       4.727       49.85 
+Macro                                  0           0           0           0           0 
+IO                                     0           0           0           0           0 
+Combinational                      1.813       2.049      0.8942       4.756       50.15 
+Clock (Combinational)                  0           0           0           0           0 
+Clock (Sequential)                     0           0           0           0           0 
+-----------------------------------------------------------------------------------------
+Total                              5.307       2.637       1.539       9.484         100 
+-----------------------------------------------------------------------------------------
+
+
+Rail                  Voltage   Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+VDD                       1.1      5.307       2.637       1.539       9.484         100 
+
+
+Total Power 
+-----------------------------------------------------------------------------------------
+Total Internal Power:        5.30694504 	   55.9586%
+Total Switching Power:       2.63731473 	   27.8090%
+Total Leakage Power:         1.53943062 	   16.2324%
+Total Power:                 9.48369039 
+-----------------------------------------------------------------------------------------
+
+
+Hierarchy                       Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+u_cbm                              0.129      0.1663     0.04933      0.3446       3.634  
+u_csr                             0.2597     0.05687     0.07284      0.3894       4.106  
+u_div                             0.1992      0.0585     0.05674      0.3144       3.315  
+u_exec0                          0.04942      0.0133     0.05248      0.1152       1.215  
+u_exec1                          0.04922     0.01228     0.05305      0.1146       1.208  
+u_frontend                         2.079      0.7547      0.5144       3.348       35.31  
+u_issue                            1.261      0.5972      0.4567       2.315       24.41  
+u_lsu                             0.1118     0.03501     0.03209      0.1789       1.886  
+u_mul                             0.4455      0.4132     0.09486      0.9536       10.06  
+u_mule                             0.221      0.1623     0.04641      0.4298       4.532  
+u_mulp                            0.2853      0.1772      0.0604      0.5229       5.514  
+u_muls                            0.2169      0.1904     0.04999      0.4574       4.823  
+u_csr/u_csrfile                   0.2028      0.0482     0.05643      0.3074       3.242  
+u_frontend/u_decode               0.1539     0.03616      0.0377      0.2278       2.402  
+u_frontend/u_fetch                0.1364     0.07457     0.02992      0.2409        2.54  
+u_frontend/u_npc                   1.789       0.644      0.4468        2.88       30.37  
+u_issue/u_pipe0_ctrl              0.2284     0.07461     0.05018      0.3532       3.724  
+u_issue/u_pipe1_ctrl              0.1397     0.04823     0.02998      0.2179       2.298  
+u_issue/u_regfile                 0.7736      0.2542      0.2917       1.319       13.91  
+u_lsu/u_lsu_request              0.05804    0.009752     0.01246     0.08026      0.8463  
+u_exec0/u_alu                          0           0     0.02358     0.02358      0.2486  
+u_exec1/u_alu                          0           0     0.02525     0.02525      0.2663  
+u_frontend/u_decode/genblk1.u_fifo
+                                  0.1446     0.02717     0.03224       0.204       2.152  
+u_frontend/u_npc/BRANCH_PREDICTION.u_lru
+                                  0.0104     0.00126    0.002315     0.01397      0.1474  
+u_frontend/u_decode/genblk1.u_dec0
+                                0.002161    0.002348     0.00194    0.006449       0.068  
+u_frontend/u_decode/genblk1.u_dec1
+                                0.002176    0.002402    0.001899    0.006477      0.0683  
+
+
+-----------------------------------------------------------------------------------------
+*	Power Distribution Summary: 
+*                Highest Average Power: u_frontend/u_npc/FE_DBTC634_n_17050 (INV_X8):         0.009845 
+*                Highest Leakage Power:         u_cbm/g9294__1617 (AOI221_X4):        0.0001644 
+*          Total Cap:      2.58568e-10 F
+*          Total instances in design: 35045
+*          Total instances in design with no power:     0
+*          Total instances in design with no activity:     0
+*          Total Fillers and Decap:     0
+-----------------------------------------------------------------------------------------
+

@@ -1,0 +1,52 @@
+
+
+Working Directory = /home/ykaraagac/cadence-bitirme/Flows/ASAP7/biriscv_lowpower/scripts/cadence
+QoS Summary for riscv_core
+================================================================================
+Metric                          generic         map             final          
+================================================================================
+Slack (ps):                     5,658           4,936           4,936
+  R2R (ps):                     7,798           6,193           6,193
+  I2R (ps):                     6,368           4,936           4,936
+  R2O (ps):                     7,088           6,385           6,385
+  I2O (ps):                     5,658           5,136           5,136
+  CG  (ps):                  no_value        no_value        no_value
+TNS (ps):                           0               0               0
+  R2R (ps):                         0               0               0
+  I2R (ps):                         0               0               0
+  R2O (ps):                         0               0               0
+  I2O (ps):                         0               0               0
+  CG  (ps):                  no_value        no_value        no_value
+Failing Paths:                      0               0               0
+Leakage Power (nW):          no_value           2,845           2,846
+Cell Area:                      8,152           5,168           5,166
+Total Cell Area:                8,152           5,168           5,166
+Leaf Instances:                77,670          46,442          46,404
+Total Instances:               77,670          46,442          46,404
+Utilization (%):                 0.00            0.00            0.00
+Tot. Net Length (um):        no_value        no_value        no_value
+Avg. Net Length (um):        no_value        no_value        no_value
+Route Overflow H (%):        no_value        no_value        no_value
+Route Overflow V (%):        no_value        no_value        no_value
+MBCI(%) (bits/gate) :            0.00            0.00            0.00
+Norm Cong Hotspot Area:
+  Max Cong:                  no_value        no_value        no_value
+  Tot Cong:                  no_value        no_value        no_value
+================================================================================
+CPU  Runtime (h:m:s):        00:12:31        00:08:46        00:00:44
+Real Runtime (h:m:s):        00:12:13        00:05:05        00:00:36
+CPU  Elapsed (h:m:s):        00:12:40        00:21:28        00:22:06
+Real Elapsed (h:m:s):        00:12:15        00:17:23        00:17:55
+Memory (MB):                  3006.22         3023.91         3028.91
+================================================================================
+================================================================================
+Flow Settings:
+================================================================================
+Total Runtime (h:m:s): 00:17:55
+Total Memory (MB):     3028.91
+Executable Version:    25.12-s067_1
+================================================================================
+Total Cell Area =  Cell Area + Physical Cell Area
+Total Instances =  Leaf Instances + Physical Instances
+
+

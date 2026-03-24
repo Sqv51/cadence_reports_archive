@@ -1,0 +1,18 @@
+  =================
+   Message Summary
+  =================
+---------------------------------------------------------------------------
+|  Id   |  Sev  |Count|                   Message Text                    |
+---------------------------------------------------------------------------
+|MESG-11|Warning|    7|Maximum message print count reached.               |
+|SYNTH-8|Info   |    1|Done incrementally optimizing.                     |
+|TUI-78 |Warning|    2|A required object parameter could not be found.    |
+|       |       |     |Check if a previous get_db or find returned an     |
+|       |       |     | empty string.                                     |
+|TUI-332|Warning|    4|Usage of path_group with define_cost_group defined |
+|       |       |     | before will be obsolete, going forward use        |
+|       |       |     | group_path instead.                               |
+|       |       |     |Usage of path_group with define_cost_group defined |
+|       |       |     | before will be obsolete, going forward use        |
+|       |       |     | group_path instead.                               |
+---------------------------------------------------------------------------

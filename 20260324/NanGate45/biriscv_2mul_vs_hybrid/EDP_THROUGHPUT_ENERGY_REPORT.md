@@ -139,3 +139,13 @@ For the `tb_mul_compare` workload on NanGate45 at 100 MHz:
 - The remaining ~89% of nets use default switching activity (0.2).
 - A workload with higher multiply instruction density would amplify the throughput difference.
 - A workload with sparser multiplications would further favor Hybrid due to lower leakage from the smaller `u_mule`.
+
+## Next Analysis TODO
+
+1. Generalized formula for energy saving while fully absorbing latency.
+2. Generalized formula for energy-latency tradeoff depending on production-consumption distance and difference of alternative paths.
+3. Standard benchmark performance comparison between 2xMUL and MUL+MULE Hybrid.
+4. Estimate potential energy savings while only fully hiding latency in a general program.
+5. Calculate energy savings in standard benchmarks.
+6. Acknowledge potential leakage difference in modern lower-nm technologies.
+7. Compare parallelized deployment of Hybrid vs 2-standard in terms of EDP, EPI, and latency.

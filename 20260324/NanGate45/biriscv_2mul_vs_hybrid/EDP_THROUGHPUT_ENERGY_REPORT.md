@@ -215,12 +215,121 @@ Compact EDP tradeoff with baseline `(E0, T0)`:
 
 `EDP_ratio < 1` means the efficient path is better overall.
 
+## Item 6: Leakage Difference at Lower Technology Nodes (Easiest)
+
+This study is at 45 nm, where dynamic power dominates and leakage is a smaller fraction of total power.
+
+At lower nodes (7 nm / 5 nm / 3 nm), leakage fraction generally increases, so area reductions have stronger total-power impact.
+
+First-order model:
+
+- Let leakage fraction be `lambda = P_leak / P_total`
+- Let total area reduction be `alpha = DeltaA / A`
+
+Then approximate total-power reduction from leakage scaling alone is:
+
+`DeltaP_total/P_total ~= lambda * alpha`
+
+Using measured `alpha = 2.67%`:
+
+- If `lambda = 15%` (older node behavior): `~0.40%` total-power reduction
+- If `lambda = 50%` (advanced-node behavior): `~1.34%` total-power reduction
+
+So, the Hybrid design's area advantage should become more valuable as node scales down, especially in leakage-sensitive or thermally constrained operating points.
+
+## Item 4: Potential Energy Savings if Latency Is Fully Hidden in General Programs
+
+From Method A measurements:
+
+- Core energy/op gap (Hybrid - 2xMUL): `+78.8 pJ/op`
+- Extra cycles/op observed: `~1.0005 cycles/op`
+- Core energy/cycle at 100 MHz: `~82.7 pJ/cycle`
+
+Estimated hidden-latency energy benefit per operation:
+
+`Deltae_hidden ~= 78.8 - 82.7*1.0005 ~= -3.95 pJ/op (Hybrid better)`
+
+Magnitude of potential savings when latency is fully hidden:
+
+`~3.95 pJ/op` at current power point (about `0.30%` of 2xMUL energy/op).
+
+Equivalent per converted multiply (roughly half of ops in this workload map to the efficient path):
+
+`~7.9 pJ per converted multiply`
+
+Program-level estimate when only fully-hidden opportunities are converted:
+
+- If `N_hide` multiplies are converted with full absorption:
+	`DeltaE_program ~= N_hide * 7.9 pJ`
+
+This gives a direct estimator for compiler/scheduler-guided conversion policies.
+
+## Item 7: Parallelized Deployment Comparison (Hybrid vs 2-standard)
+
+### A) Fixed core count (`K` cores each design)
+
+- Throughput scales approximately linearly with `K` for both
+- Latency for a fixed job scales as `1/K` for both
+- Relative single-core ratio is preserved
+
+Using measured single-core ratios:
+
+- Throughput ratio (Hybrid/2xMUL): `5.88/6.24 = 0.942`
+- Energy/op ratio (Hybrid/2xMUL): `1407.4/1328.6 = 1.059`
+- EDP ratio (Hybrid/2xMUL): `1.125`
+
+So at equal core count, parallelization does not change the ranking: 2xMUL remains better in throughput, EPI, and EDP for this workload.
+
+### B) Fixed silicon area budget
+
+Hybrid core area is 2.67% smaller, so feasible core count gain is:
+
+`K_hybrid/K_2xMUL ~= 1/0.9733 = 1.027`
+
+Effective throughput ratio under equal area budget:
+
+`(Hybrid/2xMUL)_throughput ~= 0.942 * 1.027 = 0.967`
+
+So Hybrid remains about `3.3%` slower in latency/throughput under fixed-area scaling for this workload.
+
+Approximate EDP ratio under fixed area:
+
+`EDP_ratio_area ~= 1.059 * 1.034 ~= 1.094`
+
+Hybrid still trails by about `9.4%` EDP in this measured workload, but the gap narrows versus fixed-core deployment.
+
+## Items 3 and 5: Standard Benchmark Comparison and Energy Savings (Model-Based)
+
+No full benchmark simulation campaign is included yet in this report. The table below provides a first-order projection using the generalized formulas and representative multiply densities.
+
+Assumptions used for projection:
+
+- `DeltaL = 2 cycles` (5-cycle MULE vs 3-cycle MUL)
+- Efficient-path mapping share `q = 0.5` of multiply operations
+- Baseline CPI `= 1.2`
+- Per converted multiply hidden-energy benefit `~7.9 pJ`
+- Energy per exposed cycle `e_cyc ~ 82.7 pJ`
+
+Projected benchmarks:
+
+| Benchmark class | Multiply density `f_m` | Hidden fraction `h` | Extra CPI `f_m*q*DeltaL*(1-h)` | Perf delta (Hybrid) | Net EPI delta (Hybrid) |
+|---|---:|---:|---:|---:|---:|
+| Dhrystone-like (control-heavy) | 1% | 90% | 0.001 | ~0.08% slower | ~0.04 pJ/instr higher |
+| CoreMark-like (mixed integer) | 6% | 60% | 0.024 | ~2.0% slower | ~1.75 pJ/instr higher |
+| Multiply-heavy DSP kernel | 25% | 20% | 0.200 | ~16.7% slower | ~15.6 pJ/instr higher |
+
+Interpretation:
+
+- With the current mapping/latency characteristics, exposed latency dominates unless hide distance is very high.
+- Energy savings become meaningful only when scheduling/compilation ensures near-full absorption for converted operations.
+- Therefore, Item 5 (energy savings on standard benchmarks) should be treated as projected values until actual benchmark traces and VCDs are collected.
+
 ## Next Analysis TODO
 
 1. Completed: generalized formula for energy saving while fully absorbing latency (see section above).
 2. Completed: generalized formula for energy-latency tradeoff vs production-consumption distance and path difference (see section above).
-3. Standard benchmark performance comparison between 2xMUL and MUL+MULE Hybrid.
-4. Estimate potential energy savings while only fully hiding latency in a general program.
-5. Calculate energy savings in standard benchmarks.
-6. Acknowledge potential leakage difference in modern lower-nm technologies.
-7. Compare parallelized deployment of Hybrid vs 2-standard in terms of EDP, EPI, and latency.
+3. Completed (model-based): standard benchmark performance comparison between 2xMUL and MUL+MULE Hybrid.
+4. Completed: estimate of potential energy savings while only fully hiding latency in a general program.
+5. Completed (model-based): energy savings calculation in standard benchmark classes.
+6. Completed: leakage-difference acknowledgement and scaling model for lower-nm technologies.
+7. Completed: parallelized deployment comparison (fixed-core and fixed-area) for EDP, EPI, and latency.

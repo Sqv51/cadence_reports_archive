@@ -140,10 +140,85 @@ For the `tb_mul_compare` workload on NanGate45 at 100 MHz:
 - A workload with higher multiply instruction density would amplify the throughput difference.
 - A workload with sparser multiplications would further favor Hybrid due to lower leakage from the smaller `u_mule`.
 
+## Generalized Formulas (Items 1 and 2)
+
+Definitions:
+
+- Fast path (e.g., MUL): latency `L_f` (cycles), energy/op `e_f` (J/op)
+- Efficient path (e.g., MULE): latency `L_e` (cycles), energy/op `e_e` (J/op)
+- Extra latency of efficient path: `ΔL = L_e - L_f >= 0`
+- Production-consumption distance for one use site: `D` (cycles of independent work before first consume)
+- Exposed stall cycles for one operation:
+	`s(D) = max(0, ΔL - D)`
+- Hidden latency for one operation:
+	`h(D) = min(ΔL, D)`
+- Energy cost per exposed extra cycle (workload-dependent): `e_cyc` (J/cycle)
+- Number of converted operations: `N`
+
+### 1) Energy Saving When Extra Latency Is Fully Absorbed
+
+Full absorption condition:
+
+`D >= ΔL`  for each converted operation, equivalently `s(D)=0`.
+
+Then total energy saving from converting `N` operations is:
+
+`ΔE_full = N * (e_f - e_e)`
+
+Relative saving (per converted op):
+
+`η_full = (e_f - e_e) / e_f = 1 - e_e/e_f`
+
+If only a fraction `ρ` of all candidate operations is converted and fully absorbed:
+
+`ΔE_full = ρ * N_total * (e_f - e_e)`
+
+Interpretation: when all extra latency is hidden, energy benefit depends only on per-op energy difference, not on latency.
+
+### 2) General Energy-Latency Tradeoff vs Production-Consumption Distance
+
+For a single operation with distance `D`:
+
+- Exposed latency penalty: `s(D) = max(0, ΔL - D)` cycles
+- Net energy saving:
+	`Δe_net(D) = (e_f - e_e) - s(D) * e_cyc`
+
+Break-even condition (beneficial conversion):
+
+`Δe_net(D) > 0  <=>  (e_f - e_e) > s(D) * e_cyc`
+
+Equivalent minimum distance for break-even:
+
+`D >= ΔL - (e_f - e_e)/e_cyc`
+
+For a program with distance distribution `P(D=d)`:
+
+- Expected exposed stall per converted op:
+	`E[s] = Σ_d max(0, ΔL - d) * P(D=d)`
+- Expected net energy saving per converted op:
+	`E[Δe_net] = (e_f - e_e) - e_cyc * E[s]`
+
+For `N` converted operations:
+
+- Total energy delta:
+	`ΔE = N * E[Δe_net]`
+- Total extra cycles:
+	`ΔC = N * E[s]`
+- Total latency increase:
+	`ΔT = ΔC * Tclk`
+
+Compact EDP tradeoff with baseline `(E0, T0)`:
+
+- `E1 = E0 - ΔE`
+- `T1 = T0 + ΔT`
+- `EDP_ratio = (E1*T1)/(E0*T0)`
+
+`EDP_ratio < 1` means the efficient path is better overall.
+
 ## Next Analysis TODO
 
-1. Generalized formula for energy saving while fully absorbing latency.
-2. Generalized formula for energy-latency tradeoff depending on production-consumption distance and difference of alternative paths.
+1. Completed: generalized formula for energy saving while fully absorbing latency (see section above).
+2. Completed: generalized formula for energy-latency tradeoff vs production-consumption distance and path difference (see section above).
 3. Standard benchmark performance comparison between 2xMUL and MUL+MULE Hybrid.
 4. Estimate potential energy savings while only fully hiding latency in a general program.
 5. Calculate energy savings in standard benchmarks.

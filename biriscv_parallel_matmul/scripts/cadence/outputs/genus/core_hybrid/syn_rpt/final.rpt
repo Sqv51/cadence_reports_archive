@@ -1,0 +1,51 @@
+
+
+Working Directory = /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_parallel_matmul/scripts/cadence
+QoS Summary for riscv_core
+================================================================================
+Metric                          generic         map             final          
+================================================================================
+Slack (ps):                     2,021           4,462           4,245
+  R2R (ps):                     2,021           4,481           4,245
+  I2R (ps):                     2,102           4,462           4,300
+  R2O (ps):                     7,818           8,324           8,249
+  I2O (ps):                     7,898           8,306           8,304
+  CG  (ps):                  no_value        no_value        no_value
+TNS (ps):                           0               0               0
+  R2R (ps):                         0               0               0
+  I2R (ps):                         0               0               0
+  R2O (ps):                         0               0               0
+  I2O (ps):                         0               0               0
+  CG  (ps):                  no_value        no_value        no_value
+Failing Paths:                      0               0               0
+Cell Area:                    135,076          61,968          61,009
+Total Cell Area:              135,076          61,968          61,009
+Leaf Instances:                69,886          29,860          28,302
+Total Instances:               69,886          29,860          28,302
+Utilization (%):                 0.00            0.00            0.00
+Tot. Net Length (um):        no_value        no_value        no_value
+Avg. Net Length (um):        no_value        no_value        no_value
+Route Overflow H (%):        no_value        no_value        no_value
+Route Overflow V (%):        no_value        no_value        no_value
+MBCI(%) (bits/gate) :            0.00            0.00            0.00
+Norm Cong Hotspot Area:
+  Max Cong:                  no_value        no_value        no_value
+  Tot Cong:                  no_value        no_value        no_value
+================================================================================
+CPU  Runtime (h:m:s):        00:11:56        00:05:21        00:00:41
+Real Runtime (h:m:s):        00:11:17        00:03:23        00:00:36
+CPU  Elapsed (h:m:s):        00:12:04        00:17:23        00:18:04
+Real Elapsed (h:m:s):        00:11:19        00:14:41        00:15:18
+Memory (MB):                  2615.20         2587.06         2587.06
+================================================================================
+================================================================================
+Flow Settings:
+================================================================================
+Total Runtime (h:m:s): 00:15:18
+Total Memory (MB):     2595.06
+Executable Version:    25.12-s067_1
+================================================================================
+Total Cell Area =  Cell Area + Physical Cell Area
+Total Instances =  Leaf Instances + Physical Instances
+
+

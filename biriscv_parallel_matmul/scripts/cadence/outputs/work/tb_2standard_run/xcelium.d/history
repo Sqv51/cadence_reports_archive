@@ -1,0 +1,5 @@
+//
+// File created by:  xrun
+// Do not modify this file
+
+s1::(31Mar2026:08:28:04):( xrun -64bit -sv -licqueue -timescale 1ns/1ps +access+r +define+TRACE=1 -f /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_parallel_matmul/scripts/cadence/filelists/core_2standard_tb.f -top tb_parallel_matmul -input "@run; exit" -l /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_parallel_matmul/scripts/cadence/logs/xrun_core_2standard.log )&&(./xcelium.d/env.d/env.history.31Mar2026_08_28_04)

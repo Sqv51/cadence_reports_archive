@@ -1,0 +1,82 @@
+if {![namespace exists ::IMEX]} { namespace eval ::IMEX {} }
+set ::IMEX::dataVar [file dirname [file normalize [info script]]]
+set ::IMEX::libVar ${::IMEX::dataVar}/libs
+
+catch { setDesignMode -bottomRoutingLayer 2 }
+catch { setDesignMode -process 45 }
+catch { setDesignMode -topRoutingLayer 10 }
+catch { setAnalysisMode -analysisType onChipVariation }
+catch { setAnalysisMode -checkType setup }
+catch { setAnalysisMode -clkSrcPath true }
+catch { setAnalysisMode -clockPropagation sdcControl }
+catch { setAnalysisMode -cppr both }
+catch { setAnalysisMode -usefulSkew true }
+catch { setOptMode -opt_view_pruning_setup_views_active_list { WC_VIEW } }
+catch { setOptMode -opt_view_pruning_setup_views_persistent_list { WC_VIEW} }
+catch { setOptMode -opt_view_pruning_tdgr_setup_views_persistent_list { WC_VIEW} }
+catch { setOptMode -opt_delete_insts true }
+catch { setOptMode -opt_drv_margin 0 }
+catch { setOptMode -opt_drv true }
+catch { setOptMode -opt_resize_flip_flops true }
+catch { setOptMode -opt_preserve_all_sequential false }
+catch { setOptMode -opt_setup_target_slack 0 }
+catch { setOptMode -opt_unfix_clock_insts false }
+catch { setPathGroupOptions reg2reg -effortLevel high -weight 2 }
+catch { setPathGroupOptions reg2reg -late -slackAdjustment -0 }
+catch { setPathGroupOptions reg2out -late -slackAdjustment -0 }
+catch { setPathGroupOptions in2reg -late -slackAdjustment -0 }
+catch { setPathGroupOptions in2out -late -slackAdjustment -0 }
+catch { setExtractRCMode  -engine postRoute -total_c_th 5 -relative_c_th 0.03 -coupling_c_th 3 }
+catch {setNanoRouteMode -quiet -route_detail_antenna_factor 1.000000}
+catch {setNanoRouteMode -quiet -route_detail_post_route_spread_wire "auto"}
+catch {setNanoRouteMode -quiet -drouteStartIteration 0}
+catch {setNanoRouteMode -quiet -route_detail_use_lef_pin_taper_rule true}
+catch {setNanoRouteMode -quiet -extract_design_signature 72039623}
+catch {setNanoRouteMode -quiet -extract_qrc_n2p_accuracy_enhancement true}
+catch {setNanoRouteMode -quiet -extract_rc_model_file "${::IMEX::libVar}/misc/rc_model.bin"}
+catch {setNanoRouteMode -quiet -route_extract_third_party_compatible false}
+catch {setNanoRouteMode -quiet -route_global_exp_timing_driven_std_delay 10.100000}
+catch {setNanoRouteMode -quiet -route_global_exp_timing_driven_use_tif_timing_engine_for_import_design false}
+catch {setNanoRouteMode -quiet -route_exp_design_mode_bottom_routing_layer 2}
+catch {setNanoRouteMode -quiet -route_exp_design_mode_top_routing_layer 10}
+catch {setNanoRouteMode -quiet -route_si_effort "high"}
+catch {setNanoRouteMode -quiet -route_use_auto_via "true"}
+catch {setNanoRouteMode -quiet -route_with_si_driven true}
+catch {setNanoRouteMode -quiet -route_with_si_post_route_fix false}
+catch {setNanoRouteMode -quiet -route_with_timing_driven true}
+catch {setNanoRouteMode -quiet -route_with_via_in_pin "1:1"}
+catch {setNanoRouteMode -quiet -route_with_via_only_for_stdcell_pin "1:1"}
+catch {setNanoRouteMode -quiet -timingEngine ".timing_file_2307777_c106b2ab-6511-4625-8795-5c64b3c776ff.tif.gz"}
+
+catch { setIlmMode -keepHighFanoutPorts true -keepLoopBack false -keepInstInSdc false -keepFlatten true }
+catch { setUsefulSkewMode -opt_skew_eco_route false }
+catch { setDelayCalMode -enable_hier_save_restore_flow false }
+catch { setDelayCalMode -enable_high_fanout true }
+catch { setDelayCalMode -enable_ideal_seq_async_pins false }
+catch { setDelayCalMode -eng_enablePrePlacedFlow false }
+catch { setDelayCalMode -engine aae }
+catch { setDelayCalMode -ignoreNetLoad false }
+catch { setDelayCalMode -SIAware true }
+catch { setDelayCalMode -socv_accuracy_mode low }
+catch { setHierMode -disableArt false }
+catch { setHierMode -reportPostRouteArtTiming false }
+catch { setHierMode -trialRouteHonorReadOnly false }
+catch { setImportMode -discardFloatingVNets false }
+catch { setImportMode -keepEmptyModule true }
+catch { setSIMode -separate_delta_delay_on_data true }
+catch { setRouteMode -earlyGlobalExpDoNotInvalidateRCGrid false }
+catch { setRouteMode -earlyGlobalRouteSecondPG false }
+catch { setFPlanMode -cellsForExtraSites {} }
+catch { setFPlanMode -defaultRowPatternSite {} }
+catch { setFPlanMode -disableEolBlockageOnEdges {} }
+catch { setFPlanMode -exp_dcls_region_options {} }
+catch { setFPlanMode -extraRowPattern {} }
+catch { setFPlanMode -extraSites {} }
+catch { setFPlanMode -firstRowSiteIndex 0 }
+catch { setFPlanMode -ignore_check_power_domain_overlap {} }
+catch { setFPlanMode -lastRowSiteIndex -1 }
+catch { setFPlanMode -maxIoHeight false }
+catch { setFPlanMode -place_check_ignore_fixed_cell_list {} }
+catch { setFPlanMode -powerRailLayer {} }
+catch { setFPlanMode -skipViolations {} }
+catch { setFPlanMode -snap_block_cell_grid {} }

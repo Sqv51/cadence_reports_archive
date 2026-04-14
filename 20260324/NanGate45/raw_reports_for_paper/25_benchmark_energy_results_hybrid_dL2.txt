@@ -1,0 +1,246 @@
+
+==========================================================================
+  kernel_dot
+==========================================================================
+  Dynamic instructions :      9,219
+  MUL instructions     :      1,024  (11.11%)
+  Instruction mix (top): add=4097, branch=2048, load=2048, mul=1024, other=2
+  Est. total cycles    :      9,219  (IPC=1 assumption)
+  Est. core energy     : 762,411.3 pJ
+
+  Production→consumption distance D (threshold ΔL=2):
+    Fully hidden    (D >= 2) :       0  (  0.0%)
+    Partially hidden (0<D<2) :   1,024  (100.0%)
+    Not hidden       (D = 0)  :       0  (  0.0%)
+    No consumer (→ fully hid) :       0
+
+  D distribution: D=1:1024
+  Consumer types: [('add', 1024)]
+
+  Energy params: e_mul=60.60pJ  e_mule=7.75pJ  Δe=52.85pJ/op  ΔL=2cyc  e_cyc=82.70pJ
+
+  A) ALL MUL→MULE (1024 ops, aggressive):
+    Converted ops      :     1,024
+    Multiplier saving  :    54,118.4 pJ
+    Extra stall cycles :     1,024  (+11.1075% latency)
+    Stall energy cost  :    84,684.8 pJ
+    ── Net energy save :   -30,566.4 pJ  (-4.0092% of core)
+    ── Per converted op:     -29.85 pJ/op
+
+  B) FULLY HIDDEN only (0 ops, D≥2):
+    Converted ops      :         0
+    Multiplier saving  :         0.0 pJ
+    Extra stall cycles :         0  (+0.0000% latency)
+    Stall energy cost  :         0.0 pJ
+    ── Net energy save :         0.0 pJ  (+0.0000% of core)
+    ── Per converted op:      +0.00 pJ/op
+
+  C) PARTIALLY HIDDEN only (1024 ops, 0<D<2):
+    Converted ops      :     1,024
+    Multiplier saving  :    54,118.4 pJ
+    Extra stall cycles :     1,024  (+11.1075% latency)
+    Stall energy cost  :    84,684.8 pJ
+    ── Net energy save :   -30,566.4 pJ  (-4.0092% of core)
+    ── Per converted op:     -29.85 pJ/op
+
+
+==========================================================================
+  kernel_fir
+==========================================================================
+  Dynamic instructions :    112,896
+  MUL instructions     :     16,128  (14.29%)
+  Instruction mix (top): add=48384, load=32256, mul=16128, branch=16128
+  Est. total cycles    :    112,896  (IPC=1 assumption)
+  Est. core energy     : 9.34 nJ
+
+  Production→consumption distance D (threshold ΔL=2):
+    Fully hidden    (D >= 2) :       0  (  0.0%)
+    Partially hidden (0<D<2) :  16,128  (100.0%)
+    Not hidden       (D = 0)  :       0  (  0.0%)
+    No consumer (→ fully hid) :       0
+
+  D distribution: D=1:16128
+  Consumer types: [('add', 16128)]
+
+  Energy params: e_mul=60.60pJ  e_mule=7.75pJ  Δe=52.85pJ/op  ΔL=2cyc  e_cyc=82.70pJ
+
+  A) ALL MUL→MULE (16128 ops, aggressive):
+    Converted ops      :    16,128
+    Multiplier saving  :   852,364.8 pJ
+    Extra stall cycles :    16,128  (+14.2857% latency)
+    Stall energy cost  :        1.33 nJ
+    ── Net energy save :  -481,420.8 pJ  (-5.1563% of core)
+    ── Per converted op:     -29.85 pJ/op
+
+  B) FULLY HIDDEN only (0 ops, D≥2):
+    Converted ops      :         0
+    Multiplier saving  :         0.0 pJ
+    Extra stall cycles :         0  (+0.0000% latency)
+    Stall energy cost  :         0.0 pJ
+    ── Net energy save :         0.0 pJ  (+0.0000% of core)
+    ── Per converted op:      +0.00 pJ/op
+
+  C) PARTIALLY HIDDEN only (16128 ops, 0<D<2):
+    Converted ops      :    16,128
+    Multiplier saving  :   852,364.8 pJ
+    Extra stall cycles :    16,128  (+14.2857% latency)
+    Stall energy cost  :        1.33 nJ
+    ── Net energy save :  -481,420.8 pJ  (-5.1563% of core)
+    ── Per converted op:     -29.85 pJ/op
+
+
+==========================================================================
+  kernel_horner
+==========================================================================
+  Dynamic instructions :     12,288
+  MUL instructions     :      2,048  (16.67%)
+  Instruction mix (top): load=4096, add=4096, mul=2048, branch=2048
+  Est. total cycles    :     12,288  (IPC=1 assumption)
+  Est. core energy     : 1.02 nJ
+
+  Production→consumption distance D (threshold ΔL=2):
+    Fully hidden    (D >= 2) :       0  (  0.0%)
+    Partially hidden (0<D<2) :   2,048  (100.0%)
+    Not hidden       (D = 0)  :       0  (  0.0%)
+    No consumer (→ fully hid) :       0
+
+  D distribution: D=1:2048
+  Consumer types: [('add', 2048)]
+
+  Energy params: e_mul=60.60pJ  e_mule=7.75pJ  Δe=52.85pJ/op  ΔL=2cyc  e_cyc=82.70pJ
+
+  A) ALL MUL→MULE (2048 ops, aggressive):
+    Converted ops      :     2,048
+    Multiplier saving  :   108,236.8 pJ
+    Extra stall cycles :     2,048  (+16.6667% latency)
+    Stall energy cost  :   169,369.6 pJ
+    ── Net energy save :   -61,132.8 pJ  (-6.0157% of core)
+    ── Per converted op:     -29.85 pJ/op
+
+  B) FULLY HIDDEN only (0 ops, D≥2):
+    Converted ops      :         0
+    Multiplier saving  :         0.0 pJ
+    Extra stall cycles :         0  (+0.0000% latency)
+    Stall energy cost  :         0.0 pJ
+    ── Net energy save :         0.0 pJ  (+0.0000% of core)
+    ── Per converted op:      +0.00 pJ/op
+
+  C) PARTIALLY HIDDEN only (2048 ops, 0<D<2):
+    Converted ops      :     2,048
+    Multiplier saving  :   108,236.8 pJ
+    Extra stall cycles :     2,048  (+16.6667% latency)
+    Stall energy cost  :   169,369.6 pJ
+    ── Net energy save :   -61,132.8 pJ  (-6.0157% of core)
+    ── Per converted op:     -29.85 pJ/op
+
+
+==========================================================================
+  kernel_matmul
+==========================================================================
+  Dynamic instructions :    268,384
+  MUL instructions     :     32,768  (12.21%)
+  Instruction mix (top): add=100416, load=66560, branch=33824, mul=32768, store=32768
+  Est. total cycles    :    268,384  (IPC=1 assumption)
+  Est. core energy     : 22.20 nJ
+
+  Production→consumption distance D (threshold ΔL=2):
+    Fully hidden    (D >= 2) :  32,768  (100.0%)
+    Partially hidden (0<D<2) :       0  (  0.0%)
+    Not hidden       (D = 0)  :       0  (  0.0%)
+    No consumer (→ fully hid) :       0
+
+  D distribution: D=2:32768
+  Consumer types: [('add', 32768)]
+
+  Energy params: e_mul=60.60pJ  e_mule=7.75pJ  Δe=52.85pJ/op  ΔL=2cyc  e_cyc=82.70pJ
+
+  A) ALL MUL→MULE (32768 ops, aggressive):
+    Converted ops      :    32,768
+    Multiplier saving  :        1.73 nJ
+    Extra stall cycles :         0  (+0.0000% latency)
+    Stall energy cost  :         0.0 pJ
+    ── Net energy save :        1.73 nJ  (+7.8025% of core)
+    ── Per converted op:     +52.85 pJ/op
+
+  B) FULLY HIDDEN only (32768 ops, D≥2):
+    Converted ops      :    32,768
+    Multiplier saving  :        1.73 nJ
+    Extra stall cycles :         0  (+0.0000% latency)
+    Stall energy cost  :         0.0 pJ
+    ── Net energy save :        1.73 nJ  (+7.8025% of core)
+    ── Per converted op:     +52.85 pJ/op
+
+  C) PARTIALLY HIDDEN only (0 ops, 0<D<2):
+    Converted ops      :         0
+    Multiplier saving  :         0.0 pJ
+    Extra stall cycles :         0  (+0.0000% latency)
+    Stall energy cost  :         0.0 pJ
+    ── Net energy save :         0.0 pJ  (+0.0000% of core)
+    ── Per converted op:      +0.00 pJ/op
+
+
+==========================================================================
+  kernel_unrolled
+==========================================================================
+  Dynamic instructions :     19,456
+  MUL instructions     :      4,096  (21.05%)
+  Instruction mix (top): load=8192, add=6144, mul=4096, branch=1024
+  Est. total cycles    :     19,456  (IPC=1 assumption)
+  Est. core energy     : 1.61 nJ
+
+  Production→consumption distance D (threshold ΔL=2):
+    Fully hidden    (D >= 2) :   4,096  (100.0%)
+    Partially hidden (0<D<2) :       0  (  0.0%)
+    Not hidden       (D = 0)  :       0  (  0.0%)
+    No consumer (→ fully hid) :       0
+
+  D distribution: D=2:1024, D=3:2048, D=4:1024
+  Consumer types: [('add', 4096)]
+
+  Energy params: e_mul=60.60pJ  e_mule=7.75pJ  Δe=52.85pJ/op  ΔL=2cyc  e_cyc=82.70pJ
+
+  A) ALL MUL→MULE (4096 ops, aggressive):
+    Converted ops      :     4,096
+    Multiplier saving  :   216,473.6 pJ
+    Extra stall cycles :         0  (+0.0000% latency)
+    Stall energy cost  :         0.0 pJ
+    ── Net energy save :   216,473.6 pJ  (+13.4538% of core)
+    ── Per converted op:     +52.85 pJ/op
+
+  B) FULLY HIDDEN only (4096 ops, D≥2):
+    Converted ops      :     4,096
+    Multiplier saving  :   216,473.6 pJ
+    Extra stall cycles :         0  (+0.0000% latency)
+    Stall energy cost  :         0.0 pJ
+    ── Net energy save :   216,473.6 pJ  (+13.4538% of core)
+    ── Per converted op:     +52.85 pJ/op
+
+  C) PARTIALLY HIDDEN only (0 ops, 0<D<2):
+    Converted ops      :         0
+    Multiplier saving  :         0.0 pJ
+    Extra stall cycles :         0  (+0.0000% latency)
+    Stall energy cost  :         0.0 pJ
+    ── Net energy save :         0.0 pJ  (+0.0000% of core)
+    ── Per converted op:      +0.00 pJ/op
+
+
+========================================================================================================================
+  CROSS-BENCHMARK SUMMARY
+========================================================================================================================
+Kernel                  Insns   MUL%   N_mul    FH%    PH%   NetAll(pJ)  All%core    NetFH(pJ)   FH%core    NetPH(pJ)    PH/op
+------------------------------------------------------------------------------------------------------------------------
+kernel_dot              9,219  11.1%   1,024   0.0% 100.0%     -30,566  -4.0092%           0  +0.0000%     -30,566  -29.85
+kernel_fir            112,896  14.3%  16,128   0.0% 100.0%    -481,421  -5.1563%           0  +0.0000%    -481,421  -29.85
+kernel_horner          12,288  16.7%   2,048   0.0% 100.0%     -61,133  -6.0157%           0  +0.0000%     -61,133  -29.85
+kernel_matmul         268,384  12.2%  32,768 100.0%   0.0%   1,731,789  +7.8025%   1,731,789  +7.8025%           0   +0.00
+kernel_unrolled        19,456  21.1%   4,096 100.0%   0.0%     216,474 +13.4538%     216,474 +13.4538%           0   +0.00
+
+  Legend:
+    FH% = fraction of MUL ops with D >= ΔL (fully hideable)
+    PH% = fraction with 0 < D < ΔL (partially hideable)
+    NetAll = net energy saving converting ALL MUL → MULE
+    NetFH  = net energy saving converting only fully hidden ops
+    NetPH  = net energy saving converting only partially hidden ops
+    PH/op  = net per-op saving for partially hidden ops (negative = net loss)
+    ΔL=2 cycles, e_mul=60.60pJ, e_mule=7.75pJ, Δe=52.85pJ, e_cyc=82.70pJ
+

@@ -25,16 +25,18 @@
 
 ## 1. Multiplier Architectures
 
-### MUL — Booth-Wallace (biriscv_multiplier)
+### MUL — Single-Cycle Combinational (biriscv_multiplier)
 
-- Full 33×33 combinational multiply tree (Booth encoding + Wallace reduction)
-- 2-stage fixed-latency pipeline: E1 (latch + multiply), E2 (register result)
-- **Latency:** 2 cycles (standalone), 3 cycles (dual-core pipe A)
+- 33×33 signed combinational multiply (Verilog `*` operator; Genus maps to library multiplier)
+- 2-stage fixed-latency pipeline: E1 (latch operands + combinational multiply), E2 (register result)
+- **Latency:** 2 cycles (standalone module, `MULT_STAGES=2`), 3 cycles (issue-to-writeback in core pipeline, confirmed by simulation log)
 - Critical path (Genus): 4.606 ns (53% slack at 100 MHz)
+- Note: With `SUPPORT_MUL_BYPASS=1` (default), a dependent instruction can issue 1 cycle before writeback via E2-stage bypass
 
 ### MULE — Iterative Efficient (biriscv_multiplier_efficient)
 
-- 16×16 sub-multiplier reused 3× via FSM
+- 16×16 unsigned sub-multiplier reused 3× via FSM
+- Supports only lower-32-bit `MUL` result (no `MULH`/`MULHSU`/`MULHU`); accessed via custom `mule` opcode
 - 5-state FSM: IDLE → CALC0 → CALC1 → CALC2 → DONE
 - CALC0: P0 = A_low × B_low; CALC1: P1 = A_low × B_high; CALC2: P2 = A_high × B_low
 - DONE: result = P0 + (P1 << 16) + (P2 << 16)
@@ -91,7 +93,7 @@ All data cited in this report comes from the following Cadence tool output files
 | RISC-V Spike | — | ISA-level trace generation for benchmarks |
 | PDK | NangateOpenCellLibrary rev 1.0 | 45 nm standard cells |
 
-**Power methodology:** VCD-based post-route (Innovus/Voltus). VCD annotation coverage: ~10–11% of flop outputs. Remaining nets use default switching activity (0.2). All numbers are worst-case view (WC_VIEW) at 1.1 V, 100 MHz.
+**Power methodology:** VCD-based post-route (Innovus/Voltus). VCD annotation coverage: ~10–11% of total nets (~18% of flop outputs). Remaining nets use default switching activity (0.2). All numbers are worst-case view (WC_VIEW) at 1.1 V, 100 MHz.
 
 ---
 
@@ -281,11 +283,13 @@ MULE wins EDP in-core because the real workload allows effective power gating wh
 
 | | 2×MUL | Hybrid (MUL+MULE) |
 |---|---|---|
-| Pipe A multiplier | Booth-Wallace (`u_mul`) | Booth-Wallace (`u_mul`) |
-| Pipe B multiplier | Booth-Wallace (`u_mul2`) | Iterative (`u_mule`) |
+| Pipe A multiplier | Combinational (`u_mul`) | Combinational (`u_mul`) |
+| Pipe B multiplier | Combinational (`u_mul2`) | Iterative (`u_mule`) |
 | RTL branch | `2-standard` | `2-alts` |
 | Pipe A MUL latency | 3 cycles | 3 cycles |
-| Pipe B mul latency | 3+1=4 cycles (stagger) | 5 cycles |
+| Pipe B mul latency | 3+1=4 cycles (stagger, theoretical — u_mul2 never exercised) | 5 cycles |
+
+**Note:** Hybrid core power data is from the same simulation/VCD as Section 4 (same design, same workload, same VCD annotation: 11.1% total nets, 18.3% flop outputs).
 
 ### 8.2 Measured Core Power
 

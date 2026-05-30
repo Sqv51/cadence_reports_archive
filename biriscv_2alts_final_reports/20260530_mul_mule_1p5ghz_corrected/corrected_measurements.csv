@@ -1,0 +1,7 @@
+measurement_group,design,raw_internal_mw,raw_switching_mw,raw_leakage_mw,corrected_power_1p5ghz_mw,ops,cycles,corrected_energy_per_op_pj,latency_cycles,throughput_cycles,latency_bound_energy_per_op_pj,throughput_bound_energy_per_op_pj,source_report
+core_total,mul,6.23236870,5.12484485,2.54763751,172.90584076,1024,12350,1390.92111130,,,,outputs/innovus/core_scope/vcd_mul/reports/power_total.rpt
+core_total,mule,6.07819207,4.94984990,2.54846241,167.96909196,1024,12350,1351.20800446,,,,outputs/innovus/core_scope/vcd_mule/reports/power_total.rpt
+core_unit,mul,0.90870000,0.99870000,0.36640000,28.97740000,1024,12350,233.10535511,,,,outputs/innovus/core_scope/vcd_mul/reports/power_inst_a.rpt
+core_unit,mule,0.41920000,0.44400000,0.11340000,13.06140000,1024,12350,105.07092718,,,,outputs/innovus/core_scope/vcd_mule/reports/power_inst_a.rpt
+standalone,mul,1.59905673,1.80211174,0.28277759,51.30030464,1024,1027,34.31754920,3,1,102.65190958,34.21730319,outputs/innovus/mul_standalone/vcd/reports/power_total.rpt
+standalone,mule,0.75499421,0.79709607,0.12227473,23.40362893,1024,5121,78.06634684,5,5,78.05110248,78.05110248,outputs/innovus/mule_standalone/vcd/reports/power_total.rpt

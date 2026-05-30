@@ -1,0 +1,602 @@
+env CDS_WORKAREA is set to /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_mul_mule_power/scripts/cadence
+
+Power Net Detected:
+        Voltage	    Name
+             0V	    VSS
+           1.1V	    VDD
+             0V	    VSS
+           1.1V	    VDD
+Using Power View WC_VIEW
+.
+AAE_INFO: opIsDesignInPostRouteState() is 1
+AAE_INFO: resetNetProps viewIdx 0 
+Starting SI iteration 1 using Infinite Timing Windows
+#################################################################################
+# Design Stage: PostRoute
+# Design Name: riscv_core
+# Design Mode: 45nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: No SPEF/RCDB 
+# Signoff Settings: SI On 
+#################################################################################
+#WARNING (NRDB-733) PIN Y in CELL_VIEW LOGIC1_X1 does not have a physical port. NanoRoute will not route to the pin. To resolve this issue, check that the pin shapes exist in the LEF abstract.
+#WARNING (NRDB-733) PIN Y in CELL_VIEW LOGIC0_X1 does not have a physical port. NanoRoute will not route to the pin. To resolve this issue, check that the pin shapes exist in the LEF abstract.
+#WARNING (NRDB-2120) Special net VSS is missing wiring shapes, will disable tie-net connections to this net.
+#Extract in post route mode
+#Finish check_net_pin_list step Enter extract_rc_in_nr_cmd
+#Fast data preparation for tQuantus.
+#Start routing data preparation on Fri May 29 10:22:11 2026
+#
+# metal1       H   Track-Pitch = 0.14000    Line-2-Via Pitch = 0.13500
+# metal2       V   Track-Pitch = 0.19000    Line-2-Via Pitch = 0.14000
+# metal3       H   Track-Pitch = 0.14000    Line-2-Via Pitch = 0.14000
+# metal4       V   Track-Pitch = 0.28000    Line-2-Via Pitch = 0.28000
+# metal5       H   Track-Pitch = 0.28000    Line-2-Via Pitch = 0.28000
+# metal6       V   Track-Pitch = 0.28000    Line-2-Via Pitch = 0.28000
+# metal7       H   Track-Pitch = 0.84000    Line-2-Via Pitch = 0.80000
+# metal8       V   Track-Pitch = 0.84000    Line-2-Via Pitch = 0.80000
+# metal9       H   Track-Pitch = 1.60000    Line-2-Via Pitch = 1.60000
+# metal10      V   Track-Pitch = 1.68000    Line-2-Via Pitch = 1.60000
+#Regenerating Ggrids automatically.
+#Auto generating G-grids with size=15 tracks, using layer metal3's pitch = 0.14000.
+#Using automatically generated G-grids.
+#Done routing data preparation.
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 3034.99 (MB), peak = 4544.79 (MB)
+#Start routing data preparation on Fri May 29 10:22:11 2026
+#
+#shield_layer  1: layer_id= 2 shield_wire_on_grid=1 shield_via_on_grid=1 is_hard_wire_on_grid=0 allow_ww=0
+#shield_layer  2: layer_id= 4 shield_wire_on_grid=1 shield_via_on_grid=1 is_hard_wire_on_grid=0 allow_ww=0
+#shield_layer  3: layer_id= 6 shield_wire_on_grid=1 shield_via_on_grid=1 is_hard_wire_on_grid=0 allow_ww=0
+#shield_layer  4: layer_id= 8 shield_wire_on_grid=1 shield_via_on_grid=1 is_hard_wire_on_grid=0 allow_ww=0
+#shield_layer  5: layer_id=10 shield_wire_on_grid=1 shield_via_on_grid=1 is_hard_wire_on_grid=0 allow_ww=0
+#shield_layer  6: layer_id=12 shield_wire_on_grid=1 shield_via_on_grid=1 is_hard_wire_on_grid=0 allow_ww=0
+#shield_layer  7: layer_id=14 shield_wire_on_grid=1 shield_via_on_grid=1 is_hard_wire_on_grid=0 allow_ww=0
+#shield_layer  8: layer_id=16 shield_wire_on_grid=1 shield_via_on_grid=1 is_hard_wire_on_grid=0 allow_ww=0
+#shield_layer  9: layer_id=18 shield_wire_on_grid=1 shield_via_on_grid=1 is_hard_wire_on_grid=0 allow_ww=0
+#shield_layer 10: layer_id=20 shield_wire_on_grid=1 shield_via_on_grid=1 is_hard_wire_on_grid=0 allow_ww=0
+#Bottom routing layer index=2(metal2), bottom routing layer for shielding=2(metal2), bottom shield layer=2(metal2) top shield layer=10(metal10)
+#shield_bottom_stripe_layer=1(metal1), shield_top_stripe_layer=10(metal10)
+#pin_access_rlayer=2(metal2) num_routing_layer=10 top_routing_layer=10 top_ripin_layer=10
+#shield_top_dpt_rlayer=-1 top_rlayer=10 top_trim_metal_rlayer=-1 rlayer_lowest=1 bottom_rlayer=2
+#enable_trim_layer_shield=F enable_dpt_layer_shield=F has_line_end_grid=F
+#Regenerating Ggrids automatically.
+#Auto generating G-grids with size=15 tracks, using layer metal3's pitch = 0.14000.
+#Using automatically generated G-grids.
+#Done routing data preparation.
+#cpu time = 00:00:01, elapsed time = 00:00:00, memory = 3053.51 (MB), peak = 4544.79 (MB)
+#
+#Start tQuantus RC extraction...
+#Start building rc corner(s)...
+#Number of RC Corner = 2
+#Corner Cmin /home/ykaraagac/cadence-bitirme/Enablements/NanGate45/qrc/NG45.tch 25.000000 (real) 
+#Corner Cmax /home/ykaraagac/cadence-bitirme/Enablements/NanGate45/qrc/NG45.tch 25.000000 (real) 
+#(i=10, n=10 2000)
+#metal1 -> metal1 (1)
+#metal2 -> metal2 (2)
+#metal3 -> metal3 (3)
+#metal4 -> metal4 (4)
+#metal5 -> metal5 (5)
+#metal6 -> metal6 (6)
+#metal7 -> metal7 (7)
+#metal8 -> metal8 (8)
+#metal9 -> metal9 (9)
+#metal10 -> metal10 (10)
+#SADV-On
+# Corner(s) : 
+#Cmin [25.00] 
+#Cmax [25.00]
+# Corner id: 0
+# Layout Scale: 1.000000
+# Has Metal Fill model: yes
+# Temperature was set
+# Temperature : 25.000000
+# Ref. Temp   : 25.000000
+# Corner id: 1
+# Layout Scale: 1.000000
+# Has Metal Fill model: yes
+# Temperature was set
+# Temperature : 25.000000
+# Ref. Temp   : 25.000000
+#SADV-Off
+#total pattern=220 [10, 605]
+#Reading previously stored rc_model file ( /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_mul_mule_power/scripts/cadence/outputs/innovus/core_scope/implemented/core_scope.enc.dat/libs/misc/rc_model.bin ) ...
+#found CAPMODEL /home/ykaraagac/cadence-bitirme/Enablements/NanGate45/qrc/NG45.tch
+#found RESMODEL /home/ykaraagac/cadence-bitirme/Enablements/NanGate45/qrc/NG45.tch 25.000000 
+#CCE Version read = IQuantus/TQuantus 24.1.0-s365
+#number model r/c [1,1] [10,605] read
+#0 rcmodel(s) requires rebuild
+#Build RC corners: cpu time = 00:00:00, elapsed time = 00:00:00, memory = 3074.77 (MB), peak = 4544.79 (MB)
+#Finish check_net_pin_list step Enter extract
+#Start init net ripin tree building
+#Finish init net ripin tree building
+#Cpu time = 00:00:00
+#Elapsed time = 00:00:00
+#Increased memory = 0.00 (MB)
+#Total memory = 3074.77 (MB)
+#Peak memory = 4544.79 (MB)
+#Using multithreading with 16 threads.
+#begin processing metal fill model file
+#end processing metal fill model file
+#Length limit = 200 pitches
+#opt mode = 2
+#Finish check_net_pin_list step Fix net pin list
+#Start generate extraction boxes.
+#
+#Extract using 30 x 30 Hboxes
+#7x7 initial hboxes
+#Use area based hbox pruning.
+#0/0 hboxes pruned.
+#Complete generating extraction boxes.
+#Extract 36 hboxes with 16 threads on machine with  3.25GHz 1024KB Cache 128CPU...
+#Process 0 special clock nets for rc extraction
+#WARNING (NREX-80) Net rst_i does not have a driver pin. It may have incomplete route.
+#Need to add unplaced ipin PIN:mem_i_pc_o[21] of net 1176(mem_i_pc_o[21]) into rc tree
+#Need to add unplaced ipin PIN:mem_i_pc_o[31] of net 709(mem_i_pc_o[31]) into rc tree
+#Need to add unplaced ipin PIN:rst_i of net 0(rst_i) into rc tree
+#Need to add unplaced ipin PIN:mem_i_pc_o[3] of net 21(mem_i_pc_o[3]) into rc tree
+#Need to add unplaced ipin PIN:mem_i_pc_o[7] of net 28(mem_i_pc_o[7]) into rc tree
+#Need to add unplaced ipin PIN:mem_i_pc_o[15] of net 3139(mem_i_pc_o[15]) into rc tree
+#WARNING (NREX-80) Net clk_i does not have a driver pin. It may have incomplete route.
+#Need to add unplaced ipin PIN:clk_i of net 3288(clk_i) into rc tree
+#Need to add unplaced ipin PIN:mem_i_pc_o[9] of net 2897(mem_i_pc_o[9]) into rc tree
+#Need to add unplaced ipin PIN:mem_i_pc_o[10] of net 35(mem_i_pc_o[10]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_addr_o[29] of net 4113(mem_d_addr_o[29]) into rc tree
+#WARNING (NREX-80) Net mem_d_error_i does not have a driver pin. It may have incomplete route.
+#Need to add unplaced ipin PIN:mem_d_error_i of net 4247(mem_d_error_i) into rc tree
+#Need to add unplaced ipin PIN:mem_i_pc_o[4] of net 41(mem_i_pc_o[4]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_addr_o[26] of net 5034(mem_d_addr_o[26]) into rc tree
+#Need to add unplaced ipin PIN:mem_i_pc_o[24] of net 42(mem_i_pc_o[24]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_addr_o[31] of net 4276(mem_d_addr_o[31]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_addr_o[2] of net 4428(mem_d_addr_o[2]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_addr_o[4] of net 4191(mem_d_addr_o[4]) into rc tree
+#Need to add unplaced ipin PIN:mem_i_pc_o[6] of net 47(mem_i_pc_o[6]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_addr_o[3] of net 4197(mem_d_addr_o[3]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_addr_o[27] of net 4311(mem_d_addr_o[27]) into rc tree
+#WARNING (NREX-80) Net mem_i_valid_i does not have a driver pin. It may have incomplete route.
+#Need to add unplaced ipin PIN:mem_i_valid_i of net 5522(mem_i_valid_i) into rc tree
+#Need to add unplaced ipin PIN:mem_d_addr_o[15] of net 4314(mem_d_addr_o[15]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_addr_o[28] of net 4324(mem_d_addr_o[28]) into rc tree
+#WARNING (NREX-80) Net mem_d_ack_i does not have a driver pin. It may have incomplete route.
+#Need to add unplaced ipin PIN:mem_d_ack_i of net 4334(mem_d_ack_i) into rc tree
+#Need to add unplaced ipin PIN:mem_d_addr_o[30] of net 4335(mem_d_addr_o[30]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_addr_o[9] of net 7437(mem_d_addr_o[9]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_addr_o[6] of net 7556(mem_d_addr_o[6]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_addr_o[18] of net 7810(mem_d_addr_o[18]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_addr_o[12] of net 7453(mem_d_addr_o[12]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_addr_o[14] of net 7818(mem_d_addr_o[14]) into rc tree
+#WARNING (NREX-80) Net mem_d_data_rd_i[23] does not have a driver pin. It may have incomplete route.
+#Need to add unplaced ipin PIN:mem_d_addr_o[24] of net 8340(mem_d_addr_o[24]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_rd_i[23] of net 8202(mem_d_data_rd_i[23]) into rc tree
+#Need to add unplaced ipin PIN:mem_i_pc_o[8] of net 63(mem_i_pc_o[8]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_addr_o[17] of net 7846(mem_d_addr_o[17]) into rc tree
+#Need to add unplaced ipin PIN:mem_i_pc_o[22] of net 64(mem_i_pc_o[22]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_addr_o[20] of net 8704(mem_d_addr_o[20]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_addr_o[13] of net 7457(mem_d_addr_o[13]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_addr_o[10] of net 8523(mem_d_addr_o[10]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_addr_o[23] of net 7650(mem_d_addr_o[23]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_addr_o[16] of net 7961(mem_d_addr_o[16]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_addr_o[8] of net 7663(mem_d_addr_o[8]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_addr_o[21] of net 8269(mem_d_addr_o[21]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_addr_o[22] of net 8166(mem_d_addr_o[22]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_addr_o[19] of net 7992(mem_d_addr_o[19]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_addr_o[11] of net 8170(mem_d_addr_o[11]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_addr_o[25] of net 8570(mem_d_addr_o[25]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_addr_o[7] of net 8187(mem_d_addr_o[7]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_addr_o[5] of net 7544(mem_d_addr_o[5]) into rc tree
+#Need to add unplaced ipin PIN:mem_i_pc_o[5] of net 73(mem_i_pc_o[5]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_flush_o of net 8998(mem_d_flush_o) into rc tree
+#Need to add unplaced ipin PIN:mem_i_pc_o[28] of net 74(mem_i_pc_o[28]) into rc tree
+#WARNING (NREX-80) Net mem_d_data_rd_i[29] does not have a driver pin. It may have incomplete route.
+#Need to add unplaced ipin PIN:mem_d_data_rd_i[29] of net 9298(mem_d_data_rd_i[29]) into rc tree
+#WARNING (NREX-80) Net mem_d_data_rd_i[27] does not have a driver pin. It may have incomplete route.
+#Need to add unplaced ipin PIN:mem_d_data_rd_i[27] of net 10017(mem_d_data_rd_i[27]) into rc tree
+#WARNING (NREX-80) Net mem_d_accept_i does not have a driver pin. It may have incomplete route.
+#Need to add unplaced ipin PIN:mem_d_accept_i of net 9925(mem_d_accept_i) into rc tree
+#WARNING (NREX-80) Net mem_d_data_rd_i[30] does not have a driver pin. It may have incomplete route.
+#Need to add unplaced ipin PIN:mem_d_data_rd_i[30] of net 10266(mem_d_data_rd_i[30]) into rc tree
+#WARNING (NREX-80) Net mem_d_data_rd_i[26] does not have a driver pin. It may have incomplete route.
+#WARNING (NREX-80) Net mem_d_data_rd_i[28] does not have a driver pin. It may have incomplete route.
+#Need to add unplaced ipin PIN:mem_d_data_rd_i[28] of net 9956(mem_d_data_rd_i[28]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_rd_i[26] of net 10219(mem_d_data_rd_i[26]) into rc tree
+#WARNING (NREX-80) Net mem_d_data_rd_i[25] does not have a driver pin. It may have incomplete route.
+#Need to add unplaced ipin PIN:mem_d_data_rd_i[25] of net 10275(mem_d_data_rd_i[25]) into rc tree
+#WARNING (NREX-80) Net mem_d_data_rd_i[24] does not have a driver pin. It may have incomplete route.
+#Need to add unplaced ipin PIN:mem_d_data_rd_i[24] of net 10277(mem_d_data_rd_i[24]) into rc tree
+#WARNING (NREX-80) Net mem_i_accept_i does not have a driver pin. It may have incomplete route.
+#Need to add unplaced ipin PIN:mem_i_accept_i of net 10278(mem_i_accept_i) into rc tree
+#Need to add unplaced ipin PIN:mem_i_pc_o[18] of net 85(mem_i_pc_o[18]) into rc tree
+#Need to add unplaced ipin PIN:mem_i_pc_o[16] of net 86(mem_i_pc_o[16]) into rc tree
+#Need to add unplaced ipin PIN:mem_i_pc_o[11] of net 87(mem_i_pc_o[11]) into rc tree
+#Need to add unplaced ipin PIN:mem_i_pc_o[14] of net 88(mem_i_pc_o[14]) into rc tree
+#Need to add unplaced ipin PIN:mem_i_pc_o[26] of net 96(mem_i_pc_o[26]) into rc tree
+#WARNING (NREX-80) Net mem_d_data_rd_i[13] does not have a driver pin. It may have incomplete route.
+#Need to add unplaced ipin PIN:mem_d_data_rd_i[13] of net 14104(mem_d_data_rd_i[13]) into rc tree
+#Need to add unplaced ipin PIN:mem_i_pc_o[20] of net 97(mem_i_pc_o[20]) into rc tree
+#Need to add unplaced ipin PIN:mem_i_pc_o[23] of net 98(mem_i_pc_o[23]) into rc tree
+#Need to add unplaced ipin PIN:mem_i_pc_o[12] of net 99(mem_i_pc_o[12]) into rc tree
+#Need to add unplaced ipin PIN:mem_i_pc_o[13] of net 100(mem_i_pc_o[13]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_writeback_o of net 15003(mem_d_writeback_o) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_wr_o[24] of net 14782(mem_d_data_wr_o[24]) into rc tree
+#Need to add unplaced ipin PIN:mem_i_pc_o[19] of net 104(mem_i_pc_o[19]) into rc tree
+#WARNING (NREX-80) Net mem_d_data_rd_i[22] does not have a driver pin. It may have incomplete route.
+#Need to add unplaced ipin PIN:mem_d_data_rd_i[22] of net 15525(mem_d_data_rd_i[22]) into rc tree
+#Need to add unplaced ipin PIN:mem_i_pc_o[17] of net 105(mem_i_pc_o[17]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_wr_o[15] of net 17282(mem_d_data_wr_o[15]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_invalidate_o of net 16237(mem_d_invalidate_o) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_wr_o[16] of net 16871(mem_d_data_wr_o[16]) into rc tree
+#Need to add unplaced ipin PIN:mem_i_pc_o[30] of net 114(mem_i_pc_o[30]) into rc tree
+#WARNING (NREX-80) Net mem_d_data_rd_i[18] does not have a driver pin. It may have incomplete route.
+#Need to add unplaced ipin PIN:mem_d_data_rd_i[18] of net 18059(mem_d_data_rd_i[18]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_wr_o[5] of net 18067(mem_d_data_wr_o[5]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_wr_o[11] of net 18068(mem_d_data_wr_o[11]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_wr_o[28] of net 18069(mem_d_data_wr_o[28]) into rc tree
+#Need to add unplaced ipin PIN:mem_i_pc_o[29] of net 115(mem_i_pc_o[29]) into rc tree
+#WARNING (NREX-80) Net mem_d_data_rd_i[10] does not have a driver pin. It may have incomplete route.
+#Need to add unplaced ipin PIN:mem_d_data_rd_i[10] of net 18086(mem_d_data_rd_i[10]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_wr_o[26] of net 17973(mem_d_data_wr_o[26]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_wr_o[23] of net 18594(mem_d_data_wr_o[23]) into rc tree
+#Need to add unplaced ipin PIN:mem_i_pc_o[25] of net 119(mem_i_pc_o[25]) into rc tree
+#Need to add unplaced ipin PIN:mem_i_pc_o[27] of net 120(mem_i_pc_o[27]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_wr_o[4] of net 18399(mem_d_data_wr_o[4]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_wr_o[10] of net 19004(mem_d_data_wr_o[10]) into rc tree
+#WARNING (NREX-80) Net mem_d_data_rd_i[7] does not have a driver pin. It may have incomplete route.
+#Need to add unplaced ipin PIN:mem_d_data_wr_o[14] of net 18300(mem_d_data_wr_o[14]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_rd_i[7] of net 19106(mem_d_data_rd_i[7]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_wr_o[25] of net 18303(mem_d_data_wr_o[25]) into rc tree
+#WARNING (EMS-27) Message (NREX-80) has exceeded the current message display limit of 20.
+#To increase the message display limit, refer to the product command reference manual.
+#Need to add unplaced ipin PIN:mem_d_data_wr_o[6] of net 19263(mem_d_data_wr_o[6]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_rd_i[14] of net 19604(mem_d_data_rd_i[14]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_rd_i[16] of net 19608(mem_d_data_rd_i[16]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_wr_o[13] of net 19611(mem_d_data_wr_o[13]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_wr_o[12] of net 19612(mem_d_data_wr_o[12]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_rd_i[12] of net 19613(mem_d_data_rd_i[12]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_wr_o[17] of net 19393(mem_d_data_wr_o[17]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_wr_o[30] of net 19025(mem_d_data_wr_o[30]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_rd_i[21] of net 19623(mem_d_data_rd_i[21]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_wr_o[22] of net 19507(mem_d_data_wr_o[22]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_wr_o[1] of net 19430(mem_d_data_wr_o[1]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_wr_o[7] of net 19438(mem_d_data_wr_o[7]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_rd_i[9] of net 19660(mem_d_data_rd_i[9]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_rd_i[8] of net 19661(mem_d_data_rd_i[8]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_rd_i[11] of net 19667(mem_d_data_rd_i[11]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_rd_i[20] of net 19675(mem_d_data_rd_i[20]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_wr_o[0] of net 19554(mem_d_data_wr_o[0]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_wr_o[20] of net 19555(mem_d_data_wr_o[20]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_wr_o[21] of net 19677(mem_d_data_wr_o[21]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_wr_o[2] of net 19678(mem_d_data_wr_o[2]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_wr_o[31] of net 19558(mem_d_data_wr_o[31]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_wr_o[18] of net 19680(mem_d_data_wr_o[18]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_wr_o[9] of net 19560(mem_d_data_wr_o[9]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_rd_i[19] of net 19681(mem_d_data_rd_i[19]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_wr_o[3] of net 19682(mem_d_data_wr_o[3]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_wr_o[19] of net 19683(mem_d_data_wr_o[19]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_cacheable_o of net 19684(mem_d_cacheable_o) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_wr_o[27] of net 19199(mem_d_data_wr_o[27]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_wr_o[29] of net 19685(mem_d_data_wr_o[29]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_wr_o[8] of net 19686(mem_d_data_wr_o[8]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_rd_i[15] of net 19687(mem_d_data_rd_i[15]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_rd_i[31] of net 19688(mem_d_data_rd_i[31]) into rc tree
+#Need to add unplaced ipin PIN:mem_d_data_rd_i[17] of net 19689(mem_d_data_rd_i[17]) into rc tree
+#Total 60171 nets were built. 243 nodes added to break long wires. 0 net(s) have incomplete routes.
+#Start inst blockage merging.
+#Run Statistics for Extraction:
+#   Cpu time = 00:00:19, elapsed time = 00:00:03 .
+#   Increased memory =   915.67 (MB), total memory =  3990.15 (MB), peak memory =  4544.79 (MB)
+#Register nets and terms for rcdb /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_mul_mule_power/scripts/cadence/innovus_temp_497241_ffbaed14-e34a-4a02-9c9e-c3d3c0f4a710_dockereda-rocky8_ykaraagac_N4PSoN/nr0_497241_ffbaed14-e34a-4a02-9c9e-c3d3c0f4a71033WDYj.rcdb.d
+#Finish registering nets and terms for rcdb.
+#Simplify RC tree: cpu time = 00:00:00, elapsed time = 00:00:00, memory = 3402.35 (MB), peak = 4544.79 (MB)
+#RC Statistics: 270048 Res, 137864 Ground Cap, 13857 XCap (Edge to Edge)
+#WARNING (NREX-102) Net mem_i_rd_o is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net mem_d_rd_o is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net mem_d_wr_o[1] is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net mem_d_wr_o[0] is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net mem_d_wr_o[3] is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net mem_d_wr_o[2] is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net mem_i_flush_o is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net mem_d_data_rd_i[5] is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net mem_d_data_rd_i[6] is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net mem_d_data_rd_i[2] is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net mem_d_data_rd_i[3] is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net mem_d_data_rd_i[0] is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net mem_d_data_rd_i[4] is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net cpu_id_i[2] is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net cpu_id_i[0] is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net cpu_id_i[31] is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net mem_i_error_i is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net mem_i_inst_i[55] is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net mem_i_inst_i[44] is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net mem_i_inst_i[63] is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (EMS-27) Message (NREX-102) has exceeded the current message display limit of 20.
+#To increase the message display limit, refer to the product command reference manual.
+#RC V/H edge ratio: 0.30, Avg V/H Edge Length: 2996.93 (112617), Avg L-Edge Length: 8699.24 (92581)
+#Nets and terms are pre-registered for rcdb /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_mul_mule_power/scripts/cadence/innovus_temp_497241_ffbaed14-e34a-4a02-9c9e-c3d3c0f4a710_dockereda-rocky8_ykaraagac_N4PSoN/nr0_497241_ffbaed14-e34a-4a02-9c9e-c3d3c0f4a71033WDYj.rcdb.d.
+#Start writing RC data.
+#Finish writing RC data
+#Finish writing rcdb with 330393 nodes, 270222 edges, and 33322 xcaps
+#cpu time = 00:00:02, elapsed time = 00:00:00, memory = 3392.15 (MB), peak = 4544.79 (MB)
+Restoring parasitic data from file '/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_mul_mule_power/scripts/cadence/innovus_temp_497241_ffbaed14-e34a-4a02-9c9e-c3d3c0f4a710_dockereda-rocky8_ykaraagac_N4PSoN/nr0_497241_ffbaed14-e34a-4a02-9c9e-c3d3c0f4a71033WDYj.rcdb.d' ...
+Reading RCDB with compressed RC data.
+Reading RCDB with compressed RC data.
+Begin read_parasitics... (cpu: 0:00:00.0 real: 0:00:00.0 mem: 3392.152M)
+Following multi-corner parasitics specified:
+	/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_mul_mule_power/scripts/cadence/innovus_temp_497241_ffbaed14-e34a-4a02-9c9e-c3d3c0f4a710_dockereda-rocky8_ykaraagac_N4PSoN/nr0_497241_ffbaed14-e34a-4a02-9c9e-c3d3c0f4a71033WDYj.rcdb.d (rcdb)
+Reading RCDB with compressed RC data.
+		Cell riscv_core has rcdb /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_mul_mule_power/scripts/cadence/innovus_temp_497241_ffbaed14-e34a-4a02-9c9e-c3d3c0f4a710_dockereda-rocky8_ykaraagac_N4PSoN/nr0_497241_ffbaed14-e34a-4a02-9c9e-c3d3c0f4a71033WDYj.rcdb.d specified
+Cell riscv_core, hinst 
+Reading RCDB with compressed RC data.
+Done read_parasitics... (cpu: 0:00:00.5 real: 0:00:00.0 mem: 3396.562M)
+#
+#Restore RCDB.
+#
+#Complete tQuantus RC extraction.
+#Cpu time = 00:00:31
+#Elapsed time = 00:00:05
+#Increased memory = 343.05 (MB)
+#Total memory = 3396.56 (MB)
+#Peak memory = 4544.79 (MB)
+#
+#243 inserted nodes are removed
+#Restored 0 tie nets, 0 tie snets, 0 partial nets
+#Start Design Signature (0)
+#Finish Inst Signature in MT(66283057)
+#Finish Net Signature in MT(111879995)
+#Finish SNet Signature in MT (125919808)
+#Run time and memory report for RC extraction:
+#RC extraction running on  3.78GHz 1024KB Cache 128CPU.
+#Run Statistics for snet signature:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 , scale factor =  1.02/16, scale score = 0.06.
+#    Increased memory =     0.16 (MB), total memory =  3110.23 (MB), peak memory =  4544.79 (MB)
+#Run Statistics for Net Final Signature:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+#   Increased memory =     0.00 (MB), total memory =  3110.07 (MB), peak memory =  4544.79 (MB)
+#Run Statistics for Net launch:
+#   Cpu time = 00:00:01, elapsed time = 00:00:00 , scale factor = 13.41/16, scale score = 0.84.
+#    Increased memory =     1.86 (MB), total memory =  3110.07 (MB), peak memory =  4544.79 (MB)
+#Run Statistics for Net init_dbsNet_slist:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+#   Increased memory =     0.00 (MB), total memory =  3108.21 (MB), peak memory =  4544.79 (MB)
+#Run Statistics for net signature:
+#   Cpu time = 00:00:01, elapsed time = 00:00:00 , scale factor = 12.09/16, scale score = 0.76.
+#    Increased memory =     1.86 (MB), total memory =  3110.07 (MB), peak memory =  4544.79 (MB)
+#Run Statistics for inst signature:
+#   Cpu time = 00:00:01, elapsed time = 00:00:00 , scale factor =  9.28/16, scale score = 0.58.
+#    Increased memory =    -9.93 (MB), total memory =  3108.21 (MB), peak memory =  4544.79 (MB)
+Start delay calculation (fullDC) (16 T). (MEM=3387.23)
+Reading RCDB with compressed RC data.
+AAE_INFO: 16 threads acquired from CTE.
+Total number of fetched objects 61804
+AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
+AAE_INFO-618: Total number of nets in the design is 67263,  91.9 percent of the nets selected for SI analysis
+End delay calculation. (MEM=3470.16 CPU=0:00:12.4 REAL=0:00:01.0)
+End delay calculation (fullDC). (MEM=3462.51 CPU=0:00:15.4 REAL=0:00:03.0)
+Save waveform /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_mul_mule_power/scripts/cadence/innovus_temp_497241_ffbaed14-e34a-4a02-9c9e-c3d3c0f4a710_dockereda-rocky8_ykaraagac_N4PSoN/.AAE_hoTjEP/.AAE_497241_ffbaed14-e34a-4a02-9c9e-c3d3c0f4a710/waveform.data...
+Loading CTE timing window with TwFlowType 0...(CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 3495.5M)
+Add other clocks and setupCteToAAEClockMapping during iter 1
+Loading CTE timing window is completed (CPU = 0:00:00.5, REAL = 0:00:00.0, MEM = 3495.5M)
+Starting SI iteration 2
+Start delay calculation (fullDC) (16 T). (MEM=3684.54)
+Glitch Analysis: View WC_VIEW -- Total Number of Nets Skipped = 0. 
+Glitch Analysis: View WC_VIEW -- Total Number of Nets Analyzed = 61804. 
+Total number of fetched objects 61804
+AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
+AAE_INFO-618: Total number of nets in the design is 67263,  7.6 percent of the nets selected for SI analysis
+End delay calculation. (MEM=3729.54 CPU=0:00:02.5 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=3729.54 CPU=0:00:02.5 REAL=0:00:00.0)
+Load RC corner of view WC_VIEW
+
+Begin Power Analysis
+
+             0V	    VSS
+           1.1V	    VDD
+
+Begin Processing Timing Library for Power Calculation
+
+Ended Processing Timing Library for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=3676.54MB/9867.21MB/3676.54MB)
+
+
+
+Begin Processing Power Net/Grid for Power Calculation
+
+Ended Processing Power Net/Grid for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=3676.54MB/9867.21MB/3676.54MB)
+
+Begin Processing Timing Window Data for Power Calculation
+
+clk(1499.25MHz) CK: assigning clock clk to net clk_i
+Ended Processing Timing Window Data for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=3693.54MB/10899.28MB/3693.54MB)
+
+** WARN:  (VOLTUS_POWR-1784): The SDC clock frequency 1499.25MHz is being overwritten with the VCD clock frequency 100MHz for the clock 'clk' associated with the net
+'clk_i' from the TCF file. If the SDC clock frequency is required for static power calculation, use the command
+'set_switching_activity -clock <clock name> -scale_factor <num>' to scale frequency of this clock.
+
+Begin Processing User Attributes
+
+Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=3693.54MB/10899.28MB/3693.54MB)
+
+Begin Processing Signal Activity
+
+
+Starting Levelizing
+2026-May-29 10:22:23 (2026-May-29 10:22:23 GMT)
+2026-May-29 10:22:23 (2026-May-29 10:22:23 GMT): 10%
+2026-May-29 10:22:23 (2026-May-29 10:22:23 GMT): 20%
+2026-May-29 10:22:23 (2026-May-29 10:22:23 GMT): 30%
+2026-May-29 10:22:23 (2026-May-29 10:22:23 GMT): 40%
+2026-May-29 10:22:24 (2026-May-29 10:22:24 GMT): 50%
+2026-May-29 10:22:24 (2026-May-29 10:22:24 GMT): 60%
+2026-May-29 10:22:24 (2026-May-29 10:22:24 GMT): 70%
+2026-May-29 10:22:24 (2026-May-29 10:22:24 GMT): 80%
+2026-May-29 10:22:24 (2026-May-29 10:22:24 GMT): 90%
+
+Finished Levelizing
+2026-May-29 10:22:24 (2026-May-29 10:22:24 GMT)
+
+Starting Activity Propagation
+2026-May-29 10:22:24 (2026-May-29 10:22:24 GMT)
+** INFO:  (VOLTUS_POWR-1356): No default input activity has been set. Defaulting to 0.2.
+Use 'set_default_switching_activity -input_activity' command to change the default activity value.
+
+2026-May-29 10:22:24 (2026-May-29 10:22:24 GMT): 10%
+2026-May-29 10:22:24 (2026-May-29 10:22:24 GMT): 20%
+
+Finished Activity Propagation
+2026-May-29 10:22:25 (2026-May-29 10:22:25 GMT)
+
+Activity annotation summary:
+        Primary Inputs : 180/180 = 100%
+          Flop outputs : 1903/10414 = 18.2735%
+  Memory/Macro outputs : 0/0 = 0%
+      Tristate outputs : 0/0 = 0%
+            Total Nets : 4081/61804 = 6.60313%
+
+Ended Processing Signal Activity: (cpu=0:00:01, real=0:00:01, mem(process/total/peak)=3696.54MB/10899.28MB/3696.54MB)
+
+Begin Power Computation
+
+      ----------------------------------------------------------
+      # of cell(s) missing both power/leakage table: 0
+      # of cell(s) missing power table: 0
+      # of cell(s) missing leakage table: 0
+      ----------------------------------------------------------
+
+
+
+Starting Calculating power
+2026-May-29 10:22:25 (2026-May-29 10:22:25 GMT)
+2026-May-29 10:22:26 (2026-May-29 10:22:26 GMT): 10%
+2026-May-29 10:22:26 (2026-May-29 10:22:26 GMT): 20%
+2026-May-29 10:22:26 (2026-May-29 10:22:26 GMT): 30%
+2026-May-29 10:22:26 (2026-May-29 10:22:26 GMT): 40%
+2026-May-29 10:22:26 (2026-May-29 10:22:26 GMT): 50%
+2026-May-29 10:22:26 (2026-May-29 10:22:26 GMT): 60%
+2026-May-29 10:22:26 (2026-May-29 10:22:26 GMT): 70%
+2026-May-29 10:22:26 (2026-May-29 10:22:26 GMT): 80%
+2026-May-29 10:22:26 (2026-May-29 10:22:26 GMT): 90%
+
+Finished Calculating power
+2026-May-29 10:22:26 (2026-May-29 10:22:26 GMT)
+      # of MSMV cell(s) missing power_level: 0
+Ended Power Computation: (cpu=0:00:03, real=0:00:00, mem(process/total/peak)=3707.54MB/11065.34MB/3707.54MB)
+
+Begin Processing User Attributes
+
+Begin Processing set_power
+Ended Processing set_power: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=3707.54MB/11065.34MB/3707.54MB)
+Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=3707.54MB/11065.34MB/3707.54MB)
+
+Ended Power Analysis: (cpu=0:00:05, real=0:00:03, mem(process/total/peak)=3707.54MB/11065.34MB/3707.54MB)
+
+Begin Boundary Leakage Calculation
+Ended Boundary Leakage Calculation: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=3707.54MB/11065.34MB/3707.54MB)
+Begin Static Power Report Generation
+*----------------------------------------------------------------------------------------
+*	Innovus 25.12-s079_1 (64bit) 11/18/2025 12:56 (Linux 4.18.0-305.el8.x86_64)
+*	
+*
+* 	Date & Time:	2026-May-29 10:22:26 (2026-May-29 10:22:26 GMT)
+*
+*----------------------------------------------------------------------------------------
+*
+*	Design: riscv_core
+*
+*	Liberty Libraries used:
+*	        /home/ykaraagac/cadence-bitirme/Enablements/NanGate45/lib/NangateOpenCellLibrary_typical.lib
+*
+*	Parasitic Files used:
+*
+*       Dynamic View: WC_VIEW
+*
+*       Leakage View: WC_VIEW
+*
+*       User-Defined Activity : N.A.
+*
+*	Switching Activity File used:
+*	        /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_mul_mule_power/scripts/cadence/outputs/vcd/core_mul.vcd
+*                  Vcd Window used(Start Time, Stop Time):  
+*                Vcd Scale Factor: 1
+*
+*       Hierarchical Global Activity: N.A.
+*
+*       Global Activity: N.A.
+*
+*       Sequential Element Activity: 0.200000
+*
+*       Primary Input Activity: 0.200000
+*
+*       Default icg ratio: N.A.
+*
+*       Global Comb ClockGate Ratio: N.A.
+*
+*	Power Units = 1mW
+*
+*	Time Units = 1e-09 secs
+*
+*       report_power
+*
+-----------------------------------------------------------------------------------------
+*
+
+
+
+Total Power
+-----------------------------------------------------------------------------------------
+Total Internal Power:        6.23236870 	   44.8215%
+Total Switching Power:       5.12484485 	   36.8565%
+Total Leakage Power:         2.54763751 	   18.3219%
+Total Power:                13.90485107
+-----------------------------------------------------------------------------------------
+
+
+Group                           Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+Sequential                         2.856      0.5174      0.4599       3.833       27.57
+Macro                                  0           0           0           0           0
+IO                                     0           0           0           0           0
+Combinational                      2.826       3.592       2.071       8.489       61.05
+Clock (Combinational)             0.5498       1.016     0.01695       1.583       11.38
+Clock (Sequential)                     0           0           0           0           0
+-----------------------------------------------------------------------------------------
+Total                              6.232       5.125       2.548        13.9         100
+-----------------------------------------------------------------------------------------
+
+
+Rail                  Voltage   Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+VDD                       1.1      6.232       5.125       2.548        13.9         100
+
+
+Clock                           Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+clk                               0.5498       1.016     0.01695       1.583       11.38
+-----------------------------------------------------------------------------------------
+Total                             0.5498       1.016     0.01695       1.583       11.38
+-----------------------------------------------------------------------------------------
+Clock: clk
+Clock Period: 0.010000 usec 
+Clock Toggle Rate:   200.0000 Mhz 
+Clock Static Probability:  0.5000
+  
+ 
+ 
+-----------------------------------------------------------------------------------------
+*	Power Distribution Summary: 
+*              Highest Average Power: u_issue/FE_OCPC7792_n_36542 (BUF_X32):          0.01662
+*              Highest Leakage Power:     u_issue/FE_RC_30826_0 (BUF_X32):         0.000757
+*                Total Cap:      4.03046e-10 F
+*                Total instances in design: 56303
+*                Total instances in design with no power:     0
+*                Total instances in design with no activty:     0
+
+*                Total Fillers and Decap:     0
+-----------------------------------------------------------------------------------------
+ 
+** INFO:  (VOLTUS_POWR-3465): There are 0 decaps and 0 fillers in the design
+
+Ended Static Power Report Generation: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=3723.54MB/11065.34MB/3723.54MB)
+

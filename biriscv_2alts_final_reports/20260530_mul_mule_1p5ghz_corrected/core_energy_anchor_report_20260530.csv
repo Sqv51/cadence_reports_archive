@@ -1,0 +1,3 @@
+benchmark,power_2standard_mW,power_hybrid_mW,cycles_2standard,cycles_hybrid,int_mul_ops_2standard,int_mul_ops_hybrid,eop_2standard_pJ,eop_hybrid_pJ,hybrid_minus_2standard_pJ_per_op,hybrid_delta_percent
+pair_mulmule_overlap,10.12674034,9.34486947,155062,155062,10000,10000,1570.272611,1449.034150,-121.238461,-7.720854
+fir_unrolled_latency_hidden_mule,8.71725369,7.82746974,185715,214443,16128,16128,1003.797600,1040.765187,36.967587,3.682773

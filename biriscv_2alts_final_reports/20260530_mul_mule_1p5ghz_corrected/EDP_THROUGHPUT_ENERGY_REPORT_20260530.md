@@ -6,15 +6,33 @@ This section supersedes the older single-testbench interpretation when discussin
 
 ### Anchor workloads and validated core energy results
 
-1) pair_mulmule_overlap (controlled mechanism)
-- core_2standard power_total: 10.12674034 mW
-- core_hybrid power_total: 9.34486947 mW
-- cycles: 155062 vs 155062
-- integer multiply ops: 10000 vs 10000
-- E/op (pJ): 1570.272611 vs 1449.034150
-- hybrid delta: -121.238461 pJ/op (-7.720854%)
+If the goal is to amplify validated core-energy savings, the strongest existing benchmarks are:
 
-2) fir_unrolled_latency_hidden_mule (application-like boundary)
+1) complex_mul_vec (best absolute savings)
+- core_2standard power_total: 8.28929158 mW
+- core_hybrid power_total: 7.39347994 mW
+- cycles: 109170 vs 109170
+- integer multiply ops: 2048 vs 2048
+- E/op (pJ): 441866.192280 vs 394114.357934
+- hybrid delta: -47751.834346 pJ/op (-10.806854%)
+
+2) fft_butterfly (near-best corroborating savings)
+- core_2standard power_total: 8.35169996 mW
+- core_hybrid power_total: 7.45703880 mW
+- cycles: 84951 vs 84951
+- integer multiply ops: 1024 vs 1024
+- E/op (pJ): 692856.702443 vs 618635.647557
+- hybrid delta: -74221.054886 pJ/op (-10.712324%)
+
+3) fft_butterfly_latency_hidden_mule (best explicit MULE / latency-hidden savings)
+- core_2standard power_total: 8.33314691 mW
+- core_hybrid power_total: 7.46215293 mW
+- cycles: 86993 vs 87249
+- integer multiply ops: 1024 vs 1024
+- E/op (pJ): 707935.008927 vs 635806.036123
+- hybrid delta: -72128.972804 pJ/op (-10.188643%)
+
+4) fir_unrolled_latency_hidden_mule (boundary counterexample)
 - core_2standard power_total: 8.71725369 mW
 - core_hybrid power_total: 7.82746974 mW
 - cycles: 185715 vs 214443
@@ -25,15 +43,19 @@ This section supersedes the older single-testbench interpretation when discussin
 ### Key interpretation for thesis narrative
 
 - Core-level energy savings are workload dependent.
-- Hybrid can provide clear E/op savings when latency-hiding conditions are favorable.
-- Hybrid can lose E/op when cycle inflation dominates reduced average power.
+- To maximize visible savings in the thesis narrative, use complex_mul_vec and fft_butterfly as the headline energy anchors.
+- If the text must explicitly demonstrate MULE/latency-hidden behavior rather than just the hybrid core tradeoff, use fft_butterfly_latency_hidden_mule as the positive case.
+- Keep fir_unrolled_latency_hidden_mule as the boundary case showing that cycle inflation can erase the power advantage.
+- pair_mulmule_overlap remains a useful controlled mechanism microbenchmark, but it is no longer the strongest energy-saving headline figure.
 
 ### Energy-first thesis framing
 
 - The primary thesis claim should use core energy per multiply operation, not peak-window behavior.
-- pair_mulmule_overlap is the positive case: hybrid reduces core power by 7.720854% with no cycle penalty, so E/op also improves by 7.720854%.
-- fir_unrolled_latency_hidden_mule is the boundary case: hybrid reduces core power by 10.207159%, but cycles increase by 15.468864%, so E/op becomes 3.682773% worse.
-- Thesis-safe conclusion: hybrid saves core energy only when latency hiding absorbs the longer MULE latency; lower average power alone is not sufficient.
+- complex_mul_vec is the strongest validated savings case: hybrid reduces core power by 10.806854% with no cycle penalty, so E/op also improves by 10.806854%.
+- fft_butterfly closely corroborates this with a 10.712324% E/op improvement, also at equal cycle count.
+- fft_butterfly_latency_hidden_mule is the strongest explicit MULE/latency-hidden case: hybrid reduces core power by 10.452162% and only pays a 0.294277% cycle increase, so E/op still improves by 10.188643%.
+- fir_unrolled_latency_hidden_mule remains the boundary case: hybrid reduces core power by 10.207159%, but cycles increase by 15.468864%, so E/op becomes 3.682773% worse.
+- Recommended thesis-safe wording: use complex_mul_vec as the headline savings result, fft_butterfly as corroboration, and fft_butterfly_latency_hidden_mule when an explicit latency-hidden MULE example is required.
 
 ### Secondary peak appendix status
 

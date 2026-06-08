@@ -1,0 +1,864 @@
+% !TEX root = main.tex
+
+We present the evaluation in five parts: standalone multiplier
+comparison, in-core instance analysis, full-core hybrid vs.\ baseline
+comparison, updated full-core switching-case analysis from benchmark VCD
+replay, and benchmark-level dependency-distance analysis.
+
+%% ================================================================
+\subsection{Standalone Multiplier Comparison}\label{sec:eval:standalone}
+
+Table~\ref{tab:standalone_power} reports the post-place-and-route
+power breakdown for each multiplier synthesised and routed in
+isolation under identical testbench stimuli.
+
+\begin{table}[t]
+  \caption{Standalone multiplier power and area (NanGate 45\,nm,
+           100\,MHz, post-P\&R).}
+  \label{tab:standalone_power}
+  \centering
+  \small
+  \begin{tabular}{lrrr}
+    \toprule
+    \textbf{Metric} & \textbf{\textsc{mul}} & \textbf{\textsc{mule}} & $\boldsymbol{\Delta}$ \\
+    \midrule
+    Internal power (mW) & 0.6515 & 0.1383 & $-78.8$\% \\
+    Switching power (mW)& 0.5601 & 0.0878 & $-84.3$\% \\
+    Leakage power (mW)  & 0.0895 & 0.0392 & $-56.2$\% \\
+    \textbf{Total power (mW)} & \textbf{1.301} & \textbf{0.265} & $\boldsymbol{-79.6}$\textbf{\%} \\
+    \midrule
+    Dynamic power (mW)  & 1.2116 & 0.2261 & $-81.3$\% \\
+    Leakage fraction     & 6.88\% & 14.77\% & --- \\
+    \midrule
+    Cell count           & 2\,302  & 822    & $-64.3$\% \\
+    Cell area ($\mu$m$^{2}$) & 4\,514.6 & 2\,135.4 & $-52.7$\% \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\textsc{mule} consumes \textbf{79.6\% less total power} than
+\textsc{mul}, with reductions across all three components.  The
+switching power reduction (84.3\%) is the largest contributor,
+reflecting the dramatically smaller combinational cone.
+\textsc{mule}'s leakage fraction (14.77\%) is higher than \textsc{mul}'s
+(6.88\%) in relative terms because its dynamic power is so low;
+in absolute terms, its leakage is still 56.2\% lower owing to the
+52.7\% area reduction.
+
+%% ================================================================
+\subsection{In-Core Instance Analysis}\label{sec:eval:incore}
+
+Table~\ref{tab:incore_power} presents the same power decomposition for
+the multiplier instances measured \emph{within} the hybrid core during
+the \texttt{tb\_mul\_compare} workload. Both units are present in the
+same simulation and same netlist; the differences arise purely from
+their micro-architectural activity.
+
+\begin{table}[t]
+  \caption{In-core multiplier instance power (Hybrid configuration,
+           post-P\&R, VCD-annotated).}
+  \label{tab:incore_power}
+  \centering
+  \small
+  \begin{tabular}{lrrr}
+    \toprule
+    \textbf{Metric} & \textbf{u\_mul} & \textbf{u\_mule} & $\boldsymbol{\Delta}$ \\
+    \midrule
+    Internal power (mW)  & 0.5954 & 0.0871 & $-85.4$\% \\
+    Switching power (mW) & 0.4663 & 0.0280 & $-94.0$\% \\
+    Leakage power (mW)   & 0.1263 & 0.0399 & $-68.4$\% \\
+    \textbf{Total power (mW)} & \textbf{1.188} & \textbf{0.155} & $\boldsymbol{-87.0}$\textbf{\%} \\
+    \midrule
+    \% of core power (8.270\,mW) & 14.36\% & 1.87\% & --- \\
+    Dynamic power (mW)   & 1.0617 & 0.1151 & $-89.2$\% \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The in-core reduction is even larger than standalone (87.0\%
+vs.\ 79.6\%) because the surrounding core logic effectively power-gates
+\textsc{mule}'s inputs when no multiply is in flight, reducing
+switching power by 94.0\%.  The \textsc{mul} instance accounts for
+14.36\% of total core power; \textsc{mule} accounts for only 1.87\%.
+
+%% ================================================================
+\subsection{Energy Per Instruction and Energy--Delay Product}%
+\label{sec:eval:epi}
+
+Table~\ref{tab:epi_edp} consolidates EPI and EDP for both multipliers
+across standalone and in-core contexts, with and without leakage.
+
+\begin{table}[t]
+  \caption{EPI and EDP comparison (standalone and in-core).}
+  \label{tab:epi_edp}
+  \centering
+  \small
+  \begin{tabular}{lrrrr}
+    \toprule
+    & \multicolumn{2}{c}{\textbf{EPI (pJ)}} & \multicolumn{2}{c}{\textbf{EDP (aJ$\cdot$s)}} \\
+    \cmidrule(lr){2-3}\cmidrule(lr){4-5}
+    \textbf{Context} & \textsc{mul} & \textsc{mule} & \textsc{mul} & \textsc{mule} \\
+    \midrule
+    Standalone (total)   & 26.02 & 13.25 & 520.4 & 662.5 \\
+    Standalone (dynamic) & 24.23 & 11.31 & 484.6 & 565.5 \\
+    In-core (total)      & 23.76 &  7.75 & 475.2 & 387.3 \\
+    In-core (dynamic)    & 21.23 &  5.76 & 424.6 & 288.0 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Two observations stand out.
+\emph{First}, \textsc{mule} wins in EPI across all contexts: even in
+the standalone case, where back-to-back exercise maximises its average
+power, the 5-cycle latency is overcome by the $\sim\!5\times$ power
+reduction, yielding a 49.1\% lower EPI.  In-core, the reduction widens
+to \textbf{67.4\%} because idle-period power gating further suppresses
+\textsc{mule}'s switching activity.
+
+\emph{Second}, the EDP picture depends on context.  Standalone,
+\textsc{mul} wins EDP because \textsc{mule}'s longer latency is
+penalised quadratically.  \emph{In-core}, however, \textsc{mule}'s
+dramatically lower power overcomes the latency penalty, yielding a
+\textbf{32.2\% EDP improvement} on dynamic power---the most physically
+meaningful comparison, as it isolates activity-dependent energy.
+
+%% ================================================================
+\subsection{Hybrid vs.\ Baseline Core Comparison}\label{sec:eval:hybrid}
+
+Table~\ref{tab:core_power} compares total core power, multiplier
+power, and area for the Hybrid (MUL\,+\,MULE) and Baseline
+($2\!\times\!$MUL) configurations.
+
+\begin{table}[t]
+  \caption{Core-level comparison: Hybrid vs.\ $2\!\times\!$MUL
+           baseline (post-P\&R, VCD-annotated).}
+  \label{tab:core_power}
+  \centering
+  \small
+  \begin{tabular}{lrrr}
+    \toprule
+    \textbf{Metric} & $\boldsymbol{2\!\times\!}$\textbf{MUL} & \textbf{Hybrid} & $\boldsymbol{\Delta}$ \\
+    \midrule
+    \multicolumn{4}{l}{\emph{Core power}} \\
+    \quad Internal (mW)  & 4.532 & 4.430 & $-2.3$\% \\
+    \quad Switching (mW) & 2.532 & 2.650 & $+4.7$\% \\
+    \quad Leakage (mW)   & 1.230 & 1.190 & $-3.3$\% \\
+    \quad \textbf{Total (mW)} & \textbf{8.295} & \textbf{8.270} & $\boldsymbol{-0.30}$\textbf{\%} \\
+    \midrule
+    \multicolumn{4}{l}{\emph{Multiplier power}} \\
+    \quad u\_mul (mW)     & 2.020 & 1.188 & $-41.2$\% \\
+    \quad u\_mul2 / u\_mule (mW) & 1.017 & 0.155 & $-84.8$\% \\
+    \quad \textbf{Total (mW)} & \textbf{3.037} & \textbf{1.343} & $\boldsymbol{-55.8}$\textbf{\%} \\
+    \midrule
+    \multicolumn{4}{l}{\emph{Area}} \\
+    \quad Core area ($\mu$m$^{2}$)  & 62\,640.9 & 61\,009.5 & $-2.6$\% \\
+    \quad Core cell count            & 29\,153   & 28\,302   & $-2.9$\% \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Although total core power is nearly identical ($-0.30$\%), the internal
+composition changes substantially. The combined multiplier power drops
+by \textbf{55.8\%}, from 3.037\,mW (36.6\% of core) to 1.343\,mW
+(16.2\% of core). This freed power budget can be allocated to other
+micro-architectural features or to voltage/frequency reduction.
+The core area decreases by 2.6\% because \textsc{mule} occupies only
+2\,133.9\,$\mu$m$^{2}$ versus 4\,515.9\,$\mu$m$^{2}$ for the second
+\textsc{mul}.
+
+The slight increase in switching power ($+4.7$\%) in the hybrid core
+is attributable to different routing topologies produced by the placer
+when the second multiplier's footprint changes; it does not offset the
+internal and leakage reductions.
+
+%% ================================================================
+\subsection{Updated Full-Core Switching Cases (2026)}
+\label{sec:eval:switching2026}
+
+To align the mechanism-level discussion with the latest validated
+full-core benchmark resources, Table~\ref{tab:switching_cases_update}
+summarizes the explicit latency-hidden switching workloads measured
+through matched VCD replay. The key distinction is between
+\emph{architecture-level} comparison (switched Hybrid vs.\ switched
+2$\times$MUL) and \emph{rewrite-level} comparison (switched Hybrid
+vs.\ baseline Hybrid).
+
+To avoid baseline mixing, we report savings in three lanes throughout this
+section. Lane A (architecture-level) answers whether Hybrid is better than the
+homogeneous 2$\times$MUL core under the same workload and implementation flow;
+this lane captures the larger power-oriented advantage discussed by the
+break-even model. Lane B (rewrite-level) answers whether adding
+\texttt{mul}$\rightarrow$\texttt{mule} substitutions improves or worsens the
+Hybrid baseline on that same benchmark. Lane C (strict realized) applies the
+benchmark-level exact-free acceptance rule and reports non-zero savings only
+when total cycles are preserved exactly; timing-only headroom is shown
+separately as potential, not realized gain.
+
+\begin{table*}[t]
+\centering
+\caption{Updated switching outcomes from full-core benchmark VCD replay
+(NanGate 45\,nm, 100\,MHz). Classification is based on switched Hybrid
+E/op relative to switched 2$\times$MUL E/op.}
+\label{tab:switching_cases_update}
+\small
+\begin{tabular}{l r r r r r l}
+\toprule
+Benchmark & Switched MUL sites & Hybrid power $\Delta$ vs 2$\times$MUL (\%) & Hybrid cycles $\Delta$ vs 2$\times$MUL (\%) & Hybrid E/op $\Delta$ vs 2$\times$MUL (\%) & Switched Hybrid E/op $\Delta$ vs Baseline Hybrid (\%) & Class \\
+\midrule
+\texttt{fft\_butterfly\_latency\_hidden\_mule} & 3 & -10.452162 & +0.294277 & -10.188643 & +2.775525 & Advantageous \\
+\texttt{complex\_mul\_vec\_latency\_hidden\_mule} & 3 & -10.575752 & +1.816408 & -8.951443 & +5.199038 & Advantageous \\
+\texttt{outer\_product\_latency\_hidden\_mule} & 1 & -9.990279 & +5.860363 & -4.715382 & +14.147057 & Advantageous \\
+\texttt{matmul\_tiled\_latency\_hidden\_mule} & 1 & -9.222178 & +10.928167 & +0.698174 & +17.020176 & Marginally disadvantageous \\
+\texttt{fir\_unrolled\_latency\_hidden\_mule} & 4 & -10.207159 & +15.468864 & +3.682773 & +47.578747 & Disadvantageous \\
+\texttt{fir\_direct\_latency\_hidden\_mule} & 1 & -11.511374 & +26.351994 & +11.807144 & +17.726848 & Strongly disadvantageous \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+Table~\ref{tab:switching_cases_update} is therefore the right place to state
+the \emph{architecture-level} energy result: on the best favorable switched
+workloads, Hybrid reduces full-core E/op by about 9--10\% relative to the
+homogeneous 2$\times$MUL baseline, and even the weakest favorable case still
+improves E/op by 4.7\%. That claim should not be conflated with a
+benchmark-level rewrite claim, however, because the same rows remain worse than
+their own unswitched Hybrid baseline in the rewrite-level column. In other
+words, the Hybrid architecture can be energy-favorable even when the current
+binary rewriting policy does not yet produce an additional end-to-end win
+inside Hybrid itself.
+
+Three observations are important for the paper narrative.
+\emph{First}, Hybrid consistently reduces average core power even in
+negative switching cases. \emph{Second}, energy per operation is governed
+by both power and runtime; when cycle inflation is large
+(e.g., \texttt{fir\_direct\_latency\_hidden\_mule}), E/op degrades despite
+lower power. \emph{Third}, in this dataset, every switched-Hybrid case is
+worse than its own unswitched Hybrid baseline, so switching itself should
+be presented as a conditional optimization rather than a universal gain.
+
+This updated evidence is consistent with the framework of
+Section~\ref{sec:method:framework}: local slack can make an iterative path
+beneficial, but benchmark-level composition effects determine whether that
+benefit survives at full-core scope.
+
+%% ================================================================
+\subsection{12-Benchmark In-House Exact-Free Shortlist}\label{sec:eval:1ghz_exactfree}
+
+The earlier three-row replay table was not methodologically stable for
+the current workspace-only rebuild: its switched rows already showed
+benchmark-level cycle inflation, so they should not have been presented
+as a strict exact-free subset. We therefore rebuild
+Sections~\ref{sec:eval:1ghz_exactfree}
+and~\ref{sec:eval:hybrid_mul_only_exactfree} around the reproducible
+in-house benchmark family currently available in
+\texttt{riscv\_dependency\_analysis}.
+
+Before any switched replay, we first ask which kernels already hide the
+architectural Hybrid overhead at whole-benchmark scope. Existing
+baseline artifacts show that \texttt{horner} and
+\texttt{unrolled\_dot} are the strongest current exact-free seeds. Both
+keep identical total cycle counts across \texttt{core\_2standard},
+\texttt{core\_hybrid}, and \texttt{core\_singlemul}, while still
+retiring thousands of integer multiplies. That makes them better strict
+exact-free candidates than the earlier replay rows
+(\texttt{complex\_mul\_vec}, \texttt{fft\_butterfly},
+\texttt{fir\_unrolled}), whose switched Hybrid runs already violate the
+benchmark-level acceptance rule.
+
+\begin{table*}[t]
+\centering
+\caption{Current in-house exact-free shortlist from the reproducible 12-source suite. Baseline cycle neutrality across \texttt{core\_2standard}, \texttt{core\_hybrid}, and \texttt{core\_singlemul} is used as the first screen before any switched 1\,GHz replay is attempted.}
+\label{tab:exactfree_1ghz}
+\small
+\begin{tabular}{lrrrrl}
+\toprule
+Benchmark & Cycles ($2\!\times\!$MUL) & Cycles (Hybrid) & Cycles (singlemul) & Integer multiplies & Screening outcome \\
+\midrule
+\texttt{horner} & 114763 & 114763 & 114763 & 2048 & Shortlisted; first strict exact-free rerun target \\
+\texttt{unrolled\_dot} & 29778 & 29778 & 29778 & 4096 & Shortlisted; first strict exact-free rerun target \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+The implication for replay is narrow but important. A switched benchmark
+should only be replayed at 1\,GHz after it survives the same strict
+benchmark-level acceptance test at 100\,MHz on this same in-house
+suite. Under that rule, the current reproducible path does not justify
+any new 1\,GHz switched E/op rows yet; the correct next replay queue is
+\texttt{horner} and \texttt{unrolled\_dot}, not the earlier ad hoc
+three-kernel subset.
+
+\subsection{Strict Benchmark-Level Exact-Free Status on the In-House Suite}
+\label{sec:eval:hybrid_mul_only_exactfree}
+
+Table~\ref{tab:hybrid_mul_only_vs_latency_hidden_100mhz} reports the
+current strict status of the multiply-screened portion of the same
+in-house suite. Six kernels already had completed switched artifacts
+and all six were rejected because switched Hybrid cycles exceeded the
+Hybrid MUL-only baseline. We then reran the two strongest new shortlist
+candidates. \texttt{horner} is now a measured rejection as well:
+thresholds 1 and 2 both patch one static \texttt{mul} site, but cycles
+still rise from 114763 to 125004, and threshold 3 finds no eligible
+latency-hidden site. \texttt{unrolled\_dot} is also fully rejected by
+the same strict rule: thresholds 1 and 2 patch four sites and raise
+cycles from 29778 to 54344, while threshold 3 patches three sites and
+still raises cycles to 46157. That leaves no measured strict exact-free
+win yet in the current workspace-only suite.
+
+\begin{table*}[t]
+\centering
+\caption{Current strict benchmark-level exact-free status on the multiply-screened in-house suite. The same 12-source benchmark family is used to define the shortlist and to report strict acceptance status.}
+\label{tab:hybrid_mul_only_vs_latency_hidden_100mhz}
+\small
+\begin{tabular}{llll}
+\toprule
+Benchmark & Current evidence & Strict status & Notes \\
+\midrule
+\texttt{horner} & baseline 114763; switched 125004 at thresholds 1 and 2 & Rejected & Threshold 3 exposes no eligible latency-hidden site \\
+\texttt{unrolled\_dot} & baseline 29778; switched 54344 (thr. 1/2), 46157 (thr. 3) & Rejected & Even the narrower threshold-3 rewrite still inflates cycles \\
+\texttt{complex\_mul\_vec} & switched cycles 114798 vs baseline 109170 & Rejected & Cycle increase under current switched artifact \\
+\texttt{fft\_butterfly} & switched cycles 87249 vs baseline 84951 & Rejected & Cycle increase under current switched artifact \\
+\texttt{fir\_direct} & switched cycles 386651 vs baseline 322139 & Rejected & Cycle increase under current switched artifact \\
+\texttt{fir\_unrolled} & switched cycles 214443 vs baseline 141372 & Rejected & Cycle increase under current switched artifact \\
+\texttt{matmul\_tiled} & switched cycles 665234 vs baseline 562835 & Rejected & Cycle increase under current switched artifact \\
+\texttt{outer\_product} & switched cycles 83256 vs baseline 71737 & Rejected & Cycle increase under current switched artifact \\
+\texttt{matmul} & baseline artifact available & Unresolved & Switched artifact still missing \\
+\texttt{dotprod} & partial artifacts only & Unresolved & Baseline/switched comparison still incomplete \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+This reframing makes the claim boundary explicit. The current workspace
+already supports the architecture-level result that Hybrid can deliver
+about 10\% whole-benchmark energy savings relative to switched
+$2\!\times\!$MUL on selected kernels, but it does not yet support a
+measured strict exact-free savings claim for the rewrite itself. Even
+the two best current shortlist kernels fail the strict acceptance rule
+under the first selective reruns completed so far. Any future 1\,GHz
+replay row should therefore come only from a later accepted in-house row,
+not from the presently rejected shortlist.
+
+Taken together,
+Tables~\ref{tab:switching_cases_update}, \ref{tab:exactfree_1ghz}, and
+\ref{tab:hybrid_mul_only_vs_latency_hidden_100mhz} support three scoped
+claims. First, at the architecture level, three of the six measured
+switched cases reduce whole-benchmark E/op by 4.7--10.2\% relative to
+switched $2\!\times\!$MUL, with roughly 9--11\% lower power; this is the
+sense in which the Hybrid design delivers an ``around 10\%'' benchmark
+energy saving. Second, at the rewrite level, every completed
+switched-Hybrid case remains worse than its own unswitched Hybrid
+baseline, so the current \texttt{mul}$\rightarrow$\texttt{mule} rewrite
+policy should be presented as conditional rather than universally
+beneficial. Third, within the reproducible 12-source suite,
+\texttt{horner} and \texttt{unrolled\_dot} were the first
+benchmark-level exact-free seeds worth retesting, but the completed
+reruns reported here still reject them under the strict acceptance rule.
+The break-even analysis in Section~\ref{sec:eval:breakeven} therefore
+complements, rather than contradicts, the strict tables: it explains
+when the shortlisted rewrite should be expected to help, while the strict
+table reports that no currently rerun in-house kernel has yet cleared
+benchmark-level acceptance.
+
+%% ================================================================
+\subsection{Compiler-Side Exact-Free Sweep (Mechanism Study)}\label{sec:eval:bench}
+
+This subsection serves a different purpose than
+Section~\ref{sec:eval:switching2026}. The 2026 switching table provides
+the main full-core benchmark evidence used for paper claims. The analysis
+below is retained as a mechanism-level study of exact-free site discovery
+and composability under selective binary patching. In other words, it
+explains \emph{why} some sites are safe to route to \texttt{mule}, while
+Section~\ref{sec:eval:switching2026} reports the end-to-end core outcome
+on the updated benchmark set.
+
+We evaluate the alternative-execution-path idea on the 24 integer
+kernels in the bare-metal benchmark harness used throughout this
+work. Each kernel is executed in two primary configurations: an
+all-\texttt{mul} baseline and an all-\texttt{mule} rewrite where every
+eligible plain multiply is replaced by the custom instruction. The
+benchmark return code alone is not treated as a correctness check.
+Instead, we first generate a golden manifest of the printed
+scalar/checksum outputs and then require every subsequent run to match
+that manifest before the testbench reports PASS. Aggregate
+all-\texttt{mul}/all-\texttt{mule} comparisons are formed only over
+matched completed primary runs.
+
+For exact-free replacement analysis, a static \texttt{mul} site is first
+prefiltered using the implemented latency gap ($\Delta L = 2$), which in
+this core corresponds to requiring the first dynamic consumer to be at
+least three retired instructions later. That heuristic is not the final
+metric, however: a site is counted only after patching the concrete
+static PC to \texttt{mule} and rerunning the full benchmark with the
+requirement that total cycle count remain unchanged.
+
+Methodologically, each benchmark is compiled once into the bare-metal
+harness and then evaluated in three controlled stages under the same RTL
+and testbench configuration. First, an all-\texttt{mul} baseline run
+collects total cycles, retired-instruction counts, and the retire trace
+for every dynamic multiply. Second, an all-\texttt{mule} run rewrites
+every eligible static multiply site to expose the cost of forcing the
+slow path everywhere. Third, selective patch runs start from the
+baseline binary, patch concrete static PCs to \texttt{mule}, and accept
+a site only when the rerun still matches the golden output manifest and
+preserves total cycle count exactly. This procedure keeps correctness,
+instruction mix, and timing under the same measured testbench rather
+than inferring the result from static distance alone.
+
+\begin{table}[t]
+\centering
+\caption{Verified benchmark corpus summary. Primary rows count only matched all-\texttt{mul}/all-\texttt{mule} runs whose reported outputs matched the generated golden manifest. Exact-free counts come from binary-patched re-simulations that preserve total cycle count exactly.}
+\label{tab:benchmark-verified-overview}
+\begin{tabular}{lr}
+\hline
+Metric & Value \\
+\hline
+Benchmarks analyzed & 24 \\
+Matched primary run pairs & 24 \\
+Unsupported benchmarks & none \\
+Aggregate all-\texttt{mul} cycles & 474,199 \\
+Aggregate all-\texttt{mule} cycles & 515,463 \\
+Retired instructions & 185,931 \\
+Retired integer multiplies & 16,818 \\
+Retired integer-multiply share & 9.05\% \\
+Benchmarks with exact-free rewrites & 14 \\
+Exact-free dynamic multiplies & 2,385 \\
+Exact-free share of plain \texttt{mul} & 16.68\% \\
+Exact-free share of retired instructions & 1.28\% \\
+Patched exact-free static PCs & 131 \\
+Exact-free total cycle delta & 0 \\
+\hline
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:benchmark-verified-overview} shows that the verified
+primary sweep covers all 24 kernels with no unsupported cases. The
+aggregate retired-instruction and retired-multiply counts are identical
+between the all-\texttt{mul} and all-\texttt{mule} runs, confirming that
+the opcode substitution changes latency and issue behaviour rather than
+the dynamic instruction mix. The cycle total nevertheless rises from
+474,199 to 515,463 cycles when every multiply is forced onto
+\textsc{mule}, reflecting the serialised single-outstanding nature of
+the alternative path.
+
+\begin{table*}[t]
+\centering
+\caption{Verified primary all-\texttt{mul} versus all-\texttt{mule} comparison. The table reports dynamic retired integer-multiply count and share for each benchmark, while overall slowdown is still computed from the underlying whole-benchmark all-\texttt{mul} and all-\texttt{mule} cycle totals. The exact-free columns cross-reference the independently validated selective-rewrite run to show which kernels admit timing-preserving conversions.}
+\label{tab:benchmark-primary-comparison}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{l r r r r r r r}
+\hline
+Benchmark & $N$ & $K$ & Dyn. int. mul & Int.-mul share & Overall slowdown & Exact-free / mul & Patched PCs \\
+\hline
+\texttt{extended\_estrin} & 128 & -- & 2,304 & 33.48\% & 57.99\% & 11.11\% & 2 \\
+\texttt{unrolled\_dot} & 128 & -- & 128 & 17.09\% & 39.92\% & 0.00\% & 0 \\
+\texttt{rdr\_like\_corr} & 128 & 16 & 1,792 & 14.13\% & 27.78\% & 25.00\% & 1 \\
+\texttt{matmul} & 16 & -- & 4,096 & 10.22\% & 15.34\% & 0.00\% & 0 \\
+\texttt{fir} & 128 & 16 & 1,792 & 11.28\% & 14.03\% & 0.00\% & 0 \\
+\texttt{estrin\_2level} & 128 & -- & 640 & 12.35\% & 13.79\% & 40.00\% & 2 \\
+\texttt{estrin\_poly} & 128 & -- & 640 & 10.44\% & 9.55\% & 40.00\% & 2 \\
+\texttt{outer\_product} & 16 & -- & 256 & 4.33\% & 7.42\% & 0.00\% & 0 \\
+\texttt{horner} & 128 & -- & 128 & 7.03\% & 7.06\% & 0.00\% & 0 \\
+\texttt{dotprod} & 128 & -- & 256 & 8.73\% & 5.67\% & 0.00\% & 0 \\
+\texttt{sliding\_correlation} & 128 & -- & 1,240 & 17.33\% & 4.17\% & 40.00\% & 2 \\
+\texttt{delayed\_reduction} & 128 & -- & 256 & 5.40\% & 3.25\% & 0.00\% & 0 \\
+\texttt{complex\_bank} & 128 & -- & 1,024 & 13.13\% & 2.98\% & 37.50\% & 6 \\
+\texttt{reduction\_tree\_mul} & 128 & -- & 256 & 9.07\% & 2.43\% & 25.00\% & 2 \\
+\texttt{grouped\_correlation\_bank} & 128 & -- & 480 & 10.85\% & 2.07\% & 37.50\% & 3 \\
+\texttt{unrolled\_dot16} & 128 & -- & 256 & 6.50\% & 0.39\% & 68.75\% & 11 \\
+\texttt{unrolled\_dot8} & 128 & -- & 256 & 7.59\% & 0.26\% & 62.50\% & 5 \\
+\texttt{multi\_accumulator} & 128 & -- & 256 & 7.43\% & 0.25\% & 62.50\% & 5 \\
+\texttt{conv2d} & 16 & -- & 0 & 0.00\% & 0.00\% & -- & 0 \\
+\texttt{filter\_bank\_4out} & 128 & -- & 250 & 0.87\% & 0.00\% & 100.00\% & 1 \\
+\texttt{fir\_multi} & 128 & 4 & 0 & 0.00\% & 0.00\% & -- & 0 \\
+\texttt{hello} & -- & -- & 0 & 0.00\% & 0.00\% & -- & 0 \\
+\texttt{unrolled\_dot32} & 128 & -- & 256 & 6.03\% & 0.00\% & 87.50\% & 28 \\
+\texttt{unrolled\_dot64} & 128 & -- & 256 & 5.57\% & -0.03\% & 95.31\% & 61 \\
+\hline
+\end{tabular}%
+}
+\end{table*}
+
+Table~\ref{tab:benchmark-primary-comparison} exposes two distinct
+regimes. Workloads that route most multiplies through dependence-dense
+or repeatedly serialized regions suffer badly when every site is
+rewritten to \texttt{mule}: \texttt{extended\_estrin},
+\texttt{unrolled\_dot}, and \texttt{rdr\_like\_corr} slow down by
+58.0\%, 39.9\%, and 27.8\%, respectively. At the other end of the
+spectrum, the most aggressively unrolled kernels are effectively
+cycle-neutral under the all-\texttt{mule} experiment:
+\texttt{unrolled\_dot32} is exactly neutral and
+\texttt{unrolled\_dot64} is marginally faster, while
+\texttt{multi\_accumulator}, \texttt{unrolled\_dot16}, and
+\texttt{reduction\_tree\_mul} retain sizeable exact-free subsets with
+only small positive overheads.
+
+\begin{table*}[t]
+\centering
+\caption{Benchmarks with non-zero verified exact-free rewrites. A static \texttt{mul} PC is counted only after the heuristic candidate is patched to \texttt{mule} and the full benchmark re-simulation preserves total cycle count.}
+\label{tab:benchmark-exact-free}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{l r r r r r r}
+\hline
+Benchmark & $N$ & $K$ & Exact-free dyn. mul & Exact-free / mul & Exact-free / insn & Patched PCs \\
+\hline
+\texttt{filter\_bank\_4out} & 128 & -- & 125 & 100.00\% & 0.44\% & 1 \\
+\texttt{unrolled\_dot64} & 128 & -- & 122 & 95.31\% & 2.66\% & 61 \\
+\texttt{unrolled\_dot32} & 128 & -- & 112 & 87.50\% & 2.64\% & 28 \\
+\texttt{unrolled\_dot16} & 128 & -- & 88 & 68.75\% & 2.23\% & 11 \\
+\texttt{multi\_accumulator} & 128 & -- & 80 & 62.50\% & 2.32\% & 5 \\
+\texttt{unrolled\_dot8} & 128 & -- & 80 & 62.50\% & 2.37\% & 5 \\
+\texttt{estrin\_2level} & 128 & -- & 256 & 40.00\% & 4.94\% & 2 \\
+\texttt{estrin\_poly} & 128 & -- & 256 & 40.00\% & 4.17\% & 2 \\
+\texttt{sliding\_correlation} & 128 & -- & 248 & 40.00\% & 3.47\% & 2 \\
+\texttt{complex\_bank} & 128 & -- & 192 & 37.50\% & 2.46\% & 6 \\
+\texttt{grouped\_correlation\_bank} & 128 & -- & 90 & 37.50\% & 2.04\% & 3 \\
+\texttt{rdr\_like\_corr} & 128 & 16 & 448 & 25.00\% & 3.53\% & 1 \\
+\texttt{reduction\_tree\_mul} & 128 & -- & 32 & 25.00\% & 1.13\% & 2 \\
+\texttt{extended\_estrin} & 128 & -- & 256 & 11.11\% & 3.72\% & 2 \\
+\hline
+\end{tabular}%
+}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\caption{Complete per-benchmark \texttt{mul}-hiding breakdown ordered by exact-free share. Dynamic plain \texttt{mul} executions are partitioned into three classes: \emph{free} (patched to \texttt{mule} and confirmed cycle-neutral by full re-simulation), \emph{partial} (heuristic trace candidate that did not survive the benchmark-level exact-cycle acceptance test), and \emph{no-hide} (never a heuristic candidate; recurrence-dominated). Three benchmarks with zero static integer multiplies are included for completeness. Overhead is all-\texttt{mule} vs.\ all-\texttt{mul} cycle delta.}
+\label{tab:benchmark-hiding-breakdown}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{l r r r r r r r r r}
+\hline
+Benchmark & Mul\% & Dyn.\ mul & Free & Free\% & Partial & Partial\% & No-hide & No-hide\% & MULE ovhd \\
+\hline
+\texttt{filter\_bank\_4out} & 0.87\% & 125 & 125 & 100.0\% & 0 & 0.0\% & 0 & 0.0\% & +0.00\% \\
+\texttt{unrolled\_dot64} & 5.57\% & 128 & 122 & 95.3\% & 6 & 4.7\% & 0 & 0.0\% & -0.03\% \\
+\texttt{unrolled\_dot32} & 6.03\% & 128 & 112 & 87.5\% & 16 & 12.5\% & 0 & 0.0\% & +0.00\% \\
+\texttt{unrolled\_dot16} & 6.50\% & 128 & 88 & 68.8\% & 40 & 31.2\% & 0 & 0.0\% & +0.39\% \\
+\texttt{multi\_accumulator} & 7.43\% & 128 & 80 & 62.5\% & 48 & 37.5\% & 0 & 0.0\% & +0.25\% \\
+\texttt{unrolled\_dot8} & 7.59\% & 128 & 80 & 62.5\% & 48 & 37.5\% & 0 & 0.0\% & +0.26\% \\
+\texttt{estrin\_2level} & 12.35\% & 640 & 256 & 40.0\% & 128 & 20.0\% & 256 & 40.0\% & +13.79\% \\
+\texttt{estrin\_poly} & 10.44\% & 640 & 256 & 40.0\% & 128 & 20.0\% & 256 & 40.0\% & +9.55\% \\
+\texttt{sliding\_correlation} & 17.33\% & 620 & 248 & 40.0\% & 248 & 40.0\% & 124 & 20.0\% & +4.17\% \\
+\texttt{complex\_bank} & 13.13\% & 512 & 192 & 37.5\% & 192 & 37.5\% & 128 & 25.0\% & +2.98\% \\
+\texttt{grouped\_correlation\_bank} & 10.85\% & 240 & 90 & 37.5\% & 60 & 25.0\% & 90 & 37.5\% & +2.07\% \\
+\texttt{rdr\_like\_corr} & 14.13\% & 1,792 & 448 & 25.0\% & 896 & 50.0\% & 448 & 25.0\% & +27.78\% \\
+\texttt{reduction\_tree\_mul} & 9.07\% & 128 & 32 & 25.0\% & 80 & 62.5\% & 16 & 12.5\% & +2.43\% \\
+\texttt{extended\_estrin} & 33.48\% & 2,304 & 256 & 11.1\% & 1,536 & 66.7\% & 512 & 22.2\% & +57.99\% \\
+\texttt{delayed\_reduction} & 5.40\% & 128 & 0 & 0.0\% & 128 & 100.0\% & 0 & 0.0\% & +3.25\% \\
+\texttt{unrolled\_dot} & 17.09\% & 128 & 0 & 0.0\% & 96 & 75.0\% & 32 & 25.0\% & +39.92\% \\
+\texttt{dotprod} & 8.73\% & 128 & 0 & 0.0\% & 0 & 0.0\% & 128 & 100.0\% & +5.67\% \\
+\texttt{fir} & 11.28\% & 1,792 & 0 & 0.0\% & 0 & 0.0\% & 1,792 & 100.0\% & +14.03\% \\
+\texttt{horner} & 7.03\% & 128 & 0 & 0.0\% & 0 & 0.0\% & 128 & 100.0\% & +7.06\% \\
+\texttt{matmul} & 10.22\% & 4,096 & 0 & 0.0\% & 0 & 0.0\% & 4,096 & 100.0\% & +15.34\% \\
+\texttt{outer\_product} & 4.33\% & 256 & 0 & 0.0\% & 0 & 0.0\% & 256 & 100.0\% & +7.42\% \\
+\texttt{conv2d} & 0.00\% & -- & -- & -- & -- & -- & -- & -- & +0.00\% \\
+\texttt{fir\_multi} & 0.00\% & -- & -- & -- & -- & -- & -- & -- & +0.00\% \\
+\texttt{hello} & 0.00\% & -- & -- & -- & -- & -- & -- & -- & +0.00\% \\
+\hline
+\textbf{Total} & \textbf{9.05\%} & \textbf{14,297} & \textbf{2,385} & \textbf{16.7\%} & \textbf{3,650} & \textbf{25.5\%} & \textbf{8,262} & \textbf{57.8\%} & \textbf{+8.70\%} \\
+\hline
+\end{tabular}%
+}
+\end{table*}
+
+Under this exact-free criterion, 2,385 of 14,297 dynamic plain
+\texttt{mul} executions (16.7\%) can be shifted to \texttt{mule} with no
+cycle cost, spanning 131 static PCs across 14 kernels. In aggregate,
+those exact-free conversions account for 1.28\% of all retired
+instructions. The highest verified fractions occur in
+\texttt{filter\_bank\_4out} (100.0\%), \texttt{unrolled\_dot64}
+(95.3\%), and \texttt{unrolled\_dot32} (87.5\%), while
+\texttt{sliding\_correlation}, \texttt{multi\_accumulator}, and the
+grouped-correlation kernels expose smaller but still measurable exact-free
+subsets. These results match the intended use model of the hybrid path:
+\textsc{mule} is beneficial only where existing dependence slack or
+independent work can fully absorb its additional latency.
+
+The benchmark results should therefore be interpreted conservatively.
+Exact-free multiplies are the robust subset whose extra latency remains
+fully hidden even after composing the accepted rewrites inside the full
+benchmark. A larger middle class of operations exhibits only partial
+hiding: these sites satisfy the local trace-based slack heuristic, but
+they do not all survive the benchmark-level exact-cycle acceptance test,
+typically because individually promising rewrites interfere through
+slot-0 issue restrictions, single-outstanding behaviour, or overlapping
+dependence chains. The remaining hard-unhidable multiplies are not even
+heuristic candidates and therefore correspond to recurrence-dominated
+regions such as \texttt{matmul}, \texttt{fir}, \texttt{dotprod}, and
+\texttt{horner}. Over the verified corpus, 2,385 of 14,297 dynamic
+multiplies (16.7\%) are exact-free, 3,650 (25.5\%) are only partially
+hidable, and 8,262 (57.8\%) are hard-unhidable. The main takeaway is
+that local slack is common enough to motivate the hybrid path, but only
+a smaller composable subset can be harvested without benchmark-level
+timing loss.
+
+\paragraph{Mechanics of partial hiding.}
+A dynamic multiply site is classified as a \emph{partial-hide candidate}
+when the trace-based latency-gap heuristic accepts it: the first
+dynamic consumer of the multiply result retires at least
+$\Delta L + 1 = 3$ instructions after the multiply itself, providing
+enough in-flight work to cover \textsc{mule}'s two extra cycles under
+the single-site assumption.  The site fails to become \emph{exact-free},
+however, when the full benchmark re-simulation with that PC patched to
+\texttt{mule} does not preserve the total cycle count.
+
+Three distinct failure mechanisms account for the gap between the
+heuristic acceptance set (6,035 dynamic multiplies, 42.2\% of the
+plain-\texttt{mul} pool) and the confirmed exact-free set (2,385,
+16.7\%):
+
+\begin{enumerate}
+  \item \textbf{Single-outstanding serialisation.}  The \textsc{mule}
+  backend accepts at most one operation at a time.  If the loop body
+  issues a second \texttt{mule} before the first has completed, the
+  issue stage stalls until the backend becomes free.  A site that looks
+  slack-sufficient in isolation can become the bottleneck once an
+  earlier site in the same iteration also uses \textsc{mule}, because
+  the two operations now compete for the single-entry queue.
+  A concrete trace example appears in \texttt{multi\_accumulator},
+  whose hot loop emits a dense burst of multiplies inside one unrolled
+  iteration: \texttt{0x101f2: mul}, \texttt{0x10220: mul},
+  \texttt{0x1022e: mul}, \texttt{0x10234: mul}, and subsequent multiply
+  sites continue in the same short window, interleaved only with
+  accumulator updates.  Under \texttt{mule}, these operations all target
+  the same single-entry backend before the earlier one has fully
+  drained, so some of the apparent local slack is consumed by queueing
+  rather than useful overlap.  This is consistent with
+  Table~\ref{tab:benchmark-hiding-breakdown}, where
+  \texttt{multi\_accumulator} retains 80 exact-free dynamic multiplies
+  but leaves 48 in the partial-hide class.
+
+  \item \textbf{Interference through dependence chains.}  The
+  latency-gap filter inspects only the first consumer of each
+  multiply.  When an accepted site's result feeds a second-level
+  consumer that itself feeds a third, the extra latency can propagate
+  and stall a later instruction that was not visible during single-site
+  filtering.  \texttt{extended\_estrin} (66.7\% partial) is the most
+  affected: its dependence graph is a tree of nested products and
+  partial sums, so patching a multiply high in the tree lengthens the
+  critical path for all downstream additions, erasing the local slack.
+  The trace shows this directly: \texttt{0x10224: mulw a4,a6,a5} feeds
+  \texttt{0x1022c: addw a4,a4,a7}, which is then reused by
+  \texttt{0x1023c: mulw a4,a4,s9} and folded again at
+  \texttt{0x10248: addw s7,s7,a4}.  Other products also re-enter later
+  multiply stages, for example \texttt{0x10254: mulw a4,s11,s9} and
+  \texttt{0x10266: mulw s10,s10,s9}.  This is why the benchmark can show
+  a wide 2-to-25-instruction distance budget in the trace study yet
+  still leave 1,536 dynamic multiplies in the partial-hide class once
+  those locally safe edges are composed inside the full arithmetic tree.
+
+  \item \textbf{Slot-pressure and dual-issue disruption.}  The
+  secondary issue slot (pipe1) can absorb a \texttt{mule} alongside an
+  ALU or load/store instruction in the same cycle.  When the scheduler
+  cannot pair the \texttt{mule} with an independent instruction---either
+  because the instruction window is narrow or because a scoreboard
+  hazard forces a bubble---the \texttt{mule} falls back to the primary
+  slot and its extra latency is no longer hidden.  This effect is
+  visible in \texttt{rdr\_like\_corr}: 50\% of candidates are partial,
+  and the all-\texttt{mule} overhead (+27.8\%) is far higher than the
+  multiply density (14.1\%) would suggest, indicating frequent
+  slot-pressure stalls.  In the extracted hot loop, each body packs four
+  multiplies and four accumulator updates into a short issue window:
+  \texttt{0x10244: mulw a0,a0,s8}, \texttt{0x1024c: mulw a1,a1,s7},
+  \texttt{0x10250: addw t1,a0,t1}, \texttt{0x10254: mulw a2,a2,s6},
+  \texttt{0x10258: addw a6,a1,a6}, \texttt{0x1025c: mulw a4,a4,t5}, and
+  the final updates at \texttt{0x10260} and \texttt{0x10264}.  The trace
+  study reports only 3--4 instructions of immediate mul-to-add spacing
+  for these local edges, so there is enough theoretical overlap to mark
+  many sites as candidates but not enough consistent pipe1 pairing
+  opportunity to hide every converted multiply on the real core.
+\end{enumerate}
+
+The practical implication is that a compiler selecting sites for
+\texttt{mule} substitution should account for \emph{composition
+effects}, not just per-site slack.  Greedy single-site analysis
+over-estimates the benefit by 53\% relative to the confirmed
+exact-free pool ($6{,}035 - 2{,}385 = 3{,}650$ sites that appear safe
+but are not).  A conservative strategy---accepting only sites whose
+slack exceeds the worst-case serialisation window, or limiting the
+density of \texttt{mule} sites per loop iteration---would bring the
+compile-time prediction closer to the benchmark-validated result.
+
+%% ================================================================
+\subsection{Break-Even Analysis}\label{sec:eval:breakeven}
+
+For workloads where multiply density is low (i.e., most cycles do
+\emph{not} issue a multiply to \textsc{mule}), the hybrid design saves
+power simply by having a smaller, lower-leakage second multiplier.
+Conversely, for sustained dual-issue multiply workloads, the baseline
+$2\!\times\!$MUL is faster. The crossover multiply density $f_m$
+(fraction of cycles issuing an efficient-path multiply) at which the hybrid
+breaks even on total energy is
+
+\begin{equation}\label{eq:breakeven}
+  f_m < \frac{P_{\mathit{mul2}} - P_{\mathit{mule}}}
+             {e_{\mathit{cyc}} / T_{\mathit{clk}}}
+      = \frac{1.017 - 0.155}{82.70 / 10}
+      = \frac{0.862}{8.27}
+      \approx 10.4\%.
+\end{equation}
+
+\noindent
+For workloads where fewer than $\sim$10\% of cycles contain an
+efficient-path multiply---which covers the vast majority of
+general-purpose and embedded applications---the hybrid configuration
+is more energy-efficient. Only sustained, throughput-critical dual-issue
+multiply workloads favour the homogeneous baseline.
+
+\begin{table*}[t]
+\centering
+\caption{Smart-compiler benefit classes derived from the full/partial hiding breakdown. The compiler is assumed to route only benchmark-validated beneficial sites, so exact-free conversions from Table~\ref{tab:benchmark-hiding-breakdown} are selected and partially hidden candidates are rejected. Because every selected conversion preserves total cycle count exactly, any selected benchmark is both energy- and EDP-beneficial under Equations~\ref{eq:net} and \ref{eq:edpratio}.}
+\label{tab:benchmark-benefit-classes}
+\small
+\begin{tabular}{l c r p{0.55\textwidth}}
+\hline
+Class & Benchmarks & Routed dyn. mul & Benchmarks \\
+\hline
+EDP benefit & 14 & 2,385 & \texttt{complex\_bank}, \texttt{estrin\_2level}, \texttt{estrin\_poly}, \texttt{extended\_estrin}, \texttt{filter\_bank\_4out}, \texttt{grouped\_correlation\_bank}, \texttt{multi\_accumulator}, \texttt{rdr\_like\_corr}, \texttt{reduction\_tree\_mul}, \texttt{sliding\_correlation}, \texttt{unrolled\_dot8}, \texttt{unrolled\_dot16}, \texttt{unrolled\_dot32}, \texttt{unrolled\_dot64} \\
+Energy-only benefit & 0 & 0 & none \\
+No benefit & 10 & 0 & \texttt{conv2d}, \texttt{delayed\_reduction}, \texttt{dotprod}, \texttt{fir}, \texttt{fir\_multi}, \texttt{hello}, \texttt{horner}, \texttt{matmul}, \texttt{outer\_product}, \texttt{unrolled\_dot} \\
+\hline
+\end{tabular}
+\end{table*}
+
+Table~\ref{tab:benchmark-benefit-classes} answers the selective-policy
+question directly. If the compiler routes only benchmark-validated
+beneficial sites, then all 2,385 selected dynamic conversions come from
+the exact-free subset and therefore preserve cycle count by
+construction. Under that policy, 14 of the 24 kernels become both
+energy- and EDP-beneficial, the energy-only class is empty, and the
+remaining 10 kernels are left unchanged.
+
+The zero-valued entries in Table~\ref{tab:benchmark-benefit-classes}
+are a direct consequence of the hybrid binary threshold. Because
+$\Delta e < e_{\mathit{cyc}}$, any routed site that exposes even one
+stall cycle is already energy-negative, and therefore cannot populate an
+energy-only class. For the same reason, benchmarks listed in the
+no-benefit row show zero routed dynamic multiplies: either they contain
+no executed plain \texttt{mul} instructions at all, or every locally
+promising candidate is rejected once the benchmark-level validation
+observes a non-zero cycle penalty.
+
+\begin{table}[t]
+\centering
+\caption{Per-benchmark estimated energy savings for the 14
+EDP-benefiting kernels under the selective policy. Percentages are
+relative to each benchmark's all-\texttt{mul} baseline energy
+$E_0 = C_{\texttt{mul}} \cdot e_{\mathit{cyc}}$ with
+$e_{\mathit{cyc}} = 82.70$\,pJ. The two saving columns differ only in
+the per-conversion energy delta: $\Delta e = 52.85$\,pJ from
+Table~\ref{tab:params} and $\Delta e_{\mathit{EPI}} = 16.01$\,pJ from
+Tables~\ref{tab:params} and \ref{tab:epi_edp}. The multiplication-energy
+columns use the in-core total-EPI model: baseline multiplication energy
+share is $N_{\texttt{mul}} \cdot 23.76\,\mathrm{pJ} / E_0$, and
+validated multiplication-energy saving is
+$N_{\texttt{free}} \cdot 16.01\,\mathrm{pJ} / (N_{\texttt{mul}} \cdot 23.76\,\mathrm{pJ})$.}
+\label{tab:benchmark-energy-savings}
+\small
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{l r r r r r}
+\hline
+Benchmark & Exact-free dyn. mul & Saving (\%, $\Delta e$) & Saving (\%, $\Delta e_{\mathit{EPI}}$) & Mul-energy share & Mul-energy saving \\
+\hline
+\texttt{estrin\_2level} & 256 & 1.36\% & 0.41\% & 1.53\% & 26.95\% \\
+\texttt{rdr\_like\_corr} & 448 & 1.23\% & 0.37\% & 2.20\% & 16.85\% \\
+\texttt{extended\_estrin} & 256 & 1.12\% & 0.34\% & 4.55\% & 7.49\% \\
+\texttt{estrin\_poly} & 256 & 1.11\% & 0.34\% & 1.25\% & 26.95\% \\
+\texttt{sliding\_correlation} & 248 & 0.77\% & 0.23\% & 0.87\% & 26.95\% \\
+\texttt{unrolled\_dot64} & 122 & 0.45\% & 0.13\% & 0.21\% & 64.22\% \\
+\texttt{unrolled\_dot32} & 112 & 0.42\% & 0.13\% & 0.22\% & 58.96\% \\
+\texttt{complex\_bank} & 192 & 0.39\% & 0.12\% & 0.47\% & 25.27\% \\
+\texttt{grouped\_correlation\_bank} & 90 & 0.36\% & 0.11\% & 0.43\% & 25.27\% \\
+\texttt{unrolled\_dot16} & 88 & 0.36\% & 0.11\% & 0.23\% & 46.33\% \\
+\texttt{multi\_accumulator} & 80 & 0.34\% & 0.10\% & 0.24\% & 42.11\% \\
+\texttt{unrolled\_dot8} & 80 & 0.34\% & 0.10\% & 0.25\% & 42.11\% \\
+\texttt{filter\_bank\_4out} & 125 & 0.16\% & 0.05\% & 0.07\% & 67.38\% \\
+\texttt{reduction\_tree\_mul} & 32 & 0.15\% & 0.05\% & 0.27\% & 16.85\% \\
+\hline
+\end{tabular}
+}
+\end{table}
+
+Table~\ref{tab:benchmark-energy-savings} makes the benchmark-level
+scale concrete. Under the hybrid-model conversion delta
+$\Delta e = 52.85$\,pJ, the 14 EDP-benefiting kernels span an estimated
+energy reduction from 0.15\% (\texttt{reduction\_tree\_mul}) to 1.36\%
+(\texttt{estrin\_2level}) of their own all-\texttt{mul} baseline
+energy. Using the more conservative in-core EPI gap
+$\Delta e_{\mathit{EPI}} = 16.01$\,pJ preserves the same ordering but
+compresses the range to 0.05\%--0.41\%. Under that same EPI model, the
+baseline multiplication-energy share of these kernels ranges from
+0.07\% (\texttt{filter\_bank\_4out}) to 4.55\%
+(\texttt{extended\_estrin}), while the validated selective policy saves
+between 7.49\% and 67.38\% of the multiplication energy within each
+benchmark, depending on how much of the dynamic plain-\texttt{mul} pool
+falls into the exact-free subset.
+
+The partial-hide class is still informative, but now only as a
+rejection set. Across the full corpus, 3,650 dynamic multiplies appear
+locally promising yet fail benchmark-level validation once composition
+effects are considered. Two kernels, \texttt{delayed\_reduction} and
+\texttt{unrolled\_dot}, fall into a particularly clear partial-only
+category: they contain local slack candidates but no benchmark-validated
+beneficial \texttt{mule} routes. Aggregated over all 24 kernels, the
+smart-compiler policy therefore saves 126.0\,nJ relative to the
+all-\texttt{mul} baseline, or about 0.32\% of the baseline benchmark
+energy, under the hybrid-model delta. Under the local in-core EPI gap,
+the same 2,385 validated conversions correspond to 38.2\,nJ, or about
+0.10\% of the same baseline energy, while still introducing zero
+benchmark slowdown.
+
+%% ================================================================
+\subsection{The Role of Loop Unrolling}\label{sec:eval:unrolling}
+
+The verified dot-product family highlights the compiler side of the
+co-design problem. The baseline \texttt{dotprod} kernel exposes no
+exact-free rewrites, and the lightly unrolled \texttt{unrolled\_dot}
+variant still slows down badly under the all-\texttt{mule} experiment.
+By contrast, the wider unrolled variants recover substantial hidden
+slack: \texttt{unrolled\_dot8} and \texttt{unrolled\_dot16} admit
+62.5\% and 68.8\% exact-free rewrites, respectively, while
+\texttt{unrolled\_dot32} and
+\texttt{unrolled\_dot64} reach 87.5\% and 95.3\%, respectively, with
+all selective-rewrite runs preserving cycle count exactly.
+
+This progression underscores a key insight: \emph{the energy benefit of
+slack-aware functional-unit selection is not solely a hardware
+property---it depends on compiler transformations that reshape the
+dependence graph}. Loop unrolling, accumulator replication, software
+pipelining, and instruction scheduling all enlarge the window in which
+a slower but cheaper execution path can absorb a multiply without
+changing end-to-end timing.
+
+%% ================================================================
+\subsection{Discussion}\label{sec:eval:discussion}
+
+The combined evidence from Section~\ref{sec:eval:switching2026} and
+Section~\ref{sec:eval:bench} supports a conditional claim: the Hybrid
+architecture can outperform switched 2$\times$MUL on selected workloads,
+but switching itself is beneficial only when added iterative latency is
+sufficiently hidden after benchmark-level composition effects.
+
+\paragraph{Leakage at advanced nodes.}
+At 45\,nm, leakage accounts for 6.9--14.8\% of the standalone
+multiplier power. At advanced nodes (16\,nm, 7\,nm), leakage rises to
+30--50\% of total power. Because \textsc{mule}'s area is 52.7\%
+smaller, its leakage advantage compounds: at a hypothetical 50\%
+leakage fraction, the multiplier area reduction alone would save
+$\sim$2.0\% of core power, on top of the dynamic savings.
+
+\paragraph{VCD annotation coverage.}
+Our power numbers are based on $\sim$10--11\% VCD annotation of flop
+outputs, with the remainder estimated at a default switching activity
+of 0.2. This is conservative: actual switching is often lower than 0.2
+for idle logic, so the reported power difference likely
+\emph{understates} \textsc{mule}'s advantage. Higher-coverage
+annotation (e.g., gate-level simulation) would tighten the bounds.
+
+\paragraph{Threats to validity.}
+The evaluation uses a single technology node (45\,nm) and a single
+operating point (100\,MHz, 1.1\,V). While the qualitative conclusions
+(binary threshold, area--energy tradeoff) are technology-independent,
+the quantitative margins will shift at different nodes, voltages, and
+frequencies. Additionally, the 24 benchmark kernels are still synthetic
+microbenchmarks rather than a full application suite; broader workloads
+(e.g., SPEC, Embench) are needed to characterise the population
+distribution of multiply slack across real applications.

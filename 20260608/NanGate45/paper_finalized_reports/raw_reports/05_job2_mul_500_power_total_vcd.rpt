@@ -1,0 +1,439 @@
+env CDS_WORKAREA is set to /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_mul_mule_power/scripts/cadence
+
+Power Net Detected:
+        Voltage	    Name
+             0V	    VSS
+           1.1V	    VDD
+             0V	    VSS
+           1.1V	    VDD
+Using Power View WC_VIEW
+.
+AAE_INFO: opIsDesignInPostRouteState() is 1
+AAE_INFO: resetNetProps viewIdx 0 
+Starting SI iteration 1 using Infinite Timing Windows
+#################################################################################
+# Design Stage: PostRoute
+# Design Name: biriscv_multiplier
+# Design Mode: 45nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: No SPEF/RCDB 
+# Signoff Settings: SI On 
+#################################################################################
+#WARNING (NRDB-733) PIN Y in CELL_VIEW LOGIC1_X1 does not have a physical port. NanoRoute will not route to the pin. To resolve this issue, check that the pin shapes exist in the LEF abstract.
+#WARNING (NRDB-733) PIN Y in CELL_VIEW LOGIC0_X1 does not have a physical port. NanoRoute will not route to the pin. To resolve this issue, check that the pin shapes exist in the LEF abstract.
+#Extract in post route mode
+#Finish check_net_pin_list step Enter extract_rc_in_nr_cmd
+#Fast data preparation for tQuantus.
+#Start routing data preparation on Sun Jun  7 20:44:44 2026
+#
+# metal1       H   Track-Pitch = 0.14000    Line-2-Via Pitch = 0.13500
+# metal2       V   Track-Pitch = 0.19000    Line-2-Via Pitch = 0.14000
+# metal3       H   Track-Pitch = 0.14000    Line-2-Via Pitch = 0.14000
+# metal4       V   Track-Pitch = 0.28000    Line-2-Via Pitch = 0.28000
+# metal5       H   Track-Pitch = 0.28000    Line-2-Via Pitch = 0.28000
+# metal6       V   Track-Pitch = 0.28000    Line-2-Via Pitch = 0.28000
+# metal7       H   Track-Pitch = 0.84000    Line-2-Via Pitch = 0.80000
+# metal8       V   Track-Pitch = 0.84000    Line-2-Via Pitch = 0.80000
+# metal9       H   Track-Pitch = 1.60000    Line-2-Via Pitch = 1.60000
+# metal10      V   Track-Pitch = 1.68000    Line-2-Via Pitch = 1.60000
+#Regenerating Ggrids automatically.
+#Auto generating G-grids with size=15 tracks, using layer metal3's pitch = 0.14000.
+#Using automatically generated G-grids.
+#Done routing data preparation.
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2738.50 (MB), peak = 2940.88 (MB)
+#Start routing data preparation on Sun Jun  7 20:44:44 2026
+#
+#shield_layer  1: layer_id= 2 shield_wire_on_grid=1 shield_via_on_grid=1 is_hard_wire_on_grid=0 allow_ww=0
+#shield_layer  2: layer_id= 4 shield_wire_on_grid=1 shield_via_on_grid=1 is_hard_wire_on_grid=0 allow_ww=0
+#shield_layer  3: layer_id= 6 shield_wire_on_grid=1 shield_via_on_grid=1 is_hard_wire_on_grid=0 allow_ww=0
+#shield_layer  4: layer_id= 8 shield_wire_on_grid=1 shield_via_on_grid=1 is_hard_wire_on_grid=0 allow_ww=0
+#shield_layer  5: layer_id=10 shield_wire_on_grid=1 shield_via_on_grid=1 is_hard_wire_on_grid=0 allow_ww=0
+#shield_layer  6: layer_id=12 shield_wire_on_grid=1 shield_via_on_grid=1 is_hard_wire_on_grid=0 allow_ww=0
+#shield_layer  7: layer_id=14 shield_wire_on_grid=1 shield_via_on_grid=1 is_hard_wire_on_grid=0 allow_ww=0
+#shield_layer  8: layer_id=16 shield_wire_on_grid=1 shield_via_on_grid=1 is_hard_wire_on_grid=0 allow_ww=0
+#shield_layer  9: layer_id=18 shield_wire_on_grid=1 shield_via_on_grid=1 is_hard_wire_on_grid=0 allow_ww=0
+#shield_layer 10: layer_id=20 shield_wire_on_grid=1 shield_via_on_grid=1 is_hard_wire_on_grid=0 allow_ww=0
+#Bottom routing layer index=2(metal2), bottom routing layer for shielding=2(metal2), bottom shield layer=2(metal2) top shield layer=10(metal10)
+#shield_bottom_stripe_layer=1(metal1), shield_top_stripe_layer=10(metal10)
+#pin_access_rlayer=2(metal2) num_routing_layer=10 top_routing_layer=10 top_ripin_layer=10
+#shield_top_dpt_rlayer=-1 top_rlayer=10 top_trim_metal_rlayer=-1 rlayer_lowest=1 bottom_rlayer=2
+#enable_trim_layer_shield=F enable_dpt_layer_shield=F has_line_end_grid=F
+#Regenerating Ggrids automatically.
+#Auto generating G-grids with size=15 tracks, using layer metal3's pitch = 0.14000.
+#Using automatically generated G-grids.
+#Done routing data preparation.
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2755.98 (MB), peak = 2940.88 (MB)
+#
+#Start tQuantus RC extraction...
+#Start building rc corner(s)...
+#Number of RC Corner = 2
+#Corner Cmin /home/ykaraagac/cadence-bitirme/Enablements/NanGate45/qrc/NG45.tch 25.000000 (real) 
+#Corner Cmax /home/ykaraagac/cadence-bitirme/Enablements/NanGate45/qrc/NG45.tch 25.000000 (real) 
+#(i=10, n=10 2000)
+#metal1 -> metal1 (1)
+#metal2 -> metal2 (2)
+#metal3 -> metal3 (3)
+#metal4 -> metal4 (4)
+#metal5 -> metal5 (5)
+#metal6 -> metal6 (6)
+#metal7 -> metal7 (7)
+#metal8 -> metal8 (8)
+#metal9 -> metal9 (9)
+#metal10 -> metal10 (10)
+#SADV-On
+# Corner(s) : 
+#Cmin [25.00] 
+#Cmax [25.00]
+# Corner id: 0
+# Layout Scale: 1.000000
+# Has Metal Fill model: yes
+# Temperature was set
+# Temperature : 25.000000
+# Ref. Temp   : 25.000000
+# Corner id: 1
+# Layout Scale: 1.000000
+# Has Metal Fill model: yes
+# Temperature was set
+# Temperature : 25.000000
+# Ref. Temp   : 25.000000
+#SADV-Off
+#total pattern=220 [10, 605]
+#Reading previously stored rc_model file ( /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_mul_mule_power/scripts/cadence/outputs/innovus/job2_mul_500/implemented/job2_mul_500.enc.dat/libs/misc/rc_model.bin ) ...
+#found CAPMODEL /home/ykaraagac/cadence-bitirme/Enablements/NanGate45/qrc/NG45.tch
+#found RESMODEL /home/ykaraagac/cadence-bitirme/Enablements/NanGate45/qrc/NG45.tch 25.000000 
+#CCE Version read = IQuantus/TQuantus 24.1.0-s365
+#number model r/c [1,1] [10,605] read
+#0 rcmodel(s) requires rebuild
+#Build RC corners: cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2773.39 (MB), peak = 2940.88 (MB)
+#Finish check_net_pin_list step Enter extract
+#Start init net ripin tree building
+#Finish init net ripin tree building
+#Cpu time = 00:00:00
+#Elapsed time = 00:00:00
+#Increased memory = 0.00 (MB)
+#Total memory = 2773.39 (MB)
+#Peak memory = 2940.88 (MB)
+#Using multithreading with 16 threads.
+#begin processing metal fill model file
+#end processing metal fill model file
+#Length limit = 200 pitches
+#opt mode = 2
+#Finish check_net_pin_list step Fix net pin list
+#Start generate extraction boxes.
+#
+#Extract using 30 x 30 Hboxes
+#3x3 initial hboxes
+#Use area based hbox pruning.
+#0/0 hboxes pruned.
+#Complete generating extraction boxes.
+#Extract 4 hboxes with 16 threads on machine with  3.25GHz 1024KB Cache 128CPU...
+#Process 0 special clock nets for rc extraction
+#Total 3472 nets were built. 10 nodes added to break long wires. 0 net(s) have incomplete routes.
+#Start inst blockage merging.
+#Run Statistics for Extraction:
+#   Cpu time = 00:00:02, elapsed time = 00:00:01 .
+#   Increased memory =   153.64 (MB), total memory =  2926.90 (MB), peak memory =  2940.88 (MB)
+#Register nets and terms for rcdb /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_mul_mule_power/scripts/cadence/innovus_temp_963072_e3ca31bf-12e2-429f-a688-469364253e82_dockereda-rocky8_ykaraagac_7bN1bI/nr0_963072_e3ca31bf-12e2-429f-a688-469364253e82HuYBxf.rcdb.d
+#Finish registering nets and terms for rcdb.
+#Simplify RC tree: cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2861.10 (MB), peak = 2940.88 (MB)
+#RC Statistics: 17534 Res, 8948 Ground Cap, 673 XCap (Edge to Edge)
+#WARNING (NREX-102) Net opcode_pc_i[23] is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net opcode_pc_i[30] is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net opcode_pc_i[22] is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net UNCONNECTED is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net UNCONNECTED32 is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net UNCONNECTED27 is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net UNCONNECTED20 is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net UNCONNECTED28 is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net UNCONNECTED26 is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net UNCONNECTED19 is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net UNCONNECTED31 is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net UNCONNECTED30 is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net UNCONNECTED29 is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net UNCONNECTED22 is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net UNCONNECTED21 is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net UNCONNECTED24 is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net UNCONNECTED23 is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net UNCONNECTED25 is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net UNCONNECTED18 is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net UNCONNECTED16 is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (EMS-27) Message (NREX-102) has exceeded the current message display limit of 20.
+#To increase the message display limit, refer to the product command reference manual.
+#RC V/H edge ratio: 0.24, Avg V/H Edge Length: 2177.90 (7347), Avg L-Edge Length: 7988.44 (6416)
+#Nets and terms are pre-registered for rcdb /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_mul_mule_power/scripts/cadence/innovus_temp_963072_e3ca31bf-12e2-429f-a688-469364253e82_dockereda-rocky8_ykaraagac_7bN1bI/nr0_963072_e3ca31bf-12e2-429f-a688-469364253e82HuYBxf.rcdb.d.
+#Start writing RC data.
+#Finish writing RC data
+#Finish writing rcdb with 21007 nodes, 17535 edges, and 1696 xcaps
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2857.40 (MB), peak = 2940.88 (MB)
+Restoring parasitic data from file '/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_mul_mule_power/scripts/cadence/innovus_temp_963072_e3ca31bf-12e2-429f-a688-469364253e82_dockereda-rocky8_ykaraagac_7bN1bI/nr0_963072_e3ca31bf-12e2-429f-a688-469364253e82HuYBxf.rcdb.d' ...
+Reading RCDB with compressed RC data.
+Reading RCDB with compressed RC data.
+Begin read_parasitics... (cpu: 0:00:00.0 real: 0:00:00.0 mem: 2857.402M)
+Following multi-corner parasitics specified:
+	/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_mul_mule_power/scripts/cadence/innovus_temp_963072_e3ca31bf-12e2-429f-a688-469364253e82_dockereda-rocky8_ykaraagac_7bN1bI/nr0_963072_e3ca31bf-12e2-429f-a688-469364253e82HuYBxf.rcdb.d (rcdb)
+Reading RCDB with compressed RC data.
+		Cell biriscv_multiplier has rcdb /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_mul_mule_power/scripts/cadence/innovus_temp_963072_e3ca31bf-12e2-429f-a688-469364253e82_dockereda-rocky8_ykaraagac_7bN1bI/nr0_963072_e3ca31bf-12e2-429f-a688-469364253e82HuYBxf.rcdb.d specified
+Cell biriscv_multiplier, hinst 
+Reading RCDB with compressed RC data.
+Done read_parasitics... (cpu: 0:00:00.1 real: 0:00:00.0 mem: 2856.141M)
+#
+#Restore RCDB.
+#
+#Complete tQuantus RC extraction.
+#Cpu time = 00:00:03
+#Elapsed time = 00:00:01
+#Increased memory = 100.16 (MB)
+#Total memory = 2856.14 (MB)
+#Peak memory = 2940.88 (MB)
+#
+#10 inserted nodes are removed
+#Restored 0 tie nets, 0 tie snets, 0 partial nets
+#Start Design Signature (0)
+#Finish Inst Signature in MT(44699151)
+#Finish Net Signature in MT(49161145)
+#Finish SNet Signature in MT (63200958)
+#Run time and memory report for RC extraction:
+#RC extraction running on  3.25GHz 1024KB Cache 128CPU.
+#Run Statistics for snet signature:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 , scale factor =  1.01/16, scale score = 0.06.
+#    Increased memory =    -0.05 (MB), total memory =  2789.36 (MB), peak memory =  2940.88 (MB)
+#Run Statistics for Net Final Signature:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+#   Increased memory =     0.00 (MB), total memory =  2789.41 (MB), peak memory =  2940.88 (MB)
+#Run Statistics for Net launch:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 , scale factor =  6.65/16, scale score = 0.42.
+#    Increased memory =    -0.04 (MB), total memory =  2789.41 (MB), peak memory =  2940.88 (MB)
+#Run Statistics for Net init_dbsNet_slist:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+#   Increased memory =     0.00 (MB), total memory =  2789.45 (MB), peak memory =  2940.88 (MB)
+#Run Statistics for net signature:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 , scale factor =  6.05/16, scale score = 0.38.
+#    Increased memory =    -0.04 (MB), total memory =  2789.41 (MB), peak memory =  2940.88 (MB)
+#Run Statistics for inst signature:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 , scale factor =  2.83/16, scale score = 0.18.
+#    Increased memory =   -12.08 (MB), total memory =  2789.45 (MB), peak memory =  2940.88 (MB)
+Start delay calculation (fullDC) (16 T). (MEM=3017.36)
+Reading RCDB with compressed RC data.
+AAE_INFO: 16 threads acquired from CTE.
+Total number of fetched objects 3506
+AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
+AAE_INFO-618: Total number of nets in the design is 3571,  98.2 percent of the nets selected for SI analysis
+End delay calculation. (MEM=3071.05 CPU=0:00:01.0 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=3064.79 CPU=0:00:02.9 REAL=0:00:02.0)
+Save waveform /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_mul_mule_power/scripts/cadence/innovus_temp_963072_e3ca31bf-12e2-429f-a688-469364253e82_dockereda-rocky8_ykaraagac_7bN1bI/.AAE_BAXiN8/.AAE_963072_e3ca31bf-12e2-429f-a688-469364253e82/waveform.data...
+Loading CTE timing window with TwFlowType 0...(CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 3041.5M)
+Add other clocks and setupCteToAAEClockMapping during iter 1
+Loading CTE timing window is completed (CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 3042.5M)
+Starting SI iteration 2
+Start delay calculation (fullDC) (16 T). (MEM=3205.88)
+Glitch Analysis: View WC_VIEW -- Total Number of Nets Skipped = 0. 
+Glitch Analysis: View WC_VIEW -- Total Number of Nets Analyzed = 3506. 
+Total number of fetched objects 3506
+AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
+AAE_INFO-618: Total number of nets in the design is 3571,  0.0 percent of the nets selected for SI analysis
+End delay calculation. (MEM=3211.88 CPU=0:00:00.1 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=3211.88 CPU=0:00:00.1 REAL=0:00:00.0)
+Load RC corner of view WC_VIEW
+
+Begin Power Analysis
+
+             0V	    VSS
+           1.1V	    VDD
+
+Begin Processing Timing Library for Power Calculation
+
+Ended Processing Timing Library for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=3184.46MB/8879.00MB/3184.46MB)
+
+
+
+Begin Processing Power Net/Grid for Power Calculation
+
+Ended Processing Power Net/Grid for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=3184.46MB/8879.00MB/3184.46MB)
+
+Begin Processing Timing Window Data for Power Calculation
+
+clk(500MHz) CK: assigning clock clk to net clk_i
+Ended Processing Timing Window Data for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=3196.46MB/9911.06MB/3196.46MB)
+
+** WARN:  (VOLTUS_POWR-1784): The SDC clock frequency 500MHz is being overwritten with the VCD clock frequency 100MHz for the clock 'clk' associated with the net
+'clk_i' from the TCF file. If the SDC clock frequency is required for static power calculation, use the command
+'set_switching_activity -clock <clock name> -scale_factor <num>' to scale frequency of this clock.
+
+Begin Processing User Attributes
+
+Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=3196.46MB/9911.06MB/3196.46MB)
+
+Begin Processing Signal Activity
+
+
+Starting Levelizing
+2026-Jun-07 20:44:48 (2026-Jun-07 20:44:48 GMT)
+2026-Jun-07 20:44:48 (2026-Jun-07 20:44:48 GMT): 10%
+2026-Jun-07 20:44:48 (2026-Jun-07 20:44:48 GMT): 20%
+2026-Jun-07 20:44:48 (2026-Jun-07 20:44:48 GMT): 30%
+2026-Jun-07 20:44:48 (2026-Jun-07 20:44:48 GMT): 40%
+2026-Jun-07 20:44:48 (2026-Jun-07 20:44:48 GMT): 50%
+2026-Jun-07 20:44:48 (2026-Jun-07 20:44:48 GMT): 60%
+2026-Jun-07 20:44:48 (2026-Jun-07 20:44:48 GMT): 70%
+2026-Jun-07 20:44:48 (2026-Jun-07 20:44:48 GMT): 80%
+2026-Jun-07 20:44:48 (2026-Jun-07 20:44:48 GMT): 90%
+
+Finished Levelizing
+2026-Jun-07 20:44:48 (2026-Jun-07 20:44:48 GMT)
+
+Starting Activity Propagation
+2026-Jun-07 20:44:48 (2026-Jun-07 20:44:48 GMT)
+** INFO:  (VOLTUS_POWR-1356): No default input activity has been set. Defaulting to 0.2.
+Use 'set_default_switching_activity -input_activity' command to change the default activity value.
+
+2026-Jun-07 20:44:48 (2026-Jun-07 20:44:48 GMT): 10%
+2026-Jun-07 20:44:48 (2026-Jun-07 20:44:48 GMT): 20%
+2026-Jun-07 20:44:48 (2026-Jun-07 20:44:48 GMT): 30%
+
+Finished Activity Propagation
+2026-Jun-07 20:44:48 (2026-Jun-07 20:44:48 GMT)
+
+Activity annotation summary:
+        Primary Inputs : 148/148 = 100%
+          Flop outputs : 98/198 = 49.4949%
+  Memory/Macro outputs : 0/0 = 0%
+      Tristate outputs : 0/0 = 0%
+            Total Nets : 247/3569 = 6.92071%
+
+Ended Processing Signal Activity: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=3196.46MB/9911.06MB/3196.46MB)
+
+Begin Power Computation
+
+      ----------------------------------------------------------
+      # of cell(s) missing both power/leakage table: 0
+      # of cell(s) missing power table: 0
+      # of cell(s) missing leakage table: 0
+      ----------------------------------------------------------
+
+
+
+Starting Calculating power
+2026-Jun-07 20:44:48 (2026-Jun-07 20:44:48 GMT)
+2026-Jun-07 20:44:48 (2026-Jun-07 20:44:48 GMT): 10%
+2026-Jun-07 20:44:48 (2026-Jun-07 20:44:48 GMT): 20%
+2026-Jun-07 20:44:48 (2026-Jun-07 20:44:48 GMT): 30%
+2026-Jun-07 20:44:48 (2026-Jun-07 20:44:48 GMT): 40%
+2026-Jun-07 20:44:48 (2026-Jun-07 20:44:48 GMT): 50%
+2026-Jun-07 20:44:48 (2026-Jun-07 20:44:48 GMT): 60%
+2026-Jun-07 20:44:48 (2026-Jun-07 20:44:48 GMT): 70%
+2026-Jun-07 20:44:48 (2026-Jun-07 20:44:48 GMT): 80%
+2026-Jun-07 20:44:48 (2026-Jun-07 20:44:48 GMT): 90%
+
+Finished Calculating power
+2026-Jun-07 20:44:48 (2026-Jun-07 20:44:48 GMT)
+      # of MSMV cell(s) missing power_level: 0
+Ended Power Computation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=3209.46MB/10077.12MB/3209.46MB)
+
+Begin Processing User Attributes
+
+Begin Processing set_power
+Ended Processing set_power: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=3209.46MB/10077.12MB/3209.46MB)
+Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=3209.46MB/10077.12MB/3209.46MB)
+
+Ended Power Analysis: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=3209.46MB/10077.12MB/3209.46MB)
+
+Begin Boundary Leakage Calculation
+Ended Boundary Leakage Calculation: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=3209.46MB/10077.12MB/3209.46MB)
+Begin Static Power Report Generation
+*----------------------------------------------------------------------------------------
+*	Innovus 25.12-s079_1 (64bit) 11/18/2025 12:56 (Linux 4.18.0-305.el8.x86_64)
+*	
+*
+* 	Date & Time:	2026-Jun-07 20:44:48 (2026-Jun-07 20:44:48 GMT)
+*
+*----------------------------------------------------------------------------------------
+*
+*	Design: biriscv_multiplier
+*
+*	Liberty Libraries used:
+*	        /home/ykaraagac/cadence-bitirme/Enablements/NanGate45/lib/NangateOpenCellLibrary_typical.lib
+*
+*	Parasitic Files used:
+*
+*       Dynamic View: WC_VIEW
+*
+*       Leakage View: WC_VIEW
+*
+*       User-Defined Activity : N.A.
+*
+*	Switching Activity File used:
+*	        /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_mul_mule_power/scripts/cadence/outputs/vcd/mul_standalone.vcd
+*                  Vcd Window used(Start Time, Stop Time):  
+*                Vcd Scale Factor: 1
+*
+*       Hierarchical Global Activity: N.A.
+*
+*       Global Activity: N.A.
+*
+*       Sequential Element Activity: 0.200000
+*
+*       Primary Input Activity: 0.200000
+*
+*       Default icg ratio: N.A.
+*
+*       Global Comb ClockGate Ratio: N.A.
+*
+*	Power Units = 1mW
+*
+*	Time Units = 1e-09 secs
+*
+*       report_power
+*
+-----------------------------------------------------------------------------------------
+*
+
+
+
+Total Power
+-----------------------------------------------------------------------------------------
+Total Internal Power:        1.33471339 	   47.5261%
+Total Switching Power:       1.36717785 	   48.6821%
+Total Leakage Power:         0.10648713 	    3.7918%
+Total Power:                 2.80837837
+-----------------------------------------------------------------------------------------
+
+
+Group                           Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+Sequential                       0.08089      0.1032    0.008984      0.1931       6.876
+Macro                                  0           0           0           0           0
+IO                                     0           0           0           0           0
+Combinational                      1.254       1.264      0.0975       2.615       93.12
+Clock (Combinational)                  0           0           0           0           0
+Clock (Sequential)                     0           0           0           0           0
+-----------------------------------------------------------------------------------------
+Total                              1.335       1.367      0.1065       2.808         100
+-----------------------------------------------------------------------------------------
+
+
+Rail                  Voltage   Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+VDD                       1.1      1.335       1.367      0.1065       2.808         100
+ 
+ 
+-----------------------------------------------------------------------------------------
+*	Power Distribution Summary: 
+*              Highest Average Power:   mul_123_68_g16148__5526 (AND4_X2):          0.03652
+*              Highest Leakage Power:     operand_b_e1_q_reg[1] (DFFR_X2):        0.0001303
+*                Total Cap:      2.13705e-11 F
+*                Total instances in design:  2840
+*                Total instances in design with no power:     0
+*                Total instances in design with no activty:     0
+
+*                Total Fillers and Decap:     0
+-----------------------------------------------------------------------------------------
+ 
+** INFO:  (VOLTUS_POWR-3465): There are 0 decaps and 0 fillers in the design
+
+Ended Static Power Report Generation: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=3210.46MB/10077.12MB/3210.46MB)
+

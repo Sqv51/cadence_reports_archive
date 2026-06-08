@@ -1,0 +1,17 @@
+Job 4: Software Co-Design Evaluation (RTL-VCD-to-Post-Route Replay)
+Date: 2026-06-08
+Design: core_hybrid_100
+Method: finalized post-route Innovus DB replay using RTL-generated VCD activity
+
+| Benchmark | Baseline Cycles | Switched Cycles | Cycle Delta (%) | Baseline Core Power (mW) | Switched Core Power (mW) | Core Power Delta (%) | u_mule Power (mW) |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| complex_mul_vec | 109170 | 114798 | +5.155% | 7.443486 | 7.448655 | +0.069% | 0.1204 |
+| fft_butterfly | 84951 | 87249 | +2.705% | 7.502476 | 7.511942 | +0.126% | 0.1198 |
+| fir_direct | 322139 | 386651 | +20.026% | 7.988423 | 7.829512 | -1.989% | 0.1343 |
+| fir_unrolled | 141372 | 214443 | +51.687% | 8.081438 | 7.875304 | -2.551% | 0.1403 |
+| matmul_tiled | 562835 | 665234 | +18.193% | 8.148145 | 8.099633 | -0.595% | 0.1725 |
+| outer_product | 71737 | 83256 | +16.057% | 8.197689 | 8.187659 | -0.122% | 0.1320 |
+
+Brief summary:
+- Benchmarks with decreased core power: fir_direct, fir_unrolled, matmul_tiled, outer_product
+- Cycle delta range: +2.705% to +51.687%

@@ -1,0 +1,29 @@
+Job 4 Summary Notes
+===================
+
+The switched benchmark campaign was evaluated on the finalized core_hybrid_100
+post-route database by replaying RTL-generated VCD activity onto the routed
+design. Cycle counts were taken from the benchmark metrics JSON artifacts, and
+power was extracted from Innovus report_power runs using the saved post-route DB.
+
+Observed behavior:
+- All switched binaries increased execution cycles relative to their unswitched
+  baselines.
+- The smallest cycle penalty was fft_butterfly at +2.705%.
+- The largest cycle penalty was fir_unrolled at +51.687%.
+- Core power changes were modest compared to the cycle changes.
+- Four benchmarks showed lower total core power in the switched form:
+  fir_direct, fir_unrolled, matmul_tiled, and outer_product.
+- Two benchmarks showed slightly higher total core power in the switched form:
+  complex_mul_vec and fft_butterfly.
+- u_mule instance power increased consistently in switched runs, indicating the
+  compiler-driven routing of multiply work onto the mule path is visible in the
+  post-route power reports.
+
+Per-benchmark deltas:
+- complex_mul_vec: cycles +5.155%, core power +0.069%, u_mule 0.1204 mW
+- fft_butterfly: cycles +2.705%, core power +0.126%, u_mule 0.1198 mW
+- fir_direct: cycles +20.026%, core power -1.989%, u_mule 0.1343 mW
+- fir_unrolled: cycles +51.687%, core power -2.551%, u_mule 0.1403 mW
+- matmul_tiled: cycles +18.193%, core power -0.595%, u_mule 0.1725 mW
+- outer_product: cycles +16.057%, core power -0.122%, u_mule 0.1320 mW

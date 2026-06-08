@@ -1,0 +1,38 @@
+Job 6 Selective Steering Summary Notes
+=====================================
+
+The Job 6 campaign evaluated a selective mule-steering policy across the
+original 6 application kernels and the 14 latency-hiding kernels used for the
+extended Table 14 study. Power was extracted by replaying RTL VCD activity onto
+the finalized core_hybrid_100 post-route database.
+
+Scope and completeness:
+- 20 benchmarks were evaluated.
+- 40 simulation metrics files were collected: baseline and selective for every
+  benchmark.
+- 40 post-route power reports were collected: baseline and selective for every
+  benchmark.
+
+Key verification outcomes:
+- fir_unrolled is no longer 100% mule under the selective policy.
+- matmul_tiled is no longer naively over-patched; the selective policy chose
+  zero replacements and preserved baseline timing behavior.
+- The policy fixed the original dense-loop failure mode, but the unrolled_dot16,
+  unrolled_dot32, and unrolled_dot64 kernels still behave like dynamically
+  all-mule kernels because each exposes a single hot static multiply site.
+
+Top-level observations:
+- The lowest cycle penalty is 0.000%, achieved by fir_direct, matmul_tiled,
+  outer_product, and sliding_correlation.
+- Among kernels that were genuinely steered, fft_butterfly had the lowest cycle
+  penalty at +1.803%.
+- The largest total core power reduction was observed on unrolled_dot16 at
+  -1.400%.
+- Several synthetic latency-hiding kernels reduced core power modestly, but the
+  cost in cycles remains material for the estrin and unrolled-dot families.
+
+Recommended interpretation for paper notes:
+- The selective policy is materially safer than the naive 100% replacement flow.
+- It prevents the worst structural hazard cases on the original benchmark set.
+- Further refinement is still needed for singleton hot-loop multiply kernels,
+  where static patch counts understate the dynamic all-mule behavior.

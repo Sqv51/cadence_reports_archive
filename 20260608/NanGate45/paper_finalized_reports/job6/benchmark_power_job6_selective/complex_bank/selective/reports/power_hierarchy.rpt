@@ -1,0 +1,234 @@
+env CDS_WORKAREA is set to /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence
+             0V	    VSS
+           1.1V	    VDD
+Using Power View WC_VIEW
+.
+Load RC corner of view WC_VIEW
+
+Begin Power Analysis
+
+             0V	    VSS
+           1.1V	    VDD
+
+Begin Processing Timing Library for Power Calculation
+
+Ended Processing Timing Library for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2799.00MB/8680.79MB/2799.00MB)
+
+
+
+Begin Processing Power Net/Grid for Power Calculation
+
+Ended Processing Power Net/Grid for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2799.00MB/8680.79MB/2799.00MB)
+
+Begin Processing Timing Window Data for Power Calculation
+
+clk(100MHz) CK: assigning clock clk to net clk_i
+Ended Processing Timing Window Data for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2799.00MB/8680.79MB/2799.00MB)
+
+Begin Processing User Attributes
+
+Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2799.00MB/8680.79MB/2799.00MB)
+
+Begin Processing Signal Activity
+
+
+Starting Activity Propagation
+2026-Jun-08 21:50:59 (2026-Jun-08 21:50:59 GMT)
+2026-Jun-08 21:50:59 (2026-Jun-08 21:50:59 GMT): 10%
+2026-Jun-08 21:50:59 (2026-Jun-08 21:50:59 GMT): 20%
+
+Finished Activity Propagation
+2026-Jun-08 21:50:59 (2026-Jun-08 21:50:59 GMT)
+
+Activity annotation summary:
+        Primary Inputs : 180/180 = 100%
+          Flop outputs : 1909/10414 = 18.3311%
+  Memory/Macro outputs : 0/0 = 0%
+      Tristate outputs : 0/0 = 0%
+            Total Nets : 3867/35059 = 11.03%
+
+Ended Processing Signal Activity: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2799.00MB/8680.79MB/2799.00MB)
+
+Begin Power Computation
+
+      ----------------------------------------------------------
+      # of cell(s) missing both power/leakage table: 0
+      # of cell(s) missing power table: 0
+      # of cell(s) missing leakage table: 0
+      ----------------------------------------------------------
+
+
+
+Starting Calculating power
+2026-Jun-08 21:51:00 (2026-Jun-08 21:51:00 GMT)
+ ... Calculating switching power
+2026-Jun-08 21:51:00 (2026-Jun-08 21:51:00 GMT): 10%
+2026-Jun-08 21:51:00 (2026-Jun-08 21:51:00 GMT): 20%
+2026-Jun-08 21:51:00 (2026-Jun-08 21:51:00 GMT): 30%
+2026-Jun-08 21:51:00 (2026-Jun-08 21:51:00 GMT): 40%
+2026-Jun-08 21:51:00 (2026-Jun-08 21:51:00 GMT): 50%
+ ... Calculating internal and leakage power
+2026-Jun-08 21:51:00 (2026-Jun-08 21:51:00 GMT): 60%
+2026-Jun-08 21:51:01 (2026-Jun-08 21:51:01 GMT): 70%
+2026-Jun-08 21:51:02 (2026-Jun-08 21:51:02 GMT): 80%
+2026-Jun-08 21:51:02 (2026-Jun-08 21:51:02 GMT): 90%
+
+Finished Calculating power
+2026-Jun-08 21:51:03 (2026-Jun-08 21:51:03 GMT)
+      # of MSMV cell(s) missing power_level: 0
+Ended Power Computation: (cpu=0:00:03, real=0:00:03, mem(process/total/peak)=2799.00MB/8680.79MB/2799.00MB)
+
+Begin Processing User Attributes
+
+Begin Processing set_power
+Ended Processing set_power: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=2799.00MB/8680.79MB/2799.00MB)
+Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2799.00MB/8680.79MB/2799.00MB)
+
+Ended Power Analysis: (cpu=0:00:03, real=0:00:04, mem(process/total/peak)=2799.00MB/8680.79MB/2799.00MB)
+
+Begin Boundary Leakage Calculation
+Ended Boundary Leakage Calculation: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=2799.00MB/8680.79MB/2799.00MB)
+Begin Static Power Report Generation
+*----------------------------------------------------------------------------------------
+*	Innovus 25.12-s079_1 (64bit) 11/18/2025 12:56 (Linux 4.18.0-305.el8.x86_64)
+*	
+*
+* 	Date & Time:	2026-Jun-08 21:51:03 (2026-Jun-08 21:51:03 GMT)
+*
+*----------------------------------------------------------------------------------------
+*
+*	Design: riscv_core
+*
+*	Liberty Libraries used:
+*	        /home/ykaraagac/cadence-bitirme/Enablements/NanGate45/lib/NangateOpenCellLibrary_typical.lib
+*
+*	Parasitic Files used:
+*
+*       Dynamic View: WC_VIEW
+*
+*       Leakage View: WC_VIEW
+*
+*       User-Defined Activity : N.A.
+*
+*	Switching Activity File used:
+*	        /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job6_selective_runs/complex_bank_selective_latency_hidden_mule/vcd/core_hybrid.vcd
+*                  Vcd Window used(Start Time, Stop Time):  
+*                Vcd Scale Factor: 1
+*
+*       Hierarchical Global Activity: N.A.
+*
+*       Global Activity: N.A.
+*
+*       Sequential Element Activity: 0.200000
+*
+*       Primary Input Activity: 0.200000
+*
+*       Default icg ratio: N.A.
+*
+*       Global Comb ClockGate Ratio: N.A.
+*
+*	Power Units = 1mW
+*
+*	Time Units = 1e-09 secs
+*
+*       report_power -hierarchy all
+*
+-----------------------------------------------------------------------------------------
+*
+
+
+
+Total Power
+-----------------------------------------------------------------------------------------
+Total Internal Power:        4.40257590 	   53.5112%
+Total Switching Power:       2.64142542 	   32.1052%
+Total Leakage Power:         1.18339620 	   14.3836%
+Total Power:                 8.22739752
+-----------------------------------------------------------------------------------------
+
+
+Group                           Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+Sequential                         2.876      0.3801      0.4992       3.756       45.65
+Macro                                  0           0           0           0           0
+IO                                     0           0           0           0           0
+Combinational                       1.05       1.281      0.6701       3.001       36.47
+Clock (Combinational)             0.4766      0.9803     0.01403       1.471       17.88
+Clock (Sequential)                     0           0           0           0           0
+-----------------------------------------------------------------------------------------
+Total                              4.403       2.641       1.183       8.227         100
+-----------------------------------------------------------------------------------------
+
+
+Clock                           Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+clk                               0.4766      0.9803     0.01403       1.471       17.88
+-----------------------------------------------------------------------------------------
+Total                             0.4766      0.9803     0.01403       1.471       17.88
+-----------------------------------------------------------------------------------------
+Clock: clk
+Clock Period: 0.010000 usec 
+Clock Toggle Rate:   200.0000 Mhz 
+Clock Static Probability:  0.5000
+  
+
+
+Rail                  Voltage   Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+VDD                       1.1      4.403       2.641       1.183       8.227         100
+
+
+Hierarchy                       Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+u_csr                             0.1942     0.02746     0.06068      0.2823       3.432 
+u_div                             0.1397     0.03013     0.04563      0.2155       2.619 
+u_exec0                          0.08052     0.06175     0.04227      0.1845       2.243 
+u_exec1                          0.08614     0.06767     0.04122       0.195       2.371 
+u_frontend                         1.843       0.794      0.4618       3.099       37.66 
+u_issue                            1.239      0.8467      0.3749       2.461       29.91 
+u_lsu                             0.1022     0.04855     0.02785      0.1786        2.17 
+u_mul                             0.4879      0.4309     0.08582       1.005       12.21 
+u_mule                           0.07362     0.01582     0.03827      0.1277       1.552 
+u_csr/u_csrfile                    0.134     0.01087     0.04434      0.1892       2.299 
+u_frontend/u_decode               0.1397     0.04719     0.03021      0.2171       2.639 
+u_frontend/u_fetch                0.1075     0.02763     0.02775      0.1628       1.979 
+u_frontend/u_npc                    1.56      0.6504      0.4026       2.613       31.76 
+u_issue/u_pipe0_ctrl               0.176     0.04109     0.04199      0.2591       3.149 
+u_issue/u_pipe1_ctrl              0.1045     0.02309     0.02772      0.1553       1.887 
+u_issue/u_regfile                 0.8375      0.5129      0.2376       1.588        19.3 
+u_lsu/u_lsu_request              0.04158    0.008057    0.009392     0.05903      0.7175 
+u_exec0/u_alu                    0.02565     0.03462     0.02058     0.08085      0.9827 
+u_exec1/u_alu                    0.02318      0.0332     0.02013     0.07651      0.9299 
+u_frontend/u_decode/genblk1.u_fifo
+                                  0.1362     0.04379      0.0253      0.2053       2.496 
+u_frontend/u_npc/BRANCH_PREDICTION.u_lru
+                                 0.01127    0.001771    0.001926     0.01497       0.182 
+u_frontend/u_decode/genblk1.u_dec0
+                               0.0009081   0.0009469    0.001663    0.003518     0.04276 
+u_frontend/u_decode/genblk1.u_dec1
+                                 0.00104    0.001385    0.001698    0.004123     0.05011 
+ 
+ 
+-----------------------------------------------------------------------------------------
+*	Power Distribution Summary: 
+*              Highest Average Power:            u_issue/g33019 (AND3_X2):         0.004407
+*              Highest Leakage Power:            u_issue/g33248 (AND4_X4):        0.0001893
+*                Total Cap:      2.19821e-10 F
+*                Total instances in design: 28954
+*                Total instances in design with no power:     0
+*                Total instances in design with no activty:     0
+
+*                Total Fillers and Decap:     0
+-----------------------------------------------------------------------------------------
+ 
+** INFO:  (VOLTUS_POWR-3465): There are 0 decaps and 0 fillers in the design
+
+Ended Static Power Report Generation: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=2799.00MB/8680.79MB/2799.00MB)
+

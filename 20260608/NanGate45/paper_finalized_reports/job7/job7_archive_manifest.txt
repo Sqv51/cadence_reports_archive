@@ -1,0 +1,22 @@
+Job 7 Archive Manifest
+======================
+
+Archived contents:
+- raw_reports/merged_job7_power_results_only.txt
+  Compact merged Job 7 report containing final results, metrics JSON, summaries,
+  and power reports. Xcelium/Innovus logs are intentionally excluded.
+- benchmark_power_job7_exact_free/complex_bank/oracle/reports/*.rpt
+  Voltus/Innovus post-route replay power reports for the only accepted
+  exact-free oracle benchmark.
+- results_json/**/metrics/core_hybrid.json and results_json/**/summary.json
+  Baseline and exact-free oracle cycle/patch metadata for the full Job 7 suite.
+- scripts/run_job7_exact_free_batch.sh
+- scripts/run_job7_exact_free_power_batch.sh
+- scripts/collect_job7_exact_free_results.py
+- scripts/generate_benchmark_vcds_xrun.py
+
+Summary:
+The oracle sweep found one exact-free accepted patch in complex_bank. Cycles were
+preserved at 37321 -> 37321 (+0.000%). Post-route replay power changed from
+8.261768 mW to 8.267983 mW (+0.075%), so no accepted exact-free patch reduced
+core power in this sweep.

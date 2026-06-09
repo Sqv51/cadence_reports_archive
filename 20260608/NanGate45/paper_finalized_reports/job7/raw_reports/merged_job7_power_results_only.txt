@@ -1,0 +1,3538 @@
+Job 7 Oracle-Validated Exact-Free Steering Power and Result Bundle
+=================================================================
+
+Generated: 2026-06-09 06:15:43 UTC
+Contents: final collector table, Job 7 metrics JSON, Job 7 summary JSON, and power report files. Logs are intentionally excluded.
+
+===== BEGIN FINAL_JOB7_COLLECTOR_TABLE =====
+
+| Benchmark | Baseline Cycles | Oracle Switched Cycles | Cycle Delta (%) | Baseline Core Pwr (mW) | Oracle Core Pwr (mW) | Core Power Delta (%) |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| `complex_bank` | 37321 | 37321 | `+0.000%` | 8.261768 | 8.267983 | `+0.075%` |
+
+No accepted exact-free patch reduced total core power.
+Omitted benchmarks: complex_mul_vec (zero accepted patches), fft_butterfly (zero accepted patches), fir_direct (zero accepted patches), fir_unrolled (zero accepted patches), matmul_tiled (zero accepted patches), outer_product (zero accepted patches), estrin_2level (zero accepted patches), estrin_poly (zero accepted patches), extended_estrin (zero accepted patches), filter_bank_4out (zero accepted patches), grouped_correlation_bank (zero accepted patches), multi_accumulator (zero accepted patches), rdr_like_corr (zero accepted patches), reduction_tree_mul (zero accepted patches), sliding_correlation (zero accepted patches), unrolled_dot8 (zero accepted patches), unrolled_dot16 (zero accepted patches), unrolled_dot32 (zero accepted patches), unrolled_dot64 (zero accepted patches)
+
+===== END FINAL_JOB7_COLLECTOR_TABLE =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_power/complex_bank/oracle/reports/power_hierarchy.rpt =====
+
+env CDS_WORKAREA is set to /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence
+             0V	    VSS
+           1.1V	    VDD
+Using Power View WC_VIEW
+.
+Load RC corner of view WC_VIEW
+
+Begin Power Analysis
+
+             0V	    VSS
+           1.1V	    VDD
+
+Begin Processing Timing Library for Power Calculation
+
+Ended Processing Timing Library for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2808.36MB/8680.50MB/2808.36MB)
+
+
+
+Begin Processing Power Net/Grid for Power Calculation
+
+Ended Processing Power Net/Grid for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2808.36MB/8680.50MB/2808.36MB)
+
+Begin Processing Timing Window Data for Power Calculation
+
+clk(100MHz) CK: assigning clock clk to net clk_i
+Ended Processing Timing Window Data for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2809.36MB/8680.50MB/2809.36MB)
+
+Begin Processing User Attributes
+
+Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2809.36MB/8680.50MB/2809.36MB)
+
+Begin Processing Signal Activity
+
+
+Starting Activity Propagation
+2026-Jun-09 06:11:50 (2026-Jun-09 06:11:50 GMT)
+2026-Jun-09 06:11:51 (2026-Jun-09 06:11:51 GMT): 10%
+2026-Jun-09 06:11:51 (2026-Jun-09 06:11:51 GMT): 20%
+
+Finished Activity Propagation
+2026-Jun-09 06:11:51 (2026-Jun-09 06:11:51 GMT)
+
+Activity annotation summary:
+        Primary Inputs : 180/180 = 100%
+          Flop outputs : 1909/10414 = 18.3311%
+  Memory/Macro outputs : 0/0 = 0%
+      Tristate outputs : 0/0 = 0%
+            Total Nets : 3867/35059 = 11.03%
+
+Ended Processing Signal Activity: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2809.36MB/8680.50MB/2809.36MB)
+
+Begin Power Computation
+
+      ----------------------------------------------------------
+      # of cell(s) missing both power/leakage table: 0
+      # of cell(s) missing power table: 0
+      # of cell(s) missing leakage table: 0
+      ----------------------------------------------------------
+
+
+
+Starting Calculating power
+2026-Jun-09 06:11:51 (2026-Jun-09 06:11:51 GMT)
+ ... Calculating switching power
+2026-Jun-09 06:11:51 (2026-Jun-09 06:11:51 GMT): 10%
+2026-Jun-09 06:11:51 (2026-Jun-09 06:11:51 GMT): 20%
+2026-Jun-09 06:11:51 (2026-Jun-09 06:11:51 GMT): 30%
+2026-Jun-09 06:11:51 (2026-Jun-09 06:11:51 GMT): 40%
+2026-Jun-09 06:11:51 (2026-Jun-09 06:11:51 GMT): 50%
+ ... Calculating internal and leakage power
+2026-Jun-09 06:11:52 (2026-Jun-09 06:11:52 GMT): 60%
+2026-Jun-09 06:11:52 (2026-Jun-09 06:11:52 GMT): 70%
+2026-Jun-09 06:11:54 (2026-Jun-09 06:11:54 GMT): 80%
+2026-Jun-09 06:11:54 (2026-Jun-09 06:11:54 GMT): 90%
+
+Finished Calculating power
+2026-Jun-09 06:11:54 (2026-Jun-09 06:11:54 GMT)
+      # of MSMV cell(s) missing power_level: 0
+Ended Power Computation: (cpu=0:00:03, real=0:00:03, mem(process/total/peak)=2809.36MB/8680.50MB/2809.36MB)
+
+Begin Processing User Attributes
+
+Begin Processing set_power
+Ended Processing set_power: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=2809.36MB/8680.50MB/2809.36MB)
+Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2809.36MB/8680.50MB/2809.36MB)
+
+Ended Power Analysis: (cpu=0:00:04, real=0:00:04, mem(process/total/peak)=2809.36MB/8680.50MB/2809.36MB)
+
+Begin Boundary Leakage Calculation
+Ended Boundary Leakage Calculation: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=2809.36MB/8680.50MB/2809.36MB)
+Begin Static Power Report Generation
+*----------------------------------------------------------------------------------------
+*	Innovus 25.12-s079_1 (64bit) 11/18/2025 12:56 (Linux 4.18.0-305.el8.x86_64)
+*	
+*
+* 	Date & Time:	2026-Jun-09 06:11:54 (2026-Jun-09 06:11:54 GMT)
+*
+*----------------------------------------------------------------------------------------
+*
+*	Design: riscv_core
+*
+*	Liberty Libraries used:
+*	        /home/ykaraagac/cadence-bitirme/Enablements/NanGate45/lib/NangateOpenCellLibrary_typical.lib
+*
+*	Parasitic Files used:
+*
+*       Dynamic View: WC_VIEW
+*
+*       Leakage View: WC_VIEW
+*
+*       User-Defined Activity : N.A.
+*
+*	Switching Activity File used:
+*	        /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/complex_bank_exact_free_mule/vcd/core_hybrid.vcd
+*                  Vcd Window used(Start Time, Stop Time):  
+*                Vcd Scale Factor: 1
+*
+*       Hierarchical Global Activity: N.A.
+*
+*       Global Activity: N.A.
+*
+*       Sequential Element Activity: 0.200000
+*
+*       Primary Input Activity: 0.200000
+*
+*       Default icg ratio: N.A.
+*
+*       Global Comb ClockGate Ratio: N.A.
+*
+*	Power Units = 1mW
+*
+*	Time Units = 1e-09 secs
+*
+*       report_power -hierarchy all
+*
+-----------------------------------------------------------------------------------------
+*
+
+
+
+Total Power
+-----------------------------------------------------------------------------------------
+Total Internal Power:        4.41871311 	   53.4437%
+Total Switching Power:       2.66575943 	   32.2420%
+Total Leakage Power:         1.18351096 	   14.3144%
+Total Power:                 8.26798350
+-----------------------------------------------------------------------------------------
+
+
+Group                           Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+Sequential                         2.877      0.3813      0.4993       3.757       45.44
+Macro                                  0           0           0           0           0
+IO                                     0           0           0           0           0
+Combinational                      1.065       1.304      0.6702        3.04       36.77
+Clock (Combinational)             0.4766      0.9803     0.01403       1.471       17.79
+Clock (Sequential)                     0           0           0           0           0
+-----------------------------------------------------------------------------------------
+Total                              4.419       2.666       1.184       8.268         100
+-----------------------------------------------------------------------------------------
+
+
+Clock                           Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+clk                               0.4766      0.9803     0.01403       1.471       17.79
+-----------------------------------------------------------------------------------------
+Total                             0.4766      0.9803     0.01403       1.471       17.79
+-----------------------------------------------------------------------------------------
+Clock: clk
+Clock Period: 0.010000 usec 
+Clock Toggle Rate:   200.0000 Mhz 
+Clock Static Probability:  0.5000
+  
+
+
+Rail                  Voltage   Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+VDD                       1.1      4.419       2.666       1.184       8.268         100
+
+
+Hierarchy                       Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+u_csr                             0.1943     0.02747     0.06067      0.2825       3.416 
+u_div                               0.14     0.03036     0.04563       0.216       2.613 
+u_exec0                          0.08171     0.06305     0.04229       0.187       2.262 
+u_exec1                          0.08855     0.07066     0.04124      0.2004       2.424 
+u_frontend                         1.843      0.7959      0.4618       3.101       37.51 
+u_issue                            1.246      0.8615      0.3749       2.483       30.03 
+u_lsu                             0.1031     0.04993     0.02784      0.1809       2.188 
+u_mul                             0.4933      0.4356     0.08587       1.015       12.27 
+u_mule                           0.07169     0.01283     0.03824      0.1228       1.485 
+u_csr/u_csrfile                   0.1341     0.01092     0.04434      0.1893        2.29 
+u_frontend/u_decode               0.1398      0.0475     0.03022      0.2176       2.631 
+u_frontend/u_fetch                0.1067     0.02659     0.02775       0.161       1.947 
+u_frontend/u_npc                   1.561       0.653      0.4025       2.617       31.65 
+u_issue/u_pipe0_ctrl              0.1764     0.04128     0.04204      0.2597       3.142 
+u_issue/u_pipe1_ctrl              0.1056     0.02451     0.02775      0.1578       1.909 
+u_issue/u_regfile                 0.8404      0.5181      0.2376       1.596        19.3 
+u_lsu/u_lsu_request              0.04189    0.008352    0.009391     0.05963      0.7212 
+u_exec0/u_alu                    0.02643     0.03546     0.02059     0.08249      0.9977 
+u_exec1/u_alu                    0.02436     0.03484     0.02013     0.07933      0.9595 
+u_frontend/u_decode/genblk1.u_fifo
+                                  0.1363     0.04405      0.0253      0.2057       2.487 
+u_frontend/u_npc/BRANCH_PREDICTION.u_lru
+                                 0.01125    0.001765    0.001927     0.01495      0.1808 
+u_frontend/u_decode/genblk1.u_dec0
+                               0.0008827   0.0009164    0.001671     0.00347     0.04197 
+u_frontend/u_decode/genblk1.u_dec1
+                                0.001066    0.001427    0.001697     0.00419     0.05068 
+ 
+ 
+-----------------------------------------------------------------------------------------
+*	Power Distribution Summary: 
+*              Highest Average Power:            u_issue/g33021 (AND3_X2):         0.004563
+*              Highest Leakage Power:            u_issue/g33248 (AND4_X4):        0.0001893
+*                Total Cap:      2.19821e-10 F
+*                Total instances in design: 28954
+*                Total instances in design with no power:     0
+*                Total instances in design with no activty:     0
+
+*                Total Fillers and Decap:     0
+-----------------------------------------------------------------------------------------
+ 
+** INFO:  (VOLTUS_POWR-3465): There are 0 decaps and 0 fillers in the design
+
+Ended Static Power Report Generation: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=2809.36MB/8680.50MB/2809.36MB)
+
+
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_power/complex_bank/oracle/reports/power_hierarchy.rpt =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_power/complex_bank/oracle/reports/power_inst_a.rpt =====
+
+env CDS_WORKAREA is set to /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence
+             0V	    VSS
+           1.1V	    VDD
+Using Power View WC_VIEW
+.
+Load RC corner of view WC_VIEW
+
+Begin Power Analysis
+
+             0V	    VSS
+           1.1V	    VDD
+
+Begin Processing Timing Library for Power Calculation
+
+Ended Processing Timing Library for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2809.36MB/8680.50MB/2809.36MB)
+
+
+
+Begin Processing Power Net/Grid for Power Calculation
+
+Ended Processing Power Net/Grid for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2809.36MB/8680.50MB/2809.36MB)
+
+Begin Processing Timing Window Data for Power Calculation
+
+clk(100MHz) CK: assigning clock clk to net clk_i
+Ended Processing Timing Window Data for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2809.36MB/8680.50MB/2809.36MB)
+
+Begin Processing User Attributes
+
+Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2809.36MB/8680.50MB/2809.36MB)
+
+Begin Processing Signal Activity
+
+
+Starting Activity Propagation
+2026-Jun-09 06:11:55 (2026-Jun-09 06:11:55 GMT)
+2026-Jun-09 06:11:55 (2026-Jun-09 06:11:55 GMT): 10%
+2026-Jun-09 06:11:55 (2026-Jun-09 06:11:55 GMT): 20%
+
+Finished Activity Propagation
+2026-Jun-09 06:11:56 (2026-Jun-09 06:11:56 GMT)
+
+Activity annotation summary:
+        Primary Inputs : 180/180 = 100%
+          Flop outputs : 1909/10414 = 18.3311%
+  Memory/Macro outputs : 0/0 = 0%
+      Tristate outputs : 0/0 = 0%
+            Total Nets : 3867/35059 = 11.03%
+
+Ended Processing Signal Activity: (cpu=0:00:01, real=0:00:00, mem(process/total/peak)=2809.36MB/8680.50MB/2809.36MB)
+
+Begin Power Computation
+
+      ----------------------------------------------------------
+      # of cell(s) missing both power/leakage table: 0
+      # of cell(s) missing power table: 0
+      # of cell(s) missing leakage table: 0
+      ----------------------------------------------------------
+
+
+
+Starting Calculating power
+2026-Jun-09 06:11:56 (2026-Jun-09 06:11:56 GMT)
+ ... Calculating switching power
+2026-Jun-09 06:11:56 (2026-Jun-09 06:11:56 GMT): 10%
+2026-Jun-09 06:11:56 (2026-Jun-09 06:11:56 GMT): 20%
+2026-Jun-09 06:11:56 (2026-Jun-09 06:11:56 GMT): 30%
+2026-Jun-09 06:11:56 (2026-Jun-09 06:11:56 GMT): 40%
+2026-Jun-09 06:11:56 (2026-Jun-09 06:11:56 GMT): 50%
+ ... Calculating internal and leakage power
+2026-Jun-09 06:11:56 (2026-Jun-09 06:11:56 GMT): 60%
+2026-Jun-09 06:11:57 (2026-Jun-09 06:11:57 GMT): 70%
+2026-Jun-09 06:11:58 (2026-Jun-09 06:11:58 GMT): 80%
+2026-Jun-09 06:11:59 (2026-Jun-09 06:11:59 GMT): 90%
+
+Finished Calculating power
+2026-Jun-09 06:11:59 (2026-Jun-09 06:11:59 GMT)
+      # of MSMV cell(s) missing power_level: 0
+Ended Power Computation: (cpu=0:00:02, real=0:00:03, mem(process/total/peak)=2809.36MB/8680.50MB/2809.36MB)
+
+Begin Processing User Attributes
+
+Begin Processing set_power
+Ended Processing set_power: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=2809.36MB/8680.50MB/2809.36MB)
+Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2809.36MB/8680.50MB/2809.36MB)
+
+Ended Power Analysis: (cpu=0:00:03, real=0:00:04, mem(process/total/peak)=2809.36MB/8680.50MB/2809.36MB)
+
+Begin Boundary Leakage Calculation
+Ended Boundary Leakage Calculation: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=2809.36MB/8680.50MB/2809.36MB)
+Begin Static Power Report Generation
+*----------------------------------------------------------------------------------------
+*	Innovus 25.12-s079_1 (64bit) 11/18/2025 12:56 (Linux 4.18.0-305.el8.x86_64)
+*	
+*
+* 	Date & Time:	2026-Jun-09 06:11:59 (2026-Jun-09 06:11:59 GMT)
+*
+*----------------------------------------------------------------------------------------
+*
+*	Design: riscv_core
+*
+*	Liberty Libraries used:
+*	        /home/ykaraagac/cadence-bitirme/Enablements/NanGate45/lib/NangateOpenCellLibrary_typical.lib
+*
+*	Parasitic Files used:
+*
+*       Dynamic View: WC_VIEW
+*
+*       Leakage View: WC_VIEW
+*
+*       User-Defined Activity : N.A.
+*
+*	Switching Activity File used:
+*	        /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/complex_bank_exact_free_mule/vcd/core_hybrid.vcd
+*                  Vcd Window used(Start Time, Stop Time):  
+*                Vcd Scale Factor: 1
+*
+*       Hierarchical Global Activity: N.A.
+*
+*       Global Activity: N.A.
+*
+*       Sequential Element Activity: 0.200000
+*
+*       Primary Input Activity: 0.200000
+*
+*       Default icg ratio: N.A.
+*
+*       Global Comb ClockGate Ratio: N.A.
+*
+*	Power Units = 1mW
+*
+*	Time Units = 1e-09 secs
+*
+*       report_power -instances {u_mul}
+*
+-----------------------------------------------------------------------------------------
+*
+
+
+
+Total Power
+-----------------------------------------------------------------------------------------
+Total Internal Power:        4.41871311 	   53.4437%
+Total Switching Power:       2.66575943 	   32.2420%
+Total Leakage Power:         1.18351096 	   14.3144%
+Total Power:                 8.26798350
+-----------------------------------------------------------------------------------------
+
+
+Group                           Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+Sequential                         2.877      0.3813      0.4993       3.757       45.44
+Macro                                  0           0           0           0           0
+IO                                     0           0           0           0           0
+Combinational                      1.065       1.304      0.6702        3.04       36.77
+Clock (Combinational)             0.4766      0.9803     0.01403       1.471       17.79
+Clock (Sequential)                     0           0           0           0           0
+-----------------------------------------------------------------------------------------
+Total                              4.419       2.666       1.184       8.268         100
+-----------------------------------------------------------------------------------------
+
+
+Clock                           Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+clk                               0.4766      0.9803     0.01403       1.471       17.79
+-----------------------------------------------------------------------------------------
+Total                             0.4766      0.9803     0.01403       1.471       17.79
+-----------------------------------------------------------------------------------------
+Clock: clk
+Clock Period: 0.010000 usec 
+Clock Toggle Rate:   200.0000 Mhz 
+Clock Static Probability:  0.5000
+  
+
+
+Rail                  Voltage   Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+VDD                       1.1      4.419       2.666       1.184       8.268         100
+
+
+Instance                      Max Toggles   Total Toggles   Internal   Switching     Leakage       Total  Percentage    Cell
+                              Input Pins    Output Pins     Power      Power         Power         Power  (%)           Name
+----------------------------------------------------------------------------------------------------------------------------
+u_mul                                   0               0      0.565      0.4484      0.1241       1.138       13.76    
+----------------------------------------------------------------------------------------------------------------------------
+Total                                                          0.565      0.4484      0.1241       1.138       13.76    
+ 
+ 
+-----------------------------------------------------------------------------------------
+*	Power Distribution Summary: 
+*              Highest Average Power:            u_issue/g33021 (AND3_X2):         0.004563
+*              Highest Leakage Power:            u_issue/g33248 (AND4_X4):        0.0001893
+*                Total Cap:      2.19821e-10 F
+*                Total instances in design: 28954
+*                Total instances in design with no power:     0
+*                Total instances in design with no activty:     0
+
+*                Total Fillers and Decap:     0
+-----------------------------------------------------------------------------------------
+ 
+** INFO:  (VOLTUS_POWR-3465): There are 0 decaps and 0 fillers in the design
+
+Ended Static Power Report Generation: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=2809.36MB/8680.50MB/2809.36MB)
+
+
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_power/complex_bank/oracle/reports/power_inst_a.rpt =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_power/complex_bank/oracle/reports/power_inst_b.rpt =====
+
+env CDS_WORKAREA is set to /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence
+             0V	    VSS
+           1.1V	    VDD
+Using Power View WC_VIEW
+.
+Load RC corner of view WC_VIEW
+
+Begin Power Analysis
+
+             0V	    VSS
+           1.1V	    VDD
+
+Begin Processing Timing Library for Power Calculation
+
+Ended Processing Timing Library for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2809.36MB/8680.50MB/2809.36MB)
+
+
+
+Begin Processing Power Net/Grid for Power Calculation
+
+Ended Processing Power Net/Grid for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2809.36MB/8680.50MB/2809.36MB)
+
+Begin Processing Timing Window Data for Power Calculation
+
+clk(100MHz) CK: assigning clock clk to net clk_i
+Ended Processing Timing Window Data for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2809.36MB/8680.50MB/2809.36MB)
+
+Begin Processing User Attributes
+
+Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2809.36MB/8680.50MB/2809.36MB)
+
+Begin Processing Signal Activity
+
+
+Starting Activity Propagation
+2026-Jun-09 06:12:00 (2026-Jun-09 06:12:00 GMT)
+2026-Jun-09 06:12:00 (2026-Jun-09 06:12:00 GMT): 10%
+2026-Jun-09 06:12:00 (2026-Jun-09 06:12:00 GMT): 20%
+
+Finished Activity Propagation
+2026-Jun-09 06:12:01 (2026-Jun-09 06:12:01 GMT)
+
+Activity annotation summary:
+        Primary Inputs : 180/180 = 100%
+          Flop outputs : 1909/10414 = 18.3311%
+  Memory/Macro outputs : 0/0 = 0%
+      Tristate outputs : 0/0 = 0%
+            Total Nets : 3867/35059 = 11.03%
+
+Ended Processing Signal Activity: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2809.36MB/8680.50MB/2809.36MB)
+
+Begin Power Computation
+
+      ----------------------------------------------------------
+      # of cell(s) missing both power/leakage table: 0
+      # of cell(s) missing power table: 0
+      # of cell(s) missing leakage table: 0
+      ----------------------------------------------------------
+
+
+
+Starting Calculating power
+2026-Jun-09 06:12:01 (2026-Jun-09 06:12:01 GMT)
+ ... Calculating switching power
+2026-Jun-09 06:12:01 (2026-Jun-09 06:12:01 GMT): 10%
+2026-Jun-09 06:12:01 (2026-Jun-09 06:12:01 GMT): 20%
+2026-Jun-09 06:12:01 (2026-Jun-09 06:12:01 GMT): 30%
+2026-Jun-09 06:12:01 (2026-Jun-09 06:12:01 GMT): 40%
+2026-Jun-09 06:12:01 (2026-Jun-09 06:12:01 GMT): 50%
+ ... Calculating internal and leakage power
+2026-Jun-09 06:12:01 (2026-Jun-09 06:12:01 GMT): 60%
+2026-Jun-09 06:12:02 (2026-Jun-09 06:12:02 GMT): 70%
+2026-Jun-09 06:12:03 (2026-Jun-09 06:12:03 GMT): 80%
+2026-Jun-09 06:12:03 (2026-Jun-09 06:12:03 GMT): 90%
+
+Finished Calculating power
+2026-Jun-09 06:12:04 (2026-Jun-09 06:12:04 GMT)
+      # of MSMV cell(s) missing power_level: 0
+Ended Power Computation: (cpu=0:00:03, real=0:00:03, mem(process/total/peak)=2809.36MB/8680.50MB/2809.36MB)
+
+Begin Processing User Attributes
+
+Begin Processing set_power
+Ended Processing set_power: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=2809.36MB/8680.50MB/2809.36MB)
+Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2809.36MB/8680.50MB/2809.36MB)
+
+Ended Power Analysis: (cpu=0:00:04, real=0:00:04, mem(process/total/peak)=2809.36MB/8680.50MB/2809.36MB)
+
+Begin Boundary Leakage Calculation
+Ended Boundary Leakage Calculation: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=2809.36MB/8680.50MB/2809.36MB)
+Begin Static Power Report Generation
+*----------------------------------------------------------------------------------------
+*	Innovus 25.12-s079_1 (64bit) 11/18/2025 12:56 (Linux 4.18.0-305.el8.x86_64)
+*	
+*
+* 	Date & Time:	2026-Jun-09 06:12:04 (2026-Jun-09 06:12:04 GMT)
+*
+*----------------------------------------------------------------------------------------
+*
+*	Design: riscv_core
+*
+*	Liberty Libraries used:
+*	        /home/ykaraagac/cadence-bitirme/Enablements/NanGate45/lib/NangateOpenCellLibrary_typical.lib
+*
+*	Parasitic Files used:
+*
+*       Dynamic View: WC_VIEW
+*
+*       Leakage View: WC_VIEW
+*
+*       User-Defined Activity : N.A.
+*
+*	Switching Activity File used:
+*	        /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/complex_bank_exact_free_mule/vcd/core_hybrid.vcd
+*                  Vcd Window used(Start Time, Stop Time):  
+*                Vcd Scale Factor: 1
+*
+*       Hierarchical Global Activity: N.A.
+*
+*       Global Activity: N.A.
+*
+*       Sequential Element Activity: 0.200000
+*
+*       Primary Input Activity: 0.200000
+*
+*       Default icg ratio: N.A.
+*
+*       Global Comb ClockGate Ratio: N.A.
+*
+*	Power Units = 1mW
+*
+*	Time Units = 1e-09 secs
+*
+*       report_power -instances {u_mule}
+*
+-----------------------------------------------------------------------------------------
+*
+
+
+
+Total Power
+-----------------------------------------------------------------------------------------
+Total Internal Power:        4.41871311 	   53.4437%
+Total Switching Power:       2.66575943 	   32.2420%
+Total Leakage Power:         1.18351096 	   14.3144%
+Total Power:                 8.26798350
+-----------------------------------------------------------------------------------------
+
+
+Group                           Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+Sequential                         2.877      0.3813      0.4993       3.757       45.44
+Macro                                  0           0           0           0           0
+IO                                     0           0           0           0           0
+Combinational                      1.065       1.304      0.6702        3.04       36.77
+Clock (Combinational)             0.4766      0.9803     0.01403       1.471       17.79
+Clock (Sequential)                     0           0           0           0           0
+-----------------------------------------------------------------------------------------
+Total                              4.419       2.666       1.184       8.268         100
+-----------------------------------------------------------------------------------------
+
+
+Clock                           Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+clk                               0.4766      0.9803     0.01403       1.471       17.79
+-----------------------------------------------------------------------------------------
+Total                             0.4766      0.9803     0.01403       1.471       17.79
+-----------------------------------------------------------------------------------------
+Clock: clk
+Clock Period: 0.010000 usec 
+Clock Toggle Rate:   200.0000 Mhz 
+Clock Static Probability:  0.5000
+  
+
+
+Rail                  Voltage   Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+VDD                       1.1      4.419       2.666       1.184       8.268         100
+
+
+Instance                      Max Toggles   Total Toggles   Internal   Switching     Leakage       Total  Percentage    Cell
+                              Input Pins    Output Pins     Power      Power         Power         Power  (%)           Name
+----------------------------------------------------------------------------------------------------------------------------
+u_mule                                  0               0    0.07169     0.01283     0.03824      0.1228       1.485    
+----------------------------------------------------------------------------------------------------------------------------
+Total                                                        0.07169     0.01283     0.03824      0.1228       1.485    
+ 
+ 
+-----------------------------------------------------------------------------------------
+*	Power Distribution Summary: 
+*              Highest Average Power:            u_issue/g33021 (AND3_X2):         0.004563
+*              Highest Leakage Power:            u_issue/g33248 (AND4_X4):        0.0001893
+*                Total Cap:      2.19821e-10 F
+*                Total instances in design: 28954
+*                Total instances in design with no power:     0
+*                Total instances in design with no activty:     0
+
+*                Total Fillers and Decap:     0
+-----------------------------------------------------------------------------------------
+ 
+** INFO:  (VOLTUS_POWR-3465): There are 0 decaps and 0 fillers in the design
+
+Ended Static Power Report Generation: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=2809.36MB/8680.50MB/2809.36MB)
+
+
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_power/complex_bank/oracle/reports/power_inst_b.rpt =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_power/complex_bank/oracle/reports/power_total.rpt =====
+
+env CDS_WORKAREA is set to /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence
+
+Power Net Detected:
+        Voltage	    Name
+             0V	    VSS
+           1.1V	    VDD
+             0V	    VSS
+           1.1V	    VDD
+Using Power View WC_VIEW
+.
+AAE_INFO: opIsDesignInPostRouteState() is 1
+AAE_INFO: resetNetProps viewIdx 0 
+Starting SI iteration 1 using Infinite Timing Windows
+#################################################################################
+# Design Stage: PostRoute
+# Design Name: riscv_core
+# Design Mode: 45nm
+# Analysis Mode: MMMC OCV 
+# Parasitics Mode: No SPEF/RCDB 
+# Signoff Settings: SI On 
+#################################################################################
+#WARNING (NRDB-733) PIN Y in CELL_VIEW LOGIC1_X1 does not have a physical port. NanoRoute will not route to the pin. To resolve this issue, check that the pin shapes exist in the LEF abstract.
+#WARNING (NRDB-733) PIN Y in CELL_VIEW LOGIC0_X1 does not have a physical port. NanoRoute will not route to the pin. To resolve this issue, check that the pin shapes exist in the LEF abstract.
+#WARNING (NRDB-2120) Special net VSS is missing wiring shapes, will disable tie-net connections to this net.
+#Extract in post route mode
+#Finish check_net_pin_list step Enter extract_rc_in_nr_cmd
+#Fast data preparation for tQuantus.
+#Start routing data preparation on Tue Jun  9 06:11:22 2026
+#
+# metal1       H   Track-Pitch = 0.14000    Line-2-Via Pitch = 0.13500
+# metal2       V   Track-Pitch = 0.19000    Line-2-Via Pitch = 0.14000
+# metal3       H   Track-Pitch = 0.14000    Line-2-Via Pitch = 0.14000
+# metal4       V   Track-Pitch = 0.28000    Line-2-Via Pitch = 0.28000
+# metal5       H   Track-Pitch = 0.28000    Line-2-Via Pitch = 0.28000
+# metal6       V   Track-Pitch = 0.28000    Line-2-Via Pitch = 0.28000
+# metal7       H   Track-Pitch = 0.84000    Line-2-Via Pitch = 0.80000
+# metal8       V   Track-Pitch = 0.84000    Line-2-Via Pitch = 0.80000
+# metal9       H   Track-Pitch = 1.60000    Line-2-Via Pitch = 1.60000
+# metal10      V   Track-Pitch = 1.68000    Line-2-Via Pitch = 1.60000
+#Regenerating Ggrids automatically.
+#Auto generating G-grids with size=15 tracks, using layer metal3's pitch = 0.14000.
+#Using automatically generated G-grids.
+#Done routing data preparation.
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2618.74 (MB), peak = 5398.89 (MB)
+#Start routing data preparation on Tue Jun  9 06:11:22 2026
+#
+#shield_layer  1: layer_id= 2 shield_wire_on_grid=1 shield_via_on_grid=1 is_hard_wire_on_grid=0 allow_ww=0
+#shield_layer  2: layer_id= 4 shield_wire_on_grid=1 shield_via_on_grid=1 is_hard_wire_on_grid=0 allow_ww=0
+#shield_layer  3: layer_id= 6 shield_wire_on_grid=1 shield_via_on_grid=1 is_hard_wire_on_grid=0 allow_ww=0
+#shield_layer  4: layer_id= 8 shield_wire_on_grid=1 shield_via_on_grid=1 is_hard_wire_on_grid=0 allow_ww=0
+#shield_layer  5: layer_id=10 shield_wire_on_grid=1 shield_via_on_grid=1 is_hard_wire_on_grid=0 allow_ww=0
+#shield_layer  6: layer_id=12 shield_wire_on_grid=1 shield_via_on_grid=1 is_hard_wire_on_grid=0 allow_ww=0
+#shield_layer  7: layer_id=14 shield_wire_on_grid=1 shield_via_on_grid=1 is_hard_wire_on_grid=0 allow_ww=0
+#shield_layer  8: layer_id=16 shield_wire_on_grid=1 shield_via_on_grid=1 is_hard_wire_on_grid=0 allow_ww=0
+#shield_layer  9: layer_id=18 shield_wire_on_grid=1 shield_via_on_grid=1 is_hard_wire_on_grid=0 allow_ww=0
+#shield_layer 10: layer_id=20 shield_wire_on_grid=1 shield_via_on_grid=1 is_hard_wire_on_grid=0 allow_ww=0
+#Bottom routing layer index=2(metal2), bottom routing layer for shielding=2(metal2), bottom shield layer=2(metal2) top shield layer=10(metal10)
+#shield_bottom_stripe_layer=1(metal1), shield_top_stripe_layer=10(metal10)
+#pin_access_rlayer=2(metal2) num_routing_layer=10 top_routing_layer=10 top_ripin_layer=10
+#shield_top_dpt_rlayer=-1 top_rlayer=10 top_trim_metal_rlayer=-1 rlayer_lowest=1 bottom_rlayer=2
+#enable_trim_layer_shield=F enable_dpt_layer_shield=F has_line_end_grid=F
+#Regenerating Ggrids automatically.
+#Auto generating G-grids with size=15 tracks, using layer metal3's pitch = 0.14000.
+#Using automatically generated G-grids.
+#Done routing data preparation.
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2635.74 (MB), peak = 5398.89 (MB)
+#
+#Start tQuantus RC extraction...
+#Start building rc corner(s)...
+#Number of RC Corner = 2
+#Corner Cmin /home/ykaraagac/cadence-bitirme/Enablements/NanGate45/qrc/NG45.tch 25.000000 (real) 
+#Corner Cmax /home/ykaraagac/cadence-bitirme/Enablements/NanGate45/qrc/NG45.tch 25.000000 (real) 
+#(i=10, n=10 2000)
+#metal1 -> metal1 (1)
+#metal2 -> metal2 (2)
+#metal3 -> metal3 (3)
+#metal4 -> metal4 (4)
+#metal5 -> metal5 (5)
+#metal6 -> metal6 (6)
+#metal7 -> metal7 (7)
+#metal8 -> metal8 (8)
+#metal9 -> metal9 (9)
+#metal10 -> metal10 (10)
+#SADV-On
+# Corner(s) : 
+#Cmin [25.00] 
+#Cmax [25.00]
+# Corner id: 0
+# Layout Scale: 1.000000
+# Has Metal Fill model: yes
+# Temperature was set
+# Temperature : 25.000000
+# Ref. Temp   : 25.000000
+# Corner id: 1
+# Layout Scale: 1.000000
+# Has Metal Fill model: yes
+# Temperature was set
+# Temperature : 25.000000
+# Ref. Temp   : 25.000000
+#SADV-Off
+#total pattern=220 [10, 605]
+#Reading previously stored rc_model file ( /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/innovus/core_hybrid_100/vcd/enc/core_hybrid_100.enc.dat/libs/misc/rc_model.bin ) ...
+#found CAPMODEL /home/ykaraagac/cadence-bitirme/Enablements/NanGate45/qrc/NG45.tch
+#found RESMODEL /home/ykaraagac/cadence-bitirme/Enablements/NanGate45/qrc/NG45.tch 25.000000 
+#CCE Version read = IQuantus/TQuantus 24.1.0-s365
+#number model r/c [1,1] [10,605] read
+#0 rcmodel(s) requires rebuild
+#Build RC corners: cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2652.76 (MB), peak = 5398.89 (MB)
+#Finish check_net_pin_list step Enter extract
+#Start init net ripin tree building
+#Finish init net ripin tree building
+#Cpu time = 00:00:00
+#Elapsed time = 00:00:00
+#Increased memory = 0.00 (MB)
+#Total memory = 2652.76 (MB)
+#Peak memory = 5398.89 (MB)
+#begin processing metal fill model file
+#end processing metal fill model file
+#Length limit = 200 pitches
+#opt mode = 2
+#Finish check_net_pin_list step Fix net pin list
+#Start generate extraction boxes.
+#
+#Extract using 30 x 30 Hboxes
+#6x6 initial hboxes
+#Use area based hbox pruning.
+#0/0 hboxes pruned.
+#Complete generating extraction boxes.
+#Extract 25 hboxes with single thread on machine with  3.25GHz 1024KB Cache 128CPU...
+#Process 0 special clock nets for rc extraction
+#Total 30697 nets were built. 426 nodes added to break long wires. 0 net(s) have incomplete routes.
+#Start inst blockage merging.
+#Run Statistics for Extraction:
+#   Cpu time = 00:00:09, elapsed time = 00:00:09 .
+#   Increased memory =   169.00 (MB), total memory =  2821.76 (MB), peak memory =  5398.89 (MB)
+#Register nets and terms for rcdb /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/innovus_temp_1257916_71222651-bd4c-4bc9-a403-3f19297db0b2_dockereda-rocky8_ykaraagac_s6N9Q5/nr0_1257916_71222651-bd4c-4bc9-a403-3f19297db0b2rqEOpc.rcdb.d
+#Finish registering nets and terms for rcdb.
+#Simplify RC tree: cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2808.43 (MB), peak = 5398.89 (MB)
+#RC Statistics: 202605 Res, 109104 Ground Cap, 13589 XCap (Edge to Edge)
+#WARNING (NREX-102) Net u_frontend/u_npc/UNCONNECTED2001 is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net u_frontend/u_npc/UNCONNECTED1507 is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net u_frontend/u_npc/UNCONNECTED1965 is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net u_frontend/u_npc/UNCONNECTED2136 is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net u_frontend/u_npc/UNCONNECTED1516 is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net u_frontend/u_npc/UNCONNECTED1505 is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net u_frontend/u_npc/UNCONNECTED1508 is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net u_frontend/u_npc/UNCONNECTED1512 is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net u_frontend/u_npc/UNCONNECTED1997 is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net u_frontend/u_npc/UNCONNECTED1967 is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net u_frontend/u_npc/UNCONNECTED1475 is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net u_frontend/u_npc/UNCONNECTED1503 is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net u_frontend/u_npc/UNCONNECTED1501 is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net u_frontend/u_npc/UNCONNECTED1513 is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net u_frontend/u_npc/UNCONNECTED1515 is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net u_frontend/u_npc/UNCONNECTED1999 is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net u_frontend/u_npc/UNCONNECTED1968 is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net u_frontend/u_npc/UNCONNECTED1966 is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net u_frontend/u_npc/UNCONNECTED1472 is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (NREX-102) Net u_frontend/u_npc/UNCONNECTED1471 is not extracted due to Has no routing. The result of timing analysis involving such net is inaccurate.
+#WARNING (EMS-27) Message (NREX-102) has exceeded the current message display limit of 20.
+#To increase the message display limit, refer to the product command reference manual.
+#RC V/H edge ratio: 0.34, Avg V/H Edge Length: 3305.49 (95169), Avg L-Edge Length: 8425.07 (72201)
+#Nets and terms are pre-registered for rcdb /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/innovus_temp_1257916_71222651-bd4c-4bc9-a403-3f19297db0b2_dockereda-rocky8_ykaraagac_s6N9Q5/nr0_1257916_71222651-bd4c-4bc9-a403-3f19297db0b2rqEOpc.rcdb.d.
+#Start writing RC data.
+#Finish writing RC data
+#Finish writing rcdb with 233326 nodes, 202629 edges, and 32248 xcaps
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 2801.83 (MB), peak = 5398.89 (MB)
+Restoring parasitic data from file '/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/innovus_temp_1257916_71222651-bd4c-4bc9-a403-3f19297db0b2_dockereda-rocky8_ykaraagac_s6N9Q5/nr0_1257916_71222651-bd4c-4bc9-a403-3f19297db0b2rqEOpc.rcdb.d' ...
+Reading RCDB with compressed RC data.
+Reading RCDB with compressed RC data.
+Begin read_parasitics... (cpu: 0:00:00.0 real: 0:00:00.0 mem: 2802.832M)
+Following multi-corner parasitics specified:
+	/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/innovus_temp_1257916_71222651-bd4c-4bc9-a403-3f19297db0b2_dockereda-rocky8_ykaraagac_s6N9Q5/nr0_1257916_71222651-bd4c-4bc9-a403-3f19297db0b2rqEOpc.rcdb.d (rcdb)
+Reading RCDB with compressed RC data.
+		Cell riscv_core has rcdb /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/innovus_temp_1257916_71222651-bd4c-4bc9-a403-3f19297db0b2_dockereda-rocky8_ykaraagac_s6N9Q5/nr0_1257916_71222651-bd4c-4bc9-a403-3f19297db0b2rqEOpc.rcdb.d specified
+Cell riscv_core, hinst 
+Reading RCDB with compressed RC data.
+Done read_parasitics... (cpu: 0:00:00.4 real: 0:00:01.0 mem: 2806.105M)
+#
+#Restore RCDB.
+#
+#Complete tQuantus RC extraction.
+#Cpu time = 00:00:11
+#Elapsed time = 00:00:10
+#Increased memory = 170.36 (MB)
+#Total memory = 2806.11 (MB)
+#Peak memory = 5398.89 (MB)
+#
+#426 inserted nodes are removed
+#Restored 0 tie nets, 0 tie snets, 0 partial nets
+#Start Design Signature (0)
+#Finish Inst Signature in MT(5233528)
+#Finish Net Signature in MT(18358541)
+#Finish SNet Signature in MT (32398354)
+#Run time and memory report for RC extraction:
+#RC extraction running on  3.25GHz 1024KB Cache 128CPU.
+#Run Statistics for snet signature:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+#   Increased memory =     0.00 (MB), total memory =  2717.85 (MB), peak memory =  5398.89 (MB)
+#Run Statistics for Net Final Signature:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+#   Increased memory =     0.00 (MB), total memory =  2717.85 (MB), peak memory =  5398.89 (MB)
+#Run Statistics for Net launch:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+#   Increased memory =     0.00 (MB), total memory =  2717.85 (MB), peak memory =  5398.89 (MB)
+#Run Statistics for Net init_dbsNet_slist:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+#   Increased memory =     0.00 (MB), total memory =  2717.85 (MB), peak memory =  5398.89 (MB)
+#Run Statistics for net signature:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+#   Increased memory =     0.00 (MB), total memory =  2717.85 (MB), peak memory =  5398.89 (MB)
+#Run Statistics for inst signature:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+#   Increased memory =    -1.01 (MB), total memory =  2717.85 (MB), peak memory =  5398.89 (MB)
+AAE_INFO: 1 threads acquired from CTE.
+Start delay calculation (fullDC) (1 T). (MEM=2762.85)
+Reading RCDB with compressed RC data.
+Total number of fetched objects 35048
+AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
+AAE_INFO-618: Total number of nets in the design is 38764,  90.4 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2802.98 CPU=0:00:07.0 REAL=0:00:07.0)
+End delay calculation (fullDC). (MEM=2795.68 CPU=0:00:07.7 REAL=0:00:08.0)
+Save waveform /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/innovus_temp_1257916_71222651-bd4c-4bc9-a403-3f19297db0b2_dockereda-rocky8_ykaraagac_s6N9Q5/.AAE_oGB9VL/.AAE_1257916_71222651-bd4c-4bc9-a403-3f19297db0b2/waveform.data...
+Loading CTE timing window with TwFlowType 0...(CPU = 0:00:00.0, REAL = 0:00:00.0, MEM = 2805.7M)
+Add other clocks and setupCteToAAEClockMapping during iter 1
+Loading CTE timing window is completed (CPU = 0:00:00.2, REAL = 0:00:00.0, MEM = 2805.7M)
+Starting SI iteration 2
+Start delay calculation (fullDC) (1 T). (MEM=2796.78)
+Glitch Analysis: View WC_VIEW -- Total Number of Nets Skipped = 0. 
+Glitch Analysis: View WC_VIEW -- Total Number of Nets Analyzed = 35048. 
+Total number of fetched objects 35048
+AAE_INFO: Total number of nets for which stage creation was skipped for all views 0
+AAE_INFO-618: Total number of nets in the design is 38764,  0.1 percent of the nets selected for SI analysis
+End delay calculation. (MEM=2805.78 CPU=0:00:00.3 REAL=0:00:01.0)
+End delay calculation (fullDC). (MEM=2805.78 CPU=0:00:00.3 REAL=0:00:01.0)
+Load RC corner of view WC_VIEW
+
+Begin Power Analysis
+
+             0V	    VSS
+           1.1V	    VDD
+
+Begin Processing Timing Library for Power Calculation
+
+Ended Processing Timing Library for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2796.36MB/8680.50MB/2802.68MB)
+
+
+
+Begin Processing Power Net/Grid for Power Calculation
+
+Ended Processing Power Net/Grid for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2796.36MB/8680.50MB/2802.68MB)
+
+Begin Processing Timing Window Data for Power Calculation
+
+clk(100MHz) CK: assigning clock clk to net clk_i
+Ended Processing Timing Window Data for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2798.36MB/8680.50MB/2802.68MB)
+
+Begin Processing User Attributes
+
+Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2798.36MB/8680.50MB/2802.68MB)
+
+Begin Processing Signal Activity
+
+
+Starting Levelizing
+2026-Jun-09 06:11:46 (2026-Jun-09 06:11:46 GMT)
+2026-Jun-09 06:11:46 (2026-Jun-09 06:11:46 GMT): 10%
+2026-Jun-09 06:11:46 (2026-Jun-09 06:11:46 GMT): 20%
+2026-Jun-09 06:11:46 (2026-Jun-09 06:11:46 GMT): 30%
+2026-Jun-09 06:11:46 (2026-Jun-09 06:11:46 GMT): 40%
+2026-Jun-09 06:11:46 (2026-Jun-09 06:11:46 GMT): 50%
+2026-Jun-09 06:11:46 (2026-Jun-09 06:11:46 GMT): 60%
+2026-Jun-09 06:11:46 (2026-Jun-09 06:11:46 GMT): 70%
+2026-Jun-09 06:11:46 (2026-Jun-09 06:11:46 GMT): 80%
+2026-Jun-09 06:11:46 (2026-Jun-09 06:11:46 GMT): 90%
+
+Finished Levelizing
+2026-Jun-09 06:11:46 (2026-Jun-09 06:11:46 GMT)
+
+Starting Activity Propagation
+2026-Jun-09 06:11:46 (2026-Jun-09 06:11:46 GMT)
+2026-Jun-09 06:11:46 (2026-Jun-09 06:11:46 GMT): 10%
+2026-Jun-09 06:11:46 (2026-Jun-09 06:11:46 GMT): 20%
+
+Finished Activity Propagation
+2026-Jun-09 06:11:47 (2026-Jun-09 06:11:47 GMT)
+
+Activity annotation summary:
+        Primary Inputs : 180/180 = 100%
+          Flop outputs : 1909/10414 = 18.3311%
+  Memory/Macro outputs : 0/0 = 0%
+      Tristate outputs : 0/0 = 0%
+            Total Nets : 3867/35059 = 11.03%
+
+Ended Processing Signal Activity: (cpu=0:00:01, real=0:00:01, mem(process/total/peak)=2799.36MB/8680.50MB/2802.68MB)
+
+Begin Power Computation
+
+      ----------------------------------------------------------
+      # of cell(s) missing both power/leakage table: 0
+      # of cell(s) missing power table: 0
+      # of cell(s) missing leakage table: 0
+      ----------------------------------------------------------
+
+
+
+Starting Calculating power
+2026-Jun-09 06:11:47 (2026-Jun-09 06:11:47 GMT)
+ ... Calculating switching power
+2026-Jun-09 06:11:47 (2026-Jun-09 06:11:47 GMT): 10%
+2026-Jun-09 06:11:47 (2026-Jun-09 06:11:47 GMT): 20%
+2026-Jun-09 06:11:47 (2026-Jun-09 06:11:47 GMT): 30%
+2026-Jun-09 06:11:47 (2026-Jun-09 06:11:47 GMT): 40%
+2026-Jun-09 06:11:47 (2026-Jun-09 06:11:47 GMT): 50%
+ ... Calculating internal and leakage power
+2026-Jun-09 06:11:47 (2026-Jun-09 06:11:47 GMT): 60%
+2026-Jun-09 06:11:48 (2026-Jun-09 06:11:48 GMT): 70%
+2026-Jun-09 06:11:49 (2026-Jun-09 06:11:49 GMT): 80%
+2026-Jun-09 06:11:49 (2026-Jun-09 06:11:49 GMT): 90%
+
+Finished Calculating power
+2026-Jun-09 06:11:50 (2026-Jun-09 06:11:50 GMT)
+      # of MSMV cell(s) missing power_level: 0
+Ended Power Computation: (cpu=0:00:03, real=0:00:03, mem(process/total/peak)=2799.36MB/8680.50MB/2802.68MB)
+
+Begin Processing User Attributes
+
+Begin Processing set_power
+Ended Processing set_power: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=2799.36MB/8680.50MB/2802.68MB)
+Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2799.36MB/8680.50MB/2802.68MB)
+
+Ended Power Analysis: (cpu=0:00:04, real=0:00:04, mem(process/total/peak)=2799.36MB/8680.50MB/2802.68MB)
+
+Begin Boundary Leakage Calculation
+Ended Boundary Leakage Calculation: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=2799.36MB/8680.50MB/2802.68MB)
+Begin Static Power Report Generation
+*----------------------------------------------------------------------------------------
+*	Innovus 25.12-s079_1 (64bit) 11/18/2025 12:56 (Linux 4.18.0-305.el8.x86_64)
+*	
+*
+* 	Date & Time:	2026-Jun-09 06:11:50 (2026-Jun-09 06:11:50 GMT)
+*
+*----------------------------------------------------------------------------------------
+*
+*	Design: riscv_core
+*
+*	Liberty Libraries used:
+*	        /home/ykaraagac/cadence-bitirme/Enablements/NanGate45/lib/NangateOpenCellLibrary_typical.lib
+*
+*	Parasitic Files used:
+*
+*       Dynamic View: WC_VIEW
+*
+*       Leakage View: WC_VIEW
+*
+*       User-Defined Activity : N.A.
+*
+*	Switching Activity File used:
+*	        /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/complex_bank_exact_free_mule/vcd/core_hybrid.vcd
+*                  Vcd Window used(Start Time, Stop Time):  
+*                Vcd Scale Factor: 1
+*
+*       Hierarchical Global Activity: N.A.
+*
+*       Global Activity: N.A.
+*
+*       Sequential Element Activity: 0.200000
+*
+*       Primary Input Activity: 0.200000
+*
+*       Default icg ratio: N.A.
+*
+*       Global Comb ClockGate Ratio: N.A.
+*
+*	Power Units = 1mW
+*
+*	Time Units = 1e-09 secs
+*
+*       report_power
+*
+-----------------------------------------------------------------------------------------
+*
+
+
+
+Total Power
+-----------------------------------------------------------------------------------------
+Total Internal Power:        4.41871311 	   53.4437%
+Total Switching Power:       2.66575943 	   32.2420%
+Total Leakage Power:         1.18351096 	   14.3144%
+Total Power:                 8.26798350
+-----------------------------------------------------------------------------------------
+
+
+Group                           Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+Sequential                         2.877      0.3813      0.4993       3.757       45.44
+Macro                                  0           0           0           0           0
+IO                                     0           0           0           0           0
+Combinational                      1.065       1.304      0.6702        3.04       36.77
+Clock (Combinational)             0.4766      0.9803     0.01403       1.471       17.79
+Clock (Sequential)                     0           0           0           0           0
+-----------------------------------------------------------------------------------------
+Total                              4.419       2.666       1.184       8.268         100
+-----------------------------------------------------------------------------------------
+
+
+Rail                  Voltage   Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+VDD                       1.1      4.419       2.666       1.184       8.268         100
+
+
+Clock                           Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+clk                               0.4766      0.9803     0.01403       1.471       17.79
+-----------------------------------------------------------------------------------------
+Total                             0.4766      0.9803     0.01403       1.471       17.79
+-----------------------------------------------------------------------------------------
+Clock: clk
+Clock Period: 0.010000 usec 
+Clock Toggle Rate:   200.0000 Mhz 
+Clock Static Probability:  0.5000
+  
+ 
+ 
+-----------------------------------------------------------------------------------------
+*	Power Distribution Summary: 
+*              Highest Average Power:            u_issue/g33021 (AND3_X2):         0.004563
+*              Highest Leakage Power:            u_issue/g33248 (AND4_X4):        0.0001893
+*                Total Cap:      2.19821e-10 F
+*                Total instances in design: 28954
+*                Total instances in design with no power:     0
+*                Total instances in design with no activty:     0
+
+*                Total Fillers and Decap:     0
+-----------------------------------------------------------------------------------------
+ 
+** INFO:  (VOLTUS_POWR-3465): There are 0 decaps and 0 fillers in the design
+
+Ended Static Power Report Generation: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=2808.36MB/8680.50MB/2808.36MB)
+
+
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_power/complex_bank/oracle/reports/power_total.rpt =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/complex_bank/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "baseline",
+  "status": "pass",
+  "benchmark": "complex_bank.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": null,
+  "patched_target_opcode": null,
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 37321,
+    "retired_total_instructions": 23481,
+    "retired_plain_mul": 2048,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 2048,
+    "retired_integer_multiply_ratio_ppm": 87219
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/complex_bank/logs/core_hybrid.log",
+  "vcd_path": null
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/complex_bank/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/complex_bank/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/benchmarks/table14/complex_bank.c",
+  "variant": "baseline",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "baseline",
+      "status": "pass",
+      "benchmark": "complex_bank.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": null,
+      "patched_target_opcode": null,
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 37321,
+        "retired_total_instructions": 23481,
+        "retired_plain_mul": 2048,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 2048,
+        "retired_integer_multiply_ratio_ppm": 87219
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/complex_bank/logs/core_hybrid.log",
+      "vcd_path": null
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/complex_bank/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/complex_bank_exact_free_mule/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "exact-free-mule",
+  "status": "pass",
+  "benchmark": "complex_bank.c",
+  "patched_plain_mul_count": 1,
+  "selected_plain_mul_addresses": [
+    "0x800002e4"
+  ],
+  "patched_target": "mule",
+  "patched_target_opcode": "0x0200000b",
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 37321,
+    "retired_total_instructions": 23481,
+    "retired_plain_mul": 1920,
+    "retired_mule": 128,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 2048,
+    "retired_integer_multiply_ratio_ppm": 87219
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/complex_bank_exact_free_mule/logs/core_hybrid.log",
+  "vcd_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/complex_bank_exact_free_mule/vcd/core_hybrid.vcd",
+  "oracle_candidate_count": 5,
+  "oracle_rejected": [
+    {
+      "address": "0x80000258",
+      "trial_cycles": 37833
+    },
+    {
+      "address": "0x80000280",
+      "trial_cycles": 37566
+    },
+    {
+      "address": "0x80000230",
+      "trial_cycles": 37387
+    },
+    {
+      "address": "0x800002a8",
+      "trial_cycles": 37568
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/complex_bank_exact_free_mule/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/complex_bank_exact_free_mule/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/benchmarks/table14/complex_bank.c",
+  "variant": "exact-free-mule",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "exact-free-mule",
+      "status": "pass",
+      "benchmark": "complex_bank.c",
+      "patched_plain_mul_count": 1,
+      "selected_plain_mul_addresses": [
+        "0x800002e4"
+      ],
+      "patched_target": "mule",
+      "patched_target_opcode": "0x0200000b",
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 37321,
+        "retired_total_instructions": 23481,
+        "retired_plain_mul": 1920,
+        "retired_mule": 128,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 2048,
+        "retired_integer_multiply_ratio_ppm": 87219
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/complex_bank_exact_free_mule/logs/core_hybrid.log",
+      "vcd_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/complex_bank_exact_free_mule/vcd/core_hybrid.vcd",
+      "oracle_candidate_count": 5,
+      "oracle_rejected": [
+        {
+          "address": "0x80000258",
+          "trial_cycles": 37833
+        },
+        {
+          "address": "0x80000280",
+          "trial_cycles": 37566
+        },
+        {
+          "address": "0x80000230",
+          "trial_cycles": 37387
+        },
+        {
+          "address": "0x800002a8",
+          "trial_cycles": 37568
+        }
+      ]
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/complex_bank_exact_free_mule/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/complex_mul_vec/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "baseline",
+  "status": "pass",
+  "benchmark": "complex_mul_vec.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": null,
+  "patched_target_opcode": null,
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 109170,
+    "retired_total_instructions": 24636,
+    "retired_plain_mul": 2048,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 2048,
+    "retired_integer_multiply_ratio_ppm": 83130
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/complex_mul_vec/logs/core_hybrid.log",
+  "vcd_path": null
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/complex_mul_vec/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/complex_mul_vec/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/benchmark_runs/complex_mul_vec/staged/complex_mul_vec.c",
+  "variant": "baseline",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "baseline",
+      "status": "pass",
+      "benchmark": "complex_mul_vec.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": null,
+      "patched_target_opcode": null,
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 109170,
+        "retired_total_instructions": 24636,
+        "retired_plain_mul": 2048,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 2048,
+        "retired_integer_multiply_ratio_ppm": 83130
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/complex_mul_vec/logs/core_hybrid.log",
+      "vcd_path": null
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/complex_mul_vec/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/complex_mul_vec_exact_free_mule/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "exact-free-mule",
+  "status": "pass",
+  "benchmark": "complex_mul_vec.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": "mule",
+  "patched_target_opcode": "0x0200000b",
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 109170,
+    "retired_total_instructions": 24636,
+    "retired_plain_mul": 2048,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 2048,
+    "retired_integer_multiply_ratio_ppm": 83130
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/complex_mul_vec_exact_free_mule/logs/core_hybrid.log",
+  "vcd_path": null,
+  "artifact_reuse": "baseline"
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/complex_mul_vec_exact_free_mule/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/complex_mul_vec_exact_free_mule/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/benchmark_runs/complex_mul_vec/staged/complex_mul_vec.c",
+  "variant": "exact-free-mule",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "exact-free-mule",
+      "status": "pass",
+      "benchmark": "complex_mul_vec.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": "mule",
+      "patched_target_opcode": "0x0200000b",
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 109170,
+        "retired_total_instructions": 24636,
+        "retired_plain_mul": 2048,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 2048,
+        "retired_integer_multiply_ratio_ppm": 83130
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/complex_mul_vec_exact_free_mule/logs/core_hybrid.log",
+      "vcd_path": null,
+      "artifact_reuse": "baseline"
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/complex_mul_vec_exact_free_mule/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/estrin_2level/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "baseline",
+  "status": "pass",
+  "benchmark": "estrin_2level.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": null,
+  "patched_target_opcode": null,
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 52321,
+    "retired_total_instructions": 36906,
+    "retired_plain_mul": 5120,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 5120,
+    "retired_integer_multiply_ratio_ppm": 138730
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/estrin_2level/logs/core_hybrid.log",
+  "vcd_path": null
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/estrin_2level/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/estrin_2level/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/benchmarks/table14/estrin_2level.c",
+  "variant": "baseline",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "baseline",
+      "status": "pass",
+      "benchmark": "estrin_2level.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": null,
+      "patched_target_opcode": null,
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 52321,
+        "retired_total_instructions": 36906,
+        "retired_plain_mul": 5120,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 5120,
+        "retired_integer_multiply_ratio_ppm": 138730
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/estrin_2level/logs/core_hybrid.log",
+      "vcd_path": null
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/estrin_2level/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/estrin_2level_exact_free_mule/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "exact-free-mule",
+  "status": "pass",
+  "benchmark": "estrin_2level.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": "mule",
+  "patched_target_opcode": "0x0200000b",
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 52321,
+    "retired_total_instructions": 36906,
+    "retired_plain_mul": 5120,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 5120,
+    "retired_integer_multiply_ratio_ppm": 138730
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/estrin_2level_exact_free_mule/logs/core_hybrid.log",
+  "vcd_path": null,
+  "artifact_reuse": "baseline"
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/estrin_2level_exact_free_mule/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/estrin_2level_exact_free_mule/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/benchmarks/table14/estrin_2level.c",
+  "variant": "exact-free-mule",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "exact-free-mule",
+      "status": "pass",
+      "benchmark": "estrin_2level.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": "mule",
+      "patched_target_opcode": "0x0200000b",
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 52321,
+        "retired_total_instructions": 36906,
+        "retired_plain_mul": 5120,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 5120,
+        "retired_integer_multiply_ratio_ppm": 138730
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/estrin_2level_exact_free_mule/logs/core_hybrid.log",
+      "vcd_path": null,
+      "artifact_reuse": "baseline"
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/estrin_2level_exact_free_mule/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/estrin_poly/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "baseline",
+  "status": "pass",
+  "benchmark": "estrin_poly.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": null,
+  "patched_target_opcode": null,
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 49251,
+    "retired_total_instructions": 36906,
+    "retired_plain_mul": 5120,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 5120,
+    "retired_integer_multiply_ratio_ppm": 138730
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/estrin_poly/logs/core_hybrid.log",
+  "vcd_path": null
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/estrin_poly/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/estrin_poly/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/benchmarks/table14/estrin_poly.c",
+  "variant": "baseline",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "baseline",
+      "status": "pass",
+      "benchmark": "estrin_poly.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": null,
+      "patched_target_opcode": null,
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 49251,
+        "retired_total_instructions": 36906,
+        "retired_plain_mul": 5120,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 5120,
+        "retired_integer_multiply_ratio_ppm": 138730
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/estrin_poly/logs/core_hybrid.log",
+      "vcd_path": null
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/estrin_poly/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/estrin_poly_exact_free_mule/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "exact-free-mule",
+  "status": "pass",
+  "benchmark": "estrin_poly.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": "mule",
+  "patched_target_opcode": "0x0200000b",
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 49251,
+    "retired_total_instructions": 36906,
+    "retired_plain_mul": 5120,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 5120,
+    "retired_integer_multiply_ratio_ppm": 138730
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/estrin_poly_exact_free_mule/logs/core_hybrid.log",
+  "vcd_path": null,
+  "artifact_reuse": "baseline"
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/estrin_poly_exact_free_mule/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/estrin_poly_exact_free_mule/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/benchmarks/table14/estrin_poly.c",
+  "variant": "exact-free-mule",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "exact-free-mule",
+      "status": "pass",
+      "benchmark": "estrin_poly.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": "mule",
+      "patched_target_opcode": "0x0200000b",
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 49251,
+        "retired_total_instructions": 36906,
+        "retired_plain_mul": 5120,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 5120,
+        "retired_integer_multiply_ratio_ppm": 138730
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/estrin_poly_exact_free_mule/logs/core_hybrid.log",
+      "vcd_path": null,
+      "artifact_reuse": "baseline"
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/estrin_poly_exact_free_mule/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/extended_estrin/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "baseline",
+  "status": "pass",
+  "benchmark": "extended_estrin.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": null,
+  "patched_target_opcode": null,
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 67681,
+    "retired_total_instructions": 49194,
+    "retired_plain_mul": 8192,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 8192,
+    "retired_integer_multiply_ratio_ppm": 166524
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/extended_estrin/logs/core_hybrid.log",
+  "vcd_path": null
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/extended_estrin/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/extended_estrin/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/benchmarks/table14/extended_estrin.c",
+  "variant": "baseline",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "baseline",
+      "status": "pass",
+      "benchmark": "extended_estrin.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": null,
+      "patched_target_opcode": null,
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 67681,
+        "retired_total_instructions": 49194,
+        "retired_plain_mul": 8192,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 8192,
+        "retired_integer_multiply_ratio_ppm": 166524
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/extended_estrin/logs/core_hybrid.log",
+      "vcd_path": null
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/extended_estrin/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/extended_estrin_exact_free_mule/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "exact-free-mule",
+  "status": "pass",
+  "benchmark": "extended_estrin.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": "mule",
+  "patched_target_opcode": "0x0200000b",
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 67681,
+    "retired_total_instructions": 49194,
+    "retired_plain_mul": 8192,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 8192,
+    "retired_integer_multiply_ratio_ppm": 166524
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/extended_estrin_exact_free_mule/logs/core_hybrid.log",
+  "vcd_path": null,
+  "artifact_reuse": "baseline"
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/extended_estrin_exact_free_mule/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/extended_estrin_exact_free_mule/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/benchmarks/table14/extended_estrin.c",
+  "variant": "exact-free-mule",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "exact-free-mule",
+      "status": "pass",
+      "benchmark": "extended_estrin.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": "mule",
+      "patched_target_opcode": "0x0200000b",
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 67681,
+        "retired_total_instructions": 49194,
+        "retired_plain_mul": 8192,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 8192,
+        "retired_integer_multiply_ratio_ppm": 166524
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/extended_estrin_exact_free_mule/logs/core_hybrid.log",
+      "vcd_path": null,
+      "artifact_reuse": "baseline"
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/extended_estrin_exact_free_mule/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/fft_butterfly/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "baseline",
+  "status": "pass",
+  "benchmark": "fft_butterfly.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": null,
+  "patched_target_opcode": null,
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 84951,
+    "retired_total_instructions": 21360,
+    "retired_plain_mul": 1024,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 1024,
+    "retired_integer_multiply_ratio_ppm": 47940
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/fft_butterfly/logs/core_hybrid.log",
+  "vcd_path": null
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/fft_butterfly/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/fft_butterfly/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/benchmark_runs/fft_butterfly/staged/fft_butterfly.c",
+  "variant": "baseline",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "baseline",
+      "status": "pass",
+      "benchmark": "fft_butterfly.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": null,
+      "patched_target_opcode": null,
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 84951,
+        "retired_total_instructions": 21360,
+        "retired_plain_mul": 1024,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 1024,
+        "retired_integer_multiply_ratio_ppm": 47940
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/fft_butterfly/logs/core_hybrid.log",
+      "vcd_path": null
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/fft_butterfly/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/fft_butterfly_exact_free_mule/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "exact-free-mule",
+  "status": "pass",
+  "benchmark": "fft_butterfly.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": "mule",
+  "patched_target_opcode": "0x0200000b",
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 84951,
+    "retired_total_instructions": 21360,
+    "retired_plain_mul": 1024,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 1024,
+    "retired_integer_multiply_ratio_ppm": 47940
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/fft_butterfly_exact_free_mule/logs/core_hybrid.log",
+  "vcd_path": null,
+  "artifact_reuse": "baseline"
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/fft_butterfly_exact_free_mule/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/fft_butterfly_exact_free_mule/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/benchmark_runs/fft_butterfly/staged/fft_butterfly.c",
+  "variant": "exact-free-mule",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "exact-free-mule",
+      "status": "pass",
+      "benchmark": "fft_butterfly.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": "mule",
+      "patched_target_opcode": "0x0200000b",
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 84951,
+        "retired_total_instructions": 21360,
+        "retired_plain_mul": 1024,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 1024,
+        "retired_integer_multiply_ratio_ppm": 47940
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/fft_butterfly_exact_free_mule/logs/core_hybrid.log",
+      "vcd_path": null,
+      "artifact_reuse": "baseline"
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/fft_butterfly_exact_free_mule/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/filter_bank_4out/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "baseline",
+  "status": "pass",
+  "benchmark": "filter_bank_4out.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": null,
+  "patched_target_opcode": null,
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 116982,
+    "retired_total_instructions": 84671,
+    "retired_plain_mul": 16384,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 16384,
+    "retired_integer_multiply_ratio_ppm": 193501
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/filter_bank_4out/logs/core_hybrid.log",
+  "vcd_path": null
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/filter_bank_4out/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/filter_bank_4out/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/benchmarks/table14/filter_bank_4out.c",
+  "variant": "baseline",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "baseline",
+      "status": "pass",
+      "benchmark": "filter_bank_4out.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": null,
+      "patched_target_opcode": null,
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 116982,
+        "retired_total_instructions": 84671,
+        "retired_plain_mul": 16384,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 16384,
+        "retired_integer_multiply_ratio_ppm": 193501
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/filter_bank_4out/logs/core_hybrid.log",
+      "vcd_path": null
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/filter_bank_4out/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/filter_bank_4out_exact_free_mule/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "exact-free-mule",
+  "status": "pass",
+  "benchmark": "filter_bank_4out.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": "mule",
+  "patched_target_opcode": "0x0200000b",
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 116982,
+    "retired_total_instructions": 84671,
+    "retired_plain_mul": 16384,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 16384,
+    "retired_integer_multiply_ratio_ppm": 193501
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/filter_bank_4out_exact_free_mule/logs/core_hybrid.log",
+  "vcd_path": null,
+  "artifact_reuse": "baseline"
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/filter_bank_4out_exact_free_mule/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/filter_bank_4out_exact_free_mule/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/benchmarks/table14/filter_bank_4out.c",
+  "variant": "exact-free-mule",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "exact-free-mule",
+      "status": "pass",
+      "benchmark": "filter_bank_4out.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": "mule",
+      "patched_target_opcode": "0x0200000b",
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 116982,
+        "retired_total_instructions": 84671,
+        "retired_plain_mul": 16384,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 16384,
+        "retired_integer_multiply_ratio_ppm": 193501
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/filter_bank_4out_exact_free_mule/logs/core_hybrid.log",
+      "vcd_path": null,
+      "artifact_reuse": "baseline"
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/filter_bank_4out_exact_free_mule/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/fir_direct/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "baseline",
+  "status": "pass",
+  "benchmark": "fir_direct.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": null,
+  "patched_target_opcode": null,
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 322139,
+    "retired_total_instructions": 137483,
+    "retired_plain_mul": 16128,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 16128,
+    "retired_integer_multiply_ratio_ppm": 117309
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/fir_direct/logs/core_hybrid.log",
+  "vcd_path": null
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/fir_direct/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/fir_direct/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/benchmark_runs/fir_direct/staged/fir_direct.c",
+  "variant": "baseline",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "baseline",
+      "status": "pass",
+      "benchmark": "fir_direct.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": null,
+      "patched_target_opcode": null,
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 322139,
+        "retired_total_instructions": 137483,
+        "retired_plain_mul": 16128,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 16128,
+        "retired_integer_multiply_ratio_ppm": 117309
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/fir_direct/logs/core_hybrid.log",
+      "vcd_path": null
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/fir_direct/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/fir_direct_exact_free_mule/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "exact-free-mule",
+  "status": "pass",
+  "benchmark": "fir_direct.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": "mule",
+  "patched_target_opcode": "0x0200000b",
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 322139,
+    "retired_total_instructions": 137483,
+    "retired_plain_mul": 16128,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 16128,
+    "retired_integer_multiply_ratio_ppm": 117309
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/fir_direct_exact_free_mule/logs/core_hybrid.log",
+  "vcd_path": null,
+  "artifact_reuse": "baseline"
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/fir_direct_exact_free_mule/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/fir_direct_exact_free_mule/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/benchmark_runs/fir_direct/staged/fir_direct.c",
+  "variant": "exact-free-mule",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "exact-free-mule",
+      "status": "pass",
+      "benchmark": "fir_direct.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": "mule",
+      "patched_target_opcode": "0x0200000b",
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 322139,
+        "retired_total_instructions": 137483,
+        "retired_plain_mul": 16128,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 16128,
+        "retired_integer_multiply_ratio_ppm": 117309
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/fir_direct_exact_free_mule/logs/core_hybrid.log",
+      "vcd_path": null,
+      "artifact_reuse": "baseline"
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/fir_direct_exact_free_mule/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/fir_unrolled/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "baseline",
+  "status": "pass",
+  "benchmark": "fir_unrolled.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": null,
+  "patched_target_opcode": null,
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 141372,
+    "retired_total_instructions": 86436,
+    "retired_plain_mul": 16128,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 16128,
+    "retired_integer_multiply_ratio_ppm": 186588
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/fir_unrolled/logs/core_hybrid.log",
+  "vcd_path": null
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/fir_unrolled/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/fir_unrolled/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/benchmark_runs/fir_unrolled/staged/fir_unrolled.c",
+  "variant": "baseline",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "baseline",
+      "status": "pass",
+      "benchmark": "fir_unrolled.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": null,
+      "patched_target_opcode": null,
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 141372,
+        "retired_total_instructions": 86436,
+        "retired_plain_mul": 16128,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 16128,
+        "retired_integer_multiply_ratio_ppm": 186588
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/fir_unrolled/logs/core_hybrid.log",
+      "vcd_path": null
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/fir_unrolled/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/fir_unrolled_exact_free_mule/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "exact-free-mule",
+  "status": "pass",
+  "benchmark": "fir_unrolled.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": "mule",
+  "patched_target_opcode": "0x0200000b",
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 141372,
+    "retired_total_instructions": 86436,
+    "retired_plain_mul": 16128,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 16128,
+    "retired_integer_multiply_ratio_ppm": 186588
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/fir_unrolled_exact_free_mule/logs/core_hybrid.log",
+  "vcd_path": null,
+  "artifact_reuse": "baseline"
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/fir_unrolled_exact_free_mule/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/fir_unrolled_exact_free_mule/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/benchmark_runs/fir_unrolled/staged/fir_unrolled.c",
+  "variant": "exact-free-mule",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "exact-free-mule",
+      "status": "pass",
+      "benchmark": "fir_unrolled.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": "mule",
+      "patched_target_opcode": "0x0200000b",
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 141372,
+        "retired_total_instructions": 86436,
+        "retired_plain_mul": 16128,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 16128,
+        "retired_integer_multiply_ratio_ppm": 186588
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/fir_unrolled_exact_free_mule/logs/core_hybrid.log",
+      "vcd_path": null,
+      "artifact_reuse": "baseline"
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/fir_unrolled_exact_free_mule/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/grouped_correlation_bank/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "baseline",
+  "status": "pass",
+  "benchmark": "grouped_correlation_bank.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": null,
+  "patched_target_opcode": null,
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 59465,
+    "retired_total_instructions": 41467,
+    "retired_plain_mul": 9216,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 9216,
+    "retired_integer_multiply_ratio_ppm": 222249
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/grouped_correlation_bank/logs/core_hybrid.log",
+  "vcd_path": null
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/grouped_correlation_bank/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/grouped_correlation_bank/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/benchmarks/table14/grouped_correlation_bank.c",
+  "variant": "baseline",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "baseline",
+      "status": "pass",
+      "benchmark": "grouped_correlation_bank.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": null,
+      "patched_target_opcode": null,
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 59465,
+        "retired_total_instructions": 41467,
+        "retired_plain_mul": 9216,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 9216,
+        "retired_integer_multiply_ratio_ppm": 222249
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/grouped_correlation_bank/logs/core_hybrid.log",
+      "vcd_path": null
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/grouped_correlation_bank/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/grouped_correlation_bank_exact_free_mule/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "exact-free-mule",
+  "status": "pass",
+  "benchmark": "grouped_correlation_bank.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": "mule",
+  "patched_target_opcode": "0x0200000b",
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 59465,
+    "retired_total_instructions": 41467,
+    "retired_plain_mul": 9216,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 9216,
+    "retired_integer_multiply_ratio_ppm": 222249
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/grouped_correlation_bank_exact_free_mule/logs/core_hybrid.log",
+  "vcd_path": null,
+  "artifact_reuse": "baseline"
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/grouped_correlation_bank_exact_free_mule/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/grouped_correlation_bank_exact_free_mule/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/benchmarks/table14/grouped_correlation_bank.c",
+  "variant": "exact-free-mule",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "exact-free-mule",
+      "status": "pass",
+      "benchmark": "grouped_correlation_bank.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": "mule",
+      "patched_target_opcode": "0x0200000b",
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 59465,
+        "retired_total_instructions": 41467,
+        "retired_plain_mul": 9216,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 9216,
+        "retired_integer_multiply_ratio_ppm": 222249
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/grouped_correlation_bank_exact_free_mule/logs/core_hybrid.log",
+      "vcd_path": null,
+      "artifact_reuse": "baseline"
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/grouped_correlation_bank_exact_free_mule/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/matmul_tiled/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "baseline",
+  "status": "pass",
+  "benchmark": "matmul_tiled.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": null,
+  "patched_target_opcode": null,
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 562835,
+    "retired_total_instructions": 311524,
+    "retired_plain_mul": 32768,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 32768,
+    "retired_integer_multiply_ratio_ppm": 105186
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/matmul_tiled/logs/core_hybrid.log",
+  "vcd_path": null
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/matmul_tiled/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/matmul_tiled/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/benchmark_runs/matmul_tiled/staged/matmul_tiled.c",
+  "variant": "baseline",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "baseline",
+      "status": "pass",
+      "benchmark": "matmul_tiled.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": null,
+      "patched_target_opcode": null,
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 562835,
+        "retired_total_instructions": 311524,
+        "retired_plain_mul": 32768,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 32768,
+        "retired_integer_multiply_ratio_ppm": 105186
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/matmul_tiled/logs/core_hybrid.log",
+      "vcd_path": null
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/matmul_tiled/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/matmul_tiled_exact_free_mule/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "exact-free-mule",
+  "status": "pass",
+  "benchmark": "matmul_tiled.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": "mule",
+  "patched_target_opcode": "0x0200000b",
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 562835,
+    "retired_total_instructions": 311524,
+    "retired_plain_mul": 32768,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 32768,
+    "retired_integer_multiply_ratio_ppm": 105186
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/matmul_tiled_exact_free_mule/logs/core_hybrid.log",
+  "vcd_path": null,
+  "artifact_reuse": "baseline"
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/matmul_tiled_exact_free_mule/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/matmul_tiled_exact_free_mule/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/benchmark_runs/matmul_tiled/staged/matmul_tiled.c",
+  "variant": "exact-free-mule",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "exact-free-mule",
+      "status": "pass",
+      "benchmark": "matmul_tiled.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": "mule",
+      "patched_target_opcode": "0x0200000b",
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 562835,
+        "retired_total_instructions": 311524,
+        "retired_plain_mul": 32768,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 32768,
+        "retired_integer_multiply_ratio_ppm": 105186
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/matmul_tiled_exact_free_mule/logs/core_hybrid.log",
+      "vcd_path": null,
+      "artifact_reuse": "baseline"
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/matmul_tiled_exact_free_mule/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/multi_accumulator/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "baseline",
+  "status": "pass",
+  "benchmark": "multi_accumulator.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": null,
+  "patched_target_opcode": null,
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 23049,
+    "retired_total_instructions": 17023,
+    "retired_plain_mul": 2048,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 2048,
+    "retired_integer_multiply_ratio_ppm": 120307
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/multi_accumulator/logs/core_hybrid.log",
+  "vcd_path": null
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/multi_accumulator/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/multi_accumulator/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/benchmarks/table14/multi_accumulator.c",
+  "variant": "baseline",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "baseline",
+      "status": "pass",
+      "benchmark": "multi_accumulator.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": null,
+      "patched_target_opcode": null,
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 23049,
+        "retired_total_instructions": 17023,
+        "retired_plain_mul": 2048,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 2048,
+        "retired_integer_multiply_ratio_ppm": 120307
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/multi_accumulator/logs/core_hybrid.log",
+      "vcd_path": null
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/multi_accumulator/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/multi_accumulator_exact_free_mule/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "exact-free-mule",
+  "status": "pass",
+  "benchmark": "multi_accumulator.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": "mule",
+  "patched_target_opcode": "0x0200000b",
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 23049,
+    "retired_total_instructions": 17023,
+    "retired_plain_mul": 2048,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 2048,
+    "retired_integer_multiply_ratio_ppm": 120307
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/multi_accumulator_exact_free_mule/logs/core_hybrid.log",
+  "vcd_path": null,
+  "artifact_reuse": "baseline"
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/multi_accumulator_exact_free_mule/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/multi_accumulator_exact_free_mule/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/benchmarks/table14/multi_accumulator.c",
+  "variant": "exact-free-mule",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "exact-free-mule",
+      "status": "pass",
+      "benchmark": "multi_accumulator.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": "mule",
+      "patched_target_opcode": "0x0200000b",
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 23049,
+        "retired_total_instructions": 17023,
+        "retired_plain_mul": 2048,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 2048,
+        "retired_integer_multiply_ratio_ppm": 120307
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/multi_accumulator_exact_free_mule/logs/core_hybrid.log",
+      "vcd_path": null,
+      "artifact_reuse": "baseline"
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/multi_accumulator_exact_free_mule/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/outer_product/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "baseline",
+  "status": "pass",
+  "benchmark": "outer_product.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": null,
+  "patched_target_opcode": null,
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 71737,
+    "retired_total_instructions": 51802,
+    "retired_plain_mul": 2304,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 2304,
+    "retired_integer_multiply_ratio_ppm": 44477
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/outer_product/logs/core_hybrid.log",
+  "vcd_path": null
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/outer_product/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/outer_product/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/benchmark_runs/outer_product/staged/outer_product.c",
+  "variant": "baseline",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "baseline",
+      "status": "pass",
+      "benchmark": "outer_product.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": null,
+      "patched_target_opcode": null,
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 71737,
+        "retired_total_instructions": 51802,
+        "retired_plain_mul": 2304,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 2304,
+        "retired_integer_multiply_ratio_ppm": 44477
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/outer_product/logs/core_hybrid.log",
+      "vcd_path": null
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/outer_product/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/outer_product_exact_free_mule/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "exact-free-mule",
+  "status": "pass",
+  "benchmark": "outer_product.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": "mule",
+  "patched_target_opcode": "0x0200000b",
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 71737,
+    "retired_total_instructions": 51802,
+    "retired_plain_mul": 2304,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 2304,
+    "retired_integer_multiply_ratio_ppm": 44477
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/outer_product_exact_free_mule/logs/core_hybrid.log",
+  "vcd_path": null,
+  "artifact_reuse": "baseline"
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/outer_product_exact_free_mule/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/outer_product_exact_free_mule/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/benchmark_runs/outer_product/staged/outer_product.c",
+  "variant": "exact-free-mule",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "exact-free-mule",
+      "status": "pass",
+      "benchmark": "outer_product.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": "mule",
+      "patched_target_opcode": "0x0200000b",
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 71737,
+        "retired_total_instructions": 51802,
+        "retired_plain_mul": 2304,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 2304,
+        "retired_integer_multiply_ratio_ppm": 44477
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/outer_product_exact_free_mule/logs/core_hybrid.log",
+      "vcd_path": null,
+      "artifact_reuse": "baseline"
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/outer_product_exact_free_mule/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/rdr_like_corr/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "baseline",
+  "status": "pass",
+  "benchmark": "rdr_like_corr.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": null,
+  "patched_target_opcode": null,
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 50366,
+    "retired_total_instructions": 31073,
+    "retired_plain_mul": 6144,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 6144,
+    "retired_integer_multiply_ratio_ppm": 197727
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/rdr_like_corr/logs/core_hybrid.log",
+  "vcd_path": null
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/rdr_like_corr/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/rdr_like_corr/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/benchmarks/table14/rdr_like_corr.c",
+  "variant": "baseline",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "baseline",
+      "status": "pass",
+      "benchmark": "rdr_like_corr.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": null,
+      "patched_target_opcode": null,
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 50366,
+        "retired_total_instructions": 31073,
+        "retired_plain_mul": 6144,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 6144,
+        "retired_integer_multiply_ratio_ppm": 197727
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/rdr_like_corr/logs/core_hybrid.log",
+      "vcd_path": null
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/rdr_like_corr/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/rdr_like_corr_exact_free_mule/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "exact-free-mule",
+  "status": "pass",
+  "benchmark": "rdr_like_corr.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": "mule",
+  "patched_target_opcode": "0x0200000b",
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 50366,
+    "retired_total_instructions": 31073,
+    "retired_plain_mul": 6144,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 6144,
+    "retired_integer_multiply_ratio_ppm": 197727
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/rdr_like_corr_exact_free_mule/logs/core_hybrid.log",
+  "vcd_path": null,
+  "artifact_reuse": "baseline"
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/rdr_like_corr_exact_free_mule/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/rdr_like_corr_exact_free_mule/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/benchmarks/table14/rdr_like_corr.c",
+  "variant": "exact-free-mule",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "exact-free-mule",
+      "status": "pass",
+      "benchmark": "rdr_like_corr.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": "mule",
+      "patched_target_opcode": "0x0200000b",
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 50366,
+        "retired_total_instructions": 31073,
+        "retired_plain_mul": 6144,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 6144,
+        "retired_integer_multiply_ratio_ppm": 197727
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/rdr_like_corr_exact_free_mule/logs/core_hybrid.log",
+      "vcd_path": null,
+      "artifact_reuse": "baseline"
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/rdr_like_corr_exact_free_mule/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/reduction_tree_mul/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "baseline",
+  "status": "pass",
+  "benchmark": "reduction_tree_mul.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": null,
+  "patched_target_opcode": null,
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 23237,
+    "retired_total_instructions": 16225,
+    "retired_plain_mul": 1280,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 1280,
+    "retired_integer_multiply_ratio_ppm": 78890
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/reduction_tree_mul/logs/core_hybrid.log",
+  "vcd_path": null
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/reduction_tree_mul/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/reduction_tree_mul/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/benchmarks/table14/reduction_tree_mul.c",
+  "variant": "baseline",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "baseline",
+      "status": "pass",
+      "benchmark": "reduction_tree_mul.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": null,
+      "patched_target_opcode": null,
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 23237,
+        "retired_total_instructions": 16225,
+        "retired_plain_mul": 1280,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 1280,
+        "retired_integer_multiply_ratio_ppm": 78890
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/reduction_tree_mul/logs/core_hybrid.log",
+      "vcd_path": null
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/reduction_tree_mul/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/reduction_tree_mul_exact_free_mule/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "exact-free-mule",
+  "status": "pass",
+  "benchmark": "reduction_tree_mul.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": "mule",
+  "patched_target_opcode": "0x0200000b",
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 23237,
+    "retired_total_instructions": 16225,
+    "retired_plain_mul": 1280,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 1280,
+    "retired_integer_multiply_ratio_ppm": 78890
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/reduction_tree_mul_exact_free_mule/logs/core_hybrid.log",
+  "vcd_path": null,
+  "artifact_reuse": "baseline"
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/reduction_tree_mul_exact_free_mule/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/reduction_tree_mul_exact_free_mule/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/benchmarks/table14/reduction_tree_mul.c",
+  "variant": "exact-free-mule",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "exact-free-mule",
+      "status": "pass",
+      "benchmark": "reduction_tree_mul.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": "mule",
+      "patched_target_opcode": "0x0200000b",
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 23237,
+        "retired_total_instructions": 16225,
+        "retired_plain_mul": 1280,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 1280,
+        "retired_integer_multiply_ratio_ppm": 78890
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/reduction_tree_mul_exact_free_mule/logs/core_hybrid.log",
+      "vcd_path": null,
+      "artifact_reuse": "baseline"
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/reduction_tree_mul_exact_free_mule/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/sliding_correlation/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "baseline",
+  "status": "pass",
+  "benchmark": "sliding_correlation.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": null,
+  "patched_target_opcode": null,
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 53344,
+    "retired_total_instructions": 24782,
+    "retired_plain_mul": 3072,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 3072,
+    "retired_integer_multiply_ratio_ppm": 123960
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/sliding_correlation/logs/core_hybrid.log",
+  "vcd_path": null
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/sliding_correlation/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/sliding_correlation/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/benchmarks/table14/sliding_correlation.c",
+  "variant": "baseline",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "baseline",
+      "status": "pass",
+      "benchmark": "sliding_correlation.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": null,
+      "patched_target_opcode": null,
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 53344,
+        "retired_total_instructions": 24782,
+        "retired_plain_mul": 3072,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 3072,
+        "retired_integer_multiply_ratio_ppm": 123960
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/sliding_correlation/logs/core_hybrid.log",
+      "vcd_path": null
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/sliding_correlation/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/sliding_correlation_exact_free_mule/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "exact-free-mule",
+  "status": "pass",
+  "benchmark": "sliding_correlation.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": "mule",
+  "patched_target_opcode": "0x0200000b",
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 53344,
+    "retired_total_instructions": 24782,
+    "retired_plain_mul": 3072,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 3072,
+    "retired_integer_multiply_ratio_ppm": 123960
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/sliding_correlation_exact_free_mule/logs/core_hybrid.log",
+  "vcd_path": null,
+  "artifact_reuse": "baseline"
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/sliding_correlation_exact_free_mule/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/sliding_correlation_exact_free_mule/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/benchmarks/table14/sliding_correlation.c",
+  "variant": "exact-free-mule",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "exact-free-mule",
+      "status": "pass",
+      "benchmark": "sliding_correlation.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": "mule",
+      "patched_target_opcode": "0x0200000b",
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 53344,
+        "retired_total_instructions": 24782,
+        "retired_plain_mul": 3072,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 3072,
+        "retired_integer_multiply_ratio_ppm": 123960
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/sliding_correlation_exact_free_mule/logs/core_hybrid.log",
+      "vcd_path": null,
+      "artifact_reuse": "baseline"
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/sliding_correlation_exact_free_mule/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot16/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "baseline",
+  "status": "pass",
+  "benchmark": "unrolled_dot16.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": null,
+  "patched_target_opcode": null,
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 6667,
+    "retired_total_instructions": 5217,
+    "retired_plain_mul": 256,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 256,
+    "retired_integer_multiply_ratio_ppm": 49070
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot16/logs/core_hybrid.log",
+  "vcd_path": null
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot16/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot16/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/benchmarks/table14/unrolled_dot16.c",
+  "variant": "baseline",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "baseline",
+      "status": "pass",
+      "benchmark": "unrolled_dot16.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": null,
+      "patched_target_opcode": null,
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 6667,
+        "retired_total_instructions": 5217,
+        "retired_plain_mul": 256,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 256,
+        "retired_integer_multiply_ratio_ppm": 49070
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot16/logs/core_hybrid.log",
+      "vcd_path": null
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot16/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot16_exact_free_mule/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "exact-free-mule",
+  "status": "pass",
+  "benchmark": "unrolled_dot16.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": "mule",
+  "patched_target_opcode": "0x0200000b",
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 6667,
+    "retired_total_instructions": 5217,
+    "retired_plain_mul": 256,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 256,
+    "retired_integer_multiply_ratio_ppm": 49070
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot16_exact_free_mule/logs/core_hybrid.log",
+  "vcd_path": null,
+  "artifact_reuse": "baseline"
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot16_exact_free_mule/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot16_exact_free_mule/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/benchmarks/table14/unrolled_dot16.c",
+  "variant": "exact-free-mule",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "exact-free-mule",
+      "status": "pass",
+      "benchmark": "unrolled_dot16.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": "mule",
+      "patched_target_opcode": "0x0200000b",
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 6667,
+        "retired_total_instructions": 5217,
+        "retired_plain_mul": 256,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 256,
+        "retired_integer_multiply_ratio_ppm": 49070
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot16_exact_free_mule/logs/core_hybrid.log",
+      "vcd_path": null,
+      "artifact_reuse": "baseline"
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot16_exact_free_mule/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot32/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "baseline",
+  "status": "pass",
+  "benchmark": "unrolled_dot32.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": null,
+  "patched_target_opcode": null,
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 7916,
+    "retired_total_instructions": 5354,
+    "retired_plain_mul": 256,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 256,
+    "retired_integer_multiply_ratio_ppm": 47814
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot32/logs/core_hybrid.log",
+  "vcd_path": null
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot32/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot32/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/benchmarks/table14/unrolled_dot32.c",
+  "variant": "baseline",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "baseline",
+      "status": "pass",
+      "benchmark": "unrolled_dot32.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": null,
+      "patched_target_opcode": null,
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 7916,
+        "retired_total_instructions": 5354,
+        "retired_plain_mul": 256,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 256,
+        "retired_integer_multiply_ratio_ppm": 47814
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot32/logs/core_hybrid.log",
+      "vcd_path": null
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot32/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot32_exact_free_mule/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "exact-free-mule",
+  "status": "pass",
+  "benchmark": "unrolled_dot32.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": "mule",
+  "patched_target_opcode": "0x0200000b",
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 7916,
+    "retired_total_instructions": 5354,
+    "retired_plain_mul": 256,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 256,
+    "retired_integer_multiply_ratio_ppm": 47814
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot32_exact_free_mule/logs/core_hybrid.log",
+  "vcd_path": null,
+  "artifact_reuse": "baseline"
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot32_exact_free_mule/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot32_exact_free_mule/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/benchmarks/table14/unrolled_dot32.c",
+  "variant": "exact-free-mule",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "exact-free-mule",
+      "status": "pass",
+      "benchmark": "unrolled_dot32.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": "mule",
+      "patched_target_opcode": "0x0200000b",
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 7916,
+        "retired_total_instructions": 5354,
+        "retired_plain_mul": 256,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 256,
+        "retired_integer_multiply_ratio_ppm": 47814
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot32_exact_free_mule/logs/core_hybrid.log",
+      "vcd_path": null,
+      "artifact_reuse": "baseline"
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot32_exact_free_mule/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot64/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "baseline",
+  "status": "pass",
+  "benchmark": "unrolled_dot64.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": null,
+  "patched_target_opcode": null,
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 7436,
+    "retired_total_instructions": 5709,
+    "retired_plain_mul": 256,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 256,
+    "retired_integer_multiply_ratio_ppm": 44841
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot64/logs/core_hybrid.log",
+  "vcd_path": null
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot64/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot64/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/benchmarks/table14/unrolled_dot64.c",
+  "variant": "baseline",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "baseline",
+      "status": "pass",
+      "benchmark": "unrolled_dot64.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": null,
+      "patched_target_opcode": null,
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 7436,
+        "retired_total_instructions": 5709,
+        "retired_plain_mul": 256,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 256,
+        "retired_integer_multiply_ratio_ppm": 44841
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot64/logs/core_hybrid.log",
+      "vcd_path": null
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot64/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot64_exact_free_mule/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "exact-free-mule",
+  "status": "pass",
+  "benchmark": "unrolled_dot64.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": "mule",
+  "patched_target_opcode": "0x0200000b",
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 7436,
+    "retired_total_instructions": 5709,
+    "retired_plain_mul": 256,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 256,
+    "retired_integer_multiply_ratio_ppm": 44841
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot64_exact_free_mule/logs/core_hybrid.log",
+  "vcd_path": null,
+  "artifact_reuse": "baseline"
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot64_exact_free_mule/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot64_exact_free_mule/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/benchmarks/table14/unrolled_dot64.c",
+  "variant": "exact-free-mule",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "exact-free-mule",
+      "status": "pass",
+      "benchmark": "unrolled_dot64.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": "mule",
+      "patched_target_opcode": "0x0200000b",
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 7436,
+        "retired_total_instructions": 5709,
+        "retired_plain_mul": 256,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 256,
+        "retired_integer_multiply_ratio_ppm": 44841
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot64_exact_free_mule/logs/core_hybrid.log",
+      "vcd_path": null,
+      "artifact_reuse": "baseline"
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot64_exact_free_mule/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot8/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "baseline",
+  "status": "pass",
+  "benchmark": "unrolled_dot8.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": null,
+  "patched_target_opcode": null,
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 4617,
+    "retired_total_instructions": 3535,
+    "retired_plain_mul": 256,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 256,
+    "retired_integer_multiply_ratio_ppm": 72418
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot8/logs/core_hybrid.log",
+  "vcd_path": null
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot8/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot8/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/benchmarks/table14/unrolled_dot8.c",
+  "variant": "baseline",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "baseline",
+      "status": "pass",
+      "benchmark": "unrolled_dot8.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": null,
+      "patched_target_opcode": null,
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 4617,
+        "retired_total_instructions": 3535,
+        "retired_plain_mul": 256,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 256,
+        "retired_integer_multiply_ratio_ppm": 72418
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot8/logs/core_hybrid.log",
+      "vcd_path": null
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot8/summary.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot8_exact_free_mule/metrics/core_hybrid.json =====
+
+{
+  "config": "core_hybrid",
+  "variant": "exact-free-mule",
+  "status": "pass",
+  "benchmark": "unrolled_dot8.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "patched_target": "mule",
+  "patched_target_opcode": "0x0200000b",
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 4617,
+    "retired_total_instructions": 3535,
+    "retired_plain_mul": 256,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 256,
+    "retired_integer_multiply_ratio_ppm": 72418
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot8_exact_free_mule/logs/core_hybrid.log",
+  "vcd_path": null,
+  "artifact_reuse": "baseline"
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot8_exact_free_mule/metrics/core_hybrid.json =====
+
+===== BEGIN Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot8_exact_free_mule/summary.json =====
+
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/benchmarks/table14/unrolled_dot8.c",
+  "variant": "exact-free-mule",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "exact-free-mule",
+      "status": "pass",
+      "benchmark": "unrolled_dot8.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": "mule",
+      "patched_target_opcode": "0x0200000b",
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 4617,
+        "retired_total_instructions": 3535,
+        "retired_plain_mul": 256,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 256,
+        "retired_integer_multiply_ratio_ppm": 72418
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot8_exact_free_mule/logs/core_hybrid.log",
+      "vcd_path": null,
+      "artifact_reuse": "baseline"
+    }
+  ]
+}
+===== END Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/unrolled_dot8_exact_free_mule/summary.json =====
+

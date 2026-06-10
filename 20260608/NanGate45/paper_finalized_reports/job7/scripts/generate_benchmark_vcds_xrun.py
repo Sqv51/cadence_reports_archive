@@ -150,6 +150,20 @@ VARIANT_SPECS = {
         target_opcode=0x0200000B,
         allowed_configs=frozenset({"hybrid"}),
     ),
+    "exact-free-relaxed-mule": VariantSpec(
+        name="exact-free-relaxed-mule",
+        patch_mode="exact-free-relaxed",
+        target_name="mule",
+        target_opcode=0x0200000B,
+        allowed_configs=frozenset({"hybrid"}),
+    ),
+    "near-free-relaxed-mule": VariantSpec(
+        name="near-free-relaxed-mule",
+        patch_mode="near-free-relaxed",
+        target_name="mule",
+        target_opcode=0x0200000B,
+        allowed_configs=frozenset({"hybrid"}),
+    ),
     "all-mula": VariantSpec(
         name="all-mula",
         patch_mode="all",
@@ -728,6 +742,7 @@ def select_exact_free_candidate_addresses(
     benchmark_stem: str,
     distance_threshold: int,
     baseline_metrics: dict[str, object],
+    relaxed: bool = False,
 ) -> list[int]:
     hot_symbols = hot_symbols_for_benchmark(benchmark_stem)
     scoped_records = [record for record in records if record.symbol in hot_symbols]
@@ -754,7 +769,9 @@ def select_exact_free_candidate_addresses(
         if producer_rd is None:
             continue
         distance = static_distance_to_first_consumer(scoped_records, index, producer_rd)
-        if distance is None or distance < distance_threshold:
+        if not relaxed and (distance is None or distance < distance_threshold):
+            continue
+        if relaxed and distance is not None and distance < distance_threshold:
             continue
 
         group_key = enclosing_loop_key(index, scoped_records, loops)
@@ -762,7 +779,7 @@ def select_exact_free_candidate_addresses(
         amplification = (
             0.0 if static_mul_count == 0 else float(baseline_retired_plain_mul) / float(static_mul_count)
         )
-        if static_mul_count == 1 and amplification > 1024.0:
+        if not relaxed and static_mul_count == 1 and amplification > 1024.0:
             continue
 
         ordinal = group_all_mul_ordinals[group_key].index(index)
@@ -770,7 +787,7 @@ def select_exact_free_candidate_addresses(
             {
                 "index": index,
                 "address": record.address,
-                "distance": distance,
+                "distance": -1 if distance is None else distance,
                 "group_key": group_key,
                 "static_mul_count": static_mul_count,
                 "amplification": amplification,
@@ -780,7 +797,7 @@ def select_exact_free_candidate_addresses(
 
     candidate_rows.sort(
         key=lambda row: (
-            -int(row["distance"]),
+            -(int(row["distance"]) if int(row["distance"]) >= 0 else 9999),
             float(row["amplification"]),
             int(row["static_mul_count"]),
             int(row["ordinal"]),
@@ -955,6 +972,7 @@ def run_config(
     distance_threshold: int,
     trace_retire: bool,
     dump_vcd: bool,
+    oracle_cycle_tolerance_pct: float,
 ) -> dict[str, object]:
     xrun = resolve_executable("xrun", XRUN_CANDIDATES)
     variant_spec = VARIANT_SPECS[variant]
@@ -991,13 +1009,14 @@ def run_config(
         )
         if selected_addresses:
             patched_plain_mul_count = patch_selected_mul_to_variant(tcm_bin, records, selected_addresses, variant_spec)
-    elif variant_spec.patch_mode == "exact-free":
+    elif variant_spec.patch_mode in {"exact-free", "exact-free-relaxed", "near-free-relaxed"}:
         baseline_metrics = read_baseline_metrics(out_root, benchmark_name, config_name)
         oracle_candidates = select_exact_free_candidate_addresses(
             records,
             benchmark_src.stem,
             distance_threshold,
             baseline_metrics,
+            relaxed=(variant_spec.patch_mode in {"exact-free-relaxed", "near-free-relaxed"}),
         )
     pass_pc, fail_pc = resolve_loop_addresses(elf_path)
 
@@ -1007,13 +1026,16 @@ def run_config(
     env = os.environ.copy()
     env.pop("LD_LIBRARY_PATH", None)
 
-    if variant_spec.patch_mode == "exact-free":
+    if variant_spec.patch_mode in {"exact-free", "exact-free-relaxed", "near-free-relaxed"}:
         if baseline_metrics is None:
             raise CommandError("baseline metrics unexpectedly missing for exact-free steering")
         baseline_metrics_map = baseline_metrics.get("metrics", {})
         if not isinstance(baseline_metrics_map, dict) or "sim_total_cycles" not in baseline_metrics_map:
             raise CommandError("baseline metrics payload is missing sim_total_cycles for exact-free steering")
         baseline_cycles = int(baseline_metrics_map["sim_total_cycles"])
+        max_accepted_cycles = baseline_cycles
+        if variant_spec.patch_mode == "near-free-relaxed":
+            max_accepted_cycles = baseline_cycles + int((baseline_cycles * oracle_cycle_tolerance_pct) // 100.0)
         sanitize_testbench(
             tb_assets_dir / "tb_matmul_absorbtion.v",
             tb_sanitized,
@@ -1046,7 +1068,7 @@ def run_config(
                 raise CommandError(f"exact-free oracle trial failed golden check for 0x{candidate_address:08x}")
             trial_metrics = parse_metrics(output)
             trial_cycles = int(trial_metrics.get("sim_total_cycles", 0))
-            if trial_cycles <= baseline_cycles:
+            if trial_cycles <= max_accepted_cycles:
                 accepted_addresses.append(candidate_address)
             else:
                 oracle_rejected.append({"address": candidate_address, "trial_cycles": trial_cycles})
@@ -1071,7 +1093,7 @@ def run_config(
             metrics_dir,
         )
 
-    if variant_spec.patch_mode == "exact-free" and not selected_addresses:
+    if variant_spec.patch_mode in {"exact-free", "exact-free-relaxed", "near-free-relaxed"} and not selected_addresses:
         if baseline_metrics is None:
             raise CommandError("baseline metrics unexpectedly missing for zero-patch exact-free replay")
         return clone_baseline_artifacts(
@@ -1129,8 +1151,9 @@ def run_config(
         "log_path": str(log_path),
         "vcd_path": None if not dump_vcd else str(vcd_path),
     }
-    if variant_spec.patch_mode == "exact-free":
+    if variant_spec.patch_mode in {"exact-free", "exact-free-relaxed", "near-free-relaxed"}:
         result["oracle_candidate_count"] = len(oracle_candidates)
+        result["oracle_cycle_tolerance_pct"] = oracle_cycle_tolerance_pct if variant_spec.patch_mode == "near-free-relaxed" else 0.0
         result["oracle_rejected"] = [
             {"address": f"0x{row['address']:08x}", "trial_cycles": row["trial_cycles"]}
             for row in oracle_rejected
@@ -1160,6 +1183,12 @@ def main() -> int:
         type=int,
         default=2,
         help="Static producer-to-consumer instruction distance required for latency-hidden-mule selection",
+    )
+    parser.add_argument(
+        "--oracle-cycle-tolerance-pct",
+        type=float,
+        default=0.0,
+        help="Cycle overhead tolerance for near-free oracle variants, in percent of baseline cycles",
     )
     parser.add_argument(
         "--output-root",
@@ -1218,6 +1247,7 @@ def main() -> int:
                 args.latency_distance_threshold,
                 args.trace_retire,
                 not args.no_vcd,
+                args.oracle_cycle_tolerance_pct,
             )
         )
 

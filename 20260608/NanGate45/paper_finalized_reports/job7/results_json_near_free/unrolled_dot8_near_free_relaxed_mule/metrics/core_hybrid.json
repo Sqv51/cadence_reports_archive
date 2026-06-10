@@ -1,0 +1,56 @@
+{
+  "config": "core_hybrid",
+  "variant": "near-free-relaxed-mule",
+  "status": "pass",
+  "benchmark": "unrolled_dot8.c",
+  "patched_plain_mul_count": 1,
+  "selected_plain_mul_addresses": [
+    "0x8000023c"
+  ],
+  "patched_target": "mule",
+  "patched_target_opcode": "0x0200000b",
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 4622,
+    "retired_total_instructions": 3535,
+    "retired_plain_mul": 224,
+    "retired_mule": 32,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 256,
+    "retired_integer_multiply_ratio_ppm": 72418
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_near_free_runs/unrolled_dot8_near_free_relaxed_mule/logs/core_hybrid.log",
+  "vcd_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_near_free_runs/unrolled_dot8_near_free_relaxed_mule/vcd/core_hybrid.vcd",
+  "oracle_candidate_count": 8,
+  "oracle_cycle_tolerance_pct": 0.5,
+  "oracle_rejected": [
+    {
+      "address": "0x80000208",
+      "trial_cycles": 4681
+    },
+    {
+      "address": "0x80000214",
+      "trial_cycles": 4711
+    },
+    {
+      "address": "0x8000021c",
+      "trial_cycles": 4711
+    },
+    {
+      "address": "0x80000224",
+      "trial_cycles": 4711
+    },
+    {
+      "address": "0x8000022c",
+      "trial_cycles": 4711
+    },
+    {
+      "address": "0x80000234",
+      "trial_cycles": 4710
+    },
+    {
+      "address": "0x80000244",
+      "trial_cycles": 4846
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+Job 7 Near-Free Oracle Steering Summary Notes
+=============================================
+
+This campaign evaluated a relaxed oracle-validated mule steering flow with
+a strict near-free acceptance bound of +0.500% execution cycles. Every
+benchmark was run on the hybrid core, and only accepted patch sets were
+replayed through post-route power extraction.
+
+Scope and completeness:
+- 20 benchmarks were evaluated.
+- 4 benchmarks found at least one accepted near-free patch set.
+- 4 near-free post-route power reports were generated.
+
+Accepted near-free cases:
+- complex_mul_vec: 1 accepted patches, 512 retired mule ops, cycle delta +0.469%, core power delta +0.104%
+- complex_bank: 2 accepted patches, 256 retired mule ops, cycle delta +0.177%, core power delta +0.067%
+- extended_estrin: 1 accepted patches, 1024 retired mule ops, cycle delta +0.009%, core power delta +0.217%
+- unrolled_dot8: 1 accepted patches, 32 retired mule ops, cycle delta +0.108%, core power delta +0.175%
+
+Top-level observations:
+- The lowest cycle penalty was extended_estrin at +0.009%.
+- No accepted near-free case reduced total core power; the best power result was complex_bank at +0.067%.
+- The relaxed oracle did find real hidability in a few kernels, but the measurable effect in this implementation was cycle-neutral to near-neutral rather than energy-saving.
+- Most kernels still had zero accepted patches, which reinforces the earlier conclusion that static mul sites often sit directly on throughput-critical recurrences.
+
+Omitted benchmarks:
+- fft_butterfly (zero accepted near-free patches), fir_direct (zero accepted near-free patches), fir_unrolled (zero accepted near-free patches), matmul_tiled (zero accepted near-free patches), outer_product (zero accepted near-free patches), estrin_2level (zero accepted near-free patches), estrin_poly (zero accepted near-free patches), filter_bank_4out (zero accepted near-free patches), grouped_correlation_bank (zero accepted near-free patches), multi_accumulator (zero accepted near-free patches), rdr_like_corr (zero accepted near-free patches), reduction_tree_mul (zero accepted near-free patches), sliding_correlation (zero accepted near-free patches), unrolled_dot16 (zero accepted near-free patches), unrolled_dot32 (zero accepted near-free patches), unrolled_dot64 (zero accepted near-free patches)
+
+Recommended interpretation:
+- The <=0.5% oracle is useful as a schedule-safety filter, but in this core revision it exposed only a small number of near-free substitutions and did not translate into total core power savings on the accepted set.

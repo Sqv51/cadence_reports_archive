@@ -1,0 +1,29 @@
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/benchmarks/table14/multiplier_correctness.c",
+  "variant": "baseline",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "baseline",
+      "status": "pass",
+      "benchmark": "multiplier_correctness.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "selected_mul_routing": [],
+      "patched_target": null,
+      "patched_target_opcode": null,
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 165415,
+        "retired_total_instructions": 117633,
+        "retired_plain_mul": 480,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 480,
+        "retired_integer_multiply_ratio_ppm": 4080
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/mul_update_multiplier_correctness_runs/multiplier_correctness/logs/core_hybrid.log",
+      "vcd_path": null
+    }
+  ]
+}

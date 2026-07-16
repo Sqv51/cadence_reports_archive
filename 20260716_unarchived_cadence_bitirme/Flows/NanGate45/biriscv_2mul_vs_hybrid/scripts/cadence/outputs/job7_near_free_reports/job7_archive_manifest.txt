@@ -1,0 +1,46 @@
+Job 7 Archive Manifest
+======================
+
+Archived contents:
+- raw_reports/merged_job7_power_results_only.txt
+  Compact merged Job 7 exact-free report containing final results, metrics
+  JSON, summaries, and power reports. Xcelium/Innovus logs are intentionally
+  excluded.
+- raw_reports/merged_job7_near_free_power_results_only.txt
+  Compact merged Job 7 near-free report containing final results and accepted
+  oracle power reports. Xcelium/Innovus logs are intentionally excluded.
+- job7_near_free_table_summary.txt
+- job7_near_free_narrative_summary.txt
+- benchmark_power_job7_exact_free/complex_bank/oracle/reports/*.rpt
+  Voltus/Innovus post-route replay power reports for the only accepted
+  exact-free oracle benchmark.
+- benchmark_power_job7_near_free/{complex_mul_vec,complex_bank,extended_estrin,unrolled_dot8}/oracle/reports/*.rpt
+  Voltus/Innovus post-route replay power reports for the accepted near-free
+  oracle benchmarks.
+- results_json/**
+  Baseline and exact-free oracle cycle/patch metadata for the full Job 7 suite.
+- results_json_near_free/**
+  Baseline and near-free oracle cycle/patch metadata for the full Job 7 suite.
+- scripts/run_job7_exact_free_batch.sh
+- scripts/run_job7_exact_free_power_batch.sh
+- scripts/collect_job7_exact_free_results.py
+- scripts/run_job7_near_free_batch.sh
+- scripts/run_job7_near_free_power_batch.sh
+- scripts/run_job7_near_free_orchestrated.sh
+- scripts/collect_job7_near_free_results.py
+- scripts/export_job7_near_free_reports.py
+- scripts/generate_benchmark_vcds_xrun.py
+
+Summary:
+The strict exact-free oracle sweep found one accepted benchmark, complex_bank,
+with 37321 -> 37321 cycles (+0.000%) and 8.261768 mW -> 8.267983 mW
+(+0.075%), so it did not reduce total core power.
+
+The relaxed near-free oracle sweep used a +0.500% cycle bound and found four
+accepted benchmarks:
+- complex_mul_vec: 109170 -> 109682 cycles (+0.469%), 7.443486 mW -> 7.451229 mW (+0.104%)
+- complex_bank: 37321 -> 37387 cycles (+0.177%), 8.261768 mW -> 8.267316 mW (+0.067%)
+- extended_estrin: 67681 -> 67687 cycles (+0.009%), 8.617412 mW -> 8.636078 mW (+0.217%)
+- unrolled_dot8: 4617 -> 4622 cycles (+0.108%), 8.334907 mW -> 8.349453 mW (+0.175%)
+
+No accepted near-free patch set reduced total core power in this sweep.

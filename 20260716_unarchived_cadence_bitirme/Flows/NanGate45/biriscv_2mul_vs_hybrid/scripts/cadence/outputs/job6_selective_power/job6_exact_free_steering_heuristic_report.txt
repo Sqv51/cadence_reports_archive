@@ -1,0 +1,211 @@
+Job 6.1 Exact-Free MUL-to-MULE Steering Heuristic Report
+=======================================================
+
+Objective
+---------
+
+The Job 4 and Job 6 campaigns showed that replacing standard RISC-V mul
+instructions with the multi-cycle mule instruction can reduce power, but it can
+also increase execution cycles when the replacement saturates hot loops or
+falls on loop-carried dependencies. This report summarizes the observed
+patterns and proposes a safer exact-free steering algorithm.
+
+
+Key Observation
+---------------
+
+Complete latency hiding is not mainly a replacement-ratio problem. It is a
+schedule-neutrality problem.
+
+Even low dynamic mule fractions can introduce cycle overhead if the replaced
+mul sits on a loop-carried dependency, accumulator chain, or hot singleton loop.
+Therefore, a static percentage cap alone cannot guarantee exact-free
+replacement.
+
+
+Benchmark Pattern Summary
+-------------------------
+
+1. Hot singleton loops
+
+   Examples:
+   - fir_direct
+   - matmul_tiled
+   - outer_product
+   - sliding_correlation
+   - unrolled_dot16
+   - unrolled_dot32
+   - unrolled_dot64
+
+   Pattern:
+   These kernels expose one dominant static mul site inside a hot loop. If that
+   site is patched, most or all dynamic multiplies become mule operations.
+
+   Decision:
+   Reject these sites for static-only exact-free steering unless a cycle-count
+   oracle proves the replacement is free.
+
+
+2. Moderate independent-lane kernels
+
+   Examples:
+   - complex_mul_vec
+   - fft_butterfly
+   - complex_bank
+
+   Pattern:
+   These kernels contain multiple independent multiply lanes. They look more
+   promising than singleton loops, but Job 6 still showed nonzero cycle
+   overhead when 50% of dynamic multiplies were steered to mule.
+
+   Decision:
+   Steer only cold or clearly slack lanes. For exact-free claims, validate with
+   cycle-count simulation.
+
+
+3. Accumulation and FIR-bank kernels
+
+   Examples:
+   - fir_unrolled
+   - filter_bank_4out
+   - grouped_correlation_bank
+   - rdr_like_corr
+
+   Pattern:
+   A conservative 25% steering policy improved safety versus naive replacement,
+   but cycle overhead remained visible. These loops contain accumulation and
+   repeated reduction pressure, so static first-use distance can overestimate
+   true slack.
+
+   Decision:
+   Use these replacements only for explicit power-performance tradeoff studies,
+   not for exact-free steering unless validated by a cycle oracle.
+
+
+4. Polynomial and reduction-tree kernels
+
+   Examples:
+   - estrin_2level
+   - estrin_poly
+   - extended_estrin
+   - reduction_tree_mul
+   - multi_accumulator
+
+   Pattern:
+   Static slack can be misleading because multiply results quickly enter
+   reduction or accumulation structures. The apparent independence does not
+   necessarily translate into unchanged loop throughput.
+
+   Decision:
+   Reject most of these sites for exact-free static steering. Reconsider only
+   if the compiler can prove the replaced multiply is off the critical
+   recurrence path.
+
+
+5. True zero-cycle cases in Job 6
+
+   Examples:
+   - fir_direct
+   - matmul_tiled
+   - outer_product
+   - sliding_correlation
+
+   Pattern:
+   These benchmarks achieved 0.000% cycle delta because the selective policy
+   chose zero mule patches, not because a mule replacement was successfully
+   hidden.
+
+   Decision:
+   These cases validate the reject rule. They should not be presented as
+   successful hidden mule substitutions.
+
+
+Recommended Exact-Free Steering Algorithm
+-----------------------------------------
+
+The safest policy is a two-stage static-prune plus empirical-accept algorithm.
+
+
+Stage 1: Static candidate filter
+
+Accept a candidate mul site only if all of the following are true:
+
+1. First-use distance is at least the mule latency.
+   Recommended threshold: first_use_distance >= 6.
+
+2. The result does not feed a near-term accumulator, reduction tree,
+   store-address calculation, loop bound, branch condition, or loop-carried
+   value.
+
+3. The site is not the only static mul in a hot loop.
+
+4. The estimated dynamic mule fraction for the loop remains very small.
+   Recommended threshold: <= 5% for exact-free steering.
+
+5. Replacing the site does not change the estimated loop initiation interval.
+
+
+Stage 2: Cycle-count oracle
+
+Static analysis should prune unsafe sites, but final acceptance should be based
+on measured total execution cycles.
+
+Algorithm:
+
+    accepted = {}
+    for candidate in candidates_sorted_by_energy_benefit:
+        trial = accepted + candidate
+        patch(trial)
+        cycles = run_fast_rtl_no_vcd()
+        if cycles <= baseline_cycles:
+            accepted = trial
+        else:
+            reject candidate
+
+
+Candidate Ranking
+-----------------
+
+Candidates should be attempted in this order:
+
+1. Cold multiply sites outside hot loops.
+2. Hot-loop sites with high first-use distance and no recurrence involvement.
+3. Independent-lane multiplies with low dynamic execution count.
+4. Accumulation or reduction-adjacent multiplies only as a last resort.
+
+
+Paper-Safe Interpretation
+-------------------------
+
+The strongest defensible claim is:
+
+    Exact-free steering requires cycle-counter validation. Static analysis can
+    reject obviously unsafe sites and rank promising candidates, but unchanged
+    total execution cycles should be the final acceptance criterion.
+
+This framing explains the full campaign cleanly:
+
+- Naive steering over-replaces and creates structural hazards.
+- Static selective steering prevents the worst dense-loop cases.
+- Oracle-validated steering is the correct methodology for guaranteed
+  zero-overhead mule replacement.
+
+
+Practical Recommendation
+------------------------
+
+For the next implementation pass, add a new patch mode such as:
+
+    exact-free-mule
+
+This mode should:
+
+1. Run the baseline once and record total cycles.
+2. Build a statically filtered candidate list.
+3. Patch one candidate at a time.
+4. Run fast RTL simulation without VCD.
+5. Keep only candidates that preserve total cycles.
+6. Generate VCD and run post-route replay only for the final accepted set.
+
+This avoids wasting Voltus/Innovus runtime on candidates that already fail the
+cycle-neutrality requirement.

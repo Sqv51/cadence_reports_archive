@@ -1,0 +1,69 @@
+Job 7 Relaxed Exact-Free Oracle Sweep Summary
+=============================================
+
+Date: 2026-06-09
+Target: core_hybrid_100 post-route database
+Flow: relaxed static candidate filter + strict cycle-count oracle + RTL-VCD-to-post-route replay
+
+Heuristic change
+----------------
+
+This run used the new exact-free-relaxed-mule mode. Compared with the conservative
+Job 7 filter, the relaxed filter lowered the latency-distance threshold to 2 and
+allowed more hot-loop/singleton candidates into the oracle trial queue.
+
+The cycle oracle remained strict:
+
+    accept candidate only if trial_cycles <= baseline_cycles
+
+Result
+------
+
+The relaxed filter did not produce additional exact-free accepted patches beyond
+the conservative Job 7 result. Most newly exposed candidates introduced cycle
+overhead immediately and were rejected by the oracle.
+
+Final accepted-patch table:
+
+| Benchmark | Baseline Cycles | Relaxed Oracle Cycles | Cycle Delta (%) | Accepted Patches | Baseline Core Pwr (mW) | Relaxed Oracle Core Pwr (mW) | Core Power Delta (%) |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| `complex_bank` | 37321 | 37321 | `+0.000%` | 1 | 8.261768 | 8.267983 | `+0.075%` |
+
+Interpretation
+--------------
+
+The relaxed policy confirmed that the strict oracle is necessary. Allowing more
+candidates into the sweep did not uncover extra zero-cycle-overhead energy
+reductions for this RTL implementation. The only accepted relaxed exact-free
+patch preserved cycles but slightly increased total core power by 0.075%.
+
+Therefore, this implementation does not currently demonstrate a relaxed
+exact-free power benefit. The result is still useful: it shows that the proposed
+oracle flow prevents the paper from accidentally claiming latency hiding for
+mul-to-mule substitutions that are actually cycle-costly.
+
+Omitted benchmarks
+------------------
+
+The following benchmarks had zero accepted relaxed exact-free patches:
+
+complex_mul_vec, fft_butterfly, fir_direct, fir_unrolled, matmul_tiled,
+outer_product, estrin_2level, estrin_poly, extended_estrin, filter_bank_4out,
+grouped_correlation_bank, multi_accumulator, rdr_like_corr, reduction_tree_mul,
+sliding_correlation, unrolled_dot8, unrolled_dot16, unrolled_dot32,
+unrolled_dot64.
+
+Key artifact paths
+------------------
+
+Run results:
+outputs/job7_relaxed_exact_free_runs
+
+Post-route power results:
+outputs/job7_relaxed_exact_free_power
+
+Accepted-case VCD:
+outputs/job7_relaxed_exact_free_runs/complex_bank_exact_free_relaxed_mule/vcd/core_hybrid.vcd
+
+Accepted-case power report:
+outputs/job7_relaxed_exact_free_power/complex_bank/oracle/reports/power_total.rpt

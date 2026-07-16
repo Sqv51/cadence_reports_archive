@@ -1,0 +1,32 @@
+{
+  "config": "core_hybrid",
+  "variant": "alternating-mul-mule2n",
+  "status": "pass",
+  "benchmark": "complex_bank.c",
+  "patched_plain_mul_count": 8,
+  "selected_plain_mul_addresses": [
+    "0x80000268",
+    "0x800002b8",
+    "0x800002f0",
+    "0x80000308",
+    "0x8000031c",
+    "0x80000330",
+    "0x80000344",
+    "0x80000358"
+  ],
+  "selected_mul_routing": [],
+  "patched_target": "mule2n",
+  "patched_target_opcode": "0x1a00000b",
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 37528,
+    "retired_total_instructions": 23761,
+    "retired_plain_mul": 1024,
+    "retired_mule": 1074,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 2098,
+    "retired_integer_multiply_ratio_ppm": 88295
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/mul_update_route_diagnostic_runs/complex_bank_mul_update_route_diag_alternating_mul_mule2n/logs/core_hybrid.log",
+  "vcd_path": null
+}

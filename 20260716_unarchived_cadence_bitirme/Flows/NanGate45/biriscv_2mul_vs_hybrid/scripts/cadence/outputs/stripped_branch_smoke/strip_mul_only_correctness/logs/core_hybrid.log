@@ -1,0 +1,106 @@
+xrun(64): 25.09-s003: (c) Copyright 1995-2026 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	25.09-s003: Started on Jun 30, 2026 at 09:44:37 UTC
+/eda/cadence/XCELIUM2509/tools.lnx86/inca/bin/64bit/xrun
+	-64bit
+	-sv
+	-licqueue
+	-timescale 1ns/1ps
+	+access+r
+	+define+TRACE=0
+	+define+TRACE_VCD=0
+	+define+verilog_sim
+	+incdir+/tmp/biriscv-strip-mul-only/src/core
+	+incdir+/tmp/biriscv-strip-mul-only/tb/tb_matmul_absorbtion
+	+incdir+/tmp/biriscv-strip-mul-only/tb/tb_mul
+	-xmlibdirname /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/stripped_branch_smoke/strip_mul_only_correctness/work/core_hybrid/xcelium.d
+	/tmp/biriscv-strip-mul-only/src/core/biriscv_alu.v
+	/tmp/biriscv-strip-mul-only/src/core/biriscv_csr.v
+	/tmp/biriscv-strip-mul-only/src/core/biriscv_csr_regfile.v
+	/tmp/biriscv-strip-mul-only/src/core/biriscv_decode.v
+	/tmp/biriscv-strip-mul-only/src/core/biriscv_decoder.v
+	/tmp/biriscv-strip-mul-only/src/core/biriscv_defs.v
+	/tmp/biriscv-strip-mul-only/src/core/biriscv_divider.v
+	/tmp/biriscv-strip-mul-only/src/core/biriscv_exec.v
+	/tmp/biriscv-strip-mul-only/src/core/biriscv_fetch.v
+	/tmp/biriscv-strip-mul-only/src/core/biriscv_frontend.v
+	/tmp/biriscv-strip-mul-only/src/core/biriscv_issue.v
+	/tmp/biriscv-strip-mul-only/src/core/biriscv_lsu.v
+	/tmp/biriscv-strip-mul-only/src/core/biriscv_mmu.v
+	/tmp/biriscv-strip-mul-only/src/core/biriscv_multiplier.v
+	/tmp/biriscv-strip-mul-only/src/core/biriscv_multiplier_array.v
+	/tmp/biriscv-strip-mul-only/src/core/biriscv_multiplier_baugh_wooley.v
+	/tmp/biriscv-strip-mul-only/src/core/biriscv_multiplier_braun.v
+	/tmp/biriscv-strip-mul-only/src/core/biriscv_multiplier_cbm.v
+	/tmp/biriscv-strip-mul-only/src/core/biriscv_multiplier_cyclic.v
+	/tmp/biriscv-strip-mul-only/src/core/biriscv_multiplier_efficient.v
+	/tmp/biriscv-strip-mul-only/src/core/biriscv_multiplier_efficient_2.v
+	/tmp/biriscv-strip-mul-only/src/core/biriscv_multiplier_efficient_2_n.v
+	/tmp/biriscv-strip-mul-only/src/core/biriscv_multiplier_efficient_3.v
+	/tmp/biriscv-strip-mul-only/src/core/biriscv_multiplier_efficient_3_n.v
+	/tmp/biriscv-strip-mul-only/src/core/biriscv_multiplier_efficient_5.v
+	/tmp/biriscv-strip-mul-only/src/core/biriscv_multiplier_efficient_5_n.v
+	/tmp/biriscv-strip-mul-only/src/core/biriscv_multiplier_efficient_n.v
+	/tmp/biriscv-strip-mul-only/src/core/biriscv_multiplier_redundant.v
+	/tmp/biriscv-strip-mul-only/src/core/biriscv_multiplier_wallace.v
+	/tmp/biriscv-strip-mul-only/src/core/biriscv_npc.v
+	/tmp/biriscv-strip-mul-only/src/core/biriscv_pipe_ctrl.v
+	/tmp/biriscv-strip-mul-only/src/core/biriscv_regfile.v
+	/tmp/biriscv-strip-mul-only/src/core/biriscv_trace_sim.v
+	/tmp/biriscv-strip-mul-only/src/core/biriscv_xilinx_2r1w.v
+	/tmp/biriscv-strip-mul-only/src/core/column_bypass_multiplier.v
+	/tmp/biriscv-strip-mul-only/src/core/riscv_core.v
+	/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/stripped_branch_smoke/strip_mul_only_correctness/work/core_hybrid/tb_matmul_absorbtion_sanitized.v
+	/tmp/biriscv-strip-mul-only/tb/tb_mul/tcm_mem.v
+	/tmp/biriscv-strip-mul-only/tb/tb_mul/tcm_mem_ram.v
+	-top tb_matmul_absorbtion
+	-input "@run; exit"
+	-l /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/stripped_branch_smoke/strip_mul_only_correctness/logs/core_hybrid.log
+Recompiling... reason: file './tb_matmul_absorbtion_sanitized.v' is newer than expected.
+	expected: Tue Jun 30 09:44:00 2026
+	actual:   Tue Jun 30 09:44:37 2026
+file: /tmp/biriscv-strip-mul-only/tb/tb_mul/tcm_mem_ram.v
+xmvlog: *W,SPDUSD: Include directory /tmp/biriscv-strip-mul-only/tb/tb_matmul_absorbtion given but not used.
+xmvlog: *W,SPDUSD: Include directory /tmp/biriscv-strip-mul-only/tb/tb_mul given but not used.
+	Total errors/warnings found outside modules and primitives:
+		errors: 0, warnings: 2
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		worklib.tb_matmul_absorbtion:v (module)
+	Building instance overlay tables: .................... Done
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                27      23
+		Registers:             475     431
+		Scalar wires:          446       -
+		Expanded wires:         40       3
+		Vectored wires:        388       -
+		Always blocks:         128     139
+		Initial blocks:          3       3
+		Cont. assignments:     403     757
+		Pseudo assignments:     27       -
+		Sparse arrays:           1       -
+		Process Clocks:         79       2
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tb_matmul_absorbtion:v
+Loading snapshot worklib.tb_matmul_absorbtion:v .................... Done
+xcelium> source /eda/cadence/XCELIUM2509/tools/xcelium/files/xmsimrc
+xcelium> run; exit
+Starting benchmark runner
+Loaded 2372 bytes from tcm.bin
+RAM[0] = 0x000000001440006f
+RAM[1] = 0x0000000000000000
+RAM[2] = 0x0000000000000000
+
+*** BENCHMARK PASS ***
+main_return = 0
+sim_total_cycles = 165414
+retired_total_instructions = 117633
+retired_plain_mul = 480
+retired_mule = 0
+retired_mulh_family = 0
+retired_integer_multiply_total = 480
+retired_integer_multiply_ratio_ppm = 4080
+TOOL:	xrun(64)	25.09-s003: Exiting on Jun 30, 2026 at 09:44:40 UTC  (total: 00:00:03)

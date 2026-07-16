@@ -1,0 +1,25 @@
+{
+  "config": "core_hybrid",
+  "variant": "selective-latency-hidden-mule5n",
+  "status": "pass",
+  "benchmark": "estrin_poly.c",
+  "patched_plain_mul_count": 1,
+  "selected_plain_mul_addresses": [
+    "0x80000194"
+  ],
+  "selected_mul_routing": [],
+  "patched_target": "mule5n",
+  "patched_target_opcode": "0x1e00000b",
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 49638,
+    "retired_total_instructions": 37125,
+    "retired_plain_mul": 4096,
+    "retired_mule": 1024,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 5120,
+    "retired_integer_multiply_ratio_ppm": 137912
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/mul_update_full_hide_sweep_a04bb61_runs/mule5n_th10/estrin_poly_selective_latency_hidden_mule5n/logs/core_hybrid.log",
+  "vcd_path": null
+}

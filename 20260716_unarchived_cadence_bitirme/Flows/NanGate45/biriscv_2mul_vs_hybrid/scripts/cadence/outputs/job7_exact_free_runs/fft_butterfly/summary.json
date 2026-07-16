@@ -1,0 +1,28 @@
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/benchmark_runs/fft_butterfly/staged/fft_butterfly.c",
+  "variant": "baseline",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "baseline",
+      "status": "pass",
+      "benchmark": "fft_butterfly.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": null,
+      "patched_target_opcode": null,
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 84951,
+        "retired_total_instructions": 21360,
+        "retired_plain_mul": 1024,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 1024,
+        "retired_integer_multiply_ratio_ppm": 47940
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/fft_butterfly/logs/core_hybrid.log",
+      "vcd_path": null
+    }
+  ]
+}

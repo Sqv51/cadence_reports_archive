@@ -1,0 +1,63 @@
+{
+  "config": "core_hybrid",
+  "variant": "roundrobin-mul-mule2n-mule3n-mule5n",
+  "status": "pass",
+  "benchmark": "unrolled_dot8.c",
+  "patched_plain_mul_count": 6,
+  "selected_plain_mul_addresses": [
+    "0x80000224",
+    "0x8000022c",
+    "0x80000234",
+    "0x80000244",
+    "0x8000024c",
+    "0x80000254"
+  ],
+  "selected_mul_routing": [
+    {
+      "address": "0x80000218",
+      "target": "mul"
+    },
+    {
+      "address": "0x80000224",
+      "target": "mule2n"
+    },
+    {
+      "address": "0x8000022c",
+      "target": "mule3n"
+    },
+    {
+      "address": "0x80000234",
+      "target": "mule5n"
+    },
+    {
+      "address": "0x8000023c",
+      "target": "mul"
+    },
+    {
+      "address": "0x80000244",
+      "target": "mule2n"
+    },
+    {
+      "address": "0x8000024c",
+      "target": "mule3n"
+    },
+    {
+      "address": "0x80000254",
+      "target": "mule5n"
+    }
+  ],
+  "patched_target": "mul/mule2n/mule3n/mule5n",
+  "patched_target_opcode": null,
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 5066,
+    "retired_total_instructions": 3776,
+    "retired_plain_mul": 64,
+    "retired_mule": 192,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 256,
+    "retired_integer_multiply_ratio_ppm": 67796
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/mul_update_route_smoke_runs/unrolled_dot8_mul_update_route_smoke_roundrobin_mul_mule2n_mule3n_mule5n/logs/core_hybrid.log",
+  "vcd_path": null
+}

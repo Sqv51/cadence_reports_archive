@@ -1,0 +1,105 @@
+{
+  "config": "core_hybrid",
+  "variant": "roundrobin-mule2n-mule3n-mule5n",
+  "status": "pass",
+  "benchmark": "complex_bank.c",
+  "patched_plain_mul_count": 16,
+  "selected_plain_mul_addresses": [
+    "0x80000240",
+    "0x80000268",
+    "0x80000290",
+    "0x800002b8",
+    "0x800002ec",
+    "0x800002f0",
+    "0x800002f4",
+    "0x80000308",
+    "0x80000310",
+    "0x8000031c",
+    "0x80000320",
+    "0x80000330",
+    "0x8000033c",
+    "0x80000344",
+    "0x80000348",
+    "0x80000358"
+  ],
+  "selected_mul_routing": [
+    {
+      "address": "0x80000240",
+      "target": "mule2n"
+    },
+    {
+      "address": "0x80000268",
+      "target": "mule3n"
+    },
+    {
+      "address": "0x80000290",
+      "target": "mule5n"
+    },
+    {
+      "address": "0x800002b8",
+      "target": "mule2n"
+    },
+    {
+      "address": "0x800002ec",
+      "target": "mule3n"
+    },
+    {
+      "address": "0x800002f0",
+      "target": "mule5n"
+    },
+    {
+      "address": "0x800002f4",
+      "target": "mule2n"
+    },
+    {
+      "address": "0x80000308",
+      "target": "mule3n"
+    },
+    {
+      "address": "0x80000310",
+      "target": "mule5n"
+    },
+    {
+      "address": "0x8000031c",
+      "target": "mule2n"
+    },
+    {
+      "address": "0x80000320",
+      "target": "mule3n"
+    },
+    {
+      "address": "0x80000330",
+      "target": "mule5n"
+    },
+    {
+      "address": "0x8000033c",
+      "target": "mule2n"
+    },
+    {
+      "address": "0x80000344",
+      "target": "mule3n"
+    },
+    {
+      "address": "0x80000348",
+      "target": "mule5n"
+    },
+    {
+      "address": "0x80000358",
+      "target": "mule2n"
+    }
+  ],
+  "patched_target": "mule2n/mule3n/mule5n",
+  "patched_target_opcode": null,
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 37713,
+    "retired_total_instructions": 23815,
+    "retired_plain_mul": 0,
+    "retired_mule": 2152,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 2152,
+    "retired_integer_multiply_ratio_ppm": 90363
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/mul_update_route_diagnostic_runs/complex_bank_mul_update_route_diag_roundrobin_mule2n_mule3n_mule5n/logs/core_hybrid.log",
+  "vcd_path": null
+}

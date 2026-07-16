@@ -1,0 +1,32 @@
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/benchmarks/table14/extended_estrin.c",
+  "variant": "selective-latency-hidden-mule3n",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "selective-latency-hidden-mule3n",
+      "status": "pass",
+      "benchmark": "extended_estrin.c",
+      "patched_plain_mul_count": 2,
+      "selected_plain_mul_addresses": [
+        "0x80000194",
+        "0x800001bc"
+      ],
+      "selected_mul_routing": [],
+      "patched_target": "mule3n",
+      "patched_target_opcode": "0x1c00000b",
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 68140,
+        "retired_total_instructions": 49465,
+        "retired_plain_mul": 6144,
+        "retired_mule": 2056,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 8200,
+        "retired_integer_multiply_ratio_ppm": 165773
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/mul_update_full_hide_sweep_a04bb61_runs/mule3n_th6/extended_estrin_selective_latency_hidden_mule3n/logs/core_hybrid.log",
+      "vcd_path": null
+    }
+  ]
+}

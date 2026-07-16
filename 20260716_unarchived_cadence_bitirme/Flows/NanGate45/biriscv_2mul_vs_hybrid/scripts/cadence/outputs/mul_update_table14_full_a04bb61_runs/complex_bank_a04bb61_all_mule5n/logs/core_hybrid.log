@@ -1,0 +1,350 @@
+xrun(64): 25.09-s003: (c) Copyright 1995-2026 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	25.09-s003: Started on Jun 22, 2026 at 20:18:06 UTC
+/eda/cadence/XCELIUM2509/tools.lnx86/inca/bin/64bit/xrun
+	-64bit
+	-sv
+	-licqueue
+	-timescale 1ns/1ps
+	+access+r
+	+define+TRACE=0
+	+define+TRACE_VCD=0
+	+define+verilog_sim
+	+incdir+/tmp/biriscv_mul_update_sim/src/core
+	+incdir+/tmp/biriscv_mul_update_sim/tb/tb_matmul_absorbtion
+	+incdir+/tmp/biriscv_mul_update_sim/tb/tb_mul
+	-xmlibdirname /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/mul_update_table14_full_a04bb61_runs/complex_bank_a04bb61_all_mule5n/work/core_hybrid/xcelium.d
+	/tmp/biriscv_mul_update_sim/src/core/biriscv_alu.v
+	/tmp/biriscv_mul_update_sim/src/core/biriscv_csr.v
+	/tmp/biriscv_mul_update_sim/src/core/biriscv_csr_regfile.v
+	/tmp/biriscv_mul_update_sim/src/core/biriscv_decode.v
+	/tmp/biriscv_mul_update_sim/src/core/biriscv_decoder.v
+	/tmp/biriscv_mul_update_sim/src/core/biriscv_defs.v
+	/tmp/biriscv_mul_update_sim/src/core/biriscv_divider.v
+	/tmp/biriscv_mul_update_sim/src/core/biriscv_exec.v
+	/tmp/biriscv_mul_update_sim/src/core/biriscv_fetch.v
+	/tmp/biriscv_mul_update_sim/src/core/biriscv_frontend.v
+	/tmp/biriscv_mul_update_sim/src/core/biriscv_issue.v
+	/tmp/biriscv_mul_update_sim/src/core/biriscv_lsu.v
+	/tmp/biriscv_mul_update_sim/src/core/biriscv_mmu.v
+	/tmp/biriscv_mul_update_sim/src/core/biriscv_multiplier.v
+	/tmp/biriscv_mul_update_sim/src/core/biriscv_multiplier_array.v
+	/tmp/biriscv_mul_update_sim/src/core/biriscv_multiplier_baugh_wooley.v
+	/tmp/biriscv_mul_update_sim/src/core/biriscv_multiplier_braun.v
+	/tmp/biriscv_mul_update_sim/src/core/biriscv_multiplier_cbm.v
+	/tmp/biriscv_mul_update_sim/src/core/biriscv_multiplier_cyclic.v
+	/tmp/biriscv_mul_update_sim/src/core/biriscv_multiplier_efficient.v
+	/tmp/biriscv_mul_update_sim/src/core/biriscv_multiplier_efficient_2.v
+	/tmp/biriscv_mul_update_sim/src/core/biriscv_multiplier_efficient_2_n.v
+	/tmp/biriscv_mul_update_sim/src/core/biriscv_multiplier_efficient_3.v
+	/tmp/biriscv_mul_update_sim/src/core/biriscv_multiplier_efficient_3_n.v
+	/tmp/biriscv_mul_update_sim/src/core/biriscv_multiplier_efficient_5.v
+	/tmp/biriscv_mul_update_sim/src/core/biriscv_multiplier_efficient_5_n.v
+	/tmp/biriscv_mul_update_sim/src/core/biriscv_multiplier_efficient_n.v
+	/tmp/biriscv_mul_update_sim/src/core/biriscv_multiplier_redundant.v
+	/tmp/biriscv_mul_update_sim/src/core/biriscv_multiplier_wallace.v
+	/tmp/biriscv_mul_update_sim/src/core/biriscv_npc.v
+	/tmp/biriscv_mul_update_sim/src/core/biriscv_pipe_ctrl.v
+	/tmp/biriscv_mul_update_sim/src/core/biriscv_regfile.v
+	/tmp/biriscv_mul_update_sim/src/core/biriscv_trace_sim.v
+	/tmp/biriscv_mul_update_sim/src/core/biriscv_xilinx_2r1w.v
+	/tmp/biriscv_mul_update_sim/src/core/column_bypass_multiplier.v
+	/tmp/biriscv_mul_update_sim/src/core/riscv_core.v
+	/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/mul_update_table14_full_a04bb61_runs/complex_bank_a04bb61_all_mule5n/work/core_hybrid/tb_matmul_absorbtion_sanitized.v
+	/tmp/biriscv_mul_update_sim/tb/tb_mul/tcm_mem.v
+	/tmp/biriscv_mul_update_sim/tb/tb_mul/tcm_mem_ram.v
+	-top tb_matmul_absorbtion
+	-input "@run; exit"
+	-l /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/mul_update_table14_full_a04bb61_runs/complex_bank_a04bb61_all_mule5n/logs/core_hybrid.log
+file: /tmp/biriscv_mul_update_sim/src/core/biriscv_alu.v
+	module worklib.biriscv_alu:v
+		errors: 0, warnings: 0
+file: /tmp/biriscv_mul_update_sim/src/core/biriscv_csr.v
+	module worklib.biriscv_csr:v
+		errors: 0, warnings: 0
+file: /tmp/biriscv_mul_update_sim/src/core/biriscv_csr_regfile.v
+	module worklib.biriscv_csr_regfile:v
+		errors: 0, warnings: 0
+file: /tmp/biriscv_mul_update_sim/src/core/biriscv_decode.v
+	module worklib.biriscv_decode:v
+		errors: 0, warnings: 0
+	module worklib.fetch_fifo:v
+		errors: 0, warnings: 0
+file: /tmp/biriscv_mul_update_sim/src/core/biriscv_decoder.v
+	module worklib.biriscv_decoder:v
+		errors: 0, warnings: 0
+file: /tmp/biriscv_mul_update_sim/src/core/biriscv_defs.v
+file: /tmp/biriscv_mul_update_sim/src/core/biriscv_divider.v
+	module worklib.biriscv_divider:v
+		errors: 0, warnings: 0
+file: /tmp/biriscv_mul_update_sim/src/core/biriscv_exec.v
+	module worklib.biriscv_exec:v
+		errors: 0, warnings: 0
+file: /tmp/biriscv_mul_update_sim/src/core/biriscv_fetch.v
+	module worklib.biriscv_fetch:v
+		errors: 0, warnings: 0
+file: /tmp/biriscv_mul_update_sim/src/core/biriscv_frontend.v
+	module worklib.biriscv_frontend:v
+		errors: 0, warnings: 0
+file: /tmp/biriscv_mul_update_sim/src/core/biriscv_issue.v
+	module worklib.biriscv_issue:v
+		errors: 0, warnings: 0
+file: /tmp/biriscv_mul_update_sim/src/core/biriscv_lsu.v
+	module worklib.biriscv_lsu:v
+		errors: 0, warnings: 0
+	module worklib.biriscv_lsu_fifo:v
+		errors: 0, warnings: 0
+file: /tmp/biriscv_mul_update_sim/src/core/biriscv_mmu.v
+	module worklib.biriscv_mmu:v
+		errors: 0, warnings: 0
+file: /tmp/biriscv_mul_update_sim/src/core/biriscv_multiplier.v
+	module worklib.biriscv_multiplier:v
+		errors: 0, warnings: 0
+file: /tmp/biriscv_mul_update_sim/src/core/biriscv_multiplier_array.v
+	module worklib.biriscv_multiplier_array:v
+		errors: 0, warnings: 0
+file: /tmp/biriscv_mul_update_sim/src/core/biriscv_multiplier_baugh_wooley.v
+	module worklib.biriscv_bw_csa64:v
+		errors: 0, warnings: 0
+	module worklib.biriscv_multiplier_baugh_wooley:v
+		errors: 0, warnings: 0
+file: /tmp/biriscv_mul_update_sim/src/core/biriscv_multiplier_braun.v
+	module worklib.biriscv_mulp_csa64:v
+		errors: 0, warnings: 0
+	module worklib.biriscv_mulp_rca64:v
+		errors: 0, warnings: 0
+	module worklib.biriscv_multiplier_braun:v
+		errors: 0, warnings: 0
+file: /tmp/biriscv_mul_update_sim/src/core/biriscv_multiplier_cbm.v
+	module worklib.biriscv_multiplier_cbm:v
+		errors: 0, warnings: 0
+file: /tmp/biriscv_mul_update_sim/src/core/biriscv_multiplier_cyclic.v
+	module worklib.biriscv_multiplier_cyclic:v
+		errors: 0, warnings: 0
+file: /tmp/biriscv_mul_update_sim/src/core/biriscv_multiplier_efficient.v
+	module worklib.biriscv_multiplier_efficient:v
+		errors: 0, warnings: 0
+file: /tmp/biriscv_mul_update_sim/src/core/biriscv_multiplier_efficient_2.v
+	module worklib.biriscv_mule2_csa64:v
+		errors: 0, warnings: 0
+	module worklib.biriscv_multiplier_efficient_2:v
+		errors: 0, warnings: 0
+file: /tmp/biriscv_mul_update_sim/src/core/biriscv_multiplier_efficient_2_n.v
+	module worklib.biriscv_mule2n_csa64:v
+		errors: 0, warnings: 0
+	module worklib.biriscv_multiplier_efficient_2_n:v
+		errors: 0, warnings: 0
+file: /tmp/biriscv_mul_update_sim/src/core/biriscv_multiplier_efficient_3.v
+	module worklib.biriscv_mule3_csa64:v
+		errors: 0, warnings: 0
+	module worklib.biriscv_multiplier_efficient_3:v
+		errors: 0, warnings: 0
+file: /tmp/biriscv_mul_update_sim/src/core/biriscv_multiplier_efficient_3_n.v
+	module worklib.biriscv_mule3n_csa64:v
+		errors: 0, warnings: 0
+	module worklib.biriscv_multiplier_efficient_3_n:v
+		errors: 0, warnings: 0
+file: /tmp/biriscv_mul_update_sim/src/core/biriscv_multiplier_efficient_5.v
+	module worklib.biriscv_mule5_csa64:v
+		errors: 0, warnings: 0
+	module worklib.biriscv_multiplier_efficient_5:v
+		errors: 0, warnings: 0
+file: /tmp/biriscv_mul_update_sim/src/core/biriscv_multiplier_efficient_5_n.v
+	module worklib.biriscv_mule5n_csa64:v
+		errors: 0, warnings: 0
+	module worklib.biriscv_multiplier_efficient_5_n:v
+		errors: 0, warnings: 0
+file: /tmp/biriscv_mul_update_sim/src/core/biriscv_multiplier_efficient_n.v
+	module worklib.biriscv_multiplier_efficient_n:v
+		errors: 0, warnings: 0
+file: /tmp/biriscv_mul_update_sim/src/core/biriscv_multiplier_redundant.v
+	module worklib.biriscv_mulr_csa64:v
+		errors: 0, warnings: 0
+	module worklib.biriscv_multiplier_redundant:v
+		errors: 0, warnings: 0
+file: /tmp/biriscv_mul_update_sim/src/core/biriscv_multiplier_wallace.v
+	module worklib.biriscv_wallace_csa64:v
+		errors: 0, warnings: 0
+	module worklib.biriscv_kogge_stone_64:v
+		errors: 0, warnings: 0
+	module worklib.biriscv_multiplier_wallace:v
+		errors: 0, warnings: 0
+file: /tmp/biriscv_mul_update_sim/src/core/biriscv_npc.v
+	module worklib.biriscv_npc:v
+		errors: 0, warnings: 0
+	module worklib.biriscv_npc_lfsr:v
+		errors: 0, warnings: 0
+file: /tmp/biriscv_mul_update_sim/src/core/biriscv_pipe_ctrl.v
+	module worklib.biriscv_pipe_ctrl:v
+		errors: 0, warnings: 0
+file: /tmp/biriscv_mul_update_sim/src/core/biriscv_regfile.v
+	module worklib.biriscv_regfile:v
+		errors: 0, warnings: 0
+file: /tmp/biriscv_mul_update_sim/src/core/biriscv_trace_sim.v
+	module worklib.biriscv_trace_sim:v
+		errors: 0, warnings: 0
+file: /tmp/biriscv_mul_update_sim/src/core/biriscv_xilinx_2r1w.v
+	module worklib.biriscv_xilinx_2r1w:v
+		errors: 0, warnings: 0
+file: /tmp/biriscv_mul_update_sim/src/core/column_bypass_multiplier.v
+	module worklib.column_bypass_multiplier:v
+		errors: 0, warnings: 0
+file: /tmp/biriscv_mul_update_sim/src/core/riscv_core.v
+	module worklib.riscv_core:v
+		errors: 0, warnings: 0
+file: /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/mul_update_table14_full_a04bb61_runs/complex_bank_a04bb61_all_mule5n/work/core_hybrid/tb_matmul_absorbtion_sanitized.v
+	module worklib.tb_matmul_absorbtion:v
+		errors: 0, warnings: 0
+file: /tmp/biriscv_mul_update_sim/tb/tb_mul/tcm_mem.v
+	module worklib.tcm_mem:v
+		errors: 0, warnings: 0
+file: /tmp/biriscv_mul_update_sim/tb/tb_mul/tcm_mem_ram.v
+	module worklib.tcm_mem_ram:v
+		errors: 0, warnings: 0
+xmvlog: *W,SPDUSD: Include directory /tmp/biriscv_mul_update_sim/tb/tb_matmul_absorbtion given but not used.
+xmvlog: *W,SPDUSD: Include directory /tmp/biriscv_mul_update_sim/tb/tb_mul given but not used.
+	Total errors/warnings found outside modules and primitives:
+		errors: 0, warnings: 2
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		worklib.tb_matmul_absorbtion:v (module)
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.biriscv_alu:v <0x4799038a>
+			streams:   2, words:  6022
+		worklib.biriscv_exec:v <0x40507c3c>
+			streams:  13, words: 25044
+		worklib.biriscv_pipe_ctrl:v <0x32cdb2a4>
+			streams: 102, words: 77997
+		worklib.biriscv_divider:v <0x098a065d>
+			streams:  16, words:  9353
+		worklib.column_bypass_multiplier:v <0x2d955f0a>
+			streams:  26, words: 14604
+		worklib.biriscv_multiplier_cbm:v <0x5320c0f8>
+			streams:   3, words:   474
+		worklib.biriscv_multiplier_cyclic:v <0x0884a7d0>
+			streams:  14, words:  6625
+		worklib.biriscv_mulp_csa64:v <0x38611470>
+			streams:   1, words:   775
+		worklib.biriscv_mulr_csa64:v <0x1afa6fe2>
+			streams:   1, words:   775
+		worklib.biriscv_bw_csa64:v <0x0d2472d0>
+			streams:   1, words:   775
+		worklib.biriscv_wallace_csa64:v <0x2a280ea4>
+			streams:   1, words:   775
+		worklib.biriscv_mule5n_csa64:v <0x426c19f9>
+			streams:   1, words:   775
+		worklib.biriscv_mule5_csa64:v <0x35e66ac6>
+			streams:   1, words:   775
+		worklib.biriscv_mule3n_csa64:v <0x62182ed2>
+			streams:   1, words:   775
+		worklib.biriscv_mule3_csa64:v <0x073421f2>
+			streams:   1, words:   775
+		worklib.biriscv_mule2n_csa64:v <0x39fedc2b>
+			streams:   1, words:   775
+		worklib.biriscv_mule2_csa64:v <0x0fecc284>
+			streams:   1, words:   775
+		worklib.biriscv_multiplier_efficient_n:v <0x36a147dc>
+			streams:  15, words:  5938
+		worklib.biriscv_multiplier_efficient:v <0x0d727306>
+			streams:  15, words:  5938
+		worklib.biriscv_multiplier:v <0x295a312f>
+			streams:  13, words:  6254
+		worklib.biriscv_csr_regfile:v <0x31a4598e>
+			streams:  16, words: 32385
+		worklib.biriscv_csr:v <0x79df0340>
+			streams:  39, words: 13820
+		worklib.biriscv_lsu_fifo:v <0x2e1f9d54>
+			streams:   8, words:  4317
+		worklib.biriscv_lsu:v <0x2e37fe1a>
+			streams:  31, words: 26828
+		worklib.biriscv_mmu:v <0x61fb2807>
+			streams:   9, words:  1637
+		worklib.biriscv_fetch:v <0x0edf2760>
+			streams:  36, words: 12969
+		worklib.biriscv_decoder:v <0x056ceae8>
+			streams:  21, words: 20178
+		worklib.fetch_fifo:v <0x3b238a65>
+			streams:  22, words: 12653
+		worklib.biriscv_decode:v <0x7df86803>
+			streams:   4, words:   785
+		worklib.biriscv_npc_lfsr:v <0x3694a442>
+			streams:   3, words:   826
+		worklib.biriscv_npc:v <0x13e31e93>
+			streams:  60, words: 34049
+		worklib.biriscv_frontend:v <0x0e84c9de>
+			streams:   0, words:     0
+		worklib.riscv_core:v <0x6108f700>
+			streams:   4, words:   624
+		worklib.tb_matmul_absorbtion:v <0x259add4d>
+			streams:  31, words: 29616
+		worklib.biriscv_multiplier_efficient_2:v <0x48cbdecd>
+			streams:  38, words: 26342
+		worklib.biriscv_multiplier_efficient_2_n:v <0x588bb214>
+			streams:  38, words: 26342
+		worklib.biriscv_multiplier_efficient_3:v <0x71213b71>
+			streams:  44, words: 35017
+		worklib.biriscv_multiplier_efficient_3_n:v <0x4b96451d>
+			streams:  44, words: 35017
+		worklib.biriscv_multiplier_efficient_5:v <0x1fba20a9>
+			streams:  50, words: 43341
+		worklib.biriscv_multiplier_efficient_5_n:v <0x5dc83d5a>
+			streams:  50, words: 43341
+		worklib.biriscv_multiplier_array:v <0x031ab45d>
+			streams:  10, words:  3448
+		worklib.biriscv_multiplier_wallace:v <0x6466bf70>
+			streams:  15, words:  4093
+		worklib.biriscv_multiplier_baugh_wooley:v <0x14dcdf28>
+			streams:  11, words:  3942
+		worklib.biriscv_kogge_stone_64:v <0x67d88882>
+			streams:  17, words:  7304
+		worklib.biriscv_multiplier_redundant:v <0x427f4c82>
+			streams:  20, words:  5105
+		worklib.biriscv_mulp_rca64:v <0x0e523005>
+			streams:   2, words:   959
+		worklib.biriscv_multiplier_braun:v <0x31a4c1c7>
+			streams:   9, words:  3278
+		worklib.tcm_mem:v <0x3daadfe2>
+			streams:  15, words:  6580
+		worklib.tcm_mem_ram:v <0x5d4de0a3>
+			streams:  20, words: 15888
+		worklib.biriscv_regfile:v <0x29249a92>
+			streams:  98, words: 51419
+		worklib.biriscv_issue:v <0x08ab8e53>
+			streams: 318, words: 150714
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                   Instances  Unique
+		Modules:                 282      51
+		Registers:               777     733
+		Scalar wires:          4,857       -
+		Expanded wires:          414      12
+		Vectored wires:        1,372       -
+		Always blocks:           148     159
+		Initial blocks:            3       3
+		Cont. assignments:     5,487   1,166
+		Pseudo assignments:       23       -
+		Sparse arrays:             1       -
+		Process Clocks:           94       2
+		Simulation timescale:    1ps
+	Writing initial simulation snapshot: worklib.tb_matmul_absorbtion:v
+Loading snapshot worklib.tb_matmul_absorbtion:v .................... Done
+xcelium> source /eda/cadence/XCELIUM2509/tools/xcelium/files/xmsimrc
+xcelium> run; exit
+Starting benchmark runner
+Loaded 2879 bytes from tcm.bin
+RAM[0] = 0x000000001440006f
+RAM[1] = 0x0000000000000000
+RAM[2] = 0x0000000000000000
+
+*** BENCHMARK PASS ***
+main_return = 0
+sim_total_cycles = 38172
+retired_total_instructions = 23822
+retired_plain_mul = 0
+retired_mule = 2159
+retired_mulh_family = 0
+retired_integer_multiply_total = 2159
+retired_integer_multiply_ratio_ppm = 90630
+TOOL:	xrun(64)	25.09-s003: Exiting on Jun 22, 2026 at 20:18:11 UTC  (total: 00:00:05)

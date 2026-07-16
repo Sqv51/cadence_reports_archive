@@ -1,0 +1,29 @@
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/benchmarks/table14/unrolled_dot32.c",
+  "variant": "all-mule2n",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "all-mule2n",
+      "status": "pass",
+      "benchmark": "unrolled_dot32.c",
+      "patched_plain_mul_count": 1,
+      "selected_plain_mul_addresses": [],
+      "selected_mul_routing": [],
+      "patched_target": "mule2n",
+      "patched_target_opcode": "0x1a00000b",
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 8357,
+        "retired_total_instructions": 5614,
+        "retired_plain_mul": 0,
+        "retired_mule": 264,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 264,
+        "retired_integer_multiply_ratio_ppm": 47025
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/mul_update_energy_probe_vcds/unrolled_dot32_a04bb61_energy_all_mule2n_all_mule2n/logs/core_hybrid.log",
+      "vcd_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/mul_update_energy_probe_vcds/unrolled_dot32_a04bb61_energy_all_mule2n_all_mule2n/vcd/core_hybrid.vcd"
+    }
+  ]
+}

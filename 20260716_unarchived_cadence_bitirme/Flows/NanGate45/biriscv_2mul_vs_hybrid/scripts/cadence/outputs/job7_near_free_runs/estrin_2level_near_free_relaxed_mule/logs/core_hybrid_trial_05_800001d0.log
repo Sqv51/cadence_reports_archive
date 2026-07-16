@@ -1,0 +1,61 @@
+xrun(64): 25.09-s003: (c) Copyright 1995-2026 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	25.09-s003: Started on Jun 09, 2026 at 07:40:25 UTC
+/eda/cadence/XCELIUM2509/tools.lnx86/inca/bin/64bit/xrun
+	-64bit
+	-sv
+	-licqueue
+	-timescale 1ns/1ps
+	+access+r
+	+define+TRACE=0
+	+define+TRACE_VCD=0
+	+define+verilog_sim
+	+incdir+/home/ykaraagac/biriscv/src/core
+	+incdir+/home/ykaraagac/biriscv/tb/tb_matmul_absorbtion
+	+incdir+/home/ykaraagac/biriscv/tb/tb_mul
+	-xmlibdirname /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_near_free_runs/estrin_2level_near_free_relaxed_mule/work/core_hybrid/xcelium.d
+	/home/ykaraagac/biriscv/src/core/biriscv_alu.v
+	/home/ykaraagac/biriscv/src/core/biriscv_csr.v
+	/home/ykaraagac/biriscv/src/core/biriscv_csr_regfile.v
+	/home/ykaraagac/biriscv/src/core/biriscv_decode.v
+	/home/ykaraagac/biriscv/src/core/biriscv_decoder.v
+	/home/ykaraagac/biriscv/src/core/biriscv_defs.v
+	/home/ykaraagac/biriscv/src/core/biriscv_divider.v
+	/home/ykaraagac/biriscv/src/core/biriscv_exec.v
+	/home/ykaraagac/biriscv/src/core/biriscv_fetch.v
+	/home/ykaraagac/biriscv/src/core/biriscv_frontend.v
+	/home/ykaraagac/biriscv/src/core/biriscv_issue.v
+	/home/ykaraagac/biriscv/src/core/biriscv_lsu.v
+	/home/ykaraagac/biriscv/src/core/biriscv_mmu.v
+	/home/ykaraagac/biriscv/src/core/biriscv_multiplier.v
+	/home/ykaraagac/biriscv/src/core/biriscv_multiplier_efficient.v
+	/home/ykaraagac/biriscv/src/core/biriscv_npc.v
+	/home/ykaraagac/biriscv/src/core/biriscv_pipe_ctrl.v
+	/home/ykaraagac/biriscv/src/core/biriscv_regfile.v
+	/home/ykaraagac/biriscv/src/core/biriscv_trace_sim.v
+	/home/ykaraagac/biriscv/src/core/biriscv_xilinx_2r1w.v
+	/home/ykaraagac/biriscv/src/core/riscv_core.v
+	/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_near_free_runs/estrin_2level_near_free_relaxed_mule/work/core_hybrid/tb_matmul_absorbtion_sanitized.v
+	/home/ykaraagac/biriscv/tb/tb_mul/tcm_mem.v
+	/home/ykaraagac/biriscv/tb/tb_mul/tcm_mem_ram.v
+	-top tb_matmul_absorbtion
+	-input "@run; exit"
+	-l /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_near_free_runs/estrin_2level_near_free_relaxed_mule/logs/core_hybrid_trial_05_800001d0.log
+Loading snapshot worklib.tb_matmul_absorbtion:v .................... Done
+xcelium> source /eda/cadence/XCELIUM2509/tools/xcelium/files/xmsimrc
+xcelium> run; exit
+Starting benchmark runner
+Loaded 672 bytes from tcm.bin
+RAM[0] = 0x000000001440006f
+RAM[1] = 0x0000000000000000
+RAM[2] = 0x0000000000000000
+
+*** BENCHMARK PASS ***
+main_return = 0
+sim_total_cycles = 57439
+retired_total_instructions = 36906
+retired_plain_mul = 4096
+retired_mule = 1024
+retired_mulh_family = 0
+retired_integer_multiply_total = 5120
+retired_integer_multiply_ratio_ppm = 138730
+TOOL:	xrun(64)	25.09-s003: Exiting on Jun 09, 2026 at 07:40:29 UTC  (total: 00:00:04)

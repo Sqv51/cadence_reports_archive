@@ -1,0 +1,71 @@
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/benchmarks/table14/extended_estrin.c",
+  "variant": "roundrobin-mule2n-mule3n-mule5n",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "roundrobin-mule2n-mule3n-mule5n",
+      "status": "fail",
+      "benchmark": "extended_estrin.c",
+      "patched_plain_mul_count": 8,
+      "selected_plain_mul_addresses": [
+        "0x80000194",
+        "0x800001bc",
+        "0x800001e4",
+        "0x800001f4",
+        "0x800001fc",
+        "0x80000204",
+        "0x80000208",
+        "0x80000210"
+      ],
+      "selected_mul_routing": [
+        {
+          "address": "0x80000194",
+          "target": "mule2n"
+        },
+        {
+          "address": "0x800001bc",
+          "target": "mule3n"
+        },
+        {
+          "address": "0x800001e4",
+          "target": "mule5n"
+        },
+        {
+          "address": "0x800001f4",
+          "target": "mule2n"
+        },
+        {
+          "address": "0x800001fc",
+          "target": "mule3n"
+        },
+        {
+          "address": "0x80000204",
+          "target": "mule5n"
+        },
+        {
+          "address": "0x80000208",
+          "target": "mule2n"
+        },
+        {
+          "address": "0x80000210",
+          "target": "mule3n"
+        }
+      ],
+      "patched_target": "mule2n/mule3n/mule5n",
+      "patched_target_opcode": null,
+      "metrics": {
+        "main_return": 3937028908,
+        "sim_total_cycles": 250001,
+        "retired_total_instructions": 185971,
+        "retired_plain_mul": 0,
+        "retired_mule": 33642,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 33642,
+        "retired_integer_multiply_ratio_ppm": 180899
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/mul_update_route_diagnostic_runs/extended_estrin_mul_update_route_diag_roundrobin_mule2n_mule3n_mule5n/logs/core_hybrid.log",
+      "vcd_path": null
+    }
+  ]
+}

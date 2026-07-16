@@ -1,0 +1,30 @@
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/benchmarks/table14/unrolled_dot32.c",
+  "variant": "selective-latency-hidden-mule",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "selective-latency-hidden-mule",
+      "status": "pass",
+      "benchmark": "unrolled_dot32.c",
+      "patched_plain_mul_count": 1,
+      "selected_plain_mul_addresses": [
+        "0x800001b0"
+      ],
+      "patched_target": "mule",
+      "patched_target_opcode": "0x0200000b",
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 9193,
+        "retired_total_instructions": 5354,
+        "retired_plain_mul": 0,
+        "retired_mule": 256,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 256,
+        "retired_integer_multiply_ratio_ppm": 47814
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job6_selective_runs/unrolled_dot32_selective_latency_hidden_mule/logs/core_hybrid.log",
+      "vcd_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job6_selective_runs/unrolled_dot32_selective_latency_hidden_mule/vcd/core_hybrid.vcd"
+    }
+  ]
+}

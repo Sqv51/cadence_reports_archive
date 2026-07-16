@@ -1,0 +1,29 @@
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/benchmarks/table14/sliding_correlation.c",
+  "variant": "exact-free-mule",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "exact-free-mule",
+      "status": "pass",
+      "benchmark": "sliding_correlation.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": "mule",
+      "patched_target_opcode": "0x0200000b",
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 53344,
+        "retired_total_instructions": 24782,
+        "retired_plain_mul": 3072,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 3072,
+        "retired_integer_multiply_ratio_ppm": 123960
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_exact_free_runs/sliding_correlation_exact_free_mule/logs/core_hybrid.log",
+      "vcd_path": null,
+      "artifact_reuse": "baseline"
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+xrun(64): 25.09-s003: (c) Copyright 1995-2026 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	25.09-s003: Started on Jun 09, 2026 at 07:40:59 UTC
+/eda/cadence/XCELIUM2509/tools.lnx86/inca/bin/64bit/xrun
+	-64bit
+	-sv
+	-licqueue
+	-timescale 1ns/1ps
+	+access+r
+	+define+TRACE=0
+	+define+TRACE_VCD=0
+	+define+verilog_sim
+	+incdir+/home/ykaraagac/biriscv/src/core
+	+incdir+/home/ykaraagac/biriscv/tb/tb_matmul_absorbtion
+	+incdir+/home/ykaraagac/biriscv/tb/tb_mul
+	-xmlibdirname /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_near_free_runs/extended_estrin_near_free_relaxed_mule/work/core_hybrid/xcelium.d
+	/home/ykaraagac/biriscv/src/core/biriscv_alu.v
+	/home/ykaraagac/biriscv/src/core/biriscv_csr.v
+	/home/ykaraagac/biriscv/src/core/biriscv_csr_regfile.v
+	/home/ykaraagac/biriscv/src/core/biriscv_decode.v
+	/home/ykaraagac/biriscv/src/core/biriscv_decoder.v
+	/home/ykaraagac/biriscv/src/core/biriscv_defs.v
+	/home/ykaraagac/biriscv/src/core/biriscv_divider.v
+	/home/ykaraagac/biriscv/src/core/biriscv_exec.v
+	/home/ykaraagac/biriscv/src/core/biriscv_fetch.v
+	/home/ykaraagac/biriscv/src/core/biriscv_frontend.v
+	/home/ykaraagac/biriscv/src/core/biriscv_issue.v
+	/home/ykaraagac/biriscv/src/core/biriscv_lsu.v
+	/home/ykaraagac/biriscv/src/core/biriscv_mmu.v
+	/home/ykaraagac/biriscv/src/core/biriscv_multiplier.v
+	/home/ykaraagac/biriscv/src/core/biriscv_multiplier_efficient.v
+	/home/ykaraagac/biriscv/src/core/biriscv_npc.v
+	/home/ykaraagac/biriscv/src/core/biriscv_pipe_ctrl.v
+	/home/ykaraagac/biriscv/src/core/biriscv_regfile.v
+	/home/ykaraagac/biriscv/src/core/biriscv_trace_sim.v
+	/home/ykaraagac/biriscv/src/core/biriscv_xilinx_2r1w.v
+	/home/ykaraagac/biriscv/src/core/riscv_core.v
+	/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_near_free_runs/extended_estrin_near_free_relaxed_mule/work/core_hybrid/tb_matmul_absorbtion_sanitized.v
+	/home/ykaraagac/biriscv/tb/tb_mul/tcm_mem.v
+	/home/ykaraagac/biriscv/tb/tb_mul/tcm_mem_ram.v
+	-top tb_matmul_absorbtion
+	-input "@run; exit"
+	-l /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_near_free_runs/extended_estrin_near_free_relaxed_mule/logs/core_hybrid_trial_01_800001ac.log
+file: /home/ykaraagac/biriscv/src/core/biriscv_alu.v
+	module worklib.biriscv_alu:v
+		errors: 0, warnings: 0
+file: /home/ykaraagac/biriscv/src/core/biriscv_csr.v
+	module worklib.biriscv_csr:v
+		errors: 0, warnings: 0
+file: /home/ykaraagac/biriscv/src/core/biriscv_csr_regfile.v
+	module worklib.biriscv_csr_regfile:v
+		errors: 0, warnings: 0
+file: /home/ykaraagac/biriscv/src/core/biriscv_decode.v
+	module worklib.biriscv_decode:v
+		errors: 0, warnings: 0
+	module worklib.fetch_fifo:v
+		errors: 0, warnings: 0
+file: /home/ykaraagac/biriscv/src/core/biriscv_decoder.v
+	module worklib.biriscv_decoder:v
+		errors: 0, warnings: 0
+file: /home/ykaraagac/biriscv/src/core/biriscv_defs.v
+file: /home/ykaraagac/biriscv/src/core/biriscv_divider.v
+	module worklib.biriscv_divider:v
+		errors: 0, warnings: 0
+file: /home/ykaraagac/biriscv/src/core/biriscv_exec.v
+	module worklib.biriscv_exec:v
+		errors: 0, warnings: 0
+file: /home/ykaraagac/biriscv/src/core/biriscv_fetch.v
+	module worklib.biriscv_fetch:v
+		errors: 0, warnings: 0
+file: /home/ykaraagac/biriscv/src/core/biriscv_frontend.v
+	module worklib.biriscv_frontend:v
+		errors: 0, warnings: 0
+file: /home/ykaraagac/biriscv/src/core/biriscv_issue.v
+	module worklib.biriscv_issue:v
+		errors: 0, warnings: 0
+file: /home/ykaraagac/biriscv/src/core/biriscv_lsu.v
+	module worklib.biriscv_lsu:v
+		errors: 0, warnings: 0
+	module worklib.biriscv_lsu_fifo:v
+		errors: 0, warnings: 0
+file: /home/ykaraagac/biriscv/src/core/biriscv_mmu.v
+	module worklib.biriscv_mmu:v
+		errors: 0, warnings: 0
+file: /home/ykaraagac/biriscv/src/core/biriscv_multiplier.v
+	module worklib.biriscv_multiplier:v
+		errors: 0, warnings: 0
+file: /home/ykaraagac/biriscv/src/core/biriscv_multiplier_efficient.v
+	module worklib.biriscv_multiplier_efficient:v
+		errors: 0, warnings: 0
+file: /home/ykaraagac/biriscv/src/core/biriscv_npc.v
+	module worklib.biriscv_npc:v
+		errors: 0, warnings: 0
+	module worklib.biriscv_npc_lfsr:v
+		errors: 0, warnings: 0
+file: /home/ykaraagac/biriscv/src/core/biriscv_pipe_ctrl.v
+	module worklib.biriscv_pipe_ctrl:v
+		errors: 0, warnings: 0
+file: /home/ykaraagac/biriscv/src/core/biriscv_regfile.v
+	module worklib.biriscv_regfile:v
+		errors: 0, warnings: 0
+file: /home/ykaraagac/biriscv/src/core/biriscv_trace_sim.v
+	module worklib.biriscv_trace_sim:v
+		errors: 0, warnings: 0
+file: /home/ykaraagac/biriscv/src/core/biriscv_xilinx_2r1w.v
+	module worklib.biriscv_xilinx_2r1w:v
+		errors: 0, warnings: 0
+file: /home/ykaraagac/biriscv/src/core/riscv_core.v
+	module worklib.riscv_core:v
+		errors: 0, warnings: 0
+file: /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_near_free_runs/extended_estrin_near_free_relaxed_mule/work/core_hybrid/tb_matmul_absorbtion_sanitized.v
+	module worklib.tb_matmul_absorbtion:v
+		errors: 0, warnings: 0
+file: /home/ykaraagac/biriscv/tb/tb_mul/tcm_mem.v
+	module worklib.tcm_mem:v
+		errors: 0, warnings: 0
+file: /home/ykaraagac/biriscv/tb/tb_mul/tcm_mem_ram.v
+	module worklib.tcm_mem_ram:v
+		errors: 0, warnings: 0
+xmvlog: *W,SPDUSD: Include directory /home/ykaraagac/biriscv/tb/tb_matmul_absorbtion given but not used.
+xmvlog: *W,SPDUSD: Include directory /home/ykaraagac/biriscv/tb/tb_mul given but not used.
+	Total errors/warnings found outside modules and primitives:
+		errors: 0, warnings: 2
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		worklib.tb_matmul_absorbtion:v (module)
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.biriscv_alu:v <0x66a7eb4d>
+			streams:   2, words:  6022
+		worklib.biriscv_exec:v <0x11126ff6>
+			streams:  13, words: 25044
+		worklib.biriscv_pipe_ctrl:v <0x2ab156eb>
+			streams:  65, words: 38889
+		worklib.biriscv_divider:v <0x266711bd>
+			streams:  16, words:  9353
+		worklib.biriscv_multiplier_efficient:v <0x77080933>
+			streams:  17, words:  6599
+		worklib.biriscv_multiplier:v <0x45fe3eed>
+			streams:  13, words:  6254
+		worklib.biriscv_csr_regfile:v <0x6b6b4a73>
+			streams:  16, words: 32385
+		worklib.biriscv_csr:v <0x5897854b>
+			streams:  39, words: 13820
+		worklib.biriscv_lsu_fifo:v <0x59fc4f18>
+			streams:   8, words:  4317
+		worklib.biriscv_lsu:v <0x4686aec3>
+			streams:  31, words: 26828
+		worklib.biriscv_mmu:v <0x3b22838d>
+			streams:   9, words:  1637
+		worklib.biriscv_fetch:v <0x0edf2760>
+			streams:  36, words: 12969
+		worklib.biriscv_decoder:v <0x71d23954>
+			streams:   8, words: 14482
+		worklib.fetch_fifo:v <0x250d269f>
+			streams:  22, words: 12653
+		worklib.biriscv_decode:v <0x521aae87>
+			streams:   4, words:   785
+		worklib.biriscv_npc_lfsr:v <0x3195b771>
+			streams:   3, words:   826
+		worklib.biriscv_npc:v <0x60782148>
+			streams:  60, words: 34049
+		worklib.biriscv_frontend:v <0x3857de9b>
+			streams:   0, words:     0
+		worklib.riscv_core:v <0x3fd421c9>
+			streams:   1, words:   535
+		worklib.tb_matmul_absorbtion:v <0x02173a3f>
+			streams:  30, words: 25393
+		worklib.tcm_mem:v <0x39c21ddb>
+			streams:  15, words:  6580
+		worklib.tcm_mem_ram:v <0x4552280f>
+			streams:  20, words: 15888
+		worklib.biriscv_regfile:v <0x4d7e0a23>
+			streams:  98, words: 51419
+		worklib.biriscv_issue:v <0x365e9c41>
+			streams:  98, words: 49846
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                28      24
+		Registers:             426     382
+		Scalar wires:          285       -
+		Expanded wires:         40       3
+		Vectored wires:        247       -
+		Always blocks:          98     109
+		Initial blocks:          3       3
+		Cont. assignments:     241     507
+		Pseudo assignments:     22       -
+		Sparse arrays:           1       -
+		Process Clocks:         56       2
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tb_matmul_absorbtion:v
+Loading snapshot worklib.tb_matmul_absorbtion:v .................... Done
+xcelium> source /eda/cadence/XCELIUM2509/tools/xcelium/files/xmsimrc
+xcelium> run; exit
+Starting benchmark runner
+Loaded 722 bytes from tcm.bin
+RAM[0] = 0x000000001440006f
+RAM[1] = 0x0000000000000000
+RAM[2] = 0x0000000000000000
+
+*** BENCHMARK PASS ***
+main_return = 0
+sim_total_cycles = 69726
+retired_total_instructions = 49194
+retired_plain_mul = 7168
+retired_mule = 1024
+retired_mulh_family = 0
+retired_integer_multiply_total = 8192
+retired_integer_multiply_ratio_ppm = 166524
+TOOL:	xrun(64)	25.09-s003: Exiting on Jun 09, 2026 at 07:41:03 UTC  (total: 00:00:04)

@@ -1,0 +1,96 @@
+xrun(64): 25.09-s003: (c) Copyright 1995-2026 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	25.09-s003: Started on Jun 09, 2026 at 07:50:00 UTC
+/eda/cadence/XCELIUM2509/tools.lnx86/inca/bin/64bit/xrun
+	-64bit
+	-sv
+	-licqueue
+	-timescale 1ns/1ps
+	+access+r
+	+define+TRACE=0
+	+define+TRACE_VCD=1
+	+define+verilog_sim
+	+incdir+/home/ykaraagac/biriscv/src/core
+	+incdir+/home/ykaraagac/biriscv/tb/tb_matmul_absorbtion
+	+incdir+/home/ykaraagac/biriscv/tb/tb_mul
+	-xmlibdirname /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_near_free_runs/unrolled_dot8_near_free_relaxed_mule/work/core_hybrid/xcelium.d
+	/home/ykaraagac/biriscv/src/core/biriscv_alu.v
+	/home/ykaraagac/biriscv/src/core/biriscv_csr.v
+	/home/ykaraagac/biriscv/src/core/biriscv_csr_regfile.v
+	/home/ykaraagac/biriscv/src/core/biriscv_decode.v
+	/home/ykaraagac/biriscv/src/core/biriscv_decoder.v
+	/home/ykaraagac/biriscv/src/core/biriscv_defs.v
+	/home/ykaraagac/biriscv/src/core/biriscv_divider.v
+	/home/ykaraagac/biriscv/src/core/biriscv_exec.v
+	/home/ykaraagac/biriscv/src/core/biriscv_fetch.v
+	/home/ykaraagac/biriscv/src/core/biriscv_frontend.v
+	/home/ykaraagac/biriscv/src/core/biriscv_issue.v
+	/home/ykaraagac/biriscv/src/core/biriscv_lsu.v
+	/home/ykaraagac/biriscv/src/core/biriscv_mmu.v
+	/home/ykaraagac/biriscv/src/core/biriscv_multiplier.v
+	/home/ykaraagac/biriscv/src/core/biriscv_multiplier_efficient.v
+	/home/ykaraagac/biriscv/src/core/biriscv_npc.v
+	/home/ykaraagac/biriscv/src/core/biriscv_pipe_ctrl.v
+	/home/ykaraagac/biriscv/src/core/biriscv_regfile.v
+	/home/ykaraagac/biriscv/src/core/biriscv_trace_sim.v
+	/home/ykaraagac/biriscv/src/core/biriscv_xilinx_2r1w.v
+	/home/ykaraagac/biriscv/src/core/riscv_core.v
+	/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_near_free_runs/unrolled_dot8_near_free_relaxed_mule/work/core_hybrid/tb_matmul_absorbtion_sanitized.v
+	/home/ykaraagac/biriscv/tb/tb_mul/tcm_mem.v
+	/home/ykaraagac/biriscv/tb/tb_mul/tcm_mem_ram.v
+	-top tb_matmul_absorbtion
+	-input "@run; exit"
+	-l /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_near_free_runs/unrolled_dot8_near_free_relaxed_mule/logs/core_hybrid.log
+file: /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_near_free_runs/unrolled_dot8_near_free_relaxed_mule/work/core_hybrid/tb_matmul_absorbtion_sanitized.v
+	module worklib.tb_matmul_absorbtion:v
+		errors: 0, warnings: 0
+file: /home/ykaraagac/biriscv/tb/tb_mul/tcm_mem_ram.v
+xmvlog: *W,SPDUSD: Include directory /home/ykaraagac/biriscv/tb/tb_matmul_absorbtion given but not used.
+xmvlog: *W,SPDUSD: Include directory /home/ykaraagac/biriscv/tb/tb_mul given but not used.
+	Total errors/warnings found outside modules and primitives:
+		errors: 0, warnings: 2
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		worklib.tb_matmul_absorbtion:v (module)
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.tb_matmul_absorbtion:v <0x02173a3f>
+			streams:  30, words: 25644
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                28      24
+		Registers:             426     382
+		Scalar wires:          285       -
+		Expanded wires:         40       3
+		Vectored wires:        247       -
+		Always blocks:          98     109
+		Initial blocks:          3       3
+		Cont. assignments:     241     507
+		Pseudo assignments:     22       -
+		Sparse arrays:           1       -
+		Process Clocks:         56       2
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tb_matmul_absorbtion:v
+Loading snapshot worklib.tb_matmul_absorbtion:v .................... Done
+xcelium> source /eda/cadence/XCELIUM2509/tools/xcelium/files/xmsimrc
+xcelium> run; exit
+Starting benchmark runner
+xmsim: *W,PRUASZ: Unpacked array at "tb_matmul_absorbtion.mem" of 131073 elements exceeds limit of 16384 - not probed
+ Use 'probe -create -unpacked 131073 tb_matmul_absorbtion.mem' or 'setenv SHM_UNPACKED_LIMIT 131073' to adjust limit.
+Loaded 980 bytes from tcm.bin
+RAM[0] = 0x000000001440006f
+RAM[1] = 0x0000000000000000
+RAM[2] = 0x0000000000000000
+
+*** BENCHMARK PASS ***
+main_return = 0
+sim_total_cycles = 4622
+retired_total_instructions = 3535
+retired_plain_mul = 224
+retired_mule = 32
+retired_mulh_family = 0
+retired_integer_multiply_total = 256
+retired_integer_multiply_ratio_ppm = 72418
+TOOL:	xrun(64)	25.09-s003: Exiting on Jun 09, 2026 at 07:54:55 UTC  (total: 00:04:55)

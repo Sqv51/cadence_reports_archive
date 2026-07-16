@@ -1,0 +1,21 @@
+xrun(64): 25.09-s003: (c) Copyright 1995-2026 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	25.09-s003: Started on Jun 22, 2026 at 10:09:59 UTC
+/eda/cadence/XCELIUM2509/tools.lnx86/inca/bin/64bit/xrun
+	-64bit
+	-sv
+	-licqueue
+	-timescale 1ns/1ps
+	+access+r
+	+incdir+/tmp/biriscv_mul_update_sim/src/core
+	-xmlibdirname Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/mul_update_multiplier_debug/xcelium.d
+	/tmp/biriscv_mul_update_sim/src/core/biriscv_multiplier_efficient_2_n.v
+	/tmp/biriscv_mul_update_sim/src/core/biriscv_multiplier_efficient_3_n.v
+	/tmp/biriscv_mul_update_sim/src/core/biriscv_multiplier_efficient_5_n.v
+	Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/mul_update_multiplier_debug/mule_n_unit_tb.v
+	-top mule_n_unit_tb
+	-R
+	-l Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/mul_update_multiplier_debug/mule_n_unit_tb.log
+xrun: *W,CSSF: -TOP with -R option will be ignored.
+xrun: *W,CSSF: HDL source files with -R option will be ignored.
+xrun: *E,NOSTUP: A problem was detected in the setup for simulation. Simulation can be done only after successfully completing design file parsing and elaboration. Check the command line for any unintentional errors, like the omission of the -name or the -xmlibdirname option or the -xmlibdirpath option, if these were used for parsing earlier.
+TOOL:	xrun(64)	25.09-s003: Exiting on Jun 22, 2026 at 10:09:59 UTC  (total: 00:00:00)

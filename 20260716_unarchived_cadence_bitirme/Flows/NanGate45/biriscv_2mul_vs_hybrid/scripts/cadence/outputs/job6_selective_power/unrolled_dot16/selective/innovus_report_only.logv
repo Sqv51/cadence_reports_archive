@@ -1,0 +1,691 @@
+[06/08 22:00:33      0s] 
+[06/08 22:00:33      0s] Cadence Innovus(TM) Implementation System.
+[06/08 22:00:33      0s] Copyright 2025 Cadence Design Systems, Inc. All rights reserved worldwide.
+[06/08 22:00:33      0s] 
+[06/08 22:00:33      0s] Version:	v25.12-s079_1, built Tue Nov 18 12:56:37 PST 2025
+[06/08 22:00:33      0s] Options:	-stylus -nowin -overwrite -wait 60 -log /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job6_selective_power/unrolled_dot16/selective/innovus_report_only.log -files /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/report_power_from_saved_db.tcl 
+[06/08 22:00:33      0s] Date:		Mon Jun  8 22:00:33 2026
+[06/08 22:00:33      0s] Host:		dockereda-rocky8 (x86_64 w/Linux 6.8.0-48-generic) (32cores*128cpus*AMD EPYC 9354 32-Core Processor 1024KB)
+[06/08 22:00:33      0s] OS:		Rocky Linux 8.10 (Green Obsidian)
+[06/08 22:00:33      0s] 
+[06/08 22:00:33      0s] License:
+[06/08 22:00:33      0s] 		[22:00:33.515921] Configured Lic search path (25.01-s002): 5280@100.75.31.67
+[06/08 22:00:33      0s] 
+[06/08 22:00:36      1s] 		invs	Innovus Implementation System	INVS100	25.1
+[06/08 22:00:36      1s] 		8 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+[06/08 22:00:44     10s] Memory management switch to non-aggressive memory release mode.
+[06/08 22:00:44     10s] 
+[06/08 22:00:44     10s] OS Mmap count monitoring thread starts. Limit of OS Mmap count is 65530
+[06/08 22:00:44     10s] 
+[06/08 22:00:45     10s] 
+[06/08 22:00:45     10s] 
+[06/08 22:00:46     12s] Reset Parastics called with the command setExtractRCMode -reset@(#)CDS: Innovus v25.12-s079_1 (64bit) 11/18/2025 12:56 (Linux 4.18.0-305.el8.x86_64)
+[06/08 22:00:49     14s] @(#)CDS: NanoRoute 25.12-s079_1 NR251112-0044/25_12-UB (database version 18.20.680) {superthreading v2.20}
+[06/08 22:00:49     14s] @(#)CDS: AAE 25.12-s028 (64bit) 11/18/2025 (Linux 4.18.0-305.el8.x86_64)
+[06/08 22:00:49     14s] @(#)CDS: CTE 25.12-s024_1 () Nov 12 2025 02:41:04 ( )
+[06/08 22:00:49     14s] @(#)CDS: SYNTECH 25.12-s006_1 () Oct 30 2025 11:18:17 ( )
+[06/08 22:00:49     14s] @(#)CDS: CPE v25.12-s020
+[06/08 22:00:49     14s] @(#)CDS: IQuantus/TQuantus 24.1.0-s365 (64bit) Mon Oct 13 00:44:28 PDT 2025 (Linux 4.18.0-305.el8.x86_64)
+[06/08 22:00:49     14s] @(#)CDS: OA 22.62-p016 Mon Oct 13 11:33:44 2025
+[06/08 22:00:49     14s] @(#)CDS: SGN 23.10-d005 (03-Oct-2023) (64 bit executable, TkQt5.15.9)
+[06/08 22:00:49     14s] @(#)CDS: RCDB 11.15.0
+[06/08 22:00:49     14s] @(#)CDS: STYLUS 25.12-e010_1 (08/20/2025 16:33 PDT)
+[06/08 22:00:49     14s] @(#)CDS: IntegrityPlanner-25.12-280 (25.12) (2025-11-11 08:41:39+0800)
+[06/08 22:00:49     14s] @(#)CDS: SYNTHESIS_ENGINE 25.12-s067
+[06/08 22:00:49     14s] @(#)CDS: TCDB v25.10-b001
+[06/08 22:00:49     14s] Create and set the environment variable TMPDIR to /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/innovus_temp_1208330_0e7960e6-1753-4d29-8800-c0cd51872c1a_dockereda-rocky8_ykaraagac_FMSUN4.
+
+[06/08 22:00:49     14s] Create and set the environment variable TMPDIR to /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/innovus_temp_1208330_0e7960e6-1753-4d29-8800-c0cd51872c1a_dockereda-rocky8_ykaraagac_FMSUN4.
+[06/08 22:00:49     14s] 
+[06/08 22:00:49     14s] Change the soft stacksize limit to 0.2%RAM (2063 mbytes). Set global soft_stack_size_limit to change the value.
+[06/08 22:00:50     15s] Info: Process UID = 1208330 / 0e7960e6-1753-4d29-8800-c0cd51872c1a / 4zM6uvp2TU
+[06/08 22:00:52     17s] 
+[06/08 22:00:52     17s] **INFO:  MMMC transition support version v31-84 
+[06/08 22:00:52     17s] 
+[06/08 22:00:52     17s] #@ Processing -files option
+[06/08 22:00:52     17s] @innovus 1> source /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/report_power_from_saved_db.tcl
+[06/08 22:00:52     17s] #@ Begin verbose source (pre): source /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/report_power_from_saved_db.tcl
+[06/08 22:00:52     17s] @file 1: if {![info exists ::env(ENC_SCRIPT)] || ![info exists ::env(REPORT_DIR)]} {...}
+[06/08 22:00:52     17s] @file 5:
+[06/08 22:00:52     17s] @file 6: set ENC_SCRIPT   $::env(ENC_SCRIPT)
+[06/08 22:00:52     17s] @file 7: set REPORT_DIR   $::env(REPORT_DIR)
+[06/08 22:00:52     17s] @file 8: set VCD_FILE     ""
+[06/08 22:00:52     17s] @file 9: set VCD_SCOPE    ""
+[06/08 22:00:52     17s] @file 10: set VCD_CLOCK_NAME "clk"
+[06/08 22:00:52     17s] @file 11: set VCD_CLOCK_SCALE_FACTOR "1.0"
+[06/08 22:00:52     17s] @file 12: set REPORT_INST_A ""
+[06/08 22:00:52     17s] @file 13: set REPORT_INST_B ""
+[06/08 22:00:52     17s] @file 14:
+[06/08 22:00:52     17s] @file 15: if {[info exists ::env(VCD_FILE)]} {
+[06/08 22:00:52     17s] @file 15: set VCD_FILE $::env(VCD_FILE) 
+[06/08 22:00:52     17s] @file 15: }
+[06/08 22:00:52     17s] @file 16: if {[info exists ::env(VCD_SCOPE)]} {
+[06/08 22:00:52     17s] @file 16: set VCD_SCOPE $::env(VCD_SCOPE) 
+[06/08 22:00:52     17s] @file 16: }
+[06/08 22:00:52     17s] @file 17: if {[info exists ::env(VCD_CLOCK_NAME)]} {
+[06/08 22:00:52     17s] @file 17: set VCD_CLOCK_NAME $::env(VCD_CLOCK_NAME) 
+[06/08 22:00:52     17s] @file 17: }
+[06/08 22:00:52     17s] @file 18: if {[info exists ::env(VCD_CLOCK_SCALE_FACTOR)]} {
+[06/08 22:00:52     17s] @file 18: set VCD_CLOCK_SCALE_FACTOR $::env(VCD_CLOCK_SCALE_FACTOR) 
+[06/08 22:00:52     17s] @file 18: }
+[06/08 22:00:52     17s] @file 19: if {[info exists ::env(REPORT_INST_A)]} {
+[06/08 22:00:52     17s] @file 19: set REPORT_INST_A $::env(REPORT_INST_A) 
+[06/08 22:00:52     17s] @file 19: }
+[06/08 22:00:52     17s] @file 20: if {[info exists ::env(REPORT_INST_B)]} {
+[06/08 22:00:52     17s] @file 20: set REPORT_INST_B $::env(REPORT_INST_B) 
+[06/08 22:00:52     17s] @file 20: }
+[06/08 22:00:52     17s] @file 22: if {![file exists $ENC_SCRIPT]} {...}
+[06/08 22:00:52     17s] @file 26:
+[06/08 22:00:52     17s] @file 27: file mkdir $REPORT_DIR
+[06/08 22:00:52     17s] @file 28:
+[06/08 22:00:52     17s] @file 29: source $ENC_SCRIPT
+[06/08 22:00:52     17s] #@ Begin verbose source /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/innovus/core_hybrid_100/vcd/enc/core_hybrid_100.enc (pre)
+[06/08 22:00:52     17s] @file 1: ###############################################################
+[06/08 22:00:52     17s] @file 2: #  Generated by:      Cadence Innovus 25.12-s079_1
+[06/08 22:00:52     17s] @file 3: #  OS:                Linux x86_64(Host ID dockereda-rocky8)
+[06/08 22:00:52     17s] @file 4: #  Generated on:      Mon Jun  8 11:15:22 2026
+[06/08 22:00:52     17s] @file 5: #  Design:            riscv_core
+[06/08 22:00:52     17s] @file 6: #  Command:           saveDesign outputs/innovus/core_hybrid_100/vcd/enc/core_hybrid_100.enc
+[06/08 22:00:52     17s] @file 7: ###############################################################
+[06/08 22:00:52     17s] @file 8: if {[is_common_ui_mode]} {
+[06/08 22:00:52     17s] @@file 9: read_db [file dirname [file normalize [info script]]]/core_hybrid_100.enc.dat
+[06/08 22:00:52     17s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[06/08 22:00:52     17s] #% Begin load design ... (date=06/08 22:00:52, mem=1688.3M)
+[06/08 22:00:53     18s] Loading design 'riscv_core' saved by 'Innovus' '25.12-s079_1' on 'Mon Jun 8 11:15:23 2026'.
+[06/08 22:00:53     18s] **WARN: (IMPIMEX-4026):	Stylus is loading a legacy db into memory, the MMMC1 data will be automatically converted to MMMC2 format.
+[06/08 22:00:53     18s] % Begin Load MMMC data ... (date=06/08 22:00:53, mem=1690.1M)
+[06/08 22:00:54     18s] % End Load MMMC data ... (date=06/08 22:00:54, total cpu=0:00:00.1, real=0:00:01.0, peak res=1690.1M, current mem=1690.1M)
+[06/08 22:00:54     18s] 
+[06/08 22:00:54     18s] Loading LEF file /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/innovus/core_hybrid_100/vcd/enc/core_hybrid_100.enc.dat/libs/lef/NangateOpenCellLibrary.tech.lef ...
+[06/08 22:00:54     18s] 
+[06/08 22:00:54     18s] Loading LEF file /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/innovus/core_hybrid_100/vcd/enc/core_hybrid_100.enc.dat/libs/lef/NangateOpenCellLibrary.macro.mod.lef ...
+[06/08 22:00:54     18s] Set DBUPerIGU to M2 pitch 380.
+[06/08 22:00:54     18s] 
+[06/08 22:00:54     18s] ##  Check design process and node:  
+[06/08 22:00:54     18s] ##  Both design process and tech node are not set.
+[06/08 22:00:54     18s] 
+[06/08 22:00:54     18s] Loading view definition file from /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/innovus/core_hybrid_100/vcd/enc/core_hybrid_100.enc.dat/viewDefinition.tcl
+[06/08 22:00:54     18s] Reading WC_LIB timing library '/home/ykaraagac/cadence-bitirme/Enablements/NanGate45/lib/NangateOpenCellLibrary_typical.lib' ...
+[06/08 22:00:54     19s] Read 135 cells in library 'NangateOpenCellLibrary' 
+[06/08 22:00:54     19s] Ending "PreSetAnalysisView" (total cpu=0:00:00.4, real=0:00:00.0, peak res=1766.5M, current mem=1707.2M)
+[06/08 22:00:54     19s] *** End library_loading (cpu=0.01min, real=0.00min, mem=9.1M, fe_cpu=0.32min, fe_real=0.35min, fe_mem=1707.2M) ***
+[06/08 22:00:54     19s] % Begin Load netlist data ... (date=06/08 22:00:54, mem=1705.5M)
+[06/08 22:00:54     19s] *** Begin netlist parsing (mem=1705.5M) ***
+[06/08 22:00:54     19s] **WARN: (IMPVL-159):	Pin 'Z' of cell 'LOGIC1_X1' is defined in LEF but not in the timing library.
+[06/08 22:00:54     19s] Type 'man IMPVL-159' for more detail.
+[06/08 22:00:54     19s] **WARN: (IMPVL-159):	Pin 'Z' of cell 'LOGIC0_X1' is defined in LEF but not in the timing library.
+[06/08 22:00:54     19s] Type 'man IMPVL-159' for more detail.
+[06/08 22:00:54     19s] Created 135 new cells from 1 timing libraries.
+[06/08 22:00:54     19s] Reading netlist ...
+[06/08 22:00:54     19s] Backslashed names will retain backslash and a trailing blank character.
+[06/08 22:00:54     19s] Reading verilogBinary netlist '/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/innovus/core_hybrid_100/vcd/enc/core_hybrid_100.enc.dat/vbin/riscv_core.v.bin'
+[06/08 22:00:54     19s] 
+[06/08 22:00:54     19s] *** Memory Usage v#3 (Current mem = 1721.531M, initial mem = 779.000M) ***
+[06/08 22:00:54     19s] *** End netlist parsing (cpu=0:00:00.1, real=0:00:00.0, mem=1721.5M) ***
+[06/08 22:00:54     19s] % End Load netlist data ... (date=06/08 22:00:54, total cpu=0:00:00.1, real=0:00:00.0, peak res=1721.5M, current mem=1721.5M)
+[06/08 22:00:54     19s] Set top cell to riscv_core.
+[06/08 22:00:54     19s] **WARN: (IMPTS-124):	Timing library description of pin 'Z' is missing from cell 'LOGIC1_X1' in timing library 'NangateOpenCellLibrary'.
+[06/08 22:00:54     19s] Type 'man IMPTS-124' for more detail.
+[06/08 22:00:54     19s] **WARN: (IMPTS-124):	Timing library description of pin 'Z' is missing from cell 'LOGIC0_X1' in timing library 'NangateOpenCellLibrary'.
+[06/08 22:00:54     19s] Type 'man IMPTS-124' for more detail.
+[06/08 22:00:54     19s] Hooked 135 DB cells to tlib cells.
+[06/08 22:00:54     19s] Ending "BindLib:" (total cpu=0:00:00.1, real=0:00:00.0, peak res=1724.5M, current mem=1724.5M)
+[06/08 22:00:54     19s] Starting recursive module instantiation check.
+[06/08 22:00:54     19s] No recursion found.
+[06/08 22:00:54     19s] Building hierarchical netlist for Cell riscv_core ...
+[06/08 22:00:54     19s] ***** UseNewTieNetMode *****.
+[06/08 22:00:54     19s] *** Netlist is unique.
+[06/08 22:00:54     19s] Setting Std. cell height to 2800 DBU (smallest netlist inst).
+[06/08 22:00:54     19s] ** info: there are 159 modules.
+[06/08 22:00:54     19s] ** info: there are 28954 stdCell insts.
+[06/08 22:00:54     19s] ** info: there are 28954 stdCell insts with at least one signal pin.
+[06/08 22:00:54     19s] 
+[06/08 22:00:54     19s] *** Memory Usage v#3 (Current mem = 1766.531M, initial mem = 779.000M) ***
+[06/08 22:00:54     19s] *info: set bottom ioPad orient R0
+[06/08 22:00:54     19s] Start create_tracks
+[06/08 22:00:54     19s] Generated pitch 1.68 in metal10 is different from 1.6 defined in technology file in preferred direction.
+[06/08 22:00:54     19s] Generated pitch 0.84 in metal8 is different from 0.8 defined in technology file in preferred direction.
+[06/08 22:00:54     19s] Generated pitch 0.84 in metal7 is different from 0.8 defined in technology file in preferred direction.
+[06/08 22:00:54     19s] ##  Process: 45            (User Set)               
+[06/08 22:00:54     19s] ##     Node: (not set)                           
+[06/08 22:00:54     19s] 
+[06/08 22:00:54     19s] ##  Check design process and node:  
+[06/08 22:00:54     19s] ##  Design tech node is not set.
+[06/08 22:00:54     19s] 
+[06/08 22:00:54     19s] Applying the recommended capacitance filtering threshold values for 45nm process node: total_c_th=0, relative_c_th=1 and coupling_c_th=0.1.
+[06/08 22:00:54     19s] 	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+[06/08 22:00:54     19s] 	Capacitance filtering mode(extract_rc_cap_filter_mode option of the set_db) is 'relative_and_coupling' for all engines.
+[06/08 22:00:54     19s] 	The accuracy mode for post_route extract_rc_effort_level low extraction will be set to 'high'.
+[06/08 22:00:54     19s] 	Default value for EffortLevel(extract_rc_effort_level option of the set_db) in post_route extraction mode will be 'medium' if Quantus QRC technology file is specified else 'low'.
+[06/08 22:00:54     19s] **WARN: (IMPOPT-3602):	The specified path group name reg2reg is not defined.
+[06/08 22:00:54     19s] Type 'man IMPOPT-3602' for more detail.
+[06/08 22:00:54     19s] Effort level <high> specified for reg2reg path_group
+[06/08 22:00:54     19s] Slack adjustment of -0 applied on reg2reg path_group
+[06/08 22:00:54     19s] **WARN: (IMPOPT-3602):	The specified path group name reg2out is not defined.
+[06/08 22:00:54     19s] Type 'man IMPOPT-3602' for more detail.
+[06/08 22:00:54     19s] Slack adjustment of -0 applied on reg2out path_group
+[06/08 22:00:54     19s] **WARN: (IMPOPT-3602):	The specified path group name in2reg is not defined.
+[06/08 22:00:54     19s] Type 'man IMPOPT-3602' for more detail.
+[06/08 22:00:54     19s] Slack adjustment of -0 applied on in2reg path_group
+[06/08 22:00:54     19s] **WARN: (IMPOPT-3602):	The specified path group name in2out is not defined.
+[06/08 22:00:54     19s] Type 'man IMPOPT-3602' for more detail.
+[06/08 22:00:54     19s] Slack adjustment of -0 applied on in2out path_group
+[06/08 22:00:54     19s] AAE_INFO: switching set_db delaycal_enable_si from false to true ...
+[06/08 22:00:54     19s] AAE_INFO: The setting is changed from false to true in set_db delaycal_enable_si
+[06/08 22:00:55     19s] Extraction setup Delayed 
+[06/08 22:00:55     19s] *Info: initialize multi-corner CTS.
+[06/08 22:00:55     20s] Ending "SetAnalysisView" (total cpu=0:00:00.1, real=0:00:00.0, peak res=2218.5M, current mem=1787.0M)
+[06/08 22:00:55     20s] Tech dependent Parameter, Build TLibAnalyzer for: cellAreaConsiderPadding
+[06/08 22:00:55     20s] 
+[06/08 22:00:55     20s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) in restoreDesign Begin ...
+[06/08 22:00:55     20s] SB Latch Setting to complicate: TLAT_X1 complicate code: 9
+[06/08 22:00:55     20s] Summary for sequential cells identification: 
+[06/08 22:00:55     20s]   Identified SBFF number: 16
+[06/08 22:00:55     20s]   Identified MBFF number: 0
+[06/08 22:00:55     20s]   Identified SB Latch number: 4
+[06/08 22:00:55     20s]   Identified MB Latch number: 0
+[06/08 22:00:55     20s]   Not identified SBFF number: 0
+[06/08 22:00:55     20s]   Not identified MBFF number: 0
+[06/08 22:00:55     20s]   Not identified SB Latch number: 1
+[06/08 22:00:55     20s]   Not identified MB Latch number: 0
+[06/08 22:00:55     20s]   Number of sequential cells which are not FFs: 8
+[06/08 22:00:55     20s] 
+[06/08 22:00:55     20s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) in restoreDesign End ...
+[06/08 22:00:55     20s] Total number of combinational cells: 93
+[06/08 22:00:55     20s] Total number of sequential cells: 29
+[06/08 22:00:55     20s] Total number of tristate cells: 6
+[06/08 22:00:55     20s] Total number of level shifter cells: 0
+[06/08 22:00:55     20s] Total number of power gating cells: 0
+[06/08 22:00:55     20s] Total number of isolation cells: 0
+[06/08 22:00:55     20s] Total number of power switch cells: 0
+[06/08 22:00:55     20s] Total number of pulse generator cells: 0
+[06/08 22:00:55     20s] Total number of always on buffers: 0
+[06/08 22:00:55     20s] Total number of retention cells: 0
+[06/08 22:00:55     20s] Total number of physical cells: 7
+[06/08 22:00:55     20s] List of usable buffers: CLKBUF_X1 BUF_X1 CLKBUF_X2 BUF_X2 CLKBUF_X3 BUF_X4 BUF_X8 BUF_X16 BUF_X32
+[06/08 22:00:55     20s] Total number of usable buffers: 9
+[06/08 22:00:55     20s] List of unusable buffers:
+[06/08 22:00:55     20s] Total number of unusable buffers: 0
+[06/08 22:00:55     20s] List of usable inverters: INV_X1 INV_X2 INV_X4 INV_X8 INV_X16 INV_X32
+[06/08 22:00:55     20s] Total number of usable inverters: 6
+[06/08 22:00:55     20s] List of unusable inverters:
+[06/08 22:00:55     20s] Total number of unusable inverters: 0
+[06/08 22:00:55     20s] List of identified usable delay cells:
+[06/08 22:00:55     20s] Total number of identified usable delay cells: 0
+[06/08 22:00:55     20s] List of identified unusable delay cells:
+[06/08 22:00:55     20s] Total number of identified unusable delay cells: 0
+[06/08 22:00:55     20s] No delay cells were detected in the set of buffers. Buffers will be used to fix hold violations.
+[06/08 22:00:55     20s] 
+[06/08 22:00:55     20s] TimeStamp Deleting Cell Server Begin ...
+[06/08 22:00:55     20s] 
+[06/08 22:00:55     20s] TimeStamp Deleting Cell Server End ...
+[06/08 22:00:55     20s] Ending "Cell type marking" (total cpu=0:00:00.1, real=0:00:00.0, peak res=2232.0M, current mem=2232.0M)
+[06/08 22:00:55     20s] 
+[06/08 22:00:55     20s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) in restoreDesign Begin ...
+[06/08 22:00:55     20s] SB Latch Setting to complicate: TLAT_X1 complicate code: 9
+[06/08 22:00:55     20s] Summary for sequential cells identification: 
+[06/08 22:00:55     20s]   Identified SBFF number: 16
+[06/08 22:00:55     20s]   Identified MBFF number: 0
+[06/08 22:00:55     20s]   Identified SB Latch number: 4
+[06/08 22:00:55     20s]   Identified MB Latch number: 0
+[06/08 22:00:55     20s]   Not identified SBFF number: 0
+[06/08 22:00:55     20s]   Not identified MBFF number: 0
+[06/08 22:00:55     20s]   Not identified SB Latch number: 1
+[06/08 22:00:55     20s]   Not identified MB Latch number: 0
+[06/08 22:00:55     20s]   Number of sequential cells which are not FFs: 8
+[06/08 22:00:55     20s]  Visiting view : WC_VIEW
+[06/08 22:00:55     20s]    : PowerDomain = none : Weighted F : unweighted  = 10.20 (1.000) with rcCorner = 0
+[06/08 22:00:55     20s]    : PowerDomain = none : Weighted F : unweighted  = 9.50 (1.000) with rcCorner = -1
+[06/08 22:00:55     20s]  Visiting view : BC_VIEW
+[06/08 22:00:55     20s]    : PowerDomain = none : Weighted F : unweighted  = 10.20 (1.000) with rcCorner = 1
+[06/08 22:00:55     20s]    : PowerDomain = none : Weighted F : unweighted  = 9.50 (1.000) with rcCorner = -1
+[06/08 22:00:55     20s] 
+[06/08 22:00:55     20s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) in restoreDesign End ...
+[06/08 22:00:55     20s] 
+[06/08 22:00:55     20s] TimeStamp Deleting Cell Server Begin ...
+[06/08 22:00:55     20s] 
+[06/08 22:00:55     20s] TimeStamp Deleting Cell Server End ...
+[06/08 22:00:55     20s] % Begin Load MMMC data post ... (date=06/08 22:00:55, mem=2233.0M)
+[06/08 22:00:55     20s] % End Load MMMC data post ... (date=06/08 22:00:55, total cpu=0:00:00.1, real=0:00:00.0, peak res=2233.0M, current mem=2233.0M)
+[06/08 22:00:55     20s] Reading floorplan file - /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/innovus/core_hybrid_100/vcd/enc/core_hybrid_100.enc.dat/riscv_core.fp.gz (mem = 2233.0M).
+[06/08 22:00:55     20s] % Begin Load floorplan data ... (date=06/08 22:00:55, mem=2233.0M)
+[06/08 22:00:55     20s] *info: reset 38764 existing net BottomPreferredLayer and AvoidDetour
+[06/08 22:00:55     20s] Deleting old partition specification.
+[06/08 22:00:55     20s] Set FPlanBox to (0 0 630800 628320)
+[06/08 22:00:55     20s]  ... processed partition successfully.
+[06/08 22:00:55     20s] Reading binary special route file /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/innovus/core_hybrid_100/vcd/enc/core_hybrid_100.enc.dat/riscv_core.fp.spr.gz (Created by Innovus v25.12-s079_1 on Mon Jun  8 11:15:21 2026, version: 1)
+[06/08 22:00:55     20s] Convert 0 swires and 0 svias from compressed groups
+[06/08 22:00:55     20s] 0 swires and 0 svias were compressed
+[06/08 22:00:55     20s] 0 swires and 0 svias were decompressed from small or sparse groups
+[06/08 22:00:55     20s] Ending "Read special route file" (total cpu=0:00:00.0, real=0:00:00.0, peak res=2233.0M, current mem=2233.0M)
+[06/08 22:00:55     20s] There are 475 nets with weight being set
+[06/08 22:00:55     20s] There are 479 nets with bottomPreferredRoutingLayer being set
+[06/08 22:00:55     20s] There are 475 nets with avoidDetour being set
+[06/08 22:00:55     20s] Extracting standard cell pins and blockage ...... 
+[06/08 22:00:55     20s] Pin and blockage extraction finished
+[06/08 22:00:55     20s] Delete all existing relative floorplan constraints.
+[06/08 22:00:56     20s] % End Load floorplan data ... (date=06/08 22:00:55, total cpu=0:00:00.1, real=0:00:01.0, peak res=2233.0M, current mem=2233.0M)
+[06/08 22:00:56     20s] Reading congestion map file /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/innovus/core_hybrid_100/vcd/enc/core_hybrid_100.enc.dat/riscv_core.route.congmap.gz ...
+[06/08 22:00:56     20s] % Begin Load SymbolTable ... (date=06/08 22:00:56, mem=2233.0M)
+[06/08 22:00:56     20s] routingBox: (0 0) (630800 628320)
+[06/08 22:00:56     20s] coreBox:    (20140 20160) (610660 608160)
+[06/08 22:00:56     20s] % End Load SymbolTable ... (date=06/08 22:00:56, total cpu=0:00:00.1, real=0:00:00.0, peak res=2236.0M, current mem=2236.0M)
+[06/08 22:00:56     20s] Loading place ...
+[06/08 22:00:56     20s] % Begin Load placement data ... (date=06/08 22:00:56, mem=2236.0M)
+[06/08 22:00:56     20s] Reading placement file - /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/innovus/core_hybrid_100/vcd/enc/core_hybrid_100.enc.dat/riscv_core.place.gz.
+[06/08 22:00:56     20s] ** Reading stdCellPlacement_binary (Created by Innovus v25.12-s079_1 on Mon Jun  8 11:15:21 2026, version# 2) ...
+[06/08 22:00:56     20s] Read Views for adaptive view pruning ...
+[06/08 22:00:56     20s] Read 0 views from Binary DB for adaptive view pruning
+[06/08 22:00:56     20s] *** Completed restorePlace (cpu=0:00:00.0 real=0:00:00.0 mem=2240.0M) ***
+[06/08 22:00:56     20s] Total net length = 4.811e+05 (2.405e+05 2.406e+05) (ext = 4.019e+04)
+[06/08 22:00:56     20s] % End Load placement data ... (date=06/08 22:00:56, total cpu=0:00:00.1, real=0:00:00.0, peak res=2241.0M, current mem=2239.7M)
+[06/08 22:00:56     20s] Reading PG file /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/innovus/core_hybrid_100/vcd/enc/core_hybrid_100.enc.dat/riscv_core.pg.gz, version#2, (Created by Innovus v25.12-s079_1 on       Mon Jun  8 11:15:21 2026)
+[06/08 22:00:56     20s] *** Completed restorePGFile (cpu=0:00:00.0 real=0:00:00.0 mem=2239.7M) ***
+[06/08 22:00:56     21s] % Begin Load routing data ... (date=06/08 22:00:56, mem=2239.7M)
+[06/08 22:00:56     21s] Reading routing file - /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/innovus/core_hybrid_100/vcd/enc/core_hybrid_100.enc.dat/riscv_core.route.gz.
+[06/08 22:00:56     21s] Reading Innovus routing data (Created by Innovus v25.12-s079_1 on Mon Jun  8 11:15:21 2026 Format: 23.1) ...
+[06/08 22:00:56     21s] *** Total 35078 nets are successfully restored.
+[06/08 22:00:56     21s] *** Completed restoreRoute (cpu=0:00:00.3 real=0:00:00.0 mem=2291.7M) ***
+[06/08 22:00:56     21s] % End Load routing data ... (date=06/08 22:00:56, total cpu=0:00:00.3, real=0:00:00.0, peak res=2291.7M, current mem=2291.7M)
+[06/08 22:00:56     21s] TAT_INFO: ::restoreCongMap REAL = 0 : CPU = 0 : MEM = 0.
+[06/08 22:00:56     21s] Reading property file /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/innovus/core_hybrid_100/vcd/enc/core_hybrid_100.enc.dat/riscv_core.prop
+[06/08 22:00:56     21s] *** Completed restoreProperty (cpu=0:00:00.1 real=0:00:00.0 mem=2297.7M) ***
+[06/08 22:00:57     21s] Reading dirtyarea snapshot file /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/innovus/core_hybrid_100/vcd/enc/core_hybrid_100.enc.dat/riscv_core.db.da.gz (Create by Innovus v25.12-s079_1 on Mon Jun  8 11:15:22 2026, version: 8).
+[06/08 22:00:58     22s] eee: Design meta data check started
+[06/08 22:00:58     22s] eee: Design meta data check completed
+[06/08 22:00:58     22s] Loading preRoute extraction data from directory '/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/innovus/core_hybrid_100/vcd/enc/core_hybrid_100.enc.dat/extraction/' ...
+[06/08 22:00:58     22s] Extraction setup Started for TopCell riscv_core 
+[06/08 22:00:58     22s] Initializing multi-corner RC extraction with 2 active RC Corners ...
+[06/08 22:00:58     22s] Captable file(s) not specified in multi-corner setup. PreRoute extraction will use technology file. For post_route extraction, default value for effort level would be 'medium' and effort level 'low' would not be allowed.
+[06/08 22:00:58     22s] eee: __QRC_SADV_USE_LE__ is set 0
+[06/08 22:00:58     23s] Generating auto layer map file.
+[06/08 22:00:58     23s] eee:  LayerId	    Name	QrcTechId	QrcTechName	Type
+[06/08 22:00:58     23s] eee:        1	  metal1	        4	     metal1	Metal          
+[06/08 22:00:58     23s] eee:       34	    via1	        5	       via1	Via            
+[06/08 22:00:58     23s] eee:        2	  metal2	        6	     metal2	Metal          
+[06/08 22:00:58     23s] eee:       35	    via2	        7	       via2	Via            
+[06/08 22:00:58     23s] eee:        3	  metal3	        8	     metal3	Metal          
+[06/08 22:00:58     23s] eee:       36	    via3	        9	       via3	Via            
+[06/08 22:00:58     23s] eee:        4	  metal4	       10	     metal4	Metal          
+[06/08 22:00:58     23s] eee:       37	    via4	       11	       via4	Via            
+[06/08 22:00:58     23s] eee:        5	  metal5	       12	     metal5	Metal          
+[06/08 22:00:58     23s] eee:       38	    via5	       13	       via5	Via            
+[06/08 22:00:58     23s] eee:        6	  metal6	       14	     metal6	Metal          
+[06/08 22:00:58     23s] eee:       39	    via6	       15	       via6	Via            
+[06/08 22:00:58     23s] eee:        7	  metal7	       16	     metal7	Metal          
+[06/08 22:00:58     23s] eee:       40	    via7	       17	       via7	Via            
+[06/08 22:00:58     23s] eee:        8	  metal8	       18	     metal8	Metal          
+[06/08 22:00:58     23s] eee:       41	    via8	       19	       via8	Via            
+[06/08 22:00:58     23s] eee:        9	  metal9	       20	     metal9	Metal          
+[06/08 22:00:58     23s] eee:       42	    via9	       21	       via9	Via            
+[06/08 22:00:58     23s] eee:       10	 metal10	       22	    metal10	Metal          
+[06/08 22:00:58     23s] eee: TechFile: /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/innovus/core_hybrid_100/vcd/enc/core_hybrid_100.enc.dat/libs/mmmc/Cmin/NG45.tch
+[06/08 22:00:58     23s] eee: HoWee  : 0 0 0 0 0 0 0 0 0 0 
+[06/08 22:00:58     23s] eee: Erosn  : 0 0 0 0 0 0 0 0 0 0 
+[06/08 22:00:58     23s] eee: nrColor: 0 0 0 0 0 0 0 0 0 0 
+[06/08 22:00:58     23s] eee: Save / Restore of RC patterns enabled 
+[06/08 22:00:58     23s] eee: Pattern meta data check started
+[06/08 22:00:58     23s] eee:     Mismatch in Via count
+[06/08 22:00:58     23s] eee: Pattern meta data check failed
+[06/08 22:00:58     23s] eee: Pattern data restore failed for 1 tech files
+[06/08 22:00:58     23s] eee: Pattern extraction started for 1 tech files
+[06/08 22:00:58     23s] Importing multi-corner technology file(s) for preRoute extraction...
+[06/08 22:00:58     23s] /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/innovus/core_hybrid_100/vcd/enc/core_hybrid_100.enc.dat/libs/mmmc/Cmin/NG45.tch
+[06/08 22:00:59     23s] Generating auto layer map file.
+[06/08 22:00:59      0s] eee:  LayerId	    Name	QrcTechId	QrcTechName	Type
+[06/08 22:00:59      0s] eee:        1	  metal1	        4	     metal1	Metal          
+[06/08 22:00:59      0s] eee:       34	    via1	        5	       via1	Via            
+[06/08 22:00:59      0s] eee:        2	  metal2	        6	     metal2	Metal          
+[06/08 22:00:59      0s] eee:       35	    via2	        7	       via2	Via            
+[06/08 22:00:59      0s] eee:        3	  metal3	        8	     metal3	Metal          
+[06/08 22:00:59      0s] eee:       36	    via3	        9	       via3	Via            
+[06/08 22:00:59      0s] eee:        4	  metal4	       10	     metal4	Metal          
+[06/08 22:00:59      0s] eee:       37	    via4	       11	       via4	Via            
+[06/08 22:00:59      0s] eee:        5	  metal5	       12	     metal5	Metal          
+[06/08 22:00:59      0s] eee:       38	    via5	       13	       via5	Via            
+[06/08 22:00:59      0s] eee:        6	  metal6	       14	     metal6	Metal          
+[06/08 22:00:59      0s] eee:       39	    via6	       15	       via6	Via            
+[06/08 22:00:59      0s] eee:        7	  metal7	       16	     metal7	Metal          
+[06/08 22:00:59      0s] eee:       40	    via7	       17	       via7	Via            
+[06/08 22:00:59      0s] eee:        8	  metal8	       18	     metal8	Metal          
+[06/08 22:00:59      0s] eee:       41	    via8	       19	       via8	Via            
+[06/08 22:00:59      0s] eee:        9	  metal9	       20	     metal9	Metal          
+[06/08 22:00:59      0s] eee:       42	    via9	       21	       via9	Via            
+[06/08 22:00:59      0s] eee:       10	 metal10	       22	    metal10	Metal          
+[06/08 22:00:59      0s] eee: Total Patterns: 3154 xTiles: 57 yTiles: 58 25micronYTiles: 0(0x2)
+[06/08 22:00:59      0s] eee: MaxTileSize:52 design urx:2991 ury:3043
+[06/08 22:00:59      0s] eee: ViaCellPattern Id: 3153 ts: 524800 yTile:55 
+
+[06/08 22:00:59     23s] eee: Pattern extraction completed
+[06/08 22:00:59     23s] Completed (cpu: 0:00:00.4 real: 0:00:01.0)
+[06/08 22:00:59     23s] Set Shrink Factor to 1.00000
+[06/08 22:00:59     23s] Technology file '/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/innovus/core_hybrid_100/vcd/enc/core_hybrid_100.enc.dat/libs/mmmc/Cmin/NG45.tch' associated with first view 'WC_VIEW' will be used as the primary corner for the multi-corner extraction.
+[06/08 22:00:59     23s] Summary of Active RC-Corners : 
+[06/08 22:00:59     23s]  
+[06/08 22:00:59     23s]  Analysis View: WC_VIEW
+[06/08 22:00:59     23s]     RC-Corner Name        : Cmax
+[06/08 22:00:59     23s]     RC-Corner Index       : 0
+[06/08 22:00:59     23s]     RC-Corner Temperature : 25 Celsius
+[06/08 22:00:59     23s]     RC-Corner Cap Table   : ''
+[06/08 22:00:59     23s]     RC-Corner PreRoute Res Factor         : 1
+[06/08 22:00:59     23s]     RC-Corner PreRoute Cap Factor         : 1
+[06/08 22:00:59     23s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[06/08 22:00:59     23s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[06/08 22:00:59     23s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[06/08 22:00:59     23s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[06/08 22:00:59     23s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[06/08 22:00:59     23s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[06/08 22:00:59     23s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[06/08 22:00:59     23s]     RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+[06/08 22:00:59     23s]     RC-Corner Technology file: '/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/innovus/core_hybrid_100/vcd/enc/core_hybrid_100.enc.dat/libs/mmmc/Cmin/NG45.tch'
+[06/08 22:00:59     23s]  
+[06/08 22:00:59     23s]  Analysis View: BC_VIEW
+[06/08 22:00:59     23s]     RC-Corner Name        : Cmin
+[06/08 22:00:59     23s]     RC-Corner Index       : 1
+[06/08 22:00:59     23s]     RC-Corner Temperature : 25 Celsius
+[06/08 22:00:59     23s]     RC-Corner Cap Table   : ''
+[06/08 22:00:59     23s]     RC-Corner PreRoute Res Factor         : 1
+[06/08 22:00:59     23s]     RC-Corner PreRoute Cap Factor         : 1
+[06/08 22:00:59     23s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[06/08 22:00:59     23s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[06/08 22:00:59     23s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[06/08 22:00:59     23s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[06/08 22:00:59     23s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[06/08 22:00:59     23s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[06/08 22:00:59     23s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)][06/08 22:00:59     23s] eee: escapedRCCornerName (Cmax)
+
+[06/08 22:00:59     23s]     RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+[06/08 22:00:59     23s]     RC-Corner Technology file: '/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/innovus/core_hybrid_100/vcd/enc/core_hybrid_100.enc.dat/libs/mmmc/Cmin/NG45.tch'
+[06/08 22:00:59     23s] eee: escapedRCCornerName (Cmin)
+[06/08 22:00:59     23s] eee: RC Grid memory allocated = 69120 (24 X 24 X 10 X 12b)
+[06/08 22:01:00     23s] eee: Grid density data restore started
+[06/08 22:01:00     23s] eee: Grid density data restore completed
+[06/08 22:01:00     23s] eee: pegSigSF=1.070000
+[06/08 22:01:00     23s] eee: Blockage data restore started... [06/08 22:01:00     23s] Initializing multi-corner resistance tables ...
+completed.
+[06/08 22:01:00     23s] eee: Grid unit RC data restore started
+[06/08 22:01:00     23s] eee:     Restore started for corner Cmax
+[06/08 22:01:00     23s] eee:         Current session: Cmax Tech: /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/innovus/core_hybrid_100/vcd/enc/core_hybrid_100.enc.dat/libs/mmmc/Cmin/NG45.tch 25.000000 1.000000 1.000000 
+[06/08 22:01:00     23s] eee:         Saved   session: Cmax Tech: ../../../../../Enablements/NanGate45/qrc/NG45.tch 25.000000 1.000000 1.000000 
+[06/08 22:01:00     23s] eee:     Restore completed for corner Cmax
+[06/08 22:01:00     23s] eee:     Restore started for corner Cmin
+[06/08 22:01:00     23s] eee:         Current session: Cmin Tech: /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/innovus/core_hybrid_100/vcd/enc/core_hybrid_100.enc.dat/libs/mmmc/Cmin/NG45.tch 25.000000 1.000000 1.000000 
+[06/08 22:01:00     23s] eee:         Saved   session: Cmin Tech: ../../../../../Enablements/NanGate45/qrc/NG45.tch 25.000000 1.000000 1.000000 
+[06/08 22:01:00     23s] eee:     Restore completed for corner Cmin
+[06/08 22:01:00     23s] eee: Grid unit RC data restore completed
+[06/08 22:01:00     23s] eee: l=1 avDens=0.000000 usedTrk=0.000000 availTrk=0.000000 sigTrk=0.000000
+[06/08 22:01:00     23s] eee: l=2 avDens=0.287953 usedTrk=10290.543870 availTrk=35736.842105 sigTrk=10290.543870
+[06/08 22:01:00     23s] eee: l=3 avDens=0.305969 usedTrk=14839.488540 availTrk=48500.000000 sigTrk=14839.488540
+[06/08 22:01:00     23s] eee: l=4 avDens=0.324883 usedTrk=7894.647155 availTrk=24300.000000 sigTrk=7894.647155
+[06/08 22:01:00     23s] eee: l=5 avDens=0.265559 usedTrk=6134.424384 availTrk=23100.000000 sigTrk=6134.424384
+[06/08 22:01:00     23s] eee: l=6 avDens=0.243241 usedTrk=5254.007889 availTrk=21600.000000 sigTrk=5254.007889
+[06/08 22:01:00     23s] eee: l=7 avDens=0.203863 usedTrk=812.055714 availTrk=3983.333333 sigTrk=812.055714
+[06/08 22:01:00     23s] eee: l=8 avDens=0.195642 usedTrk=472.800892 availTrk=2416.666667 sigTrk=472.800892
+[06/08 22:01:00     23s] eee: l=9 avDens=0.055568 usedTrk=43.759893 availTrk=787.500000 sigTrk=43.759893
+[06/08 22:01:00     23s] eee: l=10 avDens=0.072067 usedTrk=5.405000 availTrk=75.000000 sigTrk=5.405000
+[06/08 22:01:00     23s] eee: LAM-FP: thresh=1 ; dimX=2252.857143 ; dimY=2244.000000 ; multX=1.000000 ; multY=1.000000 ; minP=280 ; fpMult=1.000000 ;
+[06/08 22:01:00     23s] eee: LAM: n=40 LLS=2-3 HLS=3-5 rDens=0.385094 uaWl=0.999077 uaWlH=0.451300 aWlH=0.000800 lMod=0 pMax=0.891800 pMod=79 pModAss=50 wcR=0.535700 crit=0.001493 siPrev=0 newSi=0.001600 wHLS=1.341500 viaL=0.000000 shortMod=0.007467 fModUnas=0.000373 fModAs=0.000373 pDens=0.500000 
+[06/08 22:01:00     23s] eee: dbu = 2000, Design = [ll(0.000000, 0.000000) ur(315.400000, 314.160000)], Layers = [f(10) b(0)], Grid size = 14.000000 um, Grid Dim = (23 X 23)
+[06/08 22:01:00     23s] eee: Metal Layers Info:
+[06/08 22:01:00     23s] eee: +----------+-----+---------+---------+---------+--------+--------+---+---+----+
+[06/08 22:01:00     23s] eee: |   Layer  |  Id |    W    |    S    |    P    |   uC   |   uR   | D | T | wS |
+[06/08 22:01:00     23s] eee: +----------+-----+---------+---------+---------+--------+--------+---+---+----+
+[06/08 22:01:00     23s] eee: |   metal1 |   1 |   0.070 |   0.065 |   0.140 |  0.162 |   5.43 | H | 0 |  1 |
+[06/08 22:01:00     23s] eee: |   metal2 |   2 |   0.070 |   0.070 |   0.190 |  0.121 |   3.57 | V | 0 |  1 |
+[06/08 22:01:00     23s] eee: |   metal3 |   3 |   0.070 |   0.070 |   0.140 |  0.165 |   3.57 | H | 0 |  1 |
+[06/08 22:01:00     23s] eee: |   metal4 |   4 |   0.140 |   0.140 |   0.280 |  0.170 |   1.50 | V | 0 |  1 |
+[06/08 22:01:00     23s] eee: |   metal5 |   5 |   0.140 |   0.140 |   0.280 |  0.162 |   1.50 | H | 0 |  1 |
+[06/08 22:01:00     23s] eee: |   metal6 |   6 |   0.140 |   0.140 |   0.280 |  0.160 |   1.50 | V | 0 |  1 |
+[06/08 22:01:00     23s] eee: |   metal7 |   7 |   0.400 |   0.400 |   0.840 |  0.177 |   0.19 | H | 0 |  1 |
+[06/08 22:01:00     23s] eee: |   metal8 |   8 |   0.400 |   0.400 |   0.840 |  0.160 |   0.19 | V | 0 |  1 |
+[06/08 22:01:00     23s] eee: |   metal9 |   9 |   0.800 |   0.800 |   1.600 |  0.210 |   0.04 | H | 0 |  1 |
+[06/08 22:01:00     23s] eee: |  metal10 |  10 |   0.800 |   0.800 |   1.680 |  0.167 |   0.04 | V | 0 |  1 |
+[06/08 22:01:00     23s] eee: +----------+-----+---------+---------+---------+--------+--------+---+---+----+
+[06/08 22:01:00     23s] eee: uC/uR for corner Cmax, min-width/min-spacing, 30 perc over/under densities.
+[06/08 22:01:00     23s] eee: +-----------------------NDR Info-----------------------+
+[06/08 22:01:00     23s] eee: NDR Count = 0, Fake NDR = 0
+[06/08 22:01:00     23s] Default value for post_route extraction mode's extract_rc_effort_level (extract_rc_effort_level option of set_db) changed to 'medium'.
+[06/08 22:01:00     23s] Restore PreRoute all RC Grid data successful.[06/08 22:01:00     23s] Start generating vias ..
+### import design signature (1): route=1 fixed_route=1 flt_obj=0 vio=1905142130 swire=1 shield_wire=1 net_attr=1 dirty_area=0 del_dirty_area=0 cell=0 placement=0 pin_access=1 inst_pattern=1 inst_orient=1 via=762458367 routing_via=1 timing=1 sns=1 ppa_info=1
+[06/08 22:01:00     23s] Extracting standard cell pins and blockage ...... 
+[06/08 22:01:00     23s] Pin and blockage extraction finished
+[06/08 22:01:00     23s] Via generation completed successfully.
+[06/08 22:01:00     23s] eee: __QRC_SADV_USE_LE__ is set 0
+[06/08 22:01:00     23s] Generating auto layer map file.
+[06/08 22:01:00     23s] eee:  LayerId	    Name	QrcTechId	QrcTechName	Type
+[06/08 22:01:00     23s] eee:        1	  metal1	        4	     metal1	Metal          
+[06/08 22:01:00     23s] eee:       34	    via1	        5	       via1	Via            
+[06/08 22:01:00     23s] eee:        2	  metal2	        6	     metal2	Metal          
+[06/08 22:01:00     23s] eee:       35	    via2	        7	       via2	Via            
+[06/08 22:01:00     23s] eee:        3	  metal3	        8	     metal3	Metal          
+[06/08 22:01:00     23s] eee:       36	    via3	        9	       via3	Via            
+[06/08 22:01:00     23s] eee:        4	  metal4	       10	     metal4	Metal          
+[06/08 22:01:00     23s] eee:       37	    via4	       11	       via4	Via            
+[06/08 22:01:00     23s] eee:        5	  metal5	       12	     metal5	Metal          
+[06/08 22:01:00     23s] eee:       38	    via5	       13	       via5	Via            
+[06/08 22:01:00     23s] eee:        6	  metal6	       14	     metal6	Metal          
+[06/08 22:01:00     23s] eee:       39	    via6	       15	       via6	Via            
+[06/08 22:01:00     23s] eee:        7	  metal7	       16	     metal7	Metal          
+[06/08 22:01:00     23s] eee:       40	    via7	       17	       via7	Via            
+[06/08 22:01:00     23s] eee:        8	  metal8	       18	     metal8	Metal          
+[06/08 22:01:00     23s] eee:       41	    via8	       19	       via8	Via            
+[06/08 22:01:00     23s] eee:        9	  metal9	       20	     metal9	Metal          
+[06/08 22:01:00     23s] eee:       42	    via9	       21	       via9	Via            
+[06/08 22:01:00     23s] eee:       10	 metal10	       22	    metal10	Metal          
+[06/08 22:01:00     23s] eee: Save / Restore of RC patterns enabled 
+[06/08 22:01:00     23s] eee: Pattern meta data file doesn't exist
+[06/08 22:01:00     23s] eee: Pattern extraction for vias started
+[06/08 22:01:00     23s] Initializing preRoute extraction patterns for new vias...
+[06/08 22:01:00     23s] Generating auto layer map file.
+[06/08 22:01:00      0s] eee:  LayerId	    Name	QrcTechId	QrcTechName	Type
+[06/08 22:01:00      0s] eee:        1	  metal1	        4	     metal1	Metal          
+[06/08 22:01:00      0s] eee:       34	    via1	        5	       via1	Via            
+[06/08 22:01:00      0s] eee:        2	  metal2	        6	     metal2	Metal          
+[06/08 22:01:00      0s] eee:       35	    via2	        7	       via2	Via            
+[06/08 22:01:00      0s] eee:        3	  metal3	        8	     metal3	Metal          
+[06/08 22:01:00      0s] eee:       36	    via3	        9	       via3	Via            
+[06/08 22:01:00      0s] eee:        4	  metal4	       10	     metal4	Metal          
+[06/08 22:01:00      0s] eee:       37	    via4	       11	       via4	Via            
+[06/08 22:01:00      0s] eee:        5	  metal5	       12	     metal5	Metal          
+[06/08 22:01:00      0s] eee:       38	    via5	       13	       via5	Via            
+[06/08 22:01:00      0s] eee:        6	  metal6	       14	     metal6	Metal          
+[06/08 22:01:00      0s] eee:       39	    via6	       15	       via6	Via            
+[06/08 22:01:00      0s] eee:        7	  metal7	       16	     metal7	Metal          
+[06/08 22:01:00      0s] eee:       40	    via7	       17	       via7	Via            
+[06/08 22:01:00      0s] eee:        8	  metal8	       18	     metal8	Metal          
+[06/08 22:01:00      0s] eee:       41	    via8	       19	       via8	Via            
+[06/08 22:01:00      0s] eee:        9	  metal9	       20	     metal9	Metal          
+[06/08 22:01:00      0s] eee:       42	    via9	       21	       via9	Via            
+[06/08 22:01:00      0s] eee:       10	 metal10	       22	    metal10	Metal          
+[06/08 22:01:00      0s] eee: Total Patterns: 1 xTiles: 1 yTiles: 8 25micronYTiles: 0(0x1)
+[06/08 22:01:00      0s] eee: MaxTileSize:4 design urx:4 ury:39
+[06/08 22:01:00      0s] eee: ViaCellPattern Id: 0 ts: 49600 yTile:0 
+
+[06/08 22:01:01     23s] eee: Pattern extraction for vias completed
+[06/08 22:01:01     23s] Completed (cpu: 0:00:00.4 real: 0:00:01.0)
+[06/08 22:01:01     23s] % Begin Load power constraints ... (date=06/08 22:01:01, mem=2346.9M)
+[06/08 22:01:01     23s] source /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/innovus/core_hybrid_100/vcd/enc/core_hybrid_100.enc.dat/riscv_core_power_constraints.tcl
+[06/08 22:01:01     23s] 'set_default_switching_activity' finished successfully.
+[06/08 22:01:01     23s] ** WARN:  (VOLTUS_POWR-3212): The 'set_power_analysis_mode -leakage_power_view |-dynamic_power_view|-analysis_view' will be obsolete in 18.20 release. Use 'set_analysis_view -leakage <> | -dynamic <>' to set leakage and dynamic power views.
+[06/08 22:01:01     23s] 
+[06/08 22:01:01     23s] ** WARN:  (VOLTUS_POWR-3212): The 'set_power_analysis_mode -leakage_power_view |-dynamic_power_view|-analysis_view' will be obsolete in 18.20 release. Use 'set_analysis_view -leakage <> | -dynamic <>' to set leakage and dynamic power views.
+[06/08 22:01:01     23s] 
+[06/08 22:01:01     23s] 'read_activity_file' finished successfully.
+[06/08 22:01:01     23s] % End Load power constraints ... (date=06/08 22:01:01, total cpu=0:00:00.1, real=0:00:00.0, peak res=2367.9M, current mem=2367.9M)
+[06/08 22:01:01     23s] % Begin load AAE data ... (date=06/08 22:01:01, mem=2416.9M)
+[06/08 22:01:01     24s] **WARN: (IMPESI-3505):	set_db delaycal_eng_enablePrePlacedFlow false (default=false) will be obsoleted along with its sgs2set equivalent.  This parameter will continue to be supported in the current release, but will be removed in the next major release of the software.
+[06/08 22:01:01     24s] AAE DB initialization (MEM=2435.890625 CPU=0:00:00.0 REAL=0:00:00.0) 
+[06/08 22:01:01     24s] % End load AAE data ... (date=06/08 22:01:01, total cpu=0:00:00.4, real=0:00:00.0, peak res=2435.9M, current mem=2435.9M)
+[06/08 22:01:01     24s] Restoring CCOpt config...
+[06/08 22:01:01     24s] 
+[06/08 22:01:01     24s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) in restoreDesign Begin ...
+[06/08 22:01:01     24s] SB Latch Setting to complicate: TLAT_X1 complicate code: 9
+[06/08 22:01:01     24s] Summary for sequential cells identification: 
+[06/08 22:01:01     24s]   Identified SBFF number: 16
+[06/08 22:01:01     24s]   Identified MBFF number: 0
+[06/08 22:01:01     24s]   Identified SB Latch number: 4
+[06/08 22:01:01     24s]   Identified MB Latch number: 0
+[06/08 22:01:01     24s]   Not identified SBFF number: 0
+[06/08 22:01:01     24s]   Not identified MBFF number: 0
+[06/08 22:01:01     24s]   Not identified SB Latch number: 1
+[06/08 22:01:01     24s]   Not identified MB Latch number: 0
+[06/08 22:01:01     24s]   Number of sequential cells which are not FFs: 8
+[06/08 22:01:01     24s]  Visiting view : WC_VIEW
+[06/08 22:01:01     24s]    : PowerDomain = none : Weighted F : unweighted  = 10.10 (1.000) with rcCorner = 0
+[06/08 22:01:01     24s]    : PowerDomain = none : Weighted F : unweighted  = 9.50 (1.000) with rcCorner = -1
+[06/08 22:01:01     24s]  Visiting view : BC_VIEW
+[06/08 22:01:01     24s]    : PowerDomain = none : Weighted F : unweighted  = 10.10 (1.000) with rcCorner = 1
+[06/08 22:01:01     24s]    : PowerDomain = none : Weighted F : unweighted  = 9.50 (1.000) with rcCorner = -1
+[06/08 22:01:01     24s] 
+[06/08 22:01:01     24s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) in restoreDesign End ...
+[06/08 22:01:01     24s]   Extracting original clock gating for clk...
+[06/08 22:01:01     24s]     clock_tree clk contains 5207 sinks and 0 clock gates.
+[06/08 22:01:01     24s]   Extracting original clock gating for clk done.
+[06/08 22:01:01     24s]   The skew group clk/CON was created. It contains 5207 sinks and 1 sources.
+[06/08 22:01:01     24s]   The skew group clk/CON was created. It contains 5207 sinks and 1 sources.
+[06/08 22:01:01     24s] Restoring CCOpt config done.
+[06/08 22:01:01     24s] 
+[06/08 22:01:01     24s] TimeStamp Deleting Cell Server Begin ...
+[06/08 22:01:01     24s] 
+[06/08 22:01:01     24s] TimeStamp Deleting Cell Server End ...
+[06/08 22:01:01     24s] 
+[06/08 22:01:01     24s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) in restoreDesign Begin ...
+[06/08 22:01:01     24s] SB Latch Setting to complicate: TLAT_X1 complicate code: 9
+[06/08 22:01:01     24s] Summary for sequential cells identification: 
+[06/08 22:01:01     24s]   Identified SBFF number: 16
+[06/08 22:01:01     24s]   Identified MBFF number: 0
+[06/08 22:01:01     24s]   Identified SB Latch number: 4
+[06/08 22:01:01     24s]   Identified MB Latch number: 0
+[06/08 22:01:01     24s]   Not identified SBFF number: 0
+[06/08 22:01:01     24s]   Not identified MBFF number: 0
+[06/08 22:01:01     24s]   Not identified SB Latch number: 1
+[06/08 22:01:01     24s]   Not identified MB Latch number: 0
+[06/08 22:01:01     24s]   Number of sequential cells which are not FFs: 8
+[06/08 22:01:01     24s] Total number of combinational cells: 93
+[06/08 22:01:01     24s] Total number of sequential cells: 29
+[06/08 22:01:01     24s] Total number of tristate cells: 6
+[06/08 22:01:01     24s] Total number of level shifter cells: 0
+[06/08 22:01:01     24s] Total number of power gating cells: 0
+[06/08 22:01:01     24s] Total number of isolation cells: 0
+[06/08 22:01:01     24s] Total number of power switch cells: 0[06/08 22:01:01     24s] 
+[06/08 22:01:01     24s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) in restoreDesign End ...
+
+[06/08 22:01:01     24s] Total number of pulse generator cells: 0
+[06/08 22:01:01     24s] Total number of always on buffers: 0
+[06/08 22:01:01     24s] Total number of retention cells: 0
+[06/08 22:01:01     24s] Total number of physical cells: 7
+[06/08 22:01:01     24s] List of usable buffers: CLKBUF_X1 BUF_X1 CLKBUF_X2 BUF_X2 CLKBUF_X3 BUF_X4 BUF_X8 BUF_X16 BUF_X32
+[06/08 22:01:01     24s] Total number of usable buffers: 9
+[06/08 22:01:01     24s] List of unusable buffers:
+[06/08 22:01:01     24s] Total number of unusable buffers: 0
+[06/08 22:01:01     24s] List of usable inverters: INV_X1 INV_X2 INV_X4 INV_X8 INV_X16 INV_X32
+[06/08 22:01:01     24s] Total number of usable inverters: 6
+[06/08 22:01:01     24s] List of unusable inverters:
+[06/08 22:01:01     24s] Total number of unusable inverters: 0
+[06/08 22:01:01     24s] List of identified usable delay cells:
+[06/08 22:01:01     24s] Total number of identified usable delay cells: 0
+[06/08 22:01:01     24s] List of identified unusable delay cells:
+[06/08 22:01:01     24s] Total number of identified unusable delay cells: 0
+[06/08 22:01:01     24s] No delay cells were detected in the set of buffers. Buffers will be used to fix hold violations.
+[06/08 22:01:01     24s] 
+[06/08 22:01:01     24s] TimeStamp Deleting Cell Server Begin ...
+[06/08 22:01:01     24s] 
+[06/08 22:01:01     24s] TimeStamp Deleting Cell Server End ...
+[06/08 22:01:01     24s] #% End load design ... (date=06/08 22:01:01, total cpu=0:00:07.1, real=0:00:09.0, peak res=2454.9M, current mem=2440.3M)
+[06/08 22:01:01     24s] report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[06/08 22:01:01     24s] 
+[06/08 22:01:01     24s] *** Summary of all messages that are not suppressed in this session:
+[06/08 22:01:01     24s] Severity  ID               Count  Summary                                  
+[06/08 22:01:01     24s] WARNING   IMPTS-124            2  Timing library description of pin '%s' i...
+[06/08 22:01:01     24s] WARNING   IMPVL-159            2  Pin '%s' of cell '%s' is defined in LEF ...
+[06/08 22:01:01     24s] WARNING   IMPESI-3505          1  set_db delaycal_eng_%s (default=%s) will...
+[06/08 22:01:01     24s] WARNING   IMPOPT-3602          4  The specified path group name %s is not ...
+[06/08 22:01:01     24s] WARNING   IMPIMEX-4026         1  Stylus is loading a legacy db into memor...
+[06/08 22:01:01     24s] *** Message Summary: 10 warning(s), 0 error(s)
+[06/08 22:01:01     24s] 
+[06/08 22:01:01     24s] @file 10: }
+[06/08 22:01:01     24s] @file 13:
+[06/08 22:01:01     24s] #@ End verbose source /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/innovus/core_hybrid_100/vcd/enc/core_hybrid_100.enc
+[06/08 22:01:01     24s] @file 30:
+[06/08 22:01:01     24s] @file 31: if {[string length $VCD_FILE] > 0} {
+[06/08 22:01:01     24s] @file 32: if {![file exists $VCD_FILE]} {...}
+[06/08 22:01:01     24s] @@file 36: read_activity_file -reset
+[06/08 22:01:01     24s] @file 37: if {[string length $VCD_SCOPE] > 0} {
+[06/08 22:01:01     24s] @@file 38: read_activity_file -format VCD $VCD_FILE -scope $VCD_SCOPE
+[06/08 22:01:02     24s] #################################################################################
+[06/08 22:01:02     24s] # Design Stage: PostRoute
+[06/08 22:01:02     24s] # Design Name: riscv_core
+[06/08 22:01:02     24s] # Design Mode: 45nm
+[06/08 22:01:02     24s] # Analysis Mode: MMMC OCV 
+[06/08 22:01:02     24s] # Parasitics Mode: No SPEF/RCDB 
+[06/08 22:01:02     24s] # Signoff Settings: SI On 
+[06/08 22:01:02     24s] #################################################################################
+[06/08 22:01:03     25s] *** CDM Built up (cpu=0:00:01.1  real=0:00:01.0  mem= 2552.4M) ***
+[06/08 22:01:03     26s] #################################################################################
+[06/08 22:01:03     26s] # Design Stage: PostRoute
+[06/08 22:01:03     26s] # Design Name: riscv_core
+[06/08 22:01:03     26s] # Design Mode: 45nm
+[06/08 22:01:03     26s] # Analysis Mode: MMMC OCV 
+[06/08 22:01:03     26s] # Parasitics Mode: No SPEF/RCDB 
+[06/08 22:01:03     26s] # Signoff Settings: SI On 
+[06/08 22:01:03     26s] #################################################################################
+[06/08 22:01:03     26s] *** CDM Built up (cpu=0:00:00.0  real=0:00:00.0  mem= 2561.4M) ***
+[06/08 22:01:04     26s] clk(100MHz) CK: assigning clock clk to net clk_i
+[06/08 22:01:04     27s] Parsing VCD file
+[06/08 22:01:04     27s] /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job6_selective_runs/unrolled_dot16_selective_latency_hidden_mule/vcd/core_hybrid.vcd
+[06/08 22:01:04     27s] 
+[06/08 22:01:04     27s] Starting Reading VCD variables
+[06/08 22:01:04     27s] 2026-Jun-08 22:01:04 (2026-Jun-08 22:01:04 GMT)
+[06/08 22:01:04     27s] 2026-Jun-08 22:01:04 (2026-Jun-08 22:01:04 GMT): 10%
+[06/08 22:01:05     28s] 
+[06/08 22:01:05     28s] Finished Reading VCD variables
+[06/08 22:01:05     28s] 2026-Jun-08 22:01:05 (2026-Jun-08 22:01:05 GMT)
+[06/08 22:01:06     28s]    With this vcd command,  1818519 value changes and 7.95e-05 second
+[06/08 22:01:06     28s] simulation time were counted for power consumption calculation.
+[06/08 22:01:06     28s] 
+[06/08 22:01:06     28s]   Filename (activity)                    :
+[06/08 22:01:06     28s] /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job6_selective_runs/unrolled_dot16_selective_latency_hidden_mule/vcd/core_hybrid.vcd
+[06/08 22:01:06     28s]   Names in file that matched to design   : 8636/28005
+[06/08 22:01:06     28s]   Annotation coverage for this file
+[06/08 22:01:06     28s]    (Unique nets matched/Total nets)       : 3893/35059 = 11.1041%
+[06/08 22:01:06     28s] 
+[06/08 22:01:06     28s]   19369 nets were found in the VCD file(s) but were not in
+[06/08 22:01:06     28s]   the design.  These nets are not reported because
+[06/08 22:01:06     28s]   'set_power_analysis_mode' -report_missing_nets' is set to false
+[06/08 22:01:06     28s] (default).
+[06/08 22:01:06     28s] 
+[06/08 22:01:06     28s]   Total annotation coverage for all files of type VCD: 3893/35059 =
+[06/08 22:01:06     28s] 11.1041%
+[06/08 22:01:06     28s]   Percent of VCD annotated nets with zero toggles: 2249/35059 = 6.4149%
+[06/08 22:01:06     28s] 
+[06/08 22:01:06     29s] 'read_activity_file' finished successfully.
+[06/08 22:01:06     29s] @file 39: }
+[06/08 22:01:06     29s] @file 42: if {$VCD_CLOCK_SCALE_FACTOR ne "1.0"} {...}
+[06/08 22:01:06     29s] @file 46: }
+[06/08 22:01:06     29s] @file 47:
+[06/08 22:01:06     29s] @file 48: catch {summaryReport -noHtml -outfile ${REPORT_DIR}/post_route.sum}
+[06/08 22:01:06     29s] @@file 49: redirect ${REPORT_DIR}/power_total.rpt { report_power }
+[06/08 22:01:36     59s] @@file 50: redirect ${REPORT_DIR}/power_hierarchy.rpt { report_power -hierarchy all }
+[06/08 22:01:40     63s] @file 51:
+[06/08 22:01:40     63s] @file 52: if {[string length $REPORT_INST_A] > 0} {
+[06/08 22:01:40     63s] @@file 53: redirect ${REPORT_DIR}/power_inst_a.rpt {report_power -insts $REPORT_INST_A}
+[06/08 22:01:45     68s] @file 54: }
+[06/08 22:01:45     68s] @file 55:
+[06/08 22:01:45     68s] @file 56: if {[string length $REPORT_INST_B] > 0} {
+[06/08 22:01:45     68s] @@file 57: redirect ${REPORT_DIR}/power_inst_b.rpt {report_power -insts $REPORT_INST_B}
+[06/08 22:01:50     73s] @file 58: }
+[06/08 22:01:50     73s] @file 59:
+[06/08 22:01:50     73s] @file 60: exit
+[06/08 22:01:50     73s] 
+[06/08 22:01:50     73s] *** Summary of all messages that are not suppressed in this session:
+[06/08 22:01:50     73s] Severity  ID               Count  Summary                                  
+[06/08 22:01:50     73s] WARNING   IMPTS-124            2  Timing library description of pin '%s' i...
+[06/08 22:01:50     73s] WARNING   IMPVL-159            2  Pin '%s' of cell '%s' is defined in LEF ...
+[06/08 22:01:50     73s] WARNING   IMPESI-3505          1  set_db delaycal_eng_%s (default=%s) will...
+[06/08 22:01:50     73s] WARNING   IMPOPT-3602          4  The specified path group name %s is not ...
+[06/08 22:01:50     73s] WARNING   IMPIMEX-4026         1  Stylus is loading a legacy db into memor...
+[06/08 22:01:50     73s] *** Message Summary: 10 warning(s), 0 error(s)
+[06/08 22:01:50     73s] 
+[06/08 22:01:50     73s] 
+[06/08 22:01:50     73s] *** Memory Usage v#3 (Current mem = 2785.371M, initial mem = 779.000M) ***
+[06/08 22:01:50     73s] --- Ending "Innovus" (totcpu=0:01:13, real=0:01:17, mem=2785.4M) ---

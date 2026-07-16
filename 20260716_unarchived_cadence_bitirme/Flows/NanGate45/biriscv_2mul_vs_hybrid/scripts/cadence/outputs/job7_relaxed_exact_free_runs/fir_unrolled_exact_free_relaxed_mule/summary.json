@@ -1,0 +1,29 @@
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/benchmark_runs/fir_unrolled/staged/fir_unrolled.c",
+  "variant": "exact-free-relaxed-mule",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "exact-free-relaxed-mule",
+      "status": "pass",
+      "benchmark": "fir_unrolled.c",
+      "patched_plain_mul_count": 0,
+      "selected_plain_mul_addresses": [],
+      "patched_target": "mule",
+      "patched_target_opcode": "0x0200000b",
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 141372,
+        "retired_total_instructions": 86436,
+        "retired_plain_mul": 16128,
+        "retired_mule": 0,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 16128,
+        "retired_integer_multiply_ratio_ppm": 186588
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_relaxed_exact_free_runs/fir_unrolled_exact_free_relaxed_mule/logs/core_hybrid.log",
+      "vcd_path": null,
+      "artifact_reuse": "baseline"
+    }
+  ]
+}

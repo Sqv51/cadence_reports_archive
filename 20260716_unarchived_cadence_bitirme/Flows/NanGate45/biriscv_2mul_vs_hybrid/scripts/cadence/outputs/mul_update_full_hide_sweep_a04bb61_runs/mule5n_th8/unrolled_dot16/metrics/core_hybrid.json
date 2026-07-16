@@ -1,0 +1,23 @@
+{
+  "config": "core_hybrid",
+  "variant": "baseline",
+  "status": "pass",
+  "benchmark": "unrolled_dot16.c",
+  "patched_plain_mul_count": 0,
+  "selected_plain_mul_addresses": [],
+  "selected_mul_routing": [],
+  "patched_target": null,
+  "patched_target_opcode": null,
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 7137,
+    "retired_total_instructions": 5469,
+    "retired_plain_mul": 256,
+    "retired_mule": 0,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 256,
+    "retired_integer_multiply_ratio_ppm": 46809
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/mul_update_latency_hiding_a04bb61_runs/unrolled_dot16/logs/core_hybrid.log",
+  "vcd_path": null
+}

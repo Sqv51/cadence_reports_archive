@@ -1,0 +1,85 @@
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/benchmarks/table14/complex_bank.c",
+  "variant": "exact-free-relaxed-mule",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "exact-free-relaxed-mule",
+      "status": "pass",
+      "benchmark": "complex_bank.c",
+      "patched_plain_mul_count": 1,
+      "selected_plain_mul_addresses": [
+        "0x800002e4"
+      ],
+      "patched_target": "mule",
+      "patched_target_opcode": "0x0200000b",
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 37321,
+        "retired_total_instructions": 23481,
+        "retired_plain_mul": 1920,
+        "retired_mule": 128,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 2048,
+        "retired_integer_multiply_ratio_ppm": 87219
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_relaxed_exact_free_runs/complex_bank_exact_free_relaxed_mule/logs/core_hybrid.log",
+      "vcd_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job7_relaxed_exact_free_runs/complex_bank_exact_free_relaxed_mule/vcd/core_hybrid.vcd",
+      "oracle_candidate_count": 14,
+      "oracle_rejected": [
+        {
+          "address": "0x80000258",
+          "trial_cycles": 37833
+        },
+        {
+          "address": "0x80000280",
+          "trial_cycles": 37566
+        },
+        {
+          "address": "0x80000230",
+          "trial_cycles": 37387
+        },
+        {
+          "address": "0x800002a8",
+          "trial_cycles": 37568
+        },
+        {
+          "address": "0x80000300",
+          "trial_cycles": 37539
+        },
+        {
+          "address": "0x80000310",
+          "trial_cycles": 37560
+        },
+        {
+          "address": "0x80000338",
+          "trial_cycles": 37481
+        },
+        {
+          "address": "0x8000032c",
+          "trial_cycles": 37755
+        },
+        {
+          "address": "0x800002dc",
+          "trial_cycles": 37943
+        },
+        {
+          "address": "0x800002f8",
+          "trial_cycles": 37897
+        },
+        {
+          "address": "0x800002e0",
+          "trial_cycles": 37961
+        },
+        {
+          "address": "0x8000030c",
+          "trial_cycles": 38072
+        },
+        {
+          "address": "0x80000334",
+          "trial_cycles": 38066
+        }
+      ]
+    }
+  ]
+}

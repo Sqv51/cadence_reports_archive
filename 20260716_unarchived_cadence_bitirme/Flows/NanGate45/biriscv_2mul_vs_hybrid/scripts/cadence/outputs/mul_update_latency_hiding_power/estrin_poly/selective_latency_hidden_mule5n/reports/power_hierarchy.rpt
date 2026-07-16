@@ -1,0 +1,598 @@
+env CDS_WORKAREA is set to /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence
+             0V	    VSS
+           1.1V	    VDD
+Using Power View WC_VIEW
+.
+Load RC corner of view WC_VIEW
+
+Begin Power Analysis
+
+             0V	    VSS
+           1.1V	    VDD
+
+Begin Processing Timing Library for Power Calculation
+
+Ended Processing Timing Library for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=3166.61MB/13012.77MB/10465.83MB)
+
+
+
+Begin Processing Power Net/Grid for Power Calculation
+
+Ended Processing Power Net/Grid for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=3166.61MB/13012.77MB/10465.83MB)
+
+Begin Processing Timing Window Data for Power Calculation
+
+clk(100MHz) CK: assigning clock clk to net clk_i
+Ended Processing Timing Window Data for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=3166.61MB/13012.77MB/10465.83MB)
+
+Begin Processing User Attributes
+
+Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=3166.61MB/13012.77MB/10465.83MB)
+
+Begin Processing Signal Activity
+
+
+Starting Activity Propagation
+2026-Jun-23 12:34:00 (2026-Jun-23 12:34:00 GMT)
+2026-Jun-23 12:34:01 (2026-Jun-23 12:34:01 GMT): 10%
+
+Finished Activity Propagation
+2026-Jun-23 12:34:02 (2026-Jun-23 12:34:02 GMT)
+
+Activity annotation summary:
+        Primary Inputs : 180/180 = 100%
+          Flop outputs : 3874/14346 = 27.004%
+  Memory/Macro outputs : 0/0 = 0%
+      Tristate outputs : 0/0 = 0%
+            Total Nets : 19975/72373 = 27.6001%
+
+Ended Processing Signal Activity: (cpu=0:00:01, real=0:00:01, mem(process/total/peak)=3166.61MB/13012.77MB/10465.83MB)
+
+Begin Power Computation
+
+      ----------------------------------------------------------
+      # of cell(s) missing both power/leakage table: 0
+      # of cell(s) missing power table: 0
+      # of cell(s) missing leakage table: 0
+      ----------------------------------------------------------
+
+
+
+Starting Calculating power
+2026-Jun-23 12:34:02 (2026-Jun-23 12:34:02 GMT)
+ ... Calculating switching power
+2026-Jun-23 12:34:02 (2026-Jun-23 12:34:02 GMT): 10%
+2026-Jun-23 12:34:02 (2026-Jun-23 12:34:02 GMT): 20%
+2026-Jun-23 12:34:02 (2026-Jun-23 12:34:02 GMT): 30%
+2026-Jun-23 12:34:02 (2026-Jun-23 12:34:02 GMT): 40%
+2026-Jun-23 12:34:02 (2026-Jun-23 12:34:02 GMT): 50%
+ ... Calculating internal and leakage power
+2026-Jun-23 12:34:03 (2026-Jun-23 12:34:03 GMT): 60%
+2026-Jun-23 12:34:04 (2026-Jun-23 12:34:04 GMT): 70%
+2026-Jun-23 12:34:05 (2026-Jun-23 12:34:05 GMT): 80%
+2026-Jun-23 12:34:06 (2026-Jun-23 12:34:06 GMT): 90%
+
+Finished Calculating power
+2026-Jun-23 12:34:07 (2026-Jun-23 12:34:07 GMT)
+      # of MSMV cell(s) missing power_level: 0
+Ended Power Computation: (cpu=0:00:05, real=0:00:05, mem(process/total/peak)=3166.61MB/13012.77MB/10465.83MB)
+
+Begin Processing User Attributes
+
+Begin Processing set_power
+Ended Processing set_power: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=3166.61MB/13012.77MB/10465.83MB)
+Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=3166.61MB/13012.77MB/10465.83MB)
+
+Ended Power Analysis: (cpu=0:00:07, real=0:00:07, mem(process/total/peak)=3166.61MB/13012.77MB/10465.83MB)
+
+Begin Boundary Leakage Calculation
+Ended Boundary Leakage Calculation: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=3166.61MB/13012.77MB/10465.83MB)
+Begin Static Power Report Generation
+*----------------------------------------------------------------------------------------
+*	Innovus 25.12-s079_1 (64bit) 11/18/2025 12:56 (Linux 4.18.0-305.el8.x86_64)
+*	
+*
+* 	Date & Time:	2026-Jun-23 12:34:07 (2026-Jun-23 12:34:07 GMT)
+*
+*----------------------------------------------------------------------------------------
+*
+*	Design: riscv_core
+*
+*	Liberty Libraries used:
+*	        /home/ykaraagac/cadence-bitirme/Enablements/NanGate45/lib/NangateOpenCellLibrary_typical.lib
+*
+*	Parasitic Files used:
+*
+*       Dynamic View: WC_VIEW
+*
+*       Leakage View: WC_VIEW
+*
+*       User-Defined Activity : N.A.
+*
+*	Switching Activity File used:
+*	        /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/mul_update_latency_hiding_power_vcds/estrin_poly_selective_latency_hidden_mule5n/vcd/core_hybrid.vcd
+*                  Vcd Window used(Start Time, Stop Time):  
+*                Vcd Scale Factor: 1
+*
+*       Hierarchical Global Activity: N.A.
+*
+*       Global Activity: N.A.
+*
+*       Sequential Element Activity: 0.200000
+*
+*       Primary Input Activity: 0.200000
+*
+*       Default icg ratio: N.A.
+*
+*       Global Comb ClockGate Ratio: N.A.
+*
+*	Power Units = 1mW
+*
+*	Time Units = 1e-09 secs
+*
+*       report_power -hierarchy all
+*
+-----------------------------------------------------------------------------------------
+*
+
+
+
+Total Power
+-----------------------------------------------------------------------------------------
+Total Internal Power:        6.20281441 	   49.5119%
+Total Switching Power:       4.13223405 	   32.9842%
+Total Leakage Power:         2.19286851 	   17.5039%
+Total Power:                12.52791697
+-----------------------------------------------------------------------------------------
+
+
+Group                           Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+Sequential                         3.755      0.4738       0.665       4.894       39.06
+Macro                                  0           0           0           0           0
+IO                                     0           0           0           0           0
+Combinational                      1.784       2.302       1.508       5.594       44.66
+Clock (Combinational)             0.6642       1.356     0.01956        2.04       16.28
+Clock (Sequential)                     0           0           0           0           0
+-----------------------------------------------------------------------------------------
+Total                              6.203       4.132       2.193       12.53         100
+-----------------------------------------------------------------------------------------
+
+
+Clock                           Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+clk                               0.6642       1.356     0.01956        2.04       16.28
+-----------------------------------------------------------------------------------------
+Total                             0.6642       1.356     0.01956        2.04       16.28
+-----------------------------------------------------------------------------------------
+Clock: clk
+Clock Period: 0.010000 usec 
+Clock Toggle Rate:   200.0000 Mhz 
+Clock Static Probability:  0.5000
+  
+
+
+Rail                  Voltage   Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+VDD                       1.1      6.203       4.132       2.193       12.53         100
+
+
+Hierarchy                       Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+u_cbm                             0.1225     0.06771     0.04139      0.2317       1.849 
+u_csr                             0.1947     0.03146     0.06167      0.2878       2.297 
+u_div                             0.1417     0.03566     0.04957       0.227       1.812 
+u_exec0                           0.1116      0.1029     0.04329      0.2578       2.058 
+u_exec1                           0.1016      0.0894     0.04383      0.2348       1.874 
+u_frontend                         1.831      0.8081      0.4567       3.096       24.71 
+u_issue                            1.468       1.314      0.5326       3.315       26.46 
+u_lsu                             0.1027     0.04746     0.03231      0.1825       1.457 
+u_mul                             0.5071      0.4471      0.0867       1.041       8.309 
+u_mul_array                       0.2303      0.1499     0.04637      0.4266       3.405 
+u_mul_bw                          0.0511      0.0243     0.04156       0.117      0.9336 
+u_mul_wallace                     0.0553     0.02732     0.04467      0.1273       1.016 
+u_mulc                           0.08506     0.01627     0.02594      0.1273       1.016 
+u_mule                            0.0687     0.01149     0.03818      0.1184      0.9448 
+u_mule2                          0.08626     0.02572      0.0743      0.1863       1.487 
+u_mule2n                         0.08539     0.02475     0.07431      0.1845       1.472 
+u_mule3                          0.09271     0.03476     0.07373      0.2012       1.606 
+u_mule3n                         0.09754     0.04365     0.07418      0.2154       1.719 
+u_mule5                           0.1127       0.044     0.08121      0.2379       1.899 
+u_mule5n                          0.1359     0.08173     0.08266      0.3003       2.397 
+u_mulen                          0.06856     0.01385     0.03824      0.1207      0.9631 
+u_mulp                           0.05108     0.02447     0.04157      0.1171      0.9348 
+u_mulr                            0.1209     0.09504     0.09889      0.3148       2.513 
+u_cbm/u_cbm_core                  0.1224     0.06761      0.0412      0.2312       1.845 
+u_csr/u_csrfile                   0.1363     0.01665     0.04432      0.1973       1.575 
+u_frontend/u_decode               0.1418     0.04971     0.03294      0.2245       1.792 
+u_frontend/u_fetch                0.1039      0.0269      0.0281      0.1589       1.268 
+u_frontend/u_npc                   1.567       0.692      0.3948       2.654       21.18 
+u_issue/u_pipe0_ctrl              0.1848     0.04545     0.05903      0.2893       2.309 
+u_issue/u_pipe1_ctrl              0.1055     0.01728     0.03445      0.1572       1.255 
+u_issue/u_regfile                  0.833      0.5251       0.241       1.599       12.76 
+u_lsu/u_lsu_request              0.03708    0.004304    0.009859     0.05125      0.4091 
+u_exec0/u_alu                    0.04518     0.06115      0.0216      0.1279       1.021 
+u_exec1/u_alu                    0.03837     0.05226     0.02125      0.1119       0.893 
+u_mul_bw/g_array_reduce[1].u_csa
+                                0.001124    0.000553    0.001464    0.003141     0.02507 
+u_mul_bw/g_array_reduce[2].u_csa
+                                0.001257    0.000744    0.001525    0.003526     0.02814 
+u_mul_bw/g_array_reduce[3].u_csa
+                                0.001432   0.0008894    0.001486    0.003808     0.03039 
+u_mul_bw/g_array_reduce[4].u_csa
+                                0.001635    0.001007    0.001454    0.004096     0.03269 
+u_mul_bw/g_array_reduce[5].u_csa
+                                0.001716    0.001061     0.00141    0.004188     0.03343 
+u_mul_bw/g_array_reduce[6].u_csa
+                                0.001844    0.001165    0.001366    0.004375     0.03492 
+u_mul_bw/g_array_reduce[7].u_csa
+                                0.001801    0.001127    0.001315    0.004242     0.03386 
+u_mul_bw/g_array_reduce[8].u_csa
+                                0.001661    0.001031    0.001257     0.00395     0.03153 
+u_mul_bw/g_array_reduce[9].u_csa
+                                0.001684     0.00108    0.001212    0.003976     0.03173 
+u_mul_bw/g_array_reduce[10].u_csa
+                                0.001668    0.001059    0.001165    0.003891     0.03106 
+u_mul_bw/g_array_reduce[11].u_csa
+                                0.001458   0.0009289    0.001103     0.00349     0.02786 
+u_mul_bw/g_array_reduce[12].u_csa
+                                0.001414   0.0009237    0.001056    0.003394     0.02709 
+u_mul_bw/g_array_reduce[13].u_csa
+                                0.001311   0.0008444    0.001002    0.003158     0.02521 
+u_mul_bw/g_array_reduce[14].u_csa
+                                0.001131   0.0007654   0.0009445    0.002841     0.02268 
+u_mul_bw/g_array_reduce[15].u_csa
+                               0.0009804   0.0006594   0.0008884    0.002528     0.02018 
+u_mul_bw/g_array_reduce[16].u_csa
+                               0.0008852   0.0005962   0.0008377    0.002319     0.01851 
+u_mul_bw/g_array_reduce[17].u_csa
+                               0.0007915   0.0005251   0.0007849    0.002102     0.01678 
+u_mul_bw/g_array_reduce[18].u_csa
+                               0.0007059   0.0004864   0.0007331    0.001925     0.01537 
+u_mul_bw/g_array_reduce[19].u_csa
+                               0.0006261   0.0004192   0.0006808    0.001726     0.01378 
+u_mul_bw/g_array_reduce[20].u_csa
+                               0.0005544   0.0003762   0.0006302    0.001561     0.01246 
+u_mul_bw/g_array_reduce[21].u_csa
+                               0.0004853   0.0003362   0.0005786      0.0014     0.01118 
+u_mul_bw/g_array_reduce[22].u_csa
+                               0.0004253   0.0002782   0.0005274    0.001231    0.009825 
+u_mul_bw/g_array_reduce[23].u_csa
+                               0.0003679   0.0002664   0.0004762    0.001111    0.008865 
+u_mul_bw/g_array_reduce[24].u_csa
+                               0.0003058   0.0002039   0.0004244   0.0009342    0.007457 
+u_mul_bw/g_array_reduce[25].u_csa
+                               0.0002569    0.000175   0.0003742   0.0008061    0.006435 
+u_mul_bw/g_array_reduce[26].u_csa
+                               0.0002191   0.0001488    0.000324   0.0006919    0.005522 
+u_mul_bw/g_array_reduce[27].u_csa
+                               0.0001761    0.000118   0.0002741   0.0005682    0.004536 
+u_mul_bw/g_array_reduce[28].u_csa
+                               0.0001401   9.891e-05   0.0002242   0.0004632    0.003697 
+u_mul_bw/g_array_reduce[29].u_csa
+                               0.0001087   7.942e-05   0.0001748   0.0003629    0.002897 
+u_mul_bw/g_array_reduce[30].u_csa
+                                7.42e-05   5.318e-05   0.0001253   0.0002527    0.002017 
+u_mul_bw/g_array_reduce[31].u_csa
+                               7.231e-05   3.481e-05   7.573e-05   0.0001829     0.00146 
+u_mul_wallace/g_w1[0].u_csa
+                                0.001377    0.001006    0.001581    0.003964     0.03164 
+u_mul_wallace/g_w1[1].u_csa
+                                0.001572   0.0009372    0.001452    0.003961     0.03162 
+u_mul_wallace/g_w1[2].u_csa
+                                0.001394   0.0009538    0.001296    0.003644     0.02908 
+u_mul_wallace/g_w1[3].u_csa
+                                0.001185   0.0008903    0.001142    0.003217     0.02568 
+u_mul_wallace/g_w1[4].u_csa
+                                0.000831   0.0004903   0.0009812    0.002303     0.01838 
+u_mul_wallace/g_w1[5].u_csa
+                               0.0003773   0.0002257   0.0008194    0.001423     0.01135 
+u_mul_wallace/g_w1[6].u_csa
+                               0.0002971   0.0001918   0.0006693    0.001158    0.009246 
+u_mul_wallace/g_w1[7].u_csa
+                               0.0001987    0.000136   0.0005178   0.0008524    0.006804 
+u_mul_wallace/g_w1[8].u_csa
+                               0.0001096   7.324e-05    0.000367   0.0005499    0.004389 
+u_mul_wallace/g_w1[9].u_csa
+                               5.592e-05   3.716e-05   0.0002202   0.0003133    0.002501 
+u_mul_wallace/g_w2[0].u_csa
+                                0.001985    0.001414    0.001558    0.004958     0.03957 
+u_mul_wallace/g_w2[1].u_csa
+                                0.001467   0.0009086    0.001335     0.00371     0.02961 
+u_mul_wallace/g_w2[2].u_csa
+                                 0.00142   0.0009296      0.0011     0.00345     0.02754 
+u_mul_wallace/g_w2[3].u_csa
+                                0.000412   0.0002726   0.0008643    0.001549     0.01236 
+u_mul_wallace/g_w2[4].u_csa
+                               0.0003312    0.000221   0.0006206    0.001173    0.009362 
+u_mul_wallace/g_w2[5].u_csa
+                               0.0001279   8.895e-05   0.0004144   0.0006312    0.005039 
+u_mul_wallace/g_w2[6].u_csa
+                               4.549e-05    2.92e-05   0.0001712   0.0002459    0.001962 
+u_mul_wallace/g_w3[0].u_csa
+                                0.002375    0.001701     0.00153    0.005606     0.04475 
+u_mul_wallace/g_w3[1].u_csa
+                                0.001449   0.0008674     0.00119    0.003507     0.02799 
+u_mul_wallace/g_w3[2].u_csa
+                                0.000496   0.0003002   0.0008212    0.001617     0.01291 
+u_mul_wallace/g_w3[3].u_csa
+                               0.0001749   0.0001064   0.0004647    0.000746    0.005955 
+u_mul_wallace/g_w3[4].u_csa
+                               5.876e-05   4.643e-05   0.0001229   0.0002281    0.001821 
+u_mul_wallace/g_w4[0].u_csa
+                                0.002663    0.001907    0.001489    0.006059     0.04836 
+u_mul_wallace/g_w4[1].u_csa
+                               0.0006633   0.0003817   0.0009185    0.001963     0.01567 
+u_mul_wallace/g_w4[2].u_csa
+                               0.0002052   0.0001343   0.0004128   0.0007522    0.006004 
+u_mul_wallace/g_w5[0].u_csa
+                                0.002547    0.001719    0.001417    0.005683     0.04536 
+u_mul_wallace/g_w5[1].u_csa
+                               0.0002823   0.0001722   0.0005607    0.001015    0.008103 
+u_mul_wallace/u_w6_csa          0.002377    0.001525    0.001325    0.005228     0.04173 
+u_mul_wallace/u_w7_csa            0.0022    0.001328    0.001233    0.004761     0.03801 
+u_mul_wallace/u_w8_csa          0.002087    0.001257    0.001151    0.004495     0.03588 
+u_mul_wallace/u_wallace_ks
+                                0.001615    0.000908    0.001203    0.003726     0.02975 
+u_mule2/g_ppm_reduce[1].u_ppm_csa
+                                       0           0    0.001428    0.001428      0.0114 
+u_mule2/g_ppm_reduce[2].u_ppm_csa
+                                       0           0    0.001471    0.001471     0.01174 
+u_mule2/g_ppm_reduce[3].u_ppm_csa
+                                       0           0    0.001423    0.001423     0.01136 
+u_mule2/g_ppm_reduce[4].u_ppm_csa
+                                       0           0    0.001375    0.001375     0.01097 
+u_mule2/g_ppm_reduce[5].u_ppm_csa
+                                       0           0    0.001327    0.001327     0.01059 
+u_mule2/g_ppm_reduce[6].u_ppm_csa
+                                       0           0    0.001279    0.001279     0.01021 
+u_mule2/g_ppm_reduce[7].u_ppm_csa
+                                       0           0     0.00123     0.00123    0.009822 
+u_mule2/g_ppm_reduce[8].u_ppm_csa
+                                       0           0    0.001182    0.001182    0.009438 
+u_mule2/g_ppm_reduce[9].u_ppm_csa
+                                       0           0    0.001134    0.001134    0.009054 
+u_mule2/g_ppm_reduce[10].u_ppm_csa
+                                       0           0    0.001086    0.001086     0.00867 
+u_mule2/g_ppm_reduce[11].u_ppm_csa
+                                       0           0    0.001038    0.001038    0.008286 
+u_mule2/g_ppm_reduce[12].u_ppm_csa
+                                       0           0   0.0009899   0.0009899    0.007902 
+u_mule2/g_ppm_reduce[13].u_ppm_csa
+                                       0           0   0.0009418   0.0009418    0.007518 
+u_mule2/g_ppm_reduce[14].u_ppm_csa
+                                       0           0   0.0008937   0.0008937    0.007134 
+u_mule2/g_ppm_reduce[15].u_ppm_csa
+                                       0           0   0.0008456   0.0008456     0.00675 
+u_mule2/u_feedback_csa0                0           0    0.001572    0.001572     0.01255 
+u_mule2/u_feedback_csa1                0           0    0.001506    0.001506     0.01202 
+u_mule2n/g_ppm_reduce[1].u_ppm_csa
+                                       0           0    0.001428    0.001428      0.0114 
+u_mule2n/g_ppm_reduce[2].u_ppm_csa
+                                       0           0    0.001471    0.001471     0.01174 
+u_mule2n/g_ppm_reduce[3].u_ppm_csa
+                                       0           0    0.001423    0.001423     0.01136 
+u_mule2n/g_ppm_reduce[4].u_ppm_csa
+                                       0           0    0.001375    0.001375     0.01097 
+u_mule2n/g_ppm_reduce[5].u_ppm_csa
+                                       0           0    0.001327    0.001327     0.01059 
+u_mule2n/g_ppm_reduce[6].u_ppm_csa
+                                       0           0    0.001279    0.001279     0.01021 
+u_mule2n/g_ppm_reduce[7].u_ppm_csa
+                                       0           0     0.00123     0.00123    0.009822 
+u_mule2n/g_ppm_reduce[8].u_ppm_csa
+                                       0           0    0.001182    0.001182    0.009438 
+u_mule2n/g_ppm_reduce[9].u_ppm_csa
+                                       0           0    0.001134    0.001134    0.009054 
+u_mule2n/g_ppm_reduce[10].u_ppm_csa
+                                       0           0    0.001086    0.001086     0.00867 
+u_mule2n/g_ppm_reduce[11].u_ppm_csa
+                                       0           0    0.001038    0.001038    0.008286 
+u_mule2n/g_ppm_reduce[12].u_ppm_csa
+                                       0           0   0.0009899   0.0009899    0.007902 
+u_mule2n/g_ppm_reduce[13].u_ppm_csa
+                                       0           0   0.0009418   0.0009418    0.007518 
+u_mule2n/g_ppm_reduce[14].u_ppm_csa
+                                       0           0   0.0008937   0.0008937    0.007134 
+u_mule2n/g_ppm_reduce[15].u_ppm_csa
+                                       0           0   0.0008456   0.0008456     0.00675 
+u_mule2n/u_feedback_csa0               0           0    0.001572    0.001572     0.01255 
+u_mule2n/u_feedback_csa1               0           0    0.001506    0.001506     0.01202 
+u_mule3/g_ppm_reduce[1].u_ppm_csa
+                                       0           0    0.001428    0.001428      0.0114 
+u_mule3/g_ppm_reduce[2].u_ppm_csa
+                                       0           0    0.001471    0.001471     0.01174 
+u_mule3/g_ppm_reduce[3].u_ppm_csa
+                                       0           0    0.001423    0.001423     0.01136 
+u_mule3/g_ppm_reduce[4].u_ppm_csa
+                                       0           0    0.001375    0.001375     0.01097 
+u_mule3/g_ppm_reduce[5].u_ppm_csa
+                                       0           0    0.001327    0.001327     0.01059 
+u_mule3/g_ppm_reduce[6].u_ppm_csa
+                                       0           0    0.001279    0.001279     0.01021 
+u_mule3/g_ppm_reduce[7].u_ppm_csa
+                                       0           0     0.00123     0.00123    0.009822 
+u_mule3/g_ppm_reduce[8].u_ppm_csa
+                                       0           0    0.001182    0.001182    0.009438 
+u_mule3/g_ppm_reduce[9].u_ppm_csa
+                                       0           0    0.001134    0.001134    0.009054 
+u_mule3/g_ppm_reduce[10].u_ppm_csa
+                                       0           0    0.001086    0.001086     0.00867 
+u_mule3/u_feedback_csa0                0           0    0.001572    0.001572     0.01255 
+u_mule3/u_feedback_csa1                0           0    0.001505    0.001505     0.01201 
+u_mule3n/g_ppm_reduce[1].u_ppm_csa
+                                       0           0    0.001428    0.001428      0.0114 
+u_mule3n/g_ppm_reduce[2].u_ppm_csa
+                                       0           0    0.001471    0.001471     0.01174 
+u_mule3n/g_ppm_reduce[3].u_ppm_csa
+                                       0           0    0.001423    0.001423     0.01136 
+u_mule3n/g_ppm_reduce[4].u_ppm_csa
+                                       0           0    0.001375    0.001375     0.01097 
+u_mule3n/g_ppm_reduce[5].u_ppm_csa
+                                       0           0    0.001327    0.001327     0.01059 
+u_mule3n/g_ppm_reduce[6].u_ppm_csa
+                                       0           0    0.001279    0.001279     0.01021 
+u_mule3n/g_ppm_reduce[7].u_ppm_csa
+                                       0           0     0.00123     0.00123    0.009822 
+u_mule3n/g_ppm_reduce[8].u_ppm_csa
+                                       0           0    0.001182    0.001182    0.009438 
+u_mule3n/g_ppm_reduce[9].u_ppm_csa
+                                       0           0    0.001134    0.001134    0.009054 
+u_mule3n/g_ppm_reduce[10].u_ppm_csa
+                                       0           0    0.001086    0.001086     0.00867 
+u_mule3n/u_feedback_csa0               0           0    0.001572    0.001572     0.01255 
+u_mule3n/u_feedback_csa1               0           0    0.001505    0.001505     0.01201 
+u_mule5/g_ppm_reduce[1].u_ppm_csa
+                                       0           0    0.001428    0.001428      0.0114 
+u_mule5/g_ppm_reduce[2].u_ppm_csa
+                                       0           0    0.001471    0.001471     0.01174 
+u_mule5/g_ppm_reduce[3].u_ppm_csa
+                                       0           0    0.001423    0.001423     0.01136 
+u_mule5/g_ppm_reduce[4].u_ppm_csa
+                                       0           0    0.001375    0.001375     0.01097 
+u_mule5/g_ppm_reduce[5].u_ppm_csa
+                                       0           0    0.001327    0.001327     0.01059 
+u_mule5/g_ppm_reduce[6].u_ppm_csa
+                                       0           0    0.001279    0.001279     0.01021 
+u_mule5/u_feedback_csa0                0           0    0.001572    0.001572     0.01255 
+u_mule5/u_feedback_csa1                0           0    0.001511    0.001511     0.01206 
+u_mule5n/g_ppm_reduce[1].u_ppm_csa
+                               0.0004412   0.0002182    0.001439    0.002098     0.01675 
+u_mule5n/g_ppm_reduce[2].u_ppm_csa
+                               0.0004679   0.0002872     0.00149    0.002245     0.01792 
+u_mule5n/g_ppm_reduce[3].u_ppm_csa
+                               0.0005339    0.000327    0.001446    0.002307     0.01841 
+u_mule5n/g_ppm_reduce[4].u_ppm_csa
+                               0.0005869   0.0003661      0.0014    0.002353     0.01878 
+u_mule5n/g_ppm_reduce[5].u_ppm_csa
+                               0.0006051   0.0004338    0.001353    0.002392     0.01909 
+u_mule5n/g_ppm_reduce[6].u_ppm_csa
+                               0.0006071   0.0004996    0.001304    0.002411     0.01925 
+u_mule5n/u_feedback_csa0       0.0007175   0.0004736    0.001709      0.0029     0.02315 
+u_mule5n/u_feedback_csa1       0.0007295   0.0007575    0.001596    0.003083     0.02461 
+u_mulp/g_rows[1].u_csa          0.001124   0.0005705    0.001464    0.003159     0.02522 
+u_mulp/g_rows[2].u_csa          0.001258   0.0007664    0.001525    0.003549     0.02833 
+u_mulp/g_rows[3].u_csa          0.001432   0.0008816    0.001486      0.0038     0.03033 
+u_mulp/g_rows[4].u_csa          0.001635    0.001013    0.001454    0.004102     0.03274 
+u_mulp/g_rows[5].u_csa          0.001716    0.001056     0.00141    0.004182     0.03339 
+u_mulp/g_rows[6].u_csa          0.001843    0.001154    0.001366    0.004363     0.03483 
+u_mulp/g_rows[7].u_csa          0.001801    0.001142    0.001315    0.004257     0.03398 
+u_mulp/g_rows[8].u_csa          0.001662     0.00105    0.001257    0.003969     0.03168 
+u_mulp/g_rows[9].u_csa          0.001684    0.001088    0.001212    0.003984      0.0318 
+u_mulp/g_rows[10].u_csa         0.001668    0.001062    0.001165    0.003894     0.03109 
+u_mulp/g_rows[11].u_csa         0.001458   0.0009424    0.001103    0.003504     0.02797 
+u_mulp/g_rows[12].u_csa         0.001415   0.0009433    0.001056    0.003414     0.02725 
+u_mulp/g_rows[13].u_csa         0.001312   0.0008503    0.001002    0.003164     0.02526 
+u_mulp/g_rows[14].u_csa         0.001131    0.000745   0.0009445     0.00282     0.02251 
+u_mulp/g_rows[15].u_csa        0.0009807   0.0006684   0.0008884    0.002538     0.02026 
+u_mulp/g_rows[16].u_csa        0.0008854   0.0006035   0.0008377    0.002327     0.01857 
+u_mulp/g_rows[17].u_csa        0.0007924   0.0005488   0.0007849    0.002126     0.01697 
+u_mulp/g_rows[18].u_csa        0.0007056   0.0004796   0.0007331    0.001918     0.01531 
+u_mulp/g_rows[19].u_csa        0.0006269   0.0004385   0.0006808    0.001746     0.01394 
+u_mulp/g_rows[20].u_csa        0.0005548   0.0003876   0.0006302    0.001573     0.01255 
+u_mulp/g_rows[21].u_csa        0.0004854   0.0003353   0.0005786    0.001399     0.01117 
+u_mulp/g_rows[22].u_csa        0.0004263   0.0003031   0.0005274    0.001257     0.01003 
+u_mulp/g_rows[23].u_csa        0.0003674   0.0002506   0.0004762    0.001094    0.008734 
+u_mulp/g_rows[24].u_csa        0.0003065   0.0002213   0.0004244   0.0009523    0.007601 
+u_mulp/g_rows[25].u_csa        0.0002568   0.0001726   0.0003742   0.0008036    0.006415 
+u_mulp/g_rows[26].u_csa         0.000219   0.0001421    0.000324   0.0006851    0.005469 
+u_mulp/g_rows[27].u_csa        0.0001767   0.0001333   0.0002741   0.0005841    0.004662 
+u_mulp/g_rows[28].u_csa        0.0001401   9.875e-05   0.0002242   0.0004631    0.003696 
+u_mulp/g_rows[29].u_csa        0.0001086   7.395e-05   0.0001748   0.0003573    0.002852 
+u_mulp/g_rows[30].u_csa        7.445e-05    6.16e-05   0.0001253   0.0002614    0.002086 
+u_mulp/g_rows[31].u_csa        7.222e-05   3.471e-05   7.573e-05   0.0001827    0.001458 
+u_mulr/g_bw[1].u_csa            0.000975   0.0004507    0.001274      0.0027     0.02155 
+u_mulr/g_bw[2].u_csa            0.001191   0.0007133    0.001474    0.003378     0.02696 
+u_mulr/g_bw[3].u_csa            0.001438    0.000875    0.001486    0.003799     0.03033 
+u_mulr/g_bw[4].u_csa            0.001644    0.001035    0.001454    0.004132     0.03298 
+u_mulr/g_bw[5].u_csa            0.001723     0.00109     0.00141    0.004223     0.03371 
+u_mulr/g_bw[6].u_csa            0.001851    0.001147    0.001366    0.004363     0.03483 
+u_mulr/g_bw[7].u_csa            0.001808    0.001151    0.001315    0.004274     0.03412 
+u_mulr/g_bw[8].u_csa            0.001665    0.001047    0.001257     0.00397     0.03169 
+u_mulr/g_bw[9].u_csa            0.001691    0.001089    0.001212    0.003992     0.03187 
+u_mulr/g_bw[10].u_csa           0.001674    0.001053    0.001165    0.003892     0.03107 
+u_mulr/g_bw[11].u_csa           0.001462   0.0009222    0.001104    0.003487     0.02784 
+u_mulr/g_bw[12].u_csa           0.001418    0.000879    0.001056    0.003353     0.02677 
+u_mulr/g_bw[13].u_csa           0.001315   0.0008216    0.001002    0.003139     0.02506 
+u_mulr/g_bw[14].u_csa           0.001129   0.0006868   0.0009438     0.00276     0.02203 
+u_mulr/g_bw[15].u_csa           0.000979   0.0005784   0.0008877    0.002445     0.01952 
+u_mulr/g_bw[16].u_csa          0.0008856   0.0005372   0.0008369     0.00226     0.01804 
+u_mulr/g_bw[17].u_csa          0.0007905   0.0004832   0.0007841    0.002058     0.01643 
+u_mulr/g_bw[18].u_csa          0.0007058   0.0004254   0.0007331    0.001864     0.01488 
+u_mulr/g_bw[19].u_csa           0.000629   0.0003914   0.0006816    0.001702     0.01359 
+u_mulr/g_bw[20].u_csa          0.0005536   0.0003321   0.0006296    0.001515     0.01209 
+u_mulr/g_bw[21].u_csa          0.0004843   0.0002867   0.0005778    0.001349     0.01077 
+u_mulr/g_bw[22].u_csa          0.0004269   0.0002728   0.0005274    0.001227    0.009794 
+u_mulr/g_bw[23].u_csa          0.0003676   0.0002191   0.0004762    0.001063    0.008485 
+u_mulr/g_bw[24].u_csa          0.0003061    0.000186   0.0004244   0.0009166    0.007316 
+u_mulr/g_bw[25].u_csa          0.0002562   0.0001532   0.0003742   0.0007836    0.006255 
+u_mulr/g_bw[26].u_csa          0.0002187   0.0001325    0.000324   0.0006752     0.00539 
+u_mulr/g_bw[27].u_csa           0.000176    0.000112   0.0002741   0.0005621    0.004487 
+u_mulr/g_bw[28].u_csa          0.0001399   8.822e-05   0.0002242   0.0004524    0.003611 
+u_mulr/g_bw[29].u_csa          0.0001084   7.096e-05   0.0001748   0.0003541    0.002827 
+u_mulr/g_bw[30].u_csa          7.442e-05   5.505e-05   0.0001253   0.0002548    0.002034 
+u_mulr/g_bw[31].u_csa           7.22e-05   4.617e-05   7.573e-05   0.0001941    0.001549 
+u_mulr/g_wb1[0].u_csa            0.00134   0.0009588    0.001534    0.003832     0.03059 
+u_mulr/g_wb1[1].u_csa           0.001594   0.0009144    0.001451    0.003959      0.0316 
+u_mulr/g_wb1[2].u_csa           0.001412   0.0008511    0.001295    0.003558      0.0284 
+u_mulr/g_wb1[3].u_csa           0.001205   0.0008345    0.001142    0.003181     0.02539 
+u_mulr/g_wb1[4].u_csa          0.0008448   0.0005004    0.000982    0.002327     0.01858 
+u_mulr/g_wb1[5].u_csa          0.0003848   0.0002444   0.0008195    0.001449     0.01156 
+u_mulr/g_wb1[6].u_csa          0.0003022    0.000212    0.000669    0.001183    0.009445 
+u_mulr/g_wb1[7].u_csa          0.0002021   0.0001155   0.0005176   0.0008352    0.006666 
+u_mulr/g_wb1[8].u_csa          0.0001065   6.241e-05   0.0003302   0.0004991    0.003984 
+u_mulr/g_wb1[9].u_csa          5.589e-05   3.705e-05   0.0002201   0.0003131    0.002499 
+u_mulr/g_wb2[0].u_csa           0.001986    0.001446    0.001557     0.00499     0.03983 
+u_mulr/g_wb2[1].u_csa           0.001465   0.0008574    0.001335    0.003657     0.02919 
+u_mulr/g_wb2[2].u_csa           0.001421   0.0009211      0.0011    0.003442     0.02748 
+u_mulr/g_wb2[3].u_csa          0.0004107   0.0002838   0.0008635    0.001558     0.01244 
+u_mulr/g_wb2[4].u_csa           0.000331   0.0002035   0.0006208    0.001155    0.009221 
+u_mulr/g_wb2[5].u_csa          0.0001275   7.661e-05   0.0004142   0.0006182    0.004935 
+u_mulr/g_wb2[6].u_csa          4.553e-05   2.999e-05   0.0001712   0.0002467    0.001969 
+u_mulr/g_wb3[0].u_csa           0.002372    0.001668     0.00153    0.005571     0.04447 
+u_mulr/g_wb3[1].u_csa           0.001448   0.0008569     0.00119    0.003495      0.0279 
+u_mulr/g_wb3[2].u_csa          0.0004992    0.000331   0.0008202     0.00165     0.01317 
+u_mulr/g_wb3[3].u_csa          0.0001765   0.0001114   0.0004644   0.0007523    0.006005 
+u_mulr/g_wb3[4].u_csa          6.066e-05   4.175e-05   0.0001228   0.0002252    0.001798 
+u_mulr/g_wb4[0].u_csa           0.002668    0.001835    0.001489    0.005991     0.04782 
+u_mulr/g_wb4[1].u_csa          0.0006655   0.0003842   0.0009182    0.001968     0.01571 
+u_mulr/g_wb4[2].u_csa          0.0002052   0.0001425   0.0004128   0.0007605     0.00607 
+u_mulr/g_wb5[0].u_csa           0.002548    0.001626    0.001418    0.005591     0.04463 
+u_mulr/g_wb5[1].u_csa          0.0002824   0.0001725   0.0005607    0.001016    0.008107 
+u_mulr/u_w6_csa                 0.002373    0.001368    0.001326    0.005067     0.04045 
+u_mulr/u_w7_csa                 0.002206     0.00121     0.00124    0.004657     0.03717 
+u_mulr/u_w8_csa                 0.002085    0.001156    0.001151    0.004391     0.03505 
+u_mulr/u_wallace_ks              0.00163   0.0007515    0.001205    0.003587     0.02863 
+u_frontend/u_decode/genblk1.u_fifo
+                                  0.1369      0.0442     0.02664      0.2077       1.658 
+u_frontend/u_npc/BRANCH_PREDICTION.u_lru
+                                0.009802    0.001656    0.001869     0.01333      0.1064 
+u_frontend/u_decode/genblk1.u_dec0
+                                0.001192    0.001584    0.002357    0.005132     0.04097 
+u_frontend/u_decode/genblk1.u_dec1
+                                0.001642    0.002271    0.002364    0.006277      0.0501 
+ 
+ 
+-----------------------------------------------------------------------------------------
+*	Power Distribution Summary: 
+*              Highest Average Power:           u_issue/g109754 (AND3_X2):         0.006811
+*              Highest Leakage Power:           u_issue/g162069 (AND4_X4):        0.0001893
+*                Total Cap:      4.36518e-10 F
+*                Total instances in design: 58275
+*                Total instances in design with no power:     0
+*                Total instances in design with no activty:     0
+
+*                Total Fillers and Decap:     0
+-----------------------------------------------------------------------------------------
+ 
+** INFO:  (VOLTUS_POWR-3465): There are 0 decaps and 0 fillers in the design
+
+Ended Static Power Report Generation: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=3166.61MB/13012.77MB/10465.83MB)
+

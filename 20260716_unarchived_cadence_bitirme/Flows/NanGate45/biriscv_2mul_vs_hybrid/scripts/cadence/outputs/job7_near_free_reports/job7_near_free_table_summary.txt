@@ -1,0 +1,14 @@
+Job 7 Near-Free Oracle Steering Results
+=======================================
+
+| Benchmark | Baseline Cycles | Near-Free Cycles | Cycle Delta (%) | Accepted Patches | Retired MULE | Baseline Core Pwr (mW) | Near-Free Core Pwr (mW) | Core Power Delta (%) |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| complex_mul_vec | 109170 | 109682 | +0.469% | 1 | 512 | 7.443486 | 7.451229 | +0.104% |
+| complex_bank | 37321 | 37387 | +0.177% | 2 | 256 | 8.261768 | 8.267316 | +0.067% |
+| extended_estrin | 67681 | 67687 | +0.009% | 1 | 1024 | 8.617412 | 8.636078 | +0.217% |
+| unrolled_dot8 | 4617 | 4622 | +0.108% | 1 | 32 | 8.334907 | 8.349453 | +0.175% |
+
+No near-free benchmark reduced total core power.
+Best near-free core power delta: complex_bank at +0.067%.
+Lowest near-free cycle penalty: extended_estrin at +0.009%.
+Omitted benchmarks: fft_butterfly (zero accepted near-free patches), fir_direct (zero accepted near-free patches), fir_unrolled (zero accepted near-free patches), matmul_tiled (zero accepted near-free patches), outer_product (zero accepted near-free patches), estrin_2level (zero accepted near-free patches), estrin_poly (zero accepted near-free patches), filter_bank_4out (zero accepted near-free patches), grouped_correlation_bank (zero accepted near-free patches), multi_accumulator (zero accepted near-free patches), rdr_like_corr (zero accepted near-free patches), reduction_tree_mul (zero accepted near-free patches), sliding_correlation (zero accepted near-free patches), unrolled_dot16 (zero accepted near-free patches), unrolled_dot32 (zero accepted near-free patches), unrolled_dot64 (zero accepted near-free patches)

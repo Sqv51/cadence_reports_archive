@@ -1,0 +1,23 @@
+{
+  "config": "core_hybrid",
+  "variant": "all-mule2",
+  "status": "pass",
+  "benchmark": "multiplier_correctness.c",
+  "patched_plain_mul_count": 1,
+  "selected_plain_mul_addresses": [],
+  "selected_mul_routing": [],
+  "patched_target": "mule2",
+  "patched_target_opcode": "0x1000000b",
+  "metrics": {
+    "main_return": 0,
+    "sim_total_cycles": 167095,
+    "retired_total_instructions": 117612,
+    "retired_plain_mul": 0,
+    "retired_mule": 484,
+    "retired_mulh_family": 0,
+    "retired_integer_multiply_total": 484,
+    "retired_integer_multiply_ratio_ppm": 4115
+  },
+  "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/mul_update_multiplier_correctness_runs/multiplier_correctness_all_mule2/logs/core_hybrid.log",
+  "vcd_path": null
+}

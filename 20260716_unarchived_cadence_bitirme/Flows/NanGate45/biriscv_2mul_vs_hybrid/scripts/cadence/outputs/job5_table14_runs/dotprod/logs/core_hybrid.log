@@ -1,0 +1,93 @@
+xrun(64): 25.09-s003: (c) Copyright 1995-2026 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	25.09-s003: Started on Jun 08, 2026 at 16:52:58 UTC
+/eda/cadence/XCELIUM2509/tools.lnx86/inca/bin/64bit/xrun
+	-64bit
+	-sv
+	-licqueue
+	-timescale 1ns/1ps
+	+access+r
+	+define+TRACE=0
+	+define+TRACE_VCD=1
+	+define+verilog_sim
+	+incdir+/home/ykaraagac/biriscv/src/core
+	+incdir+/home/ykaraagac/biriscv/tb/tb_matmul_absorbtion
+	+incdir+/home/ykaraagac/biriscv/tb/tb_mul
+	-xmlibdirname /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job5_table14_runs/dotprod/work/core_hybrid/xcelium.d
+	/home/ykaraagac/biriscv/src/core/biriscv_alu.v
+	/home/ykaraagac/biriscv/src/core/biriscv_csr.v
+	/home/ykaraagac/biriscv/src/core/biriscv_csr_regfile.v
+	/home/ykaraagac/biriscv/src/core/biriscv_decode.v
+	/home/ykaraagac/biriscv/src/core/biriscv_decoder.v
+	/home/ykaraagac/biriscv/src/core/biriscv_defs.v
+	/home/ykaraagac/biriscv/src/core/biriscv_divider.v
+	/home/ykaraagac/biriscv/src/core/biriscv_exec.v
+	/home/ykaraagac/biriscv/src/core/biriscv_fetch.v
+	/home/ykaraagac/biriscv/src/core/biriscv_frontend.v
+	/home/ykaraagac/biriscv/src/core/biriscv_issue.v
+	/home/ykaraagac/biriscv/src/core/biriscv_lsu.v
+	/home/ykaraagac/biriscv/src/core/biriscv_mmu.v
+	/home/ykaraagac/biriscv/src/core/biriscv_multiplier.v
+	/home/ykaraagac/biriscv/src/core/biriscv_multiplier_efficient.v
+	/home/ykaraagac/biriscv/src/core/biriscv_npc.v
+	/home/ykaraagac/biriscv/src/core/biriscv_pipe_ctrl.v
+	/home/ykaraagac/biriscv/src/core/biriscv_regfile.v
+	/home/ykaraagac/biriscv/src/core/biriscv_trace_sim.v
+	/home/ykaraagac/biriscv/src/core/biriscv_xilinx_2r1w.v
+	/home/ykaraagac/biriscv/src/core/riscv_core.v
+	/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job5_table14_runs/dotprod/work/core_hybrid/tb_matmul_absorbtion_sanitized.v
+	/home/ykaraagac/biriscv/tb/tb_mul/tcm_mem.v
+	/home/ykaraagac/biriscv/tb/tb_mul/tcm_mem_ram.v
+	-top tb_matmul_absorbtion
+	-input "@run; exit"
+	-l /home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/job5_table14_runs/dotprod/logs/core_hybrid.log
+Recompiling... reason: file './tb_matmul_absorbtion_sanitized.v' is newer than expected.
+	expected: Mon Jun  8 16:34:48 2026
+	actual:   Mon Jun  8 16:52:58 2026
+file: /home/ykaraagac/biriscv/tb/tb_mul/tcm_mem_ram.v
+xmvlog: *W,SPDUSD: Include directory /home/ykaraagac/biriscv/tb/tb_matmul_absorbtion given but not used.
+xmvlog: *W,SPDUSD: Include directory /home/ykaraagac/biriscv/tb/tb_mul given but not used.
+	Total errors/warnings found outside modules and primitives:
+		errors: 0, warnings: 2
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		worklib.tb_matmul_absorbtion:v (module)
+	Building instance overlay tables: .................... Done
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                28      24
+		Registers:             426     382
+		Scalar wires:          285       -
+		Expanded wires:         40       3
+		Vectored wires:        247       -
+		Always blocks:          98     109
+		Initial blocks:          3       3
+		Cont. assignments:     241     507
+		Pseudo assignments:     22       -
+		Sparse arrays:           1       -
+		Process Clocks:         56       2
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.tb_matmul_absorbtion:v
+Loading snapshot worklib.tb_matmul_absorbtion:v .................... Done
+xcelium> source /eda/cadence/XCELIUM2509/tools/xcelium/files/xmsimrc
+xcelium> run; exit
+Starting benchmark runner
+xmsim: *W,PRUASZ: Unpacked array at "tb_matmul_absorbtion.mem" of 131073 elements exceeds limit of 16384 - not probed
+ Use 'probe -create -unpacked 131073 tb_matmul_absorbtion.mem' or 'setenv SHM_UNPACKED_LIMIT 131073' to adjust limit.
+Loaded 606 bytes from tcm.bin
+RAM[0] = 0x000000001440006f
+RAM[1] = 0x0000000000000000
+RAM[2] = 0x0000000000000000
+
+*** BENCHMARK PASS ***
+main_return = 0
+sim_total_cycles = 103509
+retired_total_instructions = 21547
+retired_plain_mul = 1024
+retired_mule = 0
+retired_mulh_family = 1024
+retired_integer_multiply_total = 2048
+retired_integer_multiply_ratio_ppm = 95048
+TOOL:	xrun(64)	25.09-s003: Exiting on Jun 08, 2026 at 16:57:28 UTC  (total: 00:04:30)

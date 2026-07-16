@@ -1,0 +1,29 @@
+{
+  "benchmark": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/benchmarks/table14/estrin_2level.c",
+  "variant": "all-mule5n",
+  "results": [
+    {
+      "config": "core_hybrid",
+      "variant": "all-mule5n",
+      "status": "pass",
+      "benchmark": "estrin_2level.c",
+      "patched_plain_mul_count": 5,
+      "selected_plain_mul_addresses": [],
+      "selected_mul_routing": [],
+      "patched_target": "mule5n",
+      "patched_target_opcode": "0x1e00000b",
+      "metrics": {
+        "main_return": 0,
+        "sim_total_cycles": 59818,
+        "retired_total_instructions": 37155,
+        "retired_plain_mul": 0,
+        "retired_mule": 5128,
+        "retired_mulh_family": 0,
+        "retired_integer_multiply_total": 5128,
+        "retired_integer_multiply_ratio_ppm": 138016
+      },
+      "log_path": "/home/ykaraagac/cadence-bitirme/Flows/NanGate45/biriscv_2mul_vs_hybrid/scripts/cadence/outputs/mul_update_table14_full_a04bb61_runs/estrin_2level_a04bb61_all_mule5n/logs/core_hybrid.log",
+      "vcd_path": null
+    }
+  ]
+}

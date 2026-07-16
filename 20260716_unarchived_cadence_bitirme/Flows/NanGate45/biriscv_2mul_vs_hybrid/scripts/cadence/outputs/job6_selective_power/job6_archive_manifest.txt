@@ -1,0 +1,21 @@
+Job 6 Archive Manifest
+======================
+
+This archive bundle is intended for the cadence_reports_archive repository.
+
+Included artifacts:
+- job6_selective_table_summary.txt
+- job6_selective_narrative_summary.txt
+- job6_selective_power/ (full post-route replay reports for baseline/selective)
+- job6_selective_metrics/ (metrics JSON files only, one per run)
+- scripts/
+  - collect_job6_selective_results.py
+  - generate_benchmark_vcds_xrun.py
+  - run_job6_selective_batch.sh
+  - run_job6_selective_power_batch.sh
+
+Notes:
+- Large transient simulation work directories and VCD dumps are intentionally
+  excluded from the archive repo.
+- The archived metrics subset preserves cycle counts and patch statistics
+  without carrying the full xcelium work tree.
